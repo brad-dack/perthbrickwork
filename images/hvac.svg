@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <title>Line illustration of a thermometer</title>
+  <rect width="1200" height="800" fill="#e9eef2"/>
+  <circle cx="600" cy="410" r="270" fill="#dfe7ec"/>
+  <rect x="578" y="260" width="44" height="240" rx="22" fill="#ffffff" stroke="#8da2b0" stroke-width="10"/>
+  <circle cx="600" cy="540" r="52" fill="#ffffff" stroke="#8da2b0" stroke-width="10"/>
+  <circle cx="600" cy="540" r="24" fill="#b9c7d1"/>
+  <line x1="600" y1="530" x2="600" y2="400" stroke="#b9c7d1" stroke-width="14" stroke-linecap="round"/>
+  <line x1="650" y1="300" x2="690" y2="300" stroke="#b9c7d1" stroke-width="8" stroke-linecap="round"/>
+  <line x1="650" y1="350" x2="690" y2="350" stroke="#b9c7d1" stroke-width="8" stroke-linecap="round"/>
+  <line x1="650" y1="400" x2="690" y2="400" stroke="#b9c7d1" stroke-width="8" stroke-linecap="round"/>
+</svg>

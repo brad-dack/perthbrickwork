@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <title>Line illustration of a lightning bolt</title>
+  <rect width="1200" height="800" fill="#e9eef2"/>
+  <circle cx="600" cy="410" r="270" fill="#dfe7ec"/>
+  <polygon points="645 250 495 465 590 465 555 570 705 385 610 385" fill="#ffffff" stroke="#8da2b0" stroke-width="10" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <title>Line illustration of a mallet and screwdriver</title>
+  <rect width="1200" height="800" fill="#e9eef2"/>
+  <circle cx="600" cy="410" r="270" fill="#dfe7ec"/>
+  <rect x="475" y="300" width="170" height="56" rx="12" fill="#ffffff" stroke="#8da2b0" stroke-width="10"/>
+  <rect x="538" y="356" width="44" height="190" rx="16" fill="#dfe7ec" stroke="#8da2b0" stroke-width="10"/>
+  <line x1="690" y1="300" x2="690" y2="440" stroke="#8da2b0" stroke-width="26" stroke-linecap="round"/>
+  <line x1="690" y1="440" x2="690" y2="545" stroke="#b9c7d1" stroke-width="12" stroke-linecap="round"/>
+</svg>

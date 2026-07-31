@@ -1,0 +1,83 @@
+
+[Before sending: confirm model is set to Opus 4.8, effort set to High]
+
+
+
+TASK: Populate the template for a real niche. Content and config only. Do
+not change template logic, main.js rendering, bake.js, schema structure, or
+site architecture.
+
+NICHE: [e.g. Epoxy Flooring]
+CITY: [e.g. Perth, WA]
+DOMAIN: [e.g. epoxyperth.com]
+PRIMARY KEYWORD: [e.g. epoxy flooring perth]
+BUSINESS NAME: [generic brand for this site, e.g. "Perth Epoxy Co"]
+PHONE NUMBER: [the number leads go to, even if temporary/forwarding]
+EMAIL: [the address on the site]
+SERVICE AREA: [e.g. Perth metro and surrounding suburbs]
+HOURS: [e.g. Mon-Sat, 7am-6pm]
+
+SERVICES (3-5, these become the service pages):
+1. [service name] - typical job value $[X] - price range $[low]-$[high]
+2. [service name] - typical job value $[X] - price range $[low]-$[high]
+3. ...
+
+AREAS (0-6 suburbs/regions, these become the area pages):
+1. [suburb]
+2. [suburb]
+3. ...
+[or write "none for launch" and leave the areas array empty]
+
+FAQs: 8 global FAQs and 3 per service. [Pick one: I've supplied these below
+/ research them from real People Also Ask results and competitor sites for
+the primary keyword.]
+
+BRAND ACCENT COLOR: [hex code, or "pick something that fits the niche"]
+SCHEMA TYPE: [a schema.org LocalBusiness subtype fitting the niche, or
+"pick the best fit"]
+
+GA4 MEASUREMENT ID: [G-XXXXXXXXXX, or "not set up yet"]
+FORMSPREE ID: [the token after /f/ in the endpoint, or "not set up yet"]
+
+TASKS
+1. Populate config.js completely: business identity, domain, brand colors,
+   schema type, ga4Id, formspreeId, page meta and headlines, services array
+   with real pricing, areas array, all FAQs, about copy, value props.
+   Every headline should mirror the actual phrase people search for.
+2. Source real images: one hero plus one per service page, plus one per
+   area page if used, from Unsplash or Pexels, genuinely relevant to the
+   niche and city where possible. Replace the placeholder SVGs in /images.
+   Optimise to roughly 1200x800, under about 150KB, JPG or WebP. Write
+   literal descriptive alt text into config, and set accurate width/height.
+   If licensing on any image is unclear, skip it and tell me rather than
+   using it.
+3. Run bake.js to regenerate every static page plus CNAME, robots.txt,
+   sitemap.xml and 404.html from the config.
+4. Run `node bake.js --check` and fix everything it flags until it passes
+   clean.
+5. Leave testimonials and photos arrays empty. No invented reviews, star
+   ratings, names, project photos, credentials, licence numbers, years in
+   business, or job counts. Nothing on this site may claim something that
+   isn't independently true yet.
+6. Serve the site locally and verify: zero console errors, all pages render,
+   correct content on every page, forms present, tel: links working, layout
+   correct at mobile, tablet and desktop widths.
+
+RULES ON CLAIMS
+The template's copy is written in a first-person voice that implies an
+operating business. Since no renter exists yet, every claim on the site must
+be one that will still be true when a renter is attached, or that is
+factually about the quoting process rather than about work performed. Flag
+anything in the existing template copy that you can't populate honestly.
+
+If this needs more exploration or judgement than a straightforward content
+pass (FAQ research returning conflicting or contradictory answers, pricing
+you can't substantiate for this city, image licensing ambiguity, a service
+that doesn't map cleanly onto the template's structure), say so explicitly
+rather than guessing, so I can decide whether to increase effort.
+
+STOPPING POINT
+Stop once config is fully populated, bake.js has regenerated everything,
+`--check` passes clean, real licensed images are in place with alt text, and
+the site renders correctly across breakpoints with zero console errors.
+Present the result and stop.

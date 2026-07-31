@@ -1,0 +1,17 @@
+# Unreferenced source screenshots — kept on disk, excluded from the repo.
+# ~2MB each, no longer referenced by any page (see README.md).
+images/aboutpage36nkl.PNG
+images/brickfence32542k.PNG
+images/brickfencesrg456r5s.PNG
+images/costguidepage36kl3n4.PNG
+images/hero678ty4.PNG
+images/repairs346kjnl3.PNG
+images/repairs5k34l6n3l.PNG
+images/repairsm5346d.PNG
+images/repairsn3n4kl65.PNG
+images/tuckpointing2534643.PNG
+
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store

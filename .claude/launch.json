@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:\\Users\\bjdac\\AppData\\Local\\Temp\\claude\\C--Users-bjdac-Perth-Brickworks\\13531c43-0dce-4fdb-b22f-ea860e219a38\\scratchpad\\static-server.js"],
+      "port": 4174
+    }
+  ]
+}

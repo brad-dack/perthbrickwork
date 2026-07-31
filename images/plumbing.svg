@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <title>Line illustration of a water droplet</title>
+  <rect width="1200" height="800" fill="#e9eef2"/>
+  <circle cx="600" cy="410" r="270" fill="#dfe7ec"/>
+  <path d="M600 270 C600 270 470 430 470 510 A130 130 0 0 0 730 510 C730 430 600 270 600 270 Z" fill="#ffffff" stroke="#8da2b0" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M545 505 a55 55 0 0 0 55 55" fill="none" stroke="#b9c7d1" stroke-width="10" stroke-linecap="round"/>
+</svg>

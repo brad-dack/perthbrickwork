@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+  <title>Line illustration of a washing machine</title>
+  <rect width="1200" height="800" fill="#e9eef2"/>
+  <circle cx="600" cy="410" r="270" fill="#dfe7ec"/>
+  <rect x="478" y="270" width="244" height="290" rx="18" fill="#ffffff" stroke="#8da2b0" stroke-width="10"/>
+  <line x1="478" y1="330" x2="722" y2="330" stroke="#8da2b0" stroke-width="8"/>
+  <circle cx="515" cy="300" r="11" fill="#b9c7d1"/>
+  <circle cx="552" cy="300" r="11" fill="#b9c7d1"/>
+  <circle cx="600" cy="450" r="78" fill="#dfe7ec" stroke="#8da2b0" stroke-width="10"/>
+  <circle cx="600" cy="450" r="46" fill="none" stroke="#b9c7d1" stroke-width="8"/>
+</svg>
