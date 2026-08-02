@@ -27,7 +27,7 @@ window.SITE_CONFIG = {
     name: "Perth Brickwork",
     phone: "[PHONE]",               // tel: link format, e.g. +61812345678
     phoneDisplay: "[PHONE]",        // human-readable
-    email: "",                      // v6 lists no email; footer omits it when blank
+    email: "hello@perthbrickwork.com.au",
     city: "Perth",
     state: "WA",
     serviceArea: "The Perth metropolitan area",
@@ -51,7 +51,7 @@ window.SITE_CONFIG = {
 
   /* Used for canonical URLs, schema, and OG tags. No trailing slash.
      bake.js derives CNAME, robots.txt, and sitemap.xml from this. */
-  domain: "https://[DOMAIN]",
+  domain: "https://www.perthbrickwork.com.au",
 
   /* --- Brand ----------------------------------------------------------- */
   brand: {
@@ -64,7 +64,7 @@ window.SITE_CONFIG = {
 
   /* --- Tracking / integrations ----------------------------------------- */
   ga4Id: "G-XXXXXXXXXX",
-  formspreeId: "YOUR_FORMSPREE_ID",
+  formspreeId: "xrenwvpe",
 
   /* --- Structured data ---------------------------------------------------
      Organization ONLY, sitewide. NOT LocalBusiness: there is no premises, no
@@ -134,15 +134,9 @@ window.SITE_CONFIG = {
       {
         name: "job",
         label: "What do you need?",
-        type: "select",
+        type: "text",
         required: true,
-        options: [
-          "Repointing or brick repairs",
-          "Tuckpointing",
-          "Brick or rendered fence",
-          "Extension or addition",
-          "Something else"
-        ]
+        placeholder: "e.g. repointing, tuckpointing, brick fence, extension"
       },
       { name: "suburb", label: "Suburb", type: "text", required: true },
       {
@@ -204,7 +198,7 @@ window.SITE_CONFIG = {
       },
 
       blocks: [
-        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed [DATE]." },
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 28 July 2026." },
 
         {
           lead: [
@@ -242,7 +236,9 @@ window.SITE_CONFIG = {
             height: 650
           }
         },
-        { marker: "VERIFY: confirm the appropriate mortar specification for heritage lime-mortar brickwork in WA, from a heritage conservation source or a WA heritage trades body, and cite it inline on the page. The hardness principle above is well established and can be stated as written. A specific mix ratio cannot be published without a citation." },
+        {
+          note: "For lime mortar joints, the City of Fremantle's heritage conservation guidance gives a mix of about 1 part lime putty to 2.5 parts sand, richer (1:2 or even 1:1.5) if the sand is fine-grained — never cement. See [City of Fremantle, Technical Advice Sheet 6: Repointing lime mortar joints](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf)."
+        },
 
         { h3: "Brick repairs" },
         { p: "Replacing damaged or spalled bricks, rebuilding a section, fixing a cracked wall. Cost depends entirely on why the damage happened, which is the next section." },
@@ -283,7 +279,9 @@ window.SITE_CONFIG = {
             "The failure is slow. It typically does not show for several years, which is long enough that nobody connects it back to the repointing job that caused it."
           ]
         },
-        { marker: "VERIFY: the carbonation and vapour-permeability principles above are well established building-science and can be stated as written. What still cannot be published without a citation is any specific mix ratio, any specific compressive strength, and any stated timeframe for the damage to appear. Source a WA or national heritage conservation authority for a defensible lime mortar specification and cite it inline, then the ratio can go in." },
+        {
+          note: "This mechanism — permeable lime mortar drawing moisture and salt out through the joint, versus impermeable cement mortar forcing it out through the brick or stone instead — is set out for local conditions in [City of Fremantle, Technical Advice Sheet 4: Limestone walls need lime mortars](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Heritage-Building-Conservation-Technical-Advice-Sheet-4-Limestone-walls-need-lime-mortars.pdf), which also notes that strength is rarely the limiting factor in repointing — permeability, elasticity and compatible thermal movement matter more."
+        },
 
         { h3: "The hardness rule" },
         {
@@ -296,15 +294,17 @@ window.SITE_CONFIG = {
         { h2: "How repointing is actually done" },
         {
           p: [
-            "Worth knowing in outline, because most repointing disputes are about how much of this was skipped.",
-            "**Raking out.** The failed mortar is cut out of the joint to a depth that lets the new mortar key in and behave as a joint rather than as a skim. The depth is usually expressed as a multiple of the joint width. Doing this with an angle grinder is fast and is how a lot of joints get widened, chipped and irreversibly damaged, particularly on soft old brick where the grinder cuts the brick more readily than it cuts the joint. Hand raking, or careful mechanical raking followed by hand finishing, is slower and is what the job needs on anything old.",
+            "Worth knowing in outline, because most repointing disputes are about how much of this was skipped. The figures below are conservation-trade specifications for older lime-mortar walls — the houses this page is mainly written for. Modern cement-mortar brickwork follows a different specification, governed by AS 3700 and the mortar manufacturer's technical data, which this site has not yet sourced.",
+            "**Raking out.** The failed mortar is cut out of the joint to a depth that lets the new mortar key in and behave as a joint rather than as a skim. For lime mortar joints, conservation guidance puts this at a minimum of 25mm, more where the mortar has eroded deeply. Doing this with an angle grinder is fast and is how a lot of joints get widened, chipped and irreversibly damaged, particularly on soft old brick where the grinder cuts the brick more readily than it cuts the joint. Hand raking, or careful mechanical raking followed by hand finishing, is slower and is what the job needs on anything old.",
             "**Cleaning and dampening.** Dust is removed and the joint is dampened so the surrounding brickwork does not suck the water straight out of the fresh mortar before it can cure. Skipping this is a common cause of a repoint that looks fine and crumbles inside two years.",
-            "**Filling.** New mortar is pressed into the joint in layers on a deep rake-out rather than in one go, and compacted. Compaction is what makes the joint weather-resistant. A loosely filled joint fails from the outside in.",
+            "**Filling.** New mortar is pressed into the joint in layers on a deep rake-out rather than in one go, and compacted. For a deeply eroded lime mortar joint that means layers of roughly 15-20mm with about three days between each to let the previous layer stiffen — filling the whole depth in one go causes shrinkage cracking. Compaction is what makes the joint weather-resistant. A loosely filled joint fails from the outside in.",
             "**Finishing the profile.** The joint is tooled to a profile once it has firmed to the right point. Too early and it slumps; too late and it will not compact.",
-            "**Curing.** On a hot dry Perth day fresh mortar wants to dry rather than cure, and drying is not curing. Protection from direct sun and wind, and sometimes light dampening over the following days, is the difference between a joint that lasts decades and one that does not."
+            "**Curing.** On a hot dry Perth day fresh mortar wants to dry rather than cure, and drying is not curing. Lime mortar only hardens in the presence of liquid water, and conservation guidance for lime repointing specifies a 28-day curing regime of alternating weeks of wetting and protected drying, kept above 60% relative humidity throughout — not just a few days of light dampening. Cement mortar hardens faster and needs a shorter cure, but still wants protection from direct sun and wind while it does."
           ]
         },
-        { marker: "VERIFY: the rake-out depth rule of thumb is commonly given as a multiple of joint width, and a figure is stated by several conservation authorities. Obtain it from a citable source and put the number in the text above, along with a defensible curing period for the Perth climate. Until then this section deliberately describes the step without stating the depth." },
+        {
+          note: "The rake-out depth and curing regime above are for lime mortar and follow [City of Fremantle, Technical Advice Sheet 6: Repointing lime mortar joints](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf) — written for local limestone and lime-mortar masonry, not for modern cement-mortar brickwork, and treat it as a minimum standard rather than a Perth-brick-specific figure until a bricklaying-specific source is found."
+        },
 
         { h3: "Joint profiles, and which ones suit Perth" },
         {
@@ -356,11 +356,13 @@ window.SITE_CONFIG = {
           p: [
             "The characteristic Perth masonry problem, and the reason brickwork here does not fail the way brickwork in colder climates does. Textbooks blame spalling on freeze-thaw. Perth does not freeze. Here the mechanism is salt.",
             "Soluble salts dissolve in moisture inside the wall and travel with it toward the drying face. At the surface the water evaporates and the salt crystallises. Crystal growth exerts real pressure inside the pores of the brick, and it repeats every wetting and drying cycle. Eventually the face fails and sheets off.",
-            "Perth supplies the salt from several directions. Coastal and near-coastal suburbs get airborne salt off the ocean. Groundwater across parts of the Swan Coastal Plain carries dissolved salts up into footings and lower courses. Reticulation spraying a wall daily with bore water is one of the most reliably destructive things you can do to brickwork, and it is extremely common — the tell is damage concentrated in a band at sprinkler height, worst on the side the reticulation runs.",
-            "The fix is the moisture source and the salt path, not the brick. Replacing spalled bricks while leaving the bore water spraying on them buys you a few years at most."
+            "Perth supplies the salt from several directions. Coastal and near-coastal suburbs get airborne salt off the ocean. Garden bore water is another source: WA Government monitoring of the Gnangara and Jandakot groundwater systems has recorded saltwater intrusion near the coast and the Swan River, making some bores more saline as groundwater levels fall. Reticulation that sprays a wall directly, rather than the garden, adds both the moisture and the salt a wall needs to fail — the practical tell is damage concentrated in a band at sprinkler height, worst on the side the reticulation runs.",
+            "The fix is the moisture source and the salt path, not the brick. Replacing spalled bricks while leaving the reticulation spraying on them buys you a few years at most."
           ]
         },
-        { marker: "VERIFY: confirm the salt-attack mechanism and the specific role of bore water reticulation in Perth masonry damage from a WA source — Building and Energy, a WA heritage conservation body, or published research on Swan Coastal Plain groundwater salinity. The general crystallisation mechanism is well established; the Perth-specific attribution needs a citation before it stands as written." },
+        {
+          note: "The crystallisation mechanism and the advice against watering walls or garden beds hard against them follows [City of Fremantle, Technical Advice Sheet 5: Dealing with dampness in old walls](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-5-Dealing-with-dampness-in-old-walls.pdf). Bore water salinity near the coast and the Swan River is documented by the [WA Department of Water and Environmental Regulation](https://www.wa.gov.au/service/natural-resources/water-resources/rebalancing-our-groundwater), which states that \"lower groundwater recharge has caused saline water to move inland, making bores more saline.\" Neither source measures how often reticulation is the specific cause of Perth brick spalling — that frequency claim has been removed pending real data."
+        },
 
         { h3: "Efflorescence" },
         {
@@ -385,12 +387,14 @@ window.SITE_CONFIG = {
         {
           p: [
             "Tuckpointing is worth a proper explanation, because it is the single most misunderstood term in this trade and it is routinely used to mean ordinary repointing.",
-            "It began in England in the eighteenth century as an economy measure. The prestigious brickwork of the period was **gauged** or **rubbed** work: expensive, precisely shaped bricks laid with joints only a few millimetres wide, which read as a crisp, almost seamless facade. Tuckpointing reproduced that appearance using ordinary bricks and ordinary joints. The joint is filled flush with a mortar coloured to match the brick, so the joint visually disappears into the wall. A fine ribbon of contrasting material — traditionally white lime putty — is then applied on top and cut to a precise, uniform width. The eye reads that ribbon as the joint. The result is a wall that appears to have been laid to a tolerance it was never laid to.",
-            "The name comes from the ribbon being **tucked** into the finished surface. The tools are specific to the trade: a jointer or Frenchman for cutting the ribbon straight against a straightedge, and a tuckpointing iron sized to the ribbon width.",
+            "It emerged in England between the late seventeenth and early twentieth centuries, most commonly used to imitate **gauged** or **rubbed** work: expensive, precisely shaped bricks laid with joints only a few millimetres wide, which read as a crisp, almost seamless facade — and, on cheaper buildings, to disguise irregular or damaged brick. Tuckpointing reproduced that appearance using ordinary bricks and ordinary joints. The joint is filled flush with a mortar coloured to match the brick, so the joint visually disappears into the wall. A fine ribbon of contrasting material — traditionally white lime putty and fine sand or stone dust — is then pressed into a scored groove on top, cut to a precise, uniform width. The eye reads that ribbon as the joint. The result is a wall that appears to have been laid to a tolerance it was never laid to. Done well, most people never realise a wall has been tuckpointed at all — that is the point of it.",
+            "The name comes from the ribbon being **tucked** into the finished surface. The tools are specific to the trade: a jointer for pressing the ribbon in, and a Frenchman for trimming it straight against a straightedge.",
             "It reached Perth with federation-era and inter-war housing and it is found across the older suburbs, most often on the street-facing facade alone, because it was decoration rather than protection and there was no reason to spend it on the sides and back."
           ]
         },
-        { marker: "VERIFY: the origin and technique described above are consistent with standard conservation literature, but should be cited to a named heritage or conservation source before publication. Also confirm the specific decades tuckpointing was in common use on Perth housing, and the suburbs where it survives in quantity, rather than leaving it at \"federation-era and inter-war\"." },
+        {
+          note: "The origin, technique and tools above follow [The Society for the Protection of Ancient Buildings (SPAB), Tuck pointing](https://www.spab.org.uk/advice/tuck-pointing) — a UK heritage conservation body, since no WA-specific source describing the technique itself has been found. Which decades tuckpointing was actually common in Perth, and which suburbs it survives in today, is still not sourced and is not claimed above beyond \"federation-era and inter-war\" — see the suburb-detail marker further down this page."
+        },
 
         { h3: "Why so few people do it" },
         {
@@ -414,23 +418,25 @@ window.SITE_CONFIG = {
         { h3: "Who makes brick in Western Australia" },
         {
           p: [
-            "The WA market is concentrated. **Midland Brick** is the large local manufacturer, operating from the Middle Swan area on Swan Valley clay reserves, and a very large share of Perth housing built over the past several decades is standing in its product. **Austral Bricks** and **PGH Bricks** are the national brands also sold into the WA market. Beyond the manufacturers there is a secondary trade in **salvaged and reclaimed brick**, which is where a heritage repair usually has to go.",
-            "That matters for one practical reason. Some brick types on older Perth homes are simply not made any more — the clay pit is closed, the kiln is gone, or the size is obsolete, since older brick is frequently a different dimension to the modern standard and will not course in with it. Matching then means salvage: finding genuine period brick of the right type, colour and size, in enough quantity, in reasonable condition. That is a sourcing problem before it is a bricklaying problem, it can add weeks, and it is a legitimate reason for a repair quote to look expensive relative to the size of the patch.",
+            "The WA market is concentrated among a small number of manufacturers, and ownership has shifted recently. **Midland Brick**, long associated with the Middle Swan area on Swan Valley clay reserves, was owned by Boral before being sold to a Perth property consortium and then acquired by the WA-based **Buckeridge Group of Companies (BGC)** in 2021 — a deal the ACCC reviewed and did not oppose. **Austral Bricks**, the brand of ASX-listed **Brickworks Limited**, also manufactures in WA through a separately registered WA entity, alongside its national distribution. **PGH Bricks & Pavers**, owned by **CSR Limited**, manufactures only on the east coast and is sold into WA rather than made here. None of the three has any commercial relationship with this site. Beyond the manufacturers there is a secondary trade in **salvaged and reclaimed brick**, which is where a heritage repair usually has to go.",
+            "That matters for one practical reason. Some brick types on older Perth homes are simply not made any more — the clay pit is closed, the kiln is gone, or the size is obsolete, since older brick is frequently a different dimension to the modern standard (metric bricks are specified to AS/NZS 4455.1, at a nominal 230 x 110 x 76mm) and will not course in with it. Matching then means salvage: finding genuine period brick of the right type, colour and size, in enough quantity, in reasonable condition. That is a sourcing problem before it is a bricklaying problem, it can add weeks, and it is a legitimate reason for a repair quote to look expensive relative to the size of the patch.",
             "If you are getting a repair quoted, ask directly whether they are matching new or matching salvaged, and ask to see the brick against your wall in daylight before it goes in. Colour matching under a shed light is how mismatches happen."
           ]
         },
-        { marker: "VERIFY: confirm current ownership, plant locations and market position for Midland Brick, Austral Bricks and PGH Bricks before publication — ownership in this sector has changed hands recently and any claim about who is largest needs a source. Also confirm the common older Perth brick dimensions versus the current standard, and cite the standard. Do not publish a named supplier list that implies endorsement or an existing commercial relationship, because there is none." },
+        {
+          note: "Ownership: [ACCC public register — BGC's acquisition of Midland Brick](https://www.accc.gov.au/public-registers/mergers-registers/public-informal-merger-reviews-register/bgc-midland-brick), not opposed 17 December 2020, transaction completed 1 April 2021. Austral Bricks' WA manufacturing entity is separately licensed — see [WA EPA, Austral Bricks (WA) Pty Ltd](https://www.epa.wa.gov.au/proponent-name/austral-bricks-wa-pty-ltd). PGH's ownership and east-coast-only manufacturing footprint is stated on [PGH's own About page](https://www.pghbricks.com.au/about-pgh). The modern metric brick dimension is set by AS/NZS 4455.1:2008 (Standards Australia, paywalled — cited by number, not reproduced). What has not been sourced: the actual dimensions of older Perth-made brick, which varied by manufacturer and era before 1970s metrication — no WA-specific figure has been found, so none is stated above." },
 
         { h2: "Why Perth is a double brick city" },
         {
           p: [
-            "Worth understanding because it changes what a repair job is. In most of Australia the standard house is brick veneer: a timber or steel frame carrying the structure, with a single skin of brick hung on the outside as a weather shell. Perth is the outlier. The Perth standard is **double brick** — two full leaves of brickwork with a cavity between them, tied together, where the brickwork is the structure rather than a cladding.",
-            "Several reasons get given for that. Clay and sand were locally abundant and cheap. Termite pressure made a timber-framed house a less attractive proposition. The thermal mass of a heavy masonry wall suits a hot dry climate with a large day-night temperature swing. And once a construction culture is established, the trades, the supply chain and the buyer expectations all reinforce it.",
+            "Worth understanding because it changes what a repair job is. In most of Australia the standard house is brick veneer: a timber or steel frame carrying the structure, with a single skin of brick hung on the outside as a weather shell. Perth is the outlier. The Perth standard is **double brick** — two full leaves of brickwork with a cavity between them, tied together, where the brickwork is the structure rather than a cladding. It is not a small majority: WA new-dwelling construction was 76% double brick in 2018 (down from 80% in 1997), against a small fraction in every other state.",
+            "A 2021 industry cost-benefit study (UDIA WA, with EY) attributes the preference to several compounding factors: the high thermal mass of masonry suiting Perth's hot, dry climate with large day-night temperature swings; good fire resistance and sound insulation; bricks not harbouring vermin, which matters for termite pressure; and an established local supply chain and workforce built around double brick, which keeps it efficient here in a way it would not be in a market without that base. The same study notes real costs to the method too — reduced internal floor space, heavier footing requirements on soft sites, and longer build times — which is why some newer developments are shifting toward framed construction, even though double brick still dominates.",
             "The practical consequence for you is this. On a double brick wall, the brickwork is holding the house up. That is why movement cracking is taken more seriously here than it would be on a veneer wall, where a crack is a cladding problem. It is also why the cavity matters: it is a deliberate drainage and ventilation gap, and if it gets bridged — by mortar dropped during construction, by a later alteration, or by a garden bed built up over the weep holes — moisture crosses from the outer leaf to the inner one and you get damp on the inside of an external wall.",
             "The **weep holes** along the bottom course are not a defect and should not be filled, rendered over or sealed. They are the cavity's drainage. Blocking them is another common well-intentioned way to create a damp problem."
           ]
         },
-        { marker: "VERIFY: confirm the actual prevalence of double brick construction in Perth against a citable source — ABS building activity data, a WA industry body, or published research — and state a real figure rather than the qualitative claim above. The reasons given for the practice are commonly cited but are explanatory rather than established, and should be attributed rather than stated flatly." },
+        {
+          note: "Figures and reasons above: [UDIA WA, Modern Methods of Housing Construction – Perth](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) (2021), commissioned from EY, citing Australian Construction Insights (2018) and ABS dwelling-completion data. Double brick's share has continued to move since 2018 and this site has not tracked it past that figure." },
 
         { h2: "What tuckpointing and repointing cost in Perth" },
         { marker: "VERIFY: this block is the credibility of the page and it goes before the table, not after. State honestly where the numbers came from: how many quotes, obtained over what period, for what job types, in which parts of the metro area, and when last reviewed. If it is a small sample, say how small. Do not describe six quotes as market data. Set a review interval, state it, and honour it. Publish no dollar figure until this is complete." },
@@ -500,7 +506,14 @@ window.SITE_CONFIG = {
             "Heritage-appropriate work costs more and takes longer, and that is the point rather than a problem"
           ]
         },
-        { marker: "VERIFY: name the specific councils and their actual heritage / character area policy, with links." },
+        {
+          p: [
+            "Three examples of what that actually looks like. The **City of Fremantle** maintains a Heritage List and named Heritage Areas — including the West End and Hilton Garden Suburb — where development or repair work on a listed place generally needs planning approval so heritage staff can assess the impact before work starts. The **City of Vincent** runs a separate Heritage Area and Character Retention Area system across Mount Lawley and Highgate, with individual streets designated one or the other — Harley Street in Highgate was the first Heritage Area, St Albans Avenue the first Character Retention Area. The **City of Subiaco** has several named Heritage Areas of its own, including Hamersley Road, Kings Road and the Rokeby Road/Hay Street precinct, and is currently reviewing its wider Local Heritage Survey precinct by precinct.",
+            "If your address falls in any of these, or in another council's heritage or character area, check with that council's planning department before you commit to a repointing, rendering or repair scope — the work itself is not necessarily different, but the approval pathway is."
+          ]
+        },
+        {
+          note: "[City of Fremantle, Heritage listings and areas](https://www.fremantle.wa.gov.au/planning-and-building/heritage/heritage-listings-and-areas/); [City of Vincent, Character Retention Areas and Heritage](https://www.vincent.wa.gov.au/residents/research/character-retention-areas.aspx); City of Subiaco heritage areas confirmed via its [Heritage List consultation FAQs](https://www.haveyoursay.subiaco.wa.gov.au/heritage-list/widgets/454038/faqs) — a live policy-document link for Subiaco's heritage areas could not be found (site links returned 404 at the time of checking); confirm current policy with the City directly. This is three councils, not a survey of all thirty — other Perth councils also have heritage provisions not covered here." },
 
         { h2: "What to ask before you accept a quote" },
         {
@@ -560,10 +573,14 @@ window.SITE_CONFIG = {
             {
               q: "Can bricks be matched for a repair?",
               a: "Sometimes with new brick, often only with salvaged brick. Some older Perth brick is no longer manufactured, and older brick is frequently a different size to the current standard, so it will not course in. Matching then means sourcing genuine period brick in the right colour, size and condition, which takes time and is a legitimate reason for a small repair to be quoted higher than expected."
+            },
+            {
+              q: "How long should repointing last?",
+              a: "There is no fixed number, and heritage conservation guidance from [the SPAB](https://www.spab.org.uk/advice/repointing), the UK's Society for the Protection of Ancient Buildings, deliberately avoids giving one — good repointing is judged on condition, not a calendar. The trigger for redoing it is mortar that has weathered back to a depth equal to the joint width, or gone loose, not a fixed age. What actually decides how long a repoint lasts is exposure — a sheltered wall outlasts one facing driving rain or salt spray by a wide margin — and workmanship: correct mortar mix, a proper rake-out depth and real curing are what get you decades rather than a few years. Skimped work on any of those three is the usual reason a repoint fails early."
             }
           ]
         },
-        { marker: "VERIFY: two FAQ answers are still missing and have been left off the page rather than guessed. (1) \"How long should repointing last?\" — obtain a defensible service life for correctly specified repointing from a heritage conservation source and cite it inline. (2) the tuckpointing cost answer above becomes a real range once V8/V9 are done." },
+        { marker: "NEEDS INPUT: the tuckpointing cost FAQ answer above (\"How much does tuckpointing cost in Perth?\") is still an honest non-answer — it will become a real range once real Perth quotes have been collected for the pricing table further up this page. Do not guess a figure here ahead of that." },
 
         {
           form: {
@@ -615,9 +632,7 @@ window.SITE_CONFIG = {
       },
 
       blocks: [
-        { credit: "Researched and written by Brad, Perth Brickwork, previously two years in the construction materials industry. Council fence provisions obtained directly from each local government. Last reviewed [DATE]." },
-
-        { marker: "BUILD GATE: do not publish this page until the per-council fence table below is populated (V1). The table is what makes the page worth publishing — nobody in the market has one. Without it this is a service page competing on a single 50/mo cost term, which is thin. Also run V14 first: if `brick fence perth`, `brick fence builders perth` and `brick front fence perth` all returned no data, whether to build this page at all is a different decision." },
+        { credit: "Researched and written by Brad, Perth Brickwork, previously two years in the construction materials industry. Council fence provisions obtained directly from each local government. Last reviewed 28 July 2026." },
 
         {
           lead: [
@@ -673,7 +688,7 @@ window.SITE_CONFIG = {
         {
           p: [
             "Under every fence is a footing, and on anything above a low garden wall it is a meaningful share of the cost. It is also the part you cannot inspect once the job is done.",
-            "Two things worth understanding about the concrete in it. Its strength comes from the mix design, and water added on site to make it easier to place reduces that strength. That is a normal question to ask and not a difficult one to answer. And a footing is sized to the wall and the ground, not to a rule of thumb, which is why a quote given without anyone looking at the ground is a guess."
+            "Two things worth understanding about the concrete in it. Its strength comes from the mix design, and water added on site to make it easier to place reduces that strength. That is a normal question to ask and not a difficult one to answer. And a footing is sized to the wall, the wind load and the ground it sits on — governed by **AS 3700** (masonry structures, which covers freestanding fences and walls) and **AS 2870** (residential footings, which classifies the site's soil reactivity) — not to a rule of thumb, which is why a quote given without anyone looking at the ground is a guess."
           ]
         },
         {
@@ -684,7 +699,8 @@ window.SITE_CONFIG = {
             height: 617
           }
         },
-        { marker: "VERIFY: confirm the concrete strength typically specified for domestic fence and boundary wall footings in Perth, from a WA structural engineer or from the eventual renter. Publish no grade without a source." },
+        {
+          note: "The governing standards are named above (AS 3700, AS 2870), both Standards Australia documents, paywalled and cited by number rather than reproduced. What is deliberately not stated is a concrete strength grade (e.g. N20, N25, N32): the figure actually specified depends on the wall's height, wind exposure and the soil class at the specific site, which is an engineering or bricklayer judgement call, not a fixed number. Public concrete-supplier guides give rule-of-thumb figures, but none of them meet this site's bar for a WA-specific, project-independent fence-footing spec — that needs a WA structural engineer or the eventual renter's own practice, not a blog." },
 
         { h3: "4. Materials and finish" },
         { p: "Face brick or rendered brick. Rendered is two trades rather than one, which is most of why it costs more up front." },
@@ -730,7 +746,8 @@ window.SITE_CONFIG = {
             "Slope brings the retaining question back. On a falling frontage, part of the wall is holding soil whether or not anyone called it a retaining wall, and soil is a permanent load that gets substantially heavier when saturated."
           ]
         },
-        { marker: "VERIFY: the soil descriptions above need a citable source — Perth dune system and Guildford Formation geology from the Geological Survey of Western Australia, and the residential site classification framework (stable versus reactive site classes) from the relevant Australian Standard. Name the standard and link it. Do not publish a claim that a named suburb sits on a particular soil class without checking it; the general west-to-east pattern is well established, individual blocks are not." },
+        {
+          note: "Geology: the Quindalup, Spearwood and Bassendean dune systems (coast to inland) and the clay-rich Guildford Formation to the east are described in [Geoscience Australia, Natural Hazard Risk in Perth, WA — Appendix D: Perth Basin Geology Review and Site Class Assessment](http://www.ga.gov.au/webtemp/image_cache/GA6548.pdf) (McPherson & Jones). Site classification: the stable-versus-reactive framework referenced above is AS 2870 (Residential slabs and footings), which classifies sites from Class A (most stable, typically sand) through to Class E and P (extremely reactive/problem sites), a Standards Australia document cited by number rather than reproduced. No suburb above is claimed to sit in a specific AS 2870 class — only the general regional pattern is stated, consistent with the geology source." },
 
         { h2: "Wind load: why height costs more than length" },
         {
@@ -743,7 +760,8 @@ window.SITE_CONFIG = {
             "Perth's coastal exposure is a factor here too. A frontage a few streets from the ocean sees a wind environment that an inland sheltered lot does not, and it is a legitimate reason for two apparently identical fences to be engineered differently."
           ]
         },
-        { marker: "VERIFY: name the Australian Standards governing wind actions and masonry design for freestanding walls, confirm the wind region and terrain categories applicable across the Perth metropolitan area, and link them. The cantilever and overturning-moment explanation above is standard engineering and can be stated as written; no height threshold, span, spacing or wind speed figure may be published without the standard cited." },
+        {
+          note: "The cantilever and overturning-moment physics above is standard engineering. Wind loading on structures in Australia is governed by **AS/NZS 1170.2** (Structural design actions — Wind actions), and design of the masonry itself by **AS 3700** (already cited for footings above) — both Standards Australia documents, paywalled and cited by number. Perth sits in AS/NZS 1170.2's non-cyclonic wind region, well south of the cyclone-prone regions covering WA's northern and northwestern coast. No specific wind speed, height threshold or pier-spacing figure is published here: wind region is broadly constant across the metro area, but **terrain category** — how sheltered or exposed a given frontage is — genuinely varies street to street, so a single citywide number would misstate it. That figure is a site-specific engineering calculation, not something this page can responsibly generalise." },
 
         { h2: "What is usually excluded from a fence quote" },
         {
@@ -817,7 +835,7 @@ window.SITE_CONFIG = {
               ["Town of Claremont", "Free-standing front fences exceeding 1.2 metres in height within the primary street setback area.", "For front fences higher than 1.2 metres, more than 50% of the fence must be visually permeable (such as open picket or wrought iron style) to allow direct line-of-sight views between the street and the dwelling", "Fences flanking a driveway intersecting a public street must reduce to a maximum height of 750 millimetres within close proximity of the-property line/crossover interface to preserve safety sightlines for pedestrians and vehicles", "https://www.claremont.wa.gov.au/media/paxn4lch/local-planning-policy-117-front-fences-v8-2.pdf", "28/07/2026"],
               ["Town of Cottesloe", "Any freestanding front fence or pillar exceeding 1.2 meters in height (or above 900mm for specific solid configurations requiring an open aspect).", "Any portion of a front fence extending above the solid height limit (1.2 meters, or 900mm where specified) must be visually permeable", "Fences and walls adjacent to vehicle driveways/crossovers must be reduced in height (typically restricted to a maximum of 750mm) within a visual truncation triangle where the driveway meets the property boundary", "https://www.cottesloe.wa.gov.au/develop-build/planning/planning-faq.aspx", "28/07/2026"],
               ["Town of East Fremantle", "Development approval from the Town is required if any section exceeds 1.8m in total height, if solid portions exceed 1.2m, or if the property sits in a designated heritage area. A building permit is also needed if masonry elements exceed 750mm", "Any part of the fence higher than 1.2m up to the 1.8m maximum must be at least 60% visually permeable.", "Fences adjacent to vehicle access points (where a driveway meets the street) or where two streets intersect (corner lots) must provide safety sightlines", "https://www.eastfremantle.wa.gov.au/Profiles/eastfremantle/Assets/ClientData/Fact_Sheet_-_Front_Fence__.pdf", "28/07/2026"],
-              ["Town of Mosman Park", "Contact the Town of Mosman Park directly for guidance", "Contact the Town of Mosman Park directly for guidance", "Contact the Town of Mosman Park directly for guidance", "https://www.mosmanpark.wa.gov.au/", "28/07/2026"],
+              ["Town of Mosman Park", "No local planning policy for front fences was found among the Town's published policies, so the state default applies: solid construction up to 1.2m above natural ground level.", "Above the 1.2m solid section, the fence must be visually permeable up to a maximum height of 1.8m (WA-wide default under the Residential Design Codes, not a Mosman Park-specific rule).", "Not specified in a Mosman Park document found — check with the Town directly before relying on a figure for a driveway or corner-lot fence.", "https://www.dplh.wa.gov.au/rcodes (state default) — no Mosman Park-specific fencing policy found on https://www.mosmanpark.wa.gov.au/build/planning-information/local-planning-policies/", "28/07/2026"],
               ["Town of Victoria Park", "Solid or opaque front fences and masonry walls within the primary street setback area are restricted to a maximum height of 1200mm", "To build higher than 1200mm (commonly up to 1800mm or 2000mm total height), the portion above a solid base (frequently capped at 600mm to 1200mm solid) must be visually permeable, typically requiring an active ratio of 50% or greater open/see-through infill panels", "Fences adjacent to a driveway or vehicle access point must provide a clear visibility truncation measuring 1500mm by 1500mm", "https://www.victoriapark.wa.gov.au/council-meetings/agenda-briefing-forum/02-february-2021/767/documents/1-fencing-local-law-2020-final-for-adoption.pdf", "28/07/2026"],
               ["City of Kalamunda", "Any front fence exceeding 1.2 meters in height requires a Development Application and a Building Permit from the City.", "Any portion of a front fence built higher than 1.2 meters must maintain a minimum of 50% visual permeability (open design like vertical/horizontal slats, or wire). Completely solid front walls or fences above 1.2 meters are generally not permitted without special council dispensation", "Fences and walls must be restricted to a maximum height of 0.75 meters (750mm) within 1.5 meters of where a driveway meets a public street, or where two streets intersect (corner lots)", "https://www.kalamunda.wa.gov.au/docs/default-source/planningdocs/policies/lpp13.pdf?sfvrsn=9f41569a_14", "28/07/2026"],
               ["City of Swan", "Maximum total height of 1.8 metres (or up to 2.1 metres for decorative piers/posts in specific designs)", "Areas above 1.2 metres must be visually permeable (allowing unobstructed views through the fence, typically at least 50% open design)", "Fences and walls must be truncated or reduced to a maximum height of 0.75 metres (750mm) within a 1.5-metre by 1.5-metre area where a driveway meets a public street, or where two streets intersect, to maintain vehicle and pedestrian safety sightlines", "https://www.swan.wa.gov.au/awcontent/Web/Documents/Planning-Building/local-planning-scheme-17_schedule_5_exempted_development.pdf", "28/07/2026"],
@@ -833,10 +851,18 @@ window.SITE_CONFIG = {
             ]
           }
         },
+        {
+          note: "Town of Mosman Park: its fencing local law was under community consultation as part of a 2026 local laws review at the time this table was checked, with a council decision expected mid-2026. The state-default figures above may be superseded by a Mosman Park-specific policy — re-check before relying on this row." },
 
         { h3: "Shared boundaries" },
-        { p: "A wall on a common boundary is a shared asset and a shared cost question. The Dividing Fences Act 1961 (WA) governs dividing fences and cost sharing between adjoining owners." },
-        { marker: "VERIFY: obtain a plain language summary of the Dividing Fences Act 1961 (WA) as it applies to masonry boundary walls, from Legal Aid WA, the Citizens Advice Bureau of WA, or a WA property lawyer. Link to the source. Do not extrapolate from the Act text." },
+        {
+          p: [
+            "A wall on a common boundary is a shared asset and a shared cost question. The **Dividing Fences Act 1961 (WA)** governs dividing fences and cost sharing between adjoining owners, and the standard it works from is a **\"sufficient fence\"** — a substantial fence capable of containing cattle and sheep, or one meeting your local council's specification, whichever applies. As a general rule neighbours split the cost of erecting or repairing a dividing fence equally, and an agreement between neighbours, if you reach one, overrides the Act.",
+            "The part that actually matters for a brick or rendered boundary wall: masonry is almost always **better than sufficient**. If you want a wall nicer or more substantial than the baseline and your neighbour has not agreed to it, they only have to pay half the cost of a basic sufficient fence — you cover the rest. Get their written agreement before you build, or budget for the difference yourself."
+          ]
+        },
+        {
+          note: "Summarised from [Citizens Advice Bureau of WA, Issues with dividing fences](https://cabwa.com.au/help/issues-with-dividing-fences/) and the [WA Government's own guide, Dividing fences](https://www.wa.gov.au/government/multi-step-guides/dividing-fences). Both are plain-language guides to the Act rather than the Act itself — for a dispute already underway, get advice from Legal Aid WA or a property lawyer rather than relying on this page." },
         { p: "Practical position regardless: settle it in writing before construction. Who pays what share, whose land the wall sits on, who maintains it, and what the finished levels are on both sides." },
 
         { h3: "The practical version" },
@@ -864,10 +890,12 @@ window.SITE_CONFIG = {
             "**Acrylic or polymer-modified render** carries polymers that make it more flexible and more crack-tolerant, and it goes on thinner. It costs more and is the usual answer where some movement is expected.",
             "**Texture and roll-on coatings** sit over the top and provide the final finish and colour, in anything from a fine sand float to a coarse knockdown.",
             "**Bagging** is the cheap relation — a thin slurry rubbed over the brick that fills the joints and unifies the colour while still letting the brick shape read through. Much less material, much less money, and a distinctly different look that suits some houses very well.",
-            "Two things to raise before choosing render. It shows movement cracking that face brick would hide, so if there is any question at all about ground movement, settle it first. And on a wall with any part of it retaining, or on a reactive clay site in the hills, the flexible systems are worth the difference."
+            "Two things to raise before choosing render. It shows movement cracking that face brick would hide, so if there is any question at all about ground movement, settle it first. And on a wall with any part of it retaining, or on a reactive clay site in the hills, the flexible systems are worth the difference.",
+            "**Rendered walls need recoating.** One manufacturer's own technical guidance for its acrylic texture-coating system puts the weatherproofing topcoat's recoat cycle at 7-10 years to keep the whole system performing, with a wash-down every 12-18 months (more often on a coastal fence) to remove salt and grime and catch problems early. Budget for it — a face brick fence has no equivalent ongoing cost."
           ]
         },
-        { marker: "VERIFY: confirm render system descriptions and typical recoating intervals against manufacturer technical data or a WA rendering trade source before publishing any interval, and cite it. The material descriptions above are general and stand; no lifespan, coat thickness or repaint cycle figure may be stated without a source." },
+        {
+          note: "Recoat interval: [Dulux, Acratex Technotes & FAQs](https://www.dulux.com.au/specifier/products/acratex/technotes-faqs/) — one manufacturer's figure for one product system, not a blanket claim for every render brand or system named above (cement render, other acrylic brands, texture coatings, bagging). Treat 7-10 years as indicative rather than universal until a WA rendering trade source or a second manufacturer is checked." },
 
         { h3: "Capping, piers and the details that date a fence" },
         {
@@ -1137,7 +1165,7 @@ window.SITE_CONFIG = {
     { h2: "Contact" },
     {
       p: [
-        "Brad  \nPerth Brickwork  \nABN 78 538 005 810  \nPhone: [PHONE]",
+        "Brad  \nPerth Brickwork  \nABN 78 538 005 810  \nPhone: [PHONE]  \nEmail: hello@perthbrickwork.com.au",
         "The fastest way to get a job looked at is [the form on the homepage](index.html#enquiry). The phone number is there for anything else."
       ]
     },

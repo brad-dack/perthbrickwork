@@ -455,9 +455,9 @@
     var label = '<label for="' + id + '">' + esc(f.label) +
       (f.required ? "" : ' <span class="field-optional">(' + UI.optional + ")</span>") + "</label>";
     var control;
+    var preset = (f.name === "job" && opts.preset) ? opts.preset : null;
 
     if (f.type === "select") {
-      var preset = (f.name === "job" && opts.preset) ? opts.preset : null;
       var opts_ = f.options.map(function (o) {
         return '<option value="' + esc(o) + '"' + (o === preset ? " selected" : "") + ">" + esc(o) + "</option>";
       }).join("");
@@ -469,7 +469,8 @@
     } else {
       control = '<input id="' + id + '" name="' + esc(f.name) + '" type="' + esc(f.type || "text") + '"' +
         (f.autocomplete ? ' autocomplete="' + esc(f.autocomplete) + '"' : "") +
-        (f.placeholder ? ' placeholder="' + esc(f.placeholder) + '"' : "") + req + ">";
+        (f.placeholder ? ' placeholder="' + esc(f.placeholder) + '"' : "") +
+        (preset ? ' value="' + esc(preset) + '"' : "") + req + ">";
     }
     return '<div class="form-field">' + label + control + "</div>";
   }
