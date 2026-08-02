@@ -1077,7 +1077,7 @@ window.SITE_CONFIG = {
     },
 
     { h2: "Where we cover" },
-    { p: "The whole Perth metropolitan area. North through Joondalup, Hillarys, Scarborough, Osborne Park, Wembley and Morley. The central corridor across Perth, Victoria Park, Belmont and Canning. East to Midland, Ellenbrook, Kalamunda and the foothills. West to Cottesloe, Mosman Park and Fremantle. South to Armadale, Rockingham and down to Mandurah. If your suburb sits anywhere between those, it is covered." },
+    { p: "The whole Perth metropolitan area. North through Joondalup, Scarborough and Morley. Central across Perth and Victoria Park. East to Midland and Kalamunda. West to Fremantle and Cottesloe. South to Armadale and Rockingham. If your suburb sits anywhere between those, it is covered." },
     { p: "Jobs outside the metro area can still be sent through — there is just no guarantee anyone covers that far out." },
 
     { h2: "Frequently asked questions" },
@@ -1097,7 +1097,7 @@ window.SITE_CONFIG = {
         },
         {
           q: "Do you cover my suburb?",
-          a: "The whole Perth metropolitan area — Joondalup to Mandurah, Fremantle to Ellenbrook and Kalamunda. Send it through either way."
+          a: "The whole Perth metropolitan area — Joondalup to Rockingham, Fremantle to Midland and Kalamunda. Send it through either way."
         },
         {
           q: "What happens to my details?",
@@ -1160,7 +1160,7 @@ window.SITE_CONFIG = {
     { p: "Perth Brickwork is paid by the bricklayer, not by you. Quotes are free and there is no obligation to proceed." },
 
     { h2: "Where we cover" },
-    { p: "The whole Perth metropolitan area. North through Joondalup, Hillarys, Scarborough, Osborne Park, Wembley and Morley. The central corridor across Perth, Victoria Park, Belmont and Canning. East to Midland, Ellenbrook, Kalamunda and the foothills. West to Cottesloe, Mosman Park and Fremantle. South to Armadale, Rockingham and down to Mandurah." },
+    { p: "The whole Perth metropolitan area. North through Joondalup, Scarborough and Morley. Central across Perth and Victoria Park. East to Midland and Kalamunda. West to Fremantle and Cottesloe. South to Armadale and Rockingham." },
 
     { h2: "Contact" },
     {
