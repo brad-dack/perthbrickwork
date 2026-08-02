@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" width="1000" height="580" role="img">
+  <defs>
+    <pattern id="soil" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="11" height="11" fill="#e6d9c3"/>
+      <line x1="0" y1="0" x2="0" y2="11" stroke="#cbb794" stroke-width="1.6"/>
+    </pattern>
+    <pattern id="gravel" width="9" height="9" patternUnits="userSpaceOnUse">
+      <rect width="9" height="9" fill="#dfe4e9"/>
+      <circle cx="2.5" cy="2.5" r="1.7" fill="#a7b3bf"/>
+      <circle cx="7" cy="6.5" r="1.4" fill="#a7b3bf"/>
+    </pattern>
+    <marker id="wind" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#55606e"/>
+    </marker>
+    <marker id="press" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#2d4a7c"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="580" fill="#ffffff"/>
+  <line x1="500" y1="34" x2="500" y2="548" stroke="#e3e8ed" stroke-width="2"/>
+
+  <!-- ============ PANEL A : LEVEL ============ -->
+  <text x="250" y="48" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="27" font-weight="700" fill="#1b2430">Level both sides</text>
+  <text x="250" y="76" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="18" fill="#55606e">The wall holds up only itself</text>
+
+  <!-- soil -->
+  <rect x="30" y="320" width="440" height="150" fill="url(#soil)"/>
+  <line x1="30" y1="320" x2="470" y2="320" stroke="#8a7a5e" stroke-width="2.5"/>
+
+  <!-- orientation -->
+  <text x="115" y="308" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#55606e">your block</text>
+  <text x="392" y="308" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#55606e">verge / street</text>
+
+  <!-- footing + wall -->
+  <rect x="198" y="320" width="104" height="44" fill="#d3d9df" stroke="#97a3af" stroke-width="2"/>
+  <rect x="233" y="152" width="34" height="168" fill="#8c4a2f"/>
+  <rect x="225" y="140" width="50" height="14" fill="#6d3823"/>
+
+  <!-- wind -->
+  <line x1="118" y1="186" x2="226" y2="186" stroke="#55606e" stroke-width="3" marker-end="url(#wind)"/>
+  <line x1="118" y1="232" x2="226" y2="232" stroke="#55606e" stroke-width="3" marker-end="url(#wind)"/>
+  <text x="118" y="166" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="16" font-weight="600" fill="#55606e">wind only</text>
+
+  <!-- footing label -->
+  <line x1="304" y1="342" x2="326" y2="342" stroke="#55606e" stroke-width="1.5"/>
+  <text x="332" y="347" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#55606e" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">footing</text>
+
+  <text x="30" y="508" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" fill="#1b2430">Footing sized for its own weight and wind</text>
+  <text x="30" y="536" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" fill="#1b2430">Nothing behind it, so no drainage</text>
+
+  <!-- ============ PANEL B : RETAINING ============ -->
+  <text x="750" y="48" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="27" font-weight="700" fill="#1b2430">Ground falls away</text>
+  <text x="750" y="76" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="18" fill="#55606e">Part of it is retaining soil</text>
+
+  <!-- soil: high behind, low in front -->
+  <path d="M530,300 L733,300 L733,470 L530,470 Z" fill="url(#soil)"/>
+  <path d="M767,385 L970,385 L970,470 L767,470 Z" fill="url(#soil)"/>
+  <line x1="530" y1="300" x2="733" y2="300" stroke="#8a7a5e" stroke-width="2.5"/>
+  <line x1="767" y1="385" x2="970" y2="385" stroke="#8a7a5e" stroke-width="2.5"/>
+
+  <!-- orientation -->
+  <text x="565" y="288" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#55606e">your block</text>
+  <text x="885" y="373" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#55606e">verge / street</text>
+
+  <!-- gravel drainage behind wall -->
+  <rect x="712" y="300" width="21" height="141" fill="url(#gravel)"/>
+  <circle cx="722" cy="424" r="8" fill="#ffffff" stroke="#2b7a9b" stroke-width="2.5"/>
+
+  <!-- footing (larger) + wall -->
+  <rect x="690" y="385" width="120" height="56" fill="#d3d9df" stroke="#97a3af" stroke-width="2"/>
+  <rect x="733" y="152" width="34" height="233" fill="#8c4a2f"/>
+  <rect x="725" y="140" width="50" height="14" fill="#6d3823"/>
+  <!-- weep hole -->
+  <rect x="733" y="366" width="34" height="11" fill="#ffffff" stroke="#2b7a9b" stroke-width="1.5"/>
+
+  <!-- soil pressure: grows with depth -->
+  <path d="M733,306 L733,382 L676,382 Z" fill="#2d4a7c" fill-opacity="0.08"/>
+  <line x1="712" y1="318" x2="731" y2="318" stroke="#2d4a7c" stroke-width="3" marker-end="url(#press)"/>
+  <line x1="697" y1="345" x2="731" y2="345" stroke="#2d4a7c" stroke-width="3" marker-end="url(#press)"/>
+  <line x1="680" y1="372" x2="731" y2="372" stroke="#2d4a7c" stroke-width="3" marker-end="url(#press)"/>
+  <text x="676" y="404" text-anchor="end" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="16" font-weight="600" fill="#2d4a7c" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">soil pressure</text>
+
+  <!-- wind still present -->
+  <line x1="620" y1="196" x2="726" y2="196" stroke="#55606e" stroke-width="3" marker-end="url(#wind)"/>
+  <text x="620" y="176" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="16" font-weight="600" fill="#55606e">wind</text>
+
+  <!-- labels -->
+  <line x1="812" y1="410" x2="834" y2="410" stroke="#55606e" stroke-width="1.5"/>
+  <text x="840" y="415" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#55606e" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">bigger footing</text>
+  <line x1="706" y1="291" x2="720" y2="301" stroke="#2b7a9b" stroke-width="1.5"/>
+  <text x="700" y="286" text-anchor="end" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#2b7a9b" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">drainage</text>
+
+  <text x="530" y="508" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" fill="#1b2430">Soil pushes sideways, permanently</text>
+  <text x="530" y="536" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" fill="#1b2430">Heavier footing and drainage behind</text>
+</svg>

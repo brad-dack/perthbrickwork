@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="1000" height="780" role="img">
+  <defs>
+    <pattern id="brick" width="86" height="64" patternUnits="userSpaceOnUse">
+      <rect width="86" height="64" fill="#e3dbcf"/>
+      <rect x="0" y="0" width="80" height="26" fill="#a05c3a"/>
+      <rect x="43" y="32" width="80" height="26" fill="#a05c3a"/>
+      <rect x="-43" y="32" width="80" height="26" fill="#a05c3a"/>
+    </pattern>
+    <clipPath id="wallclip"><rect x="0" y="0" width="424" height="218"/></clipPath>
+  </defs>
+
+  <rect width="1000" height="780" fill="#ffffff"/>
+  <text x="30" y="38" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" font-weight="600" fill="#55606e">Crack types — diagrams, not photographs</text>
+
+  <!-- ===== 1. FOLLOWS THE JOINTS (maintenance) ===== -->
+  <g transform="translate(30,70)">
+    <text x="0" y="22" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" font-weight="700" fill="#1b2430">1. Follows the joints</text>
+    <rect x="0" y="34" width="168" height="26" rx="13" fill="#e4f0e9" stroke="#bcd9c9" stroke-width="1"/>
+    <text x="84" y="52" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#276749">Usually maintenance</text>
+    <g transform="translate(8,74)">
+      <rect width="424" height="218" fill="url(#brick)"/>
+      <g clip-path="url(#wallclip)">
+        <path d="M100,125 L140,124 L176,126 L212,125 L211,112 L213,101 L212,93 L248,94 L276,92 L300,93"
+              fill="none" stroke="#16202b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <rect width="424" height="218" fill="none" stroke="#8a6a52" stroke-width="2"/>
+    </g>
+    <text x="0" y="322" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">Hairline, stays in the mortar, never crosses a brick.</text>
+  </g>
+
+  <!-- ===== 2. STEPPED AND DIAGONAL (movement) ===== -->
+  <g transform="translate(530,70)">
+    <text x="0" y="22" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" font-weight="700" fill="#1b2430">2. Stepped and diagonal</text>
+    <rect x="0" y="34" width="146" height="26" rx="13" fill="#fceae4" stroke="#f0c9bc" stroke-width="1"/>
+    <text x="73" y="52" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#96331a">Get it looked at</text>
+    <g transform="translate(8,74)">
+      <rect width="424" height="218" fill="url(#brick)"/>
+      <g clip-path="url(#wallclip)">
+        <path d="M83,218 V189 H126 V157 H169 V125 H212 V93 H255 V61 H298 V29 H341 V0"
+              fill="none" stroke="#16202b" stroke-width="4.6" stroke-linecap="square" stroke-linejoin="miter"/>
+      </g>
+      <rect width="424" height="218" fill="none" stroke="#8a6a52" stroke-width="2"/>
+    </g>
+    <text x="0" y="322" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">Steps diagonally along the joints, across the wall.</text>
+  </g>
+
+  <!-- ===== 3. STRAIGHT THROUGH BRICKS (movement) ===== -->
+  <g transform="translate(30,430)">
+    <text x="0" y="22" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" font-weight="700" fill="#1b2430">3. Straight through bricks</text>
+    <rect x="0" y="34" width="146" height="26" rx="13" fill="#fceae4" stroke="#f0c9bc" stroke-width="1"/>
+    <text x="73" y="52" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#96331a">Get it looked at</text>
+    <g transform="translate(8,74)">
+      <rect width="424" height="218" fill="url(#brick)"/>
+      <g clip-path="url(#wallclip)">
+        <path d="M205,0 L200,18 L207,34 L199,52 L206,70 L198,88 L205,106 L197,124 L204,142 L196,160 L203,178 L197,196 L204,218"
+              fill="none" stroke="#16202b" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <rect width="424" height="218" fill="none" stroke="#8a6a52" stroke-width="2"/>
+    </g>
+    <text x="0" y="322" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">Cuts through brick faces, not around them.</text>
+  </g>
+
+  <!-- ===== 4. WIDER AT ONE END (movement) ===== -->
+  <g transform="translate(530,430)">
+    <text x="0" y="22" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" font-weight="700" fill="#1b2430">4. Wider at one end</text>
+    <rect x="0" y="34" width="146" height="26" rx="13" fill="#fceae4" stroke="#f0c9bc" stroke-width="1"/>
+    <text x="73" y="52" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#96331a">Get it looked at</text>
+    <g transform="translate(8,74)">
+      <rect width="424" height="218" fill="url(#brick)"/>
+      <g clip-path="url(#wallclip)">
+        <path d="M194,0 L191,43 L195.2,87 L190.4,131 L194.6,175 L189.7,218 L190.3,218 L197.4,175 L195.6,131 L202.8,87 L201,43 L206,0 Z"
+              fill="#16202b"/>
+      </g>
+      <rect width="424" height="218" fill="none" stroke="#8a6a52" stroke-width="2"/>
+      <text x="232" y="22" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#16202b" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">widest here</text>
+      <text x="232" y="208" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#16202b" paint-order="stroke" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">closes to nothing</text>
+    </g>
+    <text x="0" y="322" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">Tapers along its length, usually widest at the top.</text>
+  </g>
+</svg>

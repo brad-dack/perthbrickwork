@@ -346,7 +346,15 @@ window.SITE_CONFIG = {
             "An engineer diagnoses movement. A bricklayer repairs what the engineer identifies. Doing it in the other order is the most expensive mistake available in this category."
           ]
         },
-        { marker: "NEEDS INPUT: photographs of each crack type, taken by the operator. Still the largest single content gap on the site, and the illustrative images elsewhere on this page do NOT discharge it. This section teaches a reader to tell a maintenance crack from a movement crack, so an image here has to show a real failure or it misinforms someone deciding whether to call an engineer. That is why no image has been placed in this section. Four real photographs, or diagrams clearly labelled as diagrams." },
+        {
+          image: {
+            src: "images/crack-types-diagram.svg",
+            alt: "Four labelled diagrams of brickwork, each showing a different crack pattern. One: a fine hairline crack running only along the mortar joints without crossing any brick, marked usually maintenance. Two: a crack stepping diagonally up the wall along the joints, marked get it looked at. Three: a near-vertical crack cutting straight through the brick faces, marked get it looked at. Four: a crack that is widest at the top and tapers to nothing at the bottom, marked get it looked at.",
+            width: 1000,
+            height: 780
+          }
+        },
+        { note: "These are drawn diagrams, not photographs, and they are labelled that way on purpose. They show the pattern to look for rather than any particular wall. Photographs of real Perth failures would be better and are still worth getting — but a stock or generated photograph would not be, because the whole point here is telling one crack apart from another, and an image that only approximates a real failure would mislead someone deciding whether to call an engineer." },
 
         { h2: "The other things that go wrong with Perth brickwork" },
         { p: "Cracking and failed mortar are the two that get called in. These are the ones people live with for years without knowing what they are looking at, and several of them are specific to this city." },
@@ -609,7 +617,8 @@ window.SITE_CONFIG = {
             "[About Perth Brickwork](about.html)"
           ]
         },
-        { marker: "NEEDS INPUT: real photographs to replace the illustrative images on this page. What is here now is illustrative only and is not presented as anyone's own work. Real shots are still worth getting, and are obtainable in an afternoon walking a federation-era Perth suburb: a tuckpointed facade close enough to see the ribbon detail, a failed mortar joint showing the depth of loss, and spalled brick faces from a hard cement repoint. That is the cheapest credibility on the entire site and it sits on the page that most needs it." }
+        {
+          note: "Decision (28 July 2026): staying with the illustrative images on this page for now rather than sourcing real photographs. They carry no captions and make no claim of authorship, consistent with the imagery policy above. Real shots (tuckpointed facade, failed mortar joint, spalled brick face) remain the cheapest available credibility upgrade if this is revisited." }
       ]
     },
 
@@ -650,6 +659,14 @@ window.SITE_CONFIG = {
             "Plenty of Perth blocks fall away toward the verge just enough for this to apply without the owner having thought of it that way. If you are not sure, take a photo from the side so the level difference is visible and mention it in the form.",
             "Where a fence is substantially retaining and built from limestone, which is the Perth default for retaining, that is a different trade. [Perth Limestone Group](https://perthlimestonegroup.com.au) covers limestone walling specifically."
           ]
+        },
+        {
+          image: {
+            src: "images/fence-retaining-vs-freestanding-diagram.svg",
+            alt: "Two labelled cross-section diagrams side by side. On the left, a brick fence on ground that is level on both sides, with a footing below ground and arrows showing wind pushing on the wall. On the right, a fence where the ground on the block side is higher than the verge, with arrows showing soil pressure increasing with depth against the buried part of the wall, a wider and deeper footing, gravel drainage behind the wall and a weep hole through it.",
+            width: 1000,
+            height: 580
+          }
         },
 
         { h2: "What a brick fence costs in Perth" },
@@ -707,6 +724,7 @@ window.SITE_CONFIG = {
 
         { h3: "5. Gates and openings" },
         { p: "Every opening needs piers either side, and a lintel or arch over it if covered. Vehicle gate openings are the expensive ones, because the piers carry gate loads and often the motor and hardware too. Those costs have nothing to do with brickwork and are frequently quoted by a different trade." },
+        { marker: "NEEDS INPUT: a real photograph of a vehicle gate opening with piers, for scale." },
 
         { h3: "6. Demolition and disposal" },
         { p: "Removing an existing fence is a separate line. So is getting the rubble and spoil off site. Ask whether both are in the quote, separately." },
@@ -1013,7 +1031,8 @@ window.SITE_CONFIG = {
             "[About Perth Brickwork](about.html)"
           ]
         },
-        { marker: "NEEDS INPUT: real photographs to replace the illustrative images on this page, plus two things not yet covered by any image — a labelled diagram of a level frontage versus one falling away (showing where a fence becomes retaining), and a vehicle gate opening with piers for scale. The diagram in particular has to be drawn rather than sourced, because it is explaining a distinction rather than decorating a section. An afternoon walking any western or southern suburb gets the photographs." }
+        {
+          note: "Decision (28 July 2026): staying with the illustrative photographs on this page for now. Two things remain genuinely uncovered by any image, illustrative or otherwise, and are tracked separately below: a labelled diagram of a level frontage versus one falling away (in the \"Is any of it retaining?\" section above), and a vehicle gate opening with piers for scale (in the \"Gates and openings\" section below)." }
       ]
     }
   ],
@@ -1115,7 +1134,7 @@ window.SITE_CONFIG = {
         "[More about how this works, and how we're paid](about.html)"
       ]
     },
-    { marker: "NEEDS INPUT: a real photograph to replace the illustrative hero image. v6 calls for a tuckpointed or repointed facade on an older Perth home, which would also match the page's lead service better than a fence does. Taken around Perth by the operator." }
+    { note: "Decision (28 July 2026): staying with the illustrative hero image for now. It depicts a fence rather than the page's lead service (repointing/tuckpointing) — worth a straight swap to a better-matching illustrative image at some point, but not urgent." }
   ],
 
   /* --- About page body ---------------------------------------------------- */
@@ -1169,7 +1188,6 @@ window.SITE_CONFIG = {
         "The fastest way to get a job looked at is [the form on the homepage](index.html#enquiry). The phone number is there for anything else."
       ]
     },
-    { marker: "NEEDS INPUT: a real photograph of Brad. This page is the site's entire trust argument and a stock headshot undermines it. If no photograph is available, use no image. No AI generated portrait under any circumstances." }
   ],
 
   /* --- Privacy page body --------------------------------------------------
