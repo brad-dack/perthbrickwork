@@ -22,6 +22,7 @@
     faqTitle: "Frequently Asked Questions",
     ctaBandTitle: "Tell us about your job",
     callLabel: "Call",
+    emailLabel: "Email us",
     orText: "or",
     testimonialsTitle: "What Customers Say",
     photosTitle: "Recent Work",
@@ -214,9 +215,10 @@
     }).join("");
 
     var phoneBtn = phoneReady()
-      ? '<a class="btn btn-primary nav-phone" href="' + telHref() + '">' +
+      ? '<a class="btn btn-outline nav-phone" href="' + telHref() + '">' +
         UI.callLabel + " " + esc(cfg.business.phoneDisplay) + "</a>"
       : "";
+    var quoteBtn = quoteButton(null, "nav-quote");
 
     document.getElementById("site-header").innerHTML =
       '<div class="container header-inner">' +
@@ -225,7 +227,7 @@
           "<span></span><span></span><span></span>" +
         "</button>" +
         '<nav id="site-nav" class="site-nav" aria-label="Main">' +
-          "<ul>" + nav + "</ul>" + phoneBtn +
+          "<ul>" + nav + "</ul>" + phoneBtn + quoteBtn +
         "</nav>" +
       "</div>";
 
@@ -268,6 +270,51 @@
         "<p>&copy; " + new Date().getFullYear() + " " + esc(b.name) +
         ". Serving the Perth metropolitan area.</p>" +
       "</div>";
+  }
+
+  /* ---------- mobile contact bar -----------------------------------------
+     Fixed to the viewport bottom below the desktop breakpoint, since the
+     phone/email links otherwise sit inside the collapsed hamburger nav.
+     Hidden automatically while #enquiry is on screen so it never overlaps
+     the form itself. */
+
+  function renderContactBar() {
+    var bar = document.getElementById("contact-bar");
+    if (!bar) return;
+
+    var b = cfg.business;
+    var phoneIcon = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" ' +
+      'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 ' +
+      '19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 ' +
+      '1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+    var mailIcon = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" ' +
+      'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/>' +
+      '<path d="m22 6-10 7L2 6"/></svg>';
+    var callLink = phoneReady()
+      ? '<a class="contact-bar-btn contact-bar-call" href="' + telHref() + '">' + phoneIcon + UI.callLabel + "</a>"
+      : "";
+    var emailLink = b.email
+      ? '<a class="contact-bar-btn contact-bar-email" href="mailto:' + esc(b.email) + '" aria-label="' + UI.emailLabel + '">' + mailIcon + "</a>"
+      : "";
+    var quoteLink = '<a class="contact-bar-btn contact-bar-quote" href="' + enquiryHref() + '">' +
+      esc(cfg.pages.home.ctaText) + "</a>";
+
+    if (!callLink && !emailLink) {
+      bar.innerHTML = "";
+      return;
+    }
+
+    bar.innerHTML = callLink + quoteLink + emailLink;
+
+    var enquiry = document.getElementById("enquiry");
+    if (enquiry && "IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          bar.classList.toggle("contact-bar-hidden", entry.isIntersecting);
+        });
+      }, { rootMargin: "0px" });
+      observer.observe(enquiry);
+    }
   }
 
   /* ---------- block renderer --------------------------------------------
@@ -681,6 +728,7 @@
 
   renderHeader();
   renderFooter();
+  renderContactBar();
   initHeaderShadow();
   initReveal();
 

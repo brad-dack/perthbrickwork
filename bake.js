@@ -272,6 +272,7 @@ ${headHtml}
 ${mainInner}
   </main>
   <footer id="site-footer"></footer>
+  <div id="contact-bar" class="contact-bar"></div>
 </body>
 </html>
 `;
