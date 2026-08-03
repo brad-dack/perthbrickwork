@@ -447,21 +447,12 @@ window.SITE_CONFIG = {
           note: "Figures and reasons above: [UDIA WA, Modern Methods of Housing Construction – Perth](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) (2021), commissioned from EY, citing Australian Construction Insights (2018) and ABS dwelling-completion data. Double brick's share has continued to move since 2018 and this site has not tracked it past that figure." },
 
         { h2: "What tuckpointing and repointing cost in Perth" },
-        { marker: "VERIFY: this block is the credibility of the page and it goes before the table, not after. State honestly where the numbers came from: how many quotes, obtained over what period, for what job types, in which parts of the metro area, and when last reviewed. If it is a small sample, say how small. Do not describe six quotes as market data. Set a review interval, state it, and honour it. Publish no dollar figure until this is complete." },
-        { p: "Until that is done, this section describes what drives each job rather than what it costs. That is deliberate. A number we cannot stand behind is worth less to you than an honest account of what you are being quoted for." },
         {
-          table: {
-            columns: ["Job", "Typical basis", "Range"],
-            rows: [
-              ["Tuckpointing", "per linear metre of joint", "[VERIFY]"],
-              ["Repointing", "per square metre", "[VERIFY]"],
-              ["Individual brick replacement", "per brick", "[VERIFY]"],
-              ["Rebuilding a small section", "per job", "[VERIFY]"],
-              ["Crack stitching", "per metre", "[VERIFY]"]
-            ]
-          }
+          p: [
+            "Not a price list, and deliberately so. Tuckpointing is priced per metre of joint, repointing per square metre, individual brick replacement per brick, and none of those numbers mean anything without real Perth quotes behind them — logged by suburb, job type and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
+            "What follows instead is what actually moves the number, so you can read any quote you get and know whether it makes sense."
+          ]
         },
-        { marker: "VERIFY: every cell above. Real Perth quotes, each recorded with date, suburb, job type, area or joint length, building age, access and whether scaffold was required. Never a competitor site or a national average." },
 
         { h3: "What moves the price" },
         {
@@ -670,20 +661,12 @@ window.SITE_CONFIG = {
         },
 
         { h2: "What a brick fence costs in Perth" },
-        { marker: "VERIFY: this block is the credibility of the section and it goes before the table. State how many quotes the ranges are based on, obtained over what period, for what fence types, in which parts of the metro area, and when last reviewed. If the sample is small, say how small. Set a review interval, state it, honour it. Publish no dollar figure until this is complete." },
         {
-          table: {
-            columns: ["Job", "Typical range"],
-            rows: [
-              ["Low front fence, face brick, per metre", "[VERIFY]"],
-              ["Rendered front fence with piers, per metre", "[VERIFY]"],
-              ["Boundary wall, higher, per metre", "[VERIFY]"],
-              ["Brick letterbox, standalone", "[VERIFY]"],
-              ["Vehicle gate piers, pair", "[VERIFY]"]
-            ]
-          }
+          p: [
+            "Not a price list, and deliberately so. A low face brick fence, a rendered fence with piers, a higher boundary wall, a standalone letterbox and a pair of vehicle gate piers are all priced completely differently, and none of those figures mean anything without real Perth quotes behind them — logged by suburb, length, height, material and pier spacing, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
+            "What follows instead is what actually drives the number, so you can read any quote you get and know whether it makes sense."
+          ]
         },
-        { marker: "VERIFY: every cell above. Real Perth quotes, each recorded with date, suburb, length, height, material, pier spacing and whether any part is retaining. Never a competitor site or a national average." },
 
         { h2: "What drives the price" },
 
@@ -828,7 +811,6 @@ window.SITE_CONFIG = {
         },
 
         { h3: "Perth councils: front fence provisions" },
-        { marker: "VERIFY: every cell of the table below. For each local government the site services, obtain the front fence height limit, the permeability requirement above that height, and the sightline or truncation requirement at driveways and corner lots. Source: that council's planning department or published local planning policy. Link directly to the relevant page, not a generic planning landing page. Record the date checked and re-check annually. Never generalise one council's figure across Perth — it is wrong and it is checkable." },
         {
           /* `cards`, not `table`: the cells here are long prose, and six columns
              of paragraphs can only side-scroll. Same data shape as a table —

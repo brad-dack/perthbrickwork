@@ -253,6 +253,39 @@ actual operating business. Never populate them with invented names, star
 ratings, or review counts — that's a legal/ethical liability (FTC fake
 review rules) and gets renters angry when discovered.
 
+## When a renter signs
+
+Several markers are deliberately left open pending a real bricklayer renter,
+because their real pricing and practice is a better source than anything
+pre-collected. Work through this list once one signs:
+
+- **Pricing tables** (repairs page and fences page, `services[0]` /
+  `services[1]` `blocks`, the "What tuckpointing and repointing cost in
+  Perth" / "What a brick fence costs in Perth" sections) — there is no table
+  there now, deliberately: an earlier placeholder table full of `[VERIFY]`
+  cells was removed in favour of the honest paragraph that's there instead,
+  because a table with no real data in it looks broken, not "coming soon."
+  Add a real table once the renter's own rates exist. Log each figure with
+  the date, suburb, job type, area or joint length, building age, access and
+  whether scaffold was required. Never a competitor site or a national
+  average.
+- **Footing concrete strength** (fences page, "3. The footing") — the
+  standards (AS 3700, AS 2870) are already named; add the renter's actual
+  specified grade once they have one.
+- **FAQ "How soon will I hear back?"** — currently absent on purpose, because
+  no turnaround can be promised pre-renter. Add it once a real one can be
+  committed to and kept.
+- **Privacy policy** (`pages.privacy.lastUpdated`, and the paragraph on who
+  receives enquiries) — confirm it still describes the actual arrangement,
+  then set a real reviewed date.
+- **`testimonials` / `photos`** — see "Real-evidence placeholders" above.
+- **Schema** — `LocalBusiness`, `AggregateRating` and `Review` stay off
+  (`--check` rejects them) until the renter's real details are on the site
+  and any reviews are genuinely theirs.
+
+Run `node bake.js --check` after each of these — the count of remaining
+markers is the honest measure of how much is left before launch.
+
 ## Deploy to GitHub Pages
 
 1. Create a public repo and push all files to the root of the default branch.
