@@ -51,7 +51,7 @@ window.SITE_CONFIG = {
 
   /* Used for canonical URLs, schema, and OG tags. No trailing slash.
      bake.js derives CNAME, robots.txt, and sitemap.xml from this. */
-  domain: "https://www.perthbrickwork.com.au",
+  domain: "https://perthbrickwork.com.au",
 
   /* --- Brand ----------------------------------------------------------- */
   brand: {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.perthbrickwork.com.au/sitemap.xml
+Sitemap: https://perthbrickwork.com.au/sitemap.xml
