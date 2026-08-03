@@ -497,7 +497,15 @@ window.SITE_CONFIG = {
 
         { h2: "Perth's older brickwork" },
         { p: "Perth has a genuine stock of federation-era and inter-war brick housing, and that housing is now at the age where original lime mortar is at or past the end of its life. That is why tuckpointing and repointing come up here more than the housing age alone would suggest." },
-        { marker: "VERIFY: name the specific suburbs the site can genuinely speak to, with a sentence each about the housing stock and the typical brickwork found there. Three or four done properly beats a list of twenty. This is the section that has to be real, because it is what makes the page worth ranking. Do not name a suburb without something specific to say about it. Walk them first." },
+        {
+          p: [
+            "**Guildford.** One of the three original 1829 Swan River Colony settlements, alongside Perth and Fremantle, and it has the brick to show for it. The **Rose & Crown Hotel** on Swan Street, WA's oldest continuously operating hotel, is built of handmade brick laid in Flemish bond dating to 1841. The **Guildford Hotel**, a two-storey Federation Free Classical building from 1885-86, was largely destroyed by fire in 2008 and rebuilt behind its original facade — restoration work turned up handmade brick from the local convict depot under the plasterwork. James Street and Market Street carry the rest of the federation-era streetscape.",
+            "**Mount Lawley.** Federation through to the inter-war building boom of the 1920s and 30s, when Mount Lawley, Inglewood and Maylands together added thousands of houses in Californian Bungalow and Spanish Mission styles. Beaufort Street is the clearest expression of the suburb's character now: heritage shopfronts and houses standing alongside a thoroughly modern cafe and bar strip, which is why the City of Vincent runs both a Heritage Area and a separate Character Retention Area system rather than one blanket rule.",
+            "**Fremantle.** Around 2,500 places on the City's own Heritage List, plus the West End separately on the state heritage register. It is the largest concentration of intact historic building stock this site speaks to — a whole port city's worth rather than a single heritage street or estate."
+          ]
+        },
+        {
+          note: "[City of Fremantle, Heritage listings and areas](https://www.fremantle.wa.gov.au/planning-and-building/heritage/heritage-listings-and-areas/); [Rose & Crown Hotel, State Heritage Office record](https://inherit.dplh.wa.gov.au/public/inventory/printsinglerecord/5e4e60fc-2a51-415f-bb46-6b604ff0a27d); [Guildford Hotel, State Heritage Office record](https://inherit.dplh.wa.gov.au/public/inventory/printsinglerecord/dc486cf3-3351-4255-bb8e-bec697838dcf); [City of Vincent, Character Retention Areas and Heritage](https://www.vincent.wa.gov.au/residents/research/character-retention-areas.aspx) (already cited above for its councils). Guildford and Mount Lawley are places Brad knows firsthand; Fremantle's detail is from the heritage record rather than a personal account." },
         { p: "Two things worth knowing if your house is in a heritage or character area:" },
         {
           ul: [
