@@ -234,7 +234,7 @@ function head({ title, description, file, faqs, extraSchemas }) {
 
 const noscript =
   '<noscript><p class="noscript-warning">This site&#8217;s content needs JavaScript. ' +
-  esc(cfg.business.name) + " &mdash; " +
+  esc(cfg.business.name) + " - " +
   (phoneIsReal()
     ? 'call <a href="tel:' + cfg.business.phone + '">' + esc(cfg.business.phoneDisplay) +
       "</a> about your job."
@@ -421,7 +421,7 @@ const notFoundContent = () => `<!DOCTYPE html>
 <body>
   <div class="card">
     <h1>Page not found</h1>
-    <p>That page doesn&#8217;t exist or has moved &mdash; but we&#8217;re still easy to reach.</p>
+    <p>That page doesn&#8217;t exist or has moved, but we&#8217;re still easy to reach.</p>
     <p><span class="brand">${esc(cfg.business.name)}</span><br>
        Call <a class="tel" href="tel:${cfg.business.phone}">${esc(cfg.business.phoneDisplay)}</a></p>
     <a class="btn" href="/">Back to homepage</a>

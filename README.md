@@ -269,15 +269,6 @@ pre-collected. Work through this list once one signs:
   the date, suburb, job type, area or joint length, building age, access and
   whether scaffold was required. Never a competitor site or a national
   average.
-- **Footing concrete strength** (fences page, "3. The footing") — the
-  standards (AS 3700, AS 2870) are already named; add the renter's actual
-  specified grade once they have one.
-- **FAQ "How soon will I hear back?"** — currently absent on purpose, because
-  no turnaround can be promised pre-renter. Add it once a real one can be
-  committed to and kept.
-- **Privacy policy** (`pages.privacy.lastUpdated`, and the paragraph on who
-  receives enquiries) — confirm it still describes the actual arrangement,
-  then set a real reviewed date.
 - **`testimonials` / `photos`** — see "Real-evidence placeholders" above.
 - **Schema** — `LocalBusiness`, `AggregateRating` and `Review` stay off
   (`--check` rejects them) until the renter's real details are on the site

@@ -23,6 +23,10 @@
     ctaBandTitle: "Tell us about your job",
     callLabel: "Call",
     emailLabel: "Email us",
+    /* Short variant for the header and mobile contact bar. The pages' own
+       ctaText ("Tell us about your job") is too wide for either: it wraps the
+       header nav onto a second row, and fills the mobile bar edge to edge. */
+    quoteShortLabel: "Get a quote",
     orText: "or",
     testimonialsTitle: "What Customers Say",
     photosTitle: "Recent Work",
@@ -32,7 +36,7 @@
     sending: "Sending…",
     chooseOne: "Choose one",
     optional: "optional",
-    markerLabel: "Unfinished — not for publication",
+    markerLabel: "Unfinished - not for publication",
     areasTitle: "Areas We Serve"
   };
 
@@ -218,7 +222,7 @@
       ? '<a class="btn btn-outline nav-phone" href="' + telHref() + '">' +
         UI.callLabel + " " + esc(cfg.business.phoneDisplay) + "</a>"
       : "";
-    var quoteBtn = quoteButton(null, "nav-quote");
+    var quoteBtn = quoteButton(UI.quoteShortLabel, "nav-quote");
 
     document.getElementById("site-header").innerHTML =
       '<div class="container header-inner">' +
@@ -297,7 +301,7 @@
       ? '<a class="contact-bar-btn contact-bar-email" href="mailto:' + esc(b.email) + '" aria-label="' + UI.emailLabel + '">' + mailIcon + "</a>"
       : "";
     var quoteLink = '<a class="contact-bar-btn contact-bar-quote" href="' + enquiryHref() + '">' +
-      esc(cfg.pages.home.ctaText) + "</a>";
+      esc(UI.quoteShortLabel) + "</a>";
 
     if (!callLink && !emailLink) {
       bar.innerHTML = "";
@@ -449,7 +453,7 @@
     if (!cfg.testimonials || !cfg.testimonials.length) return "";
     var items = cfg.testimonials.map(function (t) {
       return '<figure class="testimonial"><blockquote>' + esc(t.quote) + "</blockquote>" +
-        "<figcaption>" + esc(t.name) + (t.detail ? " — " + esc(t.detail) : "") + "</figcaption></figure>";
+        "<figcaption>" + esc(t.name) + (t.detail ? " - " + esc(t.detail) : "") + "</figcaption></figure>";
     }).join("");
     return '<section class="section"><div class="container">' +
       "<h2>" + UI.testimonialsTitle + '</h2><div class="grid-3">' + items + "</div></div></section>";
@@ -562,7 +566,7 @@
       });
 
       if (missing.length) {
-        status.textContent = "Please fill in the fields marked required — " +
+        status.textContent = "Please fill in the fields marked required, " +
           missing.length + " still to go.";
         status.className = "form-status error";
         missing[0].focus();
