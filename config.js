@@ -25,8 +25,8 @@ window.SITE_CONFIG = {
   /* --- Core business identity ---------------------------------------- */
   business: {
     name: "Perth Brickwork",
-    phone: "[PHONE]",               // tel: link format, e.g. +61812345678
-    phoneDisplay: "[PHONE]",        // human-readable
+    phone: "+61895115005",          // tel: link format, e.g. +61812345678
+    phoneDisplay: "(08) 9511 5005", // human-readable
     email: "hello@perthbrickwork.com.au",
     city: "Perth",
     state: "WA",
@@ -656,7 +656,7 @@ window.SITE_CONFIG = {
             "**Level ground on both sides** and the wall holds up itself. It needs a footing sized for its own weight and for wind load, and no drainage behind it, because there is nothing behind it.",
             "**Higher ground on one side** and part of that wall is retaining soil. Heavier footing, drainage behind it, possibly engineering. Soil is a permanent load and it gets heavier when wet.",
             "Plenty of Perth blocks fall away toward the verge just enough for this to apply without the owner having thought of it that way. If you are not sure, take a photo from the side so the level difference is visible and mention it in the form.",
-            "Where a fence is substantially retaining and built from limestone, which is the Perth default for retaining, that is a different trade. [Perth Limestone Group](https://perthlimestonegroup.com.au) covers limestone walling specifically."
+            "Where a fence is substantially retaining and built from limestone, which is the Perth default for retaining, that is a different trade with different contractors. This site covers brick and rendered fences only."
           ]
         },
         {
@@ -1060,7 +1060,7 @@ window.SITE_CONFIG = {
     { p: "Worth saying plainly, because it saves you a phone call." },
     {
       p: [
-        "**Limestone retaining walls.** Limestone walling in Perth is a different trade to bricklaying. Different suppliers, different blocks, different handling, and largely different contractors. If your job is a limestone retaining wall, [Perth Limestone Group](https://perthlimestonegroup.com.au) covers that specifically.",
+        "**Limestone retaining walls.** Limestone walling in Perth is a different trade to bricklaying. Different suppliers, different blocks, different handling, and largely different contractors.",
         "**Paving, concreting and landscaping.** Adjacent trades, not this one.",
         "**Structural engineering.** If a wall is moving, an engineer diagnoses it and a bricklayer repairs what the engineer identifies. Doing it in the other order is how people pay for the same wall twice. The [repairs page](brick-repairs-repointing-tuckpointing.html) covers how to tell which one you need."
       ]
@@ -1158,7 +1158,7 @@ window.SITE_CONFIG = {
     {
       p: [
         "We stick to bricklaying. That means repointing, tuckpointing and brick repairs, brick and rendered fences and boundary walls, and extensions and additions — some of which need to go through a registered builder rather than to a bricklayer directly.",
-        "Limestone walling is a separate trade in Perth. Different suppliers, different blocks, different handling, and largely different contractors. Sending a limestone retaining wall enquiry to a bricklayer wastes the homeowner's time and the bricklayer's. [Perth Limestone Group](https://perthlimestonegroup.com.au) covers limestone specifically, and it is run by the same operator.",
+        "Limestone walling is a separate trade in Perth. Different suppliers, different blocks, different handling, and largely different contractors. Sending a limestone retaining wall enquiry to a bricklayer wastes the homeowner's time and the bricklayer's.",
         "Paving, concreting, landscaping and structural engineering are all adjacent trades we do not handle either."
       ]
     },
@@ -1174,7 +1174,7 @@ window.SITE_CONFIG = {
     { h2: "Contact" },
     {
       p: [
-        "Brad  \nPerth Brickwork  \nABN 78 538 005 810  \nPhone: [PHONE]  \nEmail: hello@perthbrickwork.com.au",
+        "Brad  \nPerth Brickwork  \nABN 78 538 005 810  \nPhone: (08) 9511 5005  \nEmail: hello@perthbrickwork.com.au",
         "The fastest way to get a job looked at is [the form on the homepage](index.html#enquiry). The phone number is there for anything else."
       ]
     },
@@ -1201,10 +1201,10 @@ window.SITE_CONFIG = {
     { p: "If you call the number on this site, standard call records apply. We don't record calls." },
 
     { h2: "Your choices" },
-    { p: "If you'd like the details you submitted to be deleted, call [PHONE] and ask — they'll be removed." },
+    { p: "If you'd like the details you submitted to be deleted, call (08) 9511 5005 and ask — they'll be removed." },
 
     { h2: "Contact" },
-    { p: "Questions about this policy can be directed to Perth Brickwork, ABN 78 538 005 810, on [PHONE]." },
+    { p: "Questions about this policy can be directed to Perth Brickwork, ABN 78 538 005 810, on (08) 9511 5005." },
 
     { marker: "NEEDS INPUT: have this policy read against the actual arrangement before launch, and set pages.privacy.lastUpdated to a real date. It currently describes the pre-renter position. When a renter signs, confirm the paragraph about who receives enquiries is still exactly true." }
   ],
