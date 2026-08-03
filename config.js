@@ -346,6 +346,12 @@ window.SITE_CONFIG = {
             "An engineer diagnoses movement. A bricklayer repairs what the engineer identifies. Doing it in the other order is the most expensive mistake available in this category."
           ]
         },
+        /* TODO (Brad): real photographs of these four Perth crack types would be
+           a genuine upgrade over the drawn diagram below - but never swap in a
+           stock or generated photo instead. The point of this section is telling
+           one crack apart from another, and an image that only approximates a
+           real failure would mislead someone deciding whether to call an engineer.
+           Only replace with real, verified photos of actual Perth brickwork. */
         {
           image: {
             src: "images/crack-types-diagram.svg",
@@ -354,7 +360,6 @@ window.SITE_CONFIG = {
             height: 780
           }
         },
-        { note: "These are drawn diagrams, not photographs, and they are labelled that way on purpose. They show the pattern to look for rather than any particular wall. Photographs of real Perth failures would be better and are still worth getting - but a stock or generated photograph would not be, because the whole point here is telling one crack apart from another, and an image that only approximates a real failure would mislead someone deciding whether to call an engineer." },
 
         { h2: "The other things that go wrong with Perth brickwork" },
         { p: "Cracking and failed mortar are the two that get called in. These are the ones people live with for years without knowing what they are looking at, and several of them are specific to this city." },
@@ -368,8 +373,11 @@ window.SITE_CONFIG = {
             "The fix is the moisture source and the salt path, not the brick. Replacing spalled bricks while leaving the reticulation spraying on them buys you a few years at most."
           ]
         },
+        /* TODO (Brad): no source found yet measures how often reticulation is
+           specifically the cause of Perth brick spalling (vs. coastal exposure
+           or rising groundwater). Don't state a frequency figure until one exists. */
         {
-          note: "The crystallisation mechanism and the advice against watering walls or garden beds hard against them follows [City of Fremantle, Technical Advice Sheet 5: Dealing with dampness in old walls](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-5-Dealing-with-dampness-in-old-walls.pdf). Bore water salinity near the coast and the Swan River is documented by the [WA Department of Water and Environmental Regulation](https://www.wa.gov.au/service/natural-resources/water-resources/rebalancing-our-groundwater), which states that \"lower groundwater recharge has caused saline water to move inland, making bores more saline.\" Neither source measures how often reticulation is the specific cause of Perth brick spalling - that frequency claim has been removed pending real data."
+          note: "The crystallisation mechanism and the advice against watering walls or garden beds hard against them follows [City of Fremantle, Technical Advice Sheet 5: Dealing with dampness in old walls](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-5-Dealing-with-dampness-in-old-walls.pdf). Bore water salinity near the coast and the Swan River is documented by the [WA Department of Water and Environmental Regulation](https://www.wa.gov.au/service/natural-resources/water-resources/rebalancing-our-groundwater), which states that \"lower groundwater recharge has caused saline water to move inland, making bores more saline.\""
         },
 
         { h3: "Efflorescence" },
@@ -400,8 +408,12 @@ window.SITE_CONFIG = {
             "It reached Perth with federation-era and inter-war housing and it is found across the older suburbs, most often on the street-facing facade alone, because it was decoration rather than protection and there was no reason to spend it on the sides and back."
           ]
         },
+        /* TODO (Brad): no WA-specific source has been found for which decades
+           tuckpointing was actually common in Perth or which suburbs it survives
+           in today - don't claim more specificity than "federation-era and
+           inter-war" above until one exists. */
         {
-          note: "The origin, technique and tools above follow [The Society for the Protection of Ancient Buildings (SPAB), Tuck pointing](https://www.spab.org.uk/advice/tuck-pointing) - a UK heritage conservation body, since no WA-specific source describing the technique itself has been found. Which decades tuckpointing was actually common in Perth, and which suburbs it survives in today, is still not sourced and is not claimed above beyond \"federation-era and inter-war\" - see the suburb-detail marker further down this page."
+          note: "The origin, technique and tools above follow [The Society for the Protection of Ancient Buildings (SPAB), Tuck pointing](https://www.spab.org.uk/advice/tuck-pointing)."
         },
 
         { h3: "Why so few people do it" },
