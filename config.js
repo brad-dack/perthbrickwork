@@ -63,7 +63,7 @@ window.SITE_CONFIG = {
   },
 
   /* --- Tracking / integrations ----------------------------------------- */
-  ga4Id: "G-XXXXXXXXXX",
+  ga4Id: "G-GXQL7EY1YQ",
   formspreeId: "xrenwvpe",
 
   /* --- Structured data ---------------------------------------------------
