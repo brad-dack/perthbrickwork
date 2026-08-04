@@ -25,8 +25,8 @@ window.SITE_CONFIG = {
   /* --- Core business identity ---------------------------------------- */
   business: {
     name: "Perth Brickwork",
-    phone: "+61895115005",          // tel: link format, e.g. +61812345678
-    phoneDisplay: "(08) 9511 5005", // human-readable
+    phone: "+61895161337",          // tel: link format, e.g. +61812345678
+    phoneDisplay: "(08) 9516 1337", // human-readable
     email: "hello@perthbrickwork.com.au",
     city: "Perth",
     state: "WA",
@@ -555,7 +555,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "How much does tuckpointing cost in Perth?",
-              a: "Every job is different - the state of the existing mortar, access and any scaffold needed move the cost more than the size of the house does, so there is no single figure worth quoting here. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9511 5005, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "Every job is different - the state of the existing mortar, access and any scaffold needed move the cost more than the size of the house does, so there is no single figure worth quoting here. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
             },
             {
               q: "My wall has a crack. Is it serious?",
@@ -1182,7 +1182,7 @@ window.SITE_CONFIG = {
     { h2: "Contact" },
     {
       p: [
-        "Brad  \nPerth Brickwork  \nABN 78 538 005 810  \nPhone: (08) 9511 5005  \nEmail: hello@perthbrickwork.com.au",
+        "Brad  \nPerth Brickwork  \nABN 78 538 005 810  \nPhone: (08) 9516 1337  \nEmail: hello@perthbrickwork.com.au",
         "The fastest way to get a job looked at is [the form on the homepage](index.html#enquiry). The phone number is there for anything else."
       ]
     },
@@ -1208,10 +1208,10 @@ window.SITE_CONFIG = {
     { p: "If you call the number on this site, standard call records apply. We don't record calls." },
 
     { h2: "Your choices" },
-    { p: "If you'd like the details you submitted to be deleted, call (08) 9511 5005 and ask - they'll be removed." },
+    { p: "If you'd like the details you submitted to be deleted, call (08) 9516 1337 and ask - they'll be removed." },
 
     { h2: "Contact" },
-    { p: "Questions about this policy can be directed to Perth Brickwork, ABN 78 538 005 810, on (08) 9511 5005 or hello@perthbrickwork.com.au." }
+    { p: "Questions about this policy can be directed to Perth Brickwork, ABN 78 538 005 810, on (08) 9516 1337 or hello@perthbrickwork.com.au." }
   ],
 
   /* --- Real-evidence placeholders (do not fake these) ----------------------
