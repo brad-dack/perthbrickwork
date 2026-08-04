@@ -528,7 +528,9 @@ function runCheck() {
     [/\bDecision \(\d/, "dated decision log"],
     [/\bnot urgent\b/i, "priority note"],
     [/\bat some point\b/i, "deferred-work note"],
-    [/\b(?:still )?worth (?:getting|doing|a straight swap|revisiting)\b/i, "deferred-work note"],
+    // NB: no pattern on "worth doing"/"worth getting" — those are ordinary
+    // reader copy ("when a repair is worth doing"). Verified against the
+    // limestone config, where such a pattern false-positived.
     [/\bpending (?:real )?data\b/i, "outstanding-research note"],
     [/\bno (?:WA-specific )?source (?:has been )?found\b/i, "outstanding-research note"],
     [/\bis (?:still )?not sourced\b/i, "outstanding-research note"],
