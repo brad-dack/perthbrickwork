@@ -625,9 +625,13 @@ window.SITE_CONFIG = {
             "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
             "[About Perth Brickwork](about.html)"
           ]
-        },
-        {
-          note: "Decision (28 July 2026): staying with the illustrative images on this page for now rather than sourcing real photographs. They carry no captions and make no claim of authorship, consistent with the imagery policy above. Real shots (tuckpointed facade, failed mortar joint, spalled brick face) remain the cheapest available credibility upgrade if this is revisited." }
+        }
+        /* TODO (Brad): staying with the illustrative images on this page for now
+           rather than sourcing real photographs. They carry no captions and make
+           no claim of authorship, consistent with the imagery policy. Real shots
+           (tuckpointed facade, failed mortar joint, spalled brick face) remain the
+           cheapest available credibility upgrade if this is revisited.
+           Decision recorded 28 July 2026. */
       ]
     },
 
@@ -1029,9 +1033,13 @@ window.SITE_CONFIG = {
             "[Repointing, tuckpointing and brick repairs](brick-repairs-repointing-tuckpointing.html)",
             "[About Perth Brickwork](about.html)"
           ]
-        },
-        {
-          note: "Decision (28 July 2026): staying with the illustrative photographs on this page for now. Two things remain genuinely uncovered by any image, illustrative or otherwise, and are tracked separately below: a labelled diagram of a level frontage versus one falling away (in the \"Is any of it retaining?\" section above), and a vehicle gate opening with piers for scale (in the \"Gates and openings\" section below)." }
+        }
+        /* TODO (Brad): staying with the illustrative photographs on this page for
+           now. Two things remain genuinely uncovered by any image, illustrative or
+           otherwise, and are tracked separately in-place: a labelled diagram of a
+           level frontage versus one falling away (in the "Is any of it retaining?"
+           section), and a vehicle gate opening with piers for scale (in the "Gates
+           and openings" section). Decision recorded 28 July 2026. */
       ]
     }
   ],
@@ -1131,8 +1139,11 @@ window.SITE_CONFIG = {
         "We are not a directory and not a quote comparison site. What we do is ask about a job properly, publish what we have researched about how these jobs are priced and regulated in Perth, and get the job to a bricklayer who does that kind of work.",
         "[More about how this works, and how we're paid](about.html)"
       ]
-    },
-    { note: "Decision (28 July 2026): staying with the illustrative hero image for now. It depicts a fence rather than the page's lead service (repointing/tuckpointing) - worth a straight swap to a better-matching illustrative image at some point, but not urgent." }
+    }
+    /* TODO (Brad): the hero image depicts a fence rather than the page's lead
+       service (repointing/tuckpointing). A straight swap to a better-matching
+       illustrative image is worth doing at some point - not urgent.
+       Decision recorded 28 July 2026. */
   ],
 
   /* --- About page body ---------------------------------------------------- */

@@ -505,7 +505,12 @@ function runCheck() {
      [VERIFY: ...] / [NEEDS INPUT: ...] / [ABN] holes in the copy — they are
      supposed to be there while the research and the operator's details are
      outstanding, and they are supposed to block launch until they are not.
-     Fill the marker or delete the claim it guards. Never quietly strip one. */
+     Fill the marker or delete the claim it guards. Never quietly strip one.
+
+     AUTHOR_VOICE_PATTERNS are the third class: notes written to Brad rather
+     than to a reader — decision logs, "not urgent", "no source found yet".
+     Every string in this config is rendered to the public site, so this kind
+     of commentary belongs in a "TODO (Brad):" code comment instead. */
   const PLACEHOLDER_PATTERNS = [
     [/yourdomain/i, "placeholder domain"],
     [/\bSpringfield\b/, "placeholder city \"Springfield\""],
@@ -513,6 +518,25 @@ function runCheck() {
     [/YOUR_/, "\"YOUR_\" placeholder"],
     [/lorem\s+ipsum/i, "lorem-ipsum filler"],
     [/\b(?:TODO|TBD|FIXME)\b/, "TODO/TBD/FIXME filler"]
+  ];
+  /* Author-voice: notes to Brad that leaked into reader-facing copy. Each
+     pattern is deliberately narrow — these are phrases that read as a working
+     note and have no business in copy addressed to someone with a cracked wall.
+     If one of these ever fires on legitimate reader copy, reword the copy
+     rather than loosening the pattern. */
+  const AUTHOR_VOICE_PATTERNS = [
+    [/\bDecision \(\d/, "dated decision log"],
+    [/\bnot urgent\b/i, "priority note"],
+    [/\bat some point\b/i, "deferred-work note"],
+    [/\b(?:still )?worth (?:getting|doing|a straight swap|revisiting)\b/i, "deferred-work note"],
+    [/\bpending (?:real )?data\b/i, "outstanding-research note"],
+    [/\bno (?:WA-specific )?source (?:has been )?found\b/i, "outstanding-research note"],
+    [/\bis (?:still )?not sourced\b/i, "outstanding-research note"],
+    [/\bstock or generated\b/i, "imagery-sourcing note"],
+    [/\bcredibility upgrade\b/i, "editorial commentary"],
+    [/\btracked separately\b/i, "internal tracking note"],
+    [/\bmarker\b/i, "internal marker jargon"],
+    [/\b(?:config|bake)\.js\b/, "reference to the site's own source files"]
   ];
   const MARKER_PATTERNS = [
     [/\[VERIFY\b/, "unsourced claim — [VERIFY]"],
@@ -526,6 +550,15 @@ function runCheck() {
         if (re.test(node)) {
           errors.push("config " + trail + ": " + label +
             ' — "' + (node.length > 60 ? node.slice(0, 57) + "..." : node) + '"');
+        }
+      }
+      // `marker` blocks are author-facing by design and already reported below.
+      for (const [re, label] of /\.marker$/.test(trail) ? [] : AUTHOR_VOICE_PATTERNS) {
+        if (re.test(node)) {
+          errors.push("config " + trail + ": author-voice note in reader-facing copy (" +
+            label + ") — move it to a code comment — " +
+            '"' + (node.length > 60 ? node.slice(0, 57) + "..." : node) + '"');
+          break;   // one report per string
         }
       }
       const shown = node.length > 70 ? node.slice(0, 67) + "..." : node;
