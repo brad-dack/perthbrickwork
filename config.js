@@ -443,8 +443,6 @@ window.SITE_CONFIG = {
             "If you are getting a repair quoted, ask directly whether they are matching new or matching salvaged, and ask to see the brick against your wall in daylight before it goes in. Colour matching under a shed light is how mismatches happen."
           ]
         },
-        {
-          note: "Ownership: [ACCC public register - BGC's acquisition of Midland Brick](https://www.accc.gov.au/public-registers/mergers-registers/public-informal-merger-reviews-register/bgc-midland-brick), not opposed 17 December 2020, transaction completed 1 April 2021. Austral Bricks' WA manufacturing entity is separately licensed - see [WA EPA, Austral Bricks (WA) Pty Ltd](https://www.epa.wa.gov.au/proponent-name/austral-bricks-wa-pty-ltd). PGH's ownership and east-coast-only manufacturing footprint is stated on [PGH's own About page](https://www.pghbricks.com.au/about-pgh). The modern metric brick dimension is set by AS/NZS 4455.1:2008 (Standards Australia). Older Perth-made brick varied in size by manufacturer and era before 1970s metrication, so no single figure covers it." },
 
         { h2: "Why Perth is a double brick city" },
         {
@@ -516,8 +514,6 @@ window.SITE_CONFIG = {
             "**Fremantle.** Around 2,500 places on the City's own Heritage List, plus the West End separately on the state heritage register. It is the largest concentration of intact historic building stock this site speaks to - a whole port city's worth rather than a single heritage street or estate."
           ]
         },
-        {
-          note: "[City of Fremantle, Heritage listings and areas](https://www.fremantle.wa.gov.au/planning-and-building/heritage/heritage-listings-and-areas/); [Rose & Crown Hotel, State Heritage Office record](https://inherit.dplh.wa.gov.au/public/inventory/printsinglerecord/5e4e60fc-2a51-415f-bb46-6b604ff0a27d); [Guildford Hotel, State Heritage Office record](https://inherit.dplh.wa.gov.au/public/inventory/printsinglerecord/dc486cf3-3351-4255-bb8e-bec697838dcf); [City of Vincent, Character Retention Areas and Heritage](https://www.vincent.wa.gov.au/residents/research/character-retention-areas.aspx) (already cited above for its councils). Guildford and Mount Lawley are places Brad knows firsthand; Fremantle's detail is from the heritage record rather than a personal account." },
         { p: "Two things worth knowing if your house is in a heritage or character area:" },
         {
           ul: [
@@ -531,8 +527,6 @@ window.SITE_CONFIG = {
             "If your address falls in any of these, or in another council's heritage or character area, check with that council's planning department before you commit to a repointing, rendering or repair scope - the work itself is not necessarily different, but the approval pathway is."
           ]
         },
-        {
-          note: "[City of Fremantle, Heritage listings and areas](https://www.fremantle.wa.gov.au/planning-and-building/heritage/heritage-listings-and-areas/); [City of Vincent, Character Retention Areas and Heritage](https://www.vincent.wa.gov.au/residents/research/character-retention-areas.aspx); City of Subiaco heritage areas confirmed via its [Heritage List consultation FAQs](https://www.haveyoursay.subiaco.wa.gov.au/heritage-list/widgets/454038/faqs) - a live policy-document link for Subiaco's heritage areas could not be found (site links returned 404 at the time of checking); confirm current policy with the City directly. This is three councils, not a survey of all thirty - other Perth councils also have heritage provisions not covered here." },
 
         { h2: "What to ask before you accept a quote" },
         {
@@ -873,7 +867,7 @@ window.SITE_CONFIG = {
           }
         },
         {
-          note: "Town of Mosman Park: its fencing local law was under community consultation as part of a 2026 local laws review at the time this table was checked, with a council decision expected mid-2026. The state-default figures above may be superseded by a Mosman Park-specific policy - re-check before relying on this row." },
+          note: "Town of Mosman Park: its fencing local law was under community consultation as part of a 2026 local laws review at the time this table was checked, with a council decision expected mid-2026. The state-default figures above may be superseded by a Mosman Park-specific policy - re-check before relying on the info above." },
 
         { h3: "Shared boundaries" },
         {
