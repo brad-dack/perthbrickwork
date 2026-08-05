@@ -538,7 +538,17 @@ function runCheck() {
     [/\bcredibility upgrade\b/i, "editorial commentary"],
     [/\btracked separately\b/i, "internal tracking note"],
     [/\bmarker\b/i, "internal marker jargon"],
-    [/\b(?:config|bake)\.js\b/, "reference to the site's own source files"]
+    [/\b(?:config|bake)\.js\b/, "reference to the site's own source files"],
+    [/\balready cited above\b/i, "internal cross-reference note"],
+    [/\b(?:returned 404|could not be found)\b/i, "failed-research admission"],
+    [/\bnot a survey of all\b/i, "scope-disclosure note"]
+  ];
+  // "Brad" in a note (not a `credit` byline) is almost always the author
+  // auditing their own sourcing ("Brad knows firsthand") rather than
+  // information a reader needs — narrowly scoped to .note so the credit
+  // blocks' "Researched and written by Brad" bylines are unaffected.
+  const AUTHOR_VOICE_NOTE_ONLY_PATTERNS = [
+    [/\bBrad\b/, "author self-reference"]
   ];
   const MARKER_PATTERNS = [
     [/\[VERIFY\b/, "unsourced claim — [VERIFY]"],
@@ -555,7 +565,10 @@ function runCheck() {
         }
       }
       // `marker` blocks are author-facing by design and already reported below.
-      for (const [re, label] of /\.marker$/.test(trail) ? [] : AUTHOR_VOICE_PATTERNS) {
+      const authorVoiceChecks = /\.marker$/.test(trail) ? [] :
+        /\.note$/.test(trail) ? AUTHOR_VOICE_PATTERNS.concat(AUTHOR_VOICE_NOTE_ONLY_PATTERNS) :
+        AUTHOR_VOICE_PATTERNS;
+      for (const [re, label] of authorVoiceChecks) {
         if (re.test(node)) {
           errors.push("config " + trail + ": author-voice note in reader-facing copy (" +
             label + ") — move it to a code comment — " +
