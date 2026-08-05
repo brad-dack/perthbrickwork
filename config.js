@@ -64,7 +64,11 @@ window.SITE_CONFIG = {
 
   /* --- Tracking / integrations ----------------------------------------- */
   ga4Id: "G-GXQL7EY1YQ",
-  formspreeId: "xrenwvpe",
+  // Form submits go straight to our own ingest endpoint now, not Formspree —
+  // see rank-and-rent-backend's docs/DASHBOARD_PLAN.md Phase 2 Stage B.
+  ingestUrl: "https://bnfgnglzswtrvzfqkgjh.functions.supabase.co/ingest-form",
+  ingestSecret: "e5d9143183736562394e33aad46e43a3",
+  turnstileSiteKey: "0x4AAAAAAEHD1tLftcrbDXIx",
 
   /* --- Structured data ---------------------------------------------------
      Organization ONLY, sitewide. NOT LocalBusiness: there is no premises, no
@@ -1204,7 +1208,7 @@ window.SITE_CONFIG = {
     { p: "Your details are used for one purpose: to get your job in front of a bricklayer in your part of Perth who does that type of work, so they can contact you about it." },
 
     { h2: "Who processes the form" },
-    { p: "The form is delivered by [Formspree](https://formspree.io), a form-handling service. When you submit the form, your details pass through Formspree's servers to reach us. Formspree's own privacy policy is available on their website." },
+    { p: "The form is delivered directly to our own systems for handling enquiries. A free security check (Cloudflare Turnstile) runs in the background to filter out automated spam submissions before your enquiry reaches us." },
 
     { h2: "Analytics" },
     { p: "This site may use Google Analytics to understand how visitors find and use it - for example, which pages are viewed. Google Analytics uses cookies and collects anonymous usage data such as your general location and device type. It does not see anything you type into the enquiry form." },

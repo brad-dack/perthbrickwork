@@ -228,7 +228,10 @@ function head({ title, description, file, faqs, extraSchemas }) {
     faqs && faqs.length ? "  " + jsonLd(faqSchema(faqs)) : null,
     ...(extraSchemas || []).map(s => "  " + jsonLd(s)),
     '  <script src="config.js" defer></' + "script>",
-    '  <script src="js/main.js" defer></' + "script>"
+    '  <script src="js/main.js" defer></' + "script>",
+    cfg.turnstileSiteKey
+      ? '  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></' + "script>"
+      : null
   ].filter(Boolean).join("\n");
 }
 
@@ -600,8 +603,11 @@ function runCheck() {
   if (!cfg.ga4Id || /X{4,}/.test(cfg.ga4Id) || !/^G-[A-Z0-9]+$/.test(cfg.ga4Id)) {
     errors.push("ga4Id is unset or a placeholder — analytics and click_to_call tracking are OFF");
   }
-  if (!cfg.formspreeId || cfg.formspreeId.indexOf("YOUR_") === 0) {
-    errors.push("formspreeId is unset or a placeholder — the site CANNOT capture web form leads");
+  if (!cfg.ingestUrl || !cfg.ingestSecret || cfg.ingestUrl.indexOf("YOUR_") === 0) {
+    errors.push("ingestUrl/ingestSecret is unset or a placeholder — the site CANNOT capture web form leads");
+  }
+  if (!cfg.turnstileSiteKey) {
+    errors.push("turnstileSiteKey is unset — the form has no spam protection");
   }
 
   /* -- 3. content page files <-> config ------------------------------------ */

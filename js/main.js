@@ -530,10 +530,29 @@
     var fields = formFields(opts);
     return '<form id="quote-form" novalidate>' +
       fields.map(function (f) { return fieldHtml(f, opts); }).join("") +
+      // Honeypot: real visitors never see this (off-screen, not display:none — some bots
+      // skip display:none fields specifically) or fill it in. Server treats any value here
+      // as spam. Deliberately outside the `fields` config, not a real question to answer.
+      '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" ' +
+        'style="position:absolute;left:-9999px;top:-9999px">' +
+      (cfg.turnstileSiteKey ? '<div id="turnstile-widget"></div>' : "") +
       '<button class="btn btn-primary btn-block" type="submit">' + esc(cfg.form.submitText) + "</button>" +
       '<p class="form-under">' + esc(cfg.form.underButton) + "</p>" +
       '<p class="form-status" id="form-status" role="status" aria-live="polite"></p>' +
     "</form>";
+  }
+
+  // Turnstile's script may still be loading (async) when the form first renders, and the
+  // form itself is re-rendered on every page navigation in this SPA — so render explicitly
+  // once the API is available, rather than relying on its own auto-render-on-load scan,
+  // which would miss a form injected into the DOM after that scan already ran.
+  function renderTurnstile(container) {
+    if (!container || !cfg.turnstileSiteKey) return;
+    if (window.turnstile) {
+      window.turnstile.render(container, { sitekey: cfg.turnstileSiteKey });
+    } else {
+      setTimeout(function () { renderTurnstile(container); }, 100);
+    }
   }
 
   function formSection(opts) {
@@ -550,6 +569,7 @@
     var form = document.getElementById("quote-form");
     if (!form) return;
     var status = document.getElementById("form-status");
+    renderTurnstile(document.getElementById("turnstile-widget"));
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -573,10 +593,10 @@
         return;
       }
 
-      var id = cfg.formspreeId;
-      if (!id || id.indexOf("YOUR_") === 0) {
-        // Owner hasn't configured Formspree yet — fail gracefully for visitors.
-        console.warn("Formspree ID not set in config.js — form cannot submit.");
+      var ingestUrl = cfg.ingestUrl;
+      if (!ingestUrl || !cfg.ingestSecret || ingestUrl.indexOf("YOUR_") === 0) {
+        // Owner hasn't configured the ingest endpoint yet — fail gracefully for visitors.
+        console.warn("ingestUrl/ingestSecret not set in config.js — form cannot submit.");
         showError();
         return;
       }
@@ -586,14 +606,15 @@
       status.textContent = UI.sending;
       status.className = "form-status";
 
-      var data = new FormData();
-      Object.keys(values).forEach(function (k) { data.append(k, values[k]); });
-      data.append("_subject", "New job enquiry: " + (values.job || "Perth Brickwork"));
+      var payload = {};
+      Object.keys(values).forEach(function (k) { payload[k] = values[k]; });
+      payload._secret = cfg.ingestSecret;
+      payload.subject = "New job enquiry: " + (values.job || "Perth Brickwork");
 
-      fetch("https://formspree.io/f/" + id, {
+      fetch(ingestUrl, {
         method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
       }).then(function (res) {
         if (res.ok) {
           form.innerHTML = '<p class="form-status success">' + esc(cfg.form.successMessage) + "</p>";
