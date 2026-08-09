@@ -144,11 +144,14 @@ What to edit in `config.js`:
    contains `XXXX`, the tracking snippet is not injected, so you get no
    analytics and no `click_to_call` events — meaning no call-volume proof
    to show a future renter. (The placeholder is safe to develop with.)
-5. **formspreeId** — create a free form at [formspree.io](https://formspree.io),
-   copy the ID after `/f/` in the endpoint. **Required before launch: the
-   site cannot capture web form leads until this is a real ID.** Until
-   then, submitting the form shows a polite error — phone calls work (once a
-   real number is in), web leads are silently lost.
+5. **ingestUrl / ingestSecret / turnstileSiteKey** — the form posts straight
+   to our own ingest endpoint (see `rank-and-rent-backend`'s
+   `docs/DASHBOARD_PLAN.md`, Phase 2 Stage B) rather than a third-party form
+   service. **Required before launch: the site cannot capture web form leads
+   until `ingestUrl`/`ingestSecret` are real values, and has no spam
+   protection until `turnstileSiteKey` is set.** Until then, submitting the
+   form shows a polite error — phone calls work (once a real number is in),
+   web leads are silently lost.
 6. **schema** — legal name, the ABN used as the Organization `identifier`,
    area served, and the founder name used on the about page's `Person`.
    Don't reintroduce a `LocalBusiness` type here; `--check` will reject it.

@@ -484,6 +484,23 @@
      headline, intro copy, a preset for the first field, per-field placeholder
      overrides, and extra fields inserted after a named field. */
 
+  /* One id per page load, shared by every render of the form. crypto.randomUUID
+     needs a secure context; the fallback is not cryptographically strong, but
+     this only has to be unique enough to dedupe one visitor's retries. */
+  var _submissionId = null;
+  function submissionId() {
+    if (_submissionId) return _submissionId;
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      _submissionId = window.crypto.randomUUID();
+    } else {
+      _submissionId = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0;
+        return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16);
+      });
+    }
+    return _submissionId;
+  }
+
   function formFields(opts) {
     var fields = cfg.form.fields.map(function (f) {
       var copy = {};
@@ -535,6 +552,12 @@
       // as spam. Deliberately outside the `fields` config, not a real question to answer.
       '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" ' +
         'style="position:absolute;left:-9999px;top:-9999px">' +
+      // Idempotency key, generated once per page load. The ingest function dedupes on
+      // (channel, source_ref), so a retry after a failed submit updates the same lead
+      // instead of creating a second one. Without it the server falls back to a random
+      // id per request, and every retry is a new lead. Picked up automatically by the
+      // generic field loop in wireQuoteForm, same as _gotcha above.
+      '<input type="hidden" name="_id" value="' + esc(submissionId()) + '">' +
       (cfg.turnstileSiteKey ? '<div id="turnstile-widget"></div>' : "") +
       '<button class="btn btn-primary btn-block" type="submit">' + esc(cfg.form.submitText) + "</button>" +
       '<p class="form-under">' + esc(cfg.form.underButton) + "</p>" +

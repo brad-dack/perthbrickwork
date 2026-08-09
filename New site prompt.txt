@@ -37,11 +37,12 @@ SCHEMA TYPE: [a schema.org LocalBusiness subtype fitting the niche, or
 "pick the best fit"]
 
 GA4 MEASUREMENT ID: [G-XXXXXXXXXX, or "not set up yet"]
-FORMSPREE ID: [the token after /f/ in the endpoint, or "not set up yet"]
+INGEST ENDPOINT: [ingestUrl/ingestSecret/turnstileSiteKey, or "not set up yet"]
 
 TASKS
 1. Populate config.js completely: business identity, domain, brand colors,
-   schema type, ga4Id, formspreeId, page meta and headlines, services array
+   schema type, ga4Id, ingestUrl/ingestSecret/turnstileSiteKey, page meta and
+   headlines, services array
    with real pricing, areas array, all FAQs, about copy, value props.
    Every headline should mirror the actual phrase people search for.
 2. Source real images: one hero plus one per service page, plus one per

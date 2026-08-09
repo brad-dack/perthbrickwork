@@ -1208,7 +1208,7 @@ window.SITE_CONFIG = {
     { p: "Your details are used for one purpose: to get your job in front of a bricklayer in your part of Perth who does that type of work, so they can contact you about it." },
 
     { h2: "Who processes the form" },
-    { p: "The form is delivered directly to our own systems for handling enquiries. A free security check (Cloudflare Turnstile) runs in the background to filter out automated spam submissions before your enquiry reaches us." },
+    { p: "The form submits directly to our own system rather than to a third-party form service. That system is hosted on Supabase, so your details pass through their servers to reach us, and a Cloudflare Turnstile check runs in your browser first to filter out automated spam. Both companies publish their own privacy policies on their websites." },
 
     { h2: "Analytics" },
     { p: "This site may use Google Analytics to understand how visitors find and use it - for example, which pages are viewed. Google Analytics uses cookies and collects anonymous usage data such as your general location and device type. It does not see anything you type into the enquiry form." },
