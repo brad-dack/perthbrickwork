@@ -39,6 +39,26 @@ const jsonLd = obj =>
 const hostOf = url => String(url || "")
   .replace(/^https?:\/\//, "").replace(/\/.*$/, "").trim();
 
+// Shared by bake() (hero image srcset lookups) and runCheck() (file-existence checks).
+const exists = f => fs.existsSync(path.join(__dirname, f));
+
+/* Inline markup for hero copy: **bold**, [label](url), and newlines. Mirrors
+   js/main.js's inline() so baked and runtime-rendered text never diverge if
+   markdown syntax is ever added to a subheadline. Escaping happens first, so
+   config text can never inject markup — only these three constructs are
+   re-enabled afterwards. */
+const inline = s => {
+  let out = esc(s);
+  out = out.replace(/\[([^\[\]]+)\]\(([^)\s]+)\)/g, (m, label, url) => {
+    const external = /^https?:\/\//i.test(url);
+    return '<a href="' + url + '"' + (external ? ' rel="noopener"' : "") +
+      ">" + label + "</a>";
+  });
+  out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  out = out.replace(/\n/g, "<br>");
+  return out;
+};
+
 /* ---------- theme ---------------------------------------------------------
    Valid values for brand.style / brand.pattern in config.js. The chosen
    pair is baked onto the <html> tag; css/styles.css keys off it. */
@@ -244,17 +264,81 @@ const noscript =
     : "serving the Perth metropolitan area.") +
   "</p></noscript>";
 
-// Hero pages (home, services, areas): static H1 inside the hero; main.js
-// fills .hero-dynamic and #page-content around it.
-const heroMain = headline => `    <section class="hero">
+/* ---------- hero (baked, not client-rendered) -----------------------------
+   The hero image is the LCP element on every page that has one, so it has to
+   be in the initial HTML document rather than built by js/main.js's fillHero()
+   after config.js and main.js download and run. This mirrors fillHero() in
+   js/main.js exactly (same markup, same button logic) so the DOM main.js
+   would have produced is already there — see the data-baked guard below. */
+
+const blocksHaveForm = blocks => (blocks || []).some(b => !!b.form);
+const formIsFirstBlockOf = blocks => !!(blocks && blocks.length && blocks[0].form);
+const enquiryHrefFor = blocks => blocksHaveForm(blocks) ? "#enquiry" : "index.html#enquiry";
+
+const heroQuoteButtonHtml = (text, blocks) =>
+  '<a class="btn btn-primary" href="' + enquiryHrefFor(blocks) + '">' + esc(text) + "</a>";
+
+const heroCallButtonHtml = () => {
+  if (!phoneIsReal()) return "";
+  return '<a class="btn btn-outline" href="tel:' + cfg.business.phone + '">' +
+    "Call " + esc(cfg.business.phoneDisplay) + "</a>";
+};
+
+const valuePropsHtml = () => '<ul class="value-props">' +
+  (cfg.valueProps || []).map(v => "<li>" + esc(v) + "</li>").join("") + "</ul>";
+
+/* Width-derived WebP variants: images/foo.jpg -> images/foo-640.webp and
+   images/foo-1000.webp, generated as a one-off (not a build step — see
+   README) and committed alongside the JPEG. Falls back to the plain <img>
+   with no srcset if the variants aren't on disk yet, so a hero image swapped
+   in without regenerating them still works, just without the size/format win.
+   sizes matches css/styles.css: .hero-img is width:100% capped at
+   max-width:520px in .hero-grid (gap 40px, container padding 20px each
+   side), and that cap holds at every breakpoint since .hero.has-media only
+   changes the column split, not the image's own max-width. */
+function heroImgTag(image) {
+  if (!image || !image.src) return "";
+  let srcset = "";
+  const m = image.src.match(/^(.*)\.(jpe?g|png)$/i);
+  if (m) {
+    const w640 = m[1] + "-640.webp";
+    const w1000 = m[1] + "-1000.webp";
+    if (exists(w640) && exists(w1000)) {
+      srcset = ' srcset="' + esc(w640) + ' 640w, ' + esc(w1000) + ' 1000w"' +
+        ' sizes="(min-width: 560px) 520px, calc(100vw - 40px)"';
+    }
+  }
+  return '<img class="hero-img" src="' + esc(image.src) + '"' + srcset +
+    ' alt="' + esc(image.alt || "") + '"' +
+    (image.width ? ' width="' + image.width + '"' : "") +
+    (image.height ? ' height="' + image.height + '"' : "") +
+    ' fetchpriority="high">';
+}
+
+// opts: { headline, subheadline, ctaText, image, blocks } — blocks decides
+// the CTA href (#enquiry vs index.html#enquiry) and whether the hero's own
+// quote button is suppressed because the page's form is its first block
+// (home page: repeating "Tell us about your job" right above the form
+// itself would be redundant — see formIsFirstBlock in js/main.js).
+function heroMain(opts) {
+  const media = heroImgTag(opts.image);
+  const formFirst = formIsFirstBlockOf(opts.blocks);
+  const actions = (formFirst ? "" : heroQuoteButtonHtml(opts.ctaText, opts.blocks)) + heroCallButtonHtml();
+  const dyn =
+    (opts.subheadline ? '<p class="hero-sub">' + inline(opts.subheadline) + "</p>" : "") +
+    (actions ? '<div class="hero-actions">' + actions + "</div>" : "") +
+    valuePropsHtml();
+  return `    <section class="hero${media ? " has-media" : ""}">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1>${esc(headline)}</h1>
-          <div class="hero-dynamic"></div>
+          <h1>${esc(opts.headline)}</h1>
+          <div class="hero-dynamic" data-baked="1">${dyn}</div>
         </div>
+        ${media ? '<div class="hero-media">' + media + "</div>" : ""}
       </div>
     </section>
     <div id="page-content"></div>`;
+}
 
 // Simple pages (faq/about/privacy): static H1 in the page header band.
 const pageHeadMain = headline => `    <section class="page-head">
@@ -290,7 +374,10 @@ function buildPages() {
       title: cfg.pages.home.metaTitle, description: cfg.pages.home.metaDescription,
       file: "index.html", faqs: faqsIn(cfg.homeBlocks)
     }),
-    heroMain(cfg.pages.home.headline))]);
+    heroMain({
+      headline: cfg.pages.home.headline, subheadline: cfg.pages.home.subheadline,
+      ctaText: cfg.pages.home.ctaText, image: cfg.pages.home.image, blocks: cfg.homeBlocks
+    }))]);
 
   for (const svc of cfg.services) {
     files.push([svc.page, page("service",
@@ -302,7 +389,10 @@ function buildPages() {
           breadcrumbSchema(svc.name, canonicalFor(svc.page))
         ]
       }),
-      heroMain(svc.headline))]);
+      heroMain({
+        headline: svc.headline, subheadline: svc.subheadline,
+        ctaText: svc.ctaText, image: svc.image, blocks: svc.blocks
+      }))]);
   }
 
   for (const area of cfg.areas || []) {
@@ -312,7 +402,7 @@ function buildPages() {
         title: area.metaTitle, description: area.metaDescription, file: file, faqs: area.faqs,
         extraSchemas: [breadcrumbSchema(area.name, canonicalFor(file))]
       }),
-      heroMain(area.headline))]);
+      heroMain({ headline: area.headline }))]);
   }
 
   files.push(["about.html", page("about",
@@ -500,7 +590,7 @@ function runCheck() {
     try { return fs.readFileSync(path.join(__dirname, f), "utf8"); }
     catch (e) { return null; }
   };
-  const exists = f => fs.existsSync(path.join(__dirname, f));
+  // exists() is defined at module scope — shared with bake()'s hero srcset lookup.
 
   /* -- 1. placeholder scan over every string VALUE in config --------------
      Two classes. PLACEHOLDER_PATTERNS are leftovers from the template that
@@ -737,6 +827,23 @@ function runCheck() {
   if (cfg.photos && cfg.photos.length) {
     warnings.push("photos is non-empty (" + cfg.photos.length +
       " entries) — make sure these are REAL photos from the actual business");
+  }
+
+  /* -- 10. hero images missing their WebP srcset variants (warn — the page
+     still works off the plain <img src> fallback, see heroImgTag in bake.js,
+     but it ships the full-size JPEG to every viewport instead of a sized
+     WebP). Only checks pages.home.image and each service's image, the two
+     places a hero image is configured. */
+  const heroImages = [cfg.pages.home.image, ...cfg.services.map(s => s.image)]
+    .filter(img => img && img.src);
+  for (const img of heroImages) {
+    const m = img.src.match(/^(.*)\.(jpe?g|png)$/i);
+    if (!m) continue;
+    const w640 = m[1] + "-640.webp", w1000 = m[1] + "-1000.webp";
+    if (!exists(w640) || !exists(w1000)) {
+      warnings.push("hero image " + img.src + " has no WebP variants (" +
+        w640 + " / " + w1000 + ") — serving the full-size JPEG to every viewport instead");
+    }
   }
 
   /* -- report --------------------------------------------------------------- */

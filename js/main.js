@@ -424,6 +424,12 @@
   function fillHero(h, image) {
     var dyn = document.querySelector(".hero-dynamic");
     if (!dyn) return;
+    // bake.js now bakes this same markup into the static HTML (see heroMain()
+    // in bake.js) so the LCP image is in the initial document instead of
+    // waiting on config.js + main.js to load and run. This is a fallback for
+    // any page HTML that predates that change — skip re-rendering what's
+    // already there.
+    if (dyn.hasAttribute("data-baked")) return;
     var actions = (formIsFirstBlock ? "" : quoteButton(h.ctaText)) + callButton();
     dyn.innerHTML =
       (h.subheadline ? '<p class="hero-sub">' + inline(h.subheadline) + "</p>" : "") +
@@ -760,7 +766,17 @@
   /* ---------- boot --------------------------------------------------------- */
 
   applyBrand();
-  injectGA4();
+  // Deferred to window "load" rather than fired at boot: gtag.js is ~160KB and
+  // was competing with config.js/main.js/the hero image for bandwidth during
+  // the page's most performance-critical window (see PSI mobile LCP notes).
+  // Trade-off: a session that bounces before "load" fires goes untracked —
+  // acceptable for a lead-gen site where page views and click_to_call on
+  // sessions that stick around are what matters.
+  if (document.readyState === "complete") {
+    injectGA4();
+  } else {
+    window.addEventListener("load", injectGA4);
+  }
   trackPhoneClicks();
 
   var content = document.getElementById("page-content");
