@@ -584,6 +584,48 @@
     }
   }
 
+  /* Turnstile's api.js is no longer a static <head> tag (see bake.js) — it was
+     competing with the hero image for bandwidth and main-thread time during
+     the LCP window on every page, whether or not that visitor ever reaches
+     the form. Load it lazily instead: when the enquiry section is about to
+     scroll into view, or immediately on first interaction as a fast-path for
+     anyone who scrolls or types before the observer's margin trips. */
+  var _turnstileLoading = false;
+  function loadTurnstileScript() {
+    if (_turnstileLoading || window.turnstile || !cfg.turnstileSiteKey) return;
+    _turnstileLoading = true;
+    var s = document.createElement("script");
+    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    s.async = true;
+    document.head.appendChild(s);
+  }
+
+  function scheduleTurnstileLoad(section) {
+    if (!cfg.turnstileSiteKey) return;
+    if (!section || !("IntersectionObserver" in window)) {
+      loadTurnstileScript();
+      return;
+    }
+    var triggered = false;
+    var trigger = function () {
+      if (triggered) return;
+      triggered = true;
+      loadTurnstileScript();
+    };
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          trigger();
+          observer.disconnect();
+        }
+      });
+    }, { rootMargin: "600px 0px" });
+    observer.observe(section);
+    ["pointerdown", "focusin", "keydown"].forEach(function (evt) {
+      document.addEventListener(evt, trigger, { once: true, passive: true });
+    });
+  }
+
   function formSection(opts) {
     opts = opts || {};
     var intro = opts.intro ? paragraphs(opts.intro, "lead") : "";
@@ -599,6 +641,7 @@
     if (!form) return;
     var status = document.getElementById("form-status");
     renderTurnstile(document.getElementById("turnstile-widget"));
+    scheduleTurnstileLoad(document.getElementById("enquiry"));
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -732,7 +775,14 @@
       header.classList.toggle("scrolled", window.scrollY > 8);
     };
     document.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    // Deferred rather than called synchronously right after the page-build
+    // innerHTML injection above — reading window.scrollY there forced a
+    // layout flush mid-boot (PSI: "forced reflow", main.js:732). setTimeout,
+    // not requestAnimationFrame: rAF doesn't fire for a tab that isn't
+    // compositing frames (backgrounded, prerendered, an unfocused preview
+    // pane), which would leave the header permanently missing its shadow
+    // state in that case — see the boot-section comment for where this bit.
+    setTimeout(onScroll, 0);
   }
 
   function initReveal() {
@@ -753,11 +803,14 @@
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
 
-    targets.forEach(function (el) {
-      var idx = el.parentNode
-        ? Array.prototype.indexOf.call(el.parentNode.children, el)
-        : 0;
-      el.style.transitionDelay = (idx % 6) * 70 + "ms";
+    // Two passes rather than one — read every element's position first, then
+    // apply all the style/class writes — so DOM reads and writes don't
+    // interleave per element right after the page was just built.
+    var indices = Array.prototype.map.call(targets, function (el) {
+      return el.parentNode ? Array.prototype.indexOf.call(el.parentNode.children, el) : 0;
+    });
+    targets.forEach(function (el, i) {
+      el.style.transitionDelay = (indices[i] % 6) * 70 + "ms";
       el.classList.add("reveal");
       observer.observe(el);
     });
@@ -779,33 +832,49 @@
   }
   trackPhoneClicks();
 
-  var content = document.getElementById("page-content");
-  var page = document.body.getAttribute("data-page");
-  var renderers = {
-    home: renderHome,
-    service: renderService,
-    about: renderAbout,
-    privacy: renderPrivacy
-  };
-  // Body first, so header/footer helpers can see whether #enquiry exists.
-  if (renderers[page] && content) renderers[page](content);
+  /* Everything below builds #page-content, the header, the footer and the
+     rest of the page via innerHTML — real work on a real page, and none of
+     it is needed for the hero, which bake.js now bakes directly into the
+     static HTML (see heroMain() in bake.js). Running it after a setTimeout(0)
+     yields one task boundary first, so this script's own long synchronous
+     block isn't what occupies the main thread at the exact moment the browser
+     would otherwise paint the already-complete hero.
+     Deliberately setTimeout, not requestAnimationFrame: rAF callbacks don't
+     fire for a tab that isn't compositing frames (backgrounded, prerendered,
+     an unfocused preview pane) — tried that here first and it left the page
+     permanently blank in exactly that situation. setTimeout has no such
+     dependency and still yields the same task-boundary opportunity to paint. */
+  setTimeout(function () {
+    var content = document.getElementById("page-content");
+    var page = document.body.getAttribute("data-page");
+    var renderers = {
+      home: renderHome,
+      service: renderService,
+      about: renderAbout,
+      privacy: renderPrivacy
+    };
+    // Body first, so header/footer helpers can see whether #enquiry exists.
+    if (renderers[page] && content) renderers[page](content);
 
-  renderHeader();
-  renderFooter();
-  renderContactBar();
-  initHeaderShadow();
-  initReveal();
+    renderHeader();
+    renderFooter();
+    renderContactBar();
+    initHeaderShadow();
+    initReveal();
 
-  /* If the URL has a hash (e.g. index.html#enquiry), re-scroll after render
-     since the target element didn't exist at initial page load. Deferred a
-     frame and forced to "auto": the stylesheet sets scroll-behavior: smooth,
-     and a smooth scroll started during boot gets cancelled by the browser's
-     own scroll restoration. */
-  if (window.location.hash) {
-    requestAnimationFrame(function () {
-      var target = null;
-      try { target = document.querySelector(window.location.hash); } catch (e) { /* not a selector */ }
-      if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
-    });
-  }
+    /* If the URL has a hash (e.g. index.html#enquiry), re-scroll after
+       render since the target element didn't exist at initial page load.
+       Forced to "auto": the stylesheet sets scroll-behavior: smooth, and a
+       smooth scroll started here gets cancelled by the browser's own scroll
+       restoration. A non-compositing tab just means this scroll doesn't
+       happen yet, not that content stays missing — unlike the rAF above,
+       nothing depends on this to render the page — so rAF is fine here. */
+    if (window.location.hash) {
+      requestAnimationFrame(function () {
+        var target = null;
+        try { target = document.querySelector(window.location.hash); } catch (e) { /* not a selector */ }
+        if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+      });
+    }
+  }, 0);
 })();

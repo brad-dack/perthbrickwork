@@ -100,6 +100,19 @@ const rgba = (hex, alpha) => {
   return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
 };
 
+/* css/styles.css inlined into every page's <head> instead of linked, so
+   first paint doesn't wait on a second render-blocking request (PSI:
+   dropped a 473ms critical-path hop). css/styles.css stays the editable
+   source on disk; bake.js is the only thing that reads it. A separate
+   cacheable file would matter more if GitHub Pages' cache TTL weren't
+   fixed at 10 minutes — at that TTL and this page count, inlining wins.
+   Guards against "</style>" appearing literally in the source, which
+   would otherwise close the tag early. */
+function siteCss() {
+  const raw = fs.readFileSync(path.join(__dirname, "css/styles.css"), "utf8");
+  return raw.replace(/<\/style>/gi, "<\\/style>");
+}
+
 /* The full brand palette as a CSS block, baked into each page's <head> so
    crawlers and first paint see final colors with no JS and no flash.
    main.js re-derives the same values at runtime as a fallback. */
@@ -242,16 +255,17 @@ function head({ title, description, file, faqs, extraSchemas }) {
     '  <meta property="og:image:width" content="1200">',
     '  <meta property="og:image:height" content="630">',
     '  <meta name="twitter:card" content="summary_large_image">',
-    '  <link rel="stylesheet" href="css/styles.css">',
+    "  <style>" + siteCss() + "</style>",
     "  <style>" + brandCss() + "</style>",
     "  " + jsonLd(orgSchema),
     faqs && faqs.length ? "  " + jsonLd(faqSchema(faqs)) : null,
     ...(extraSchemas || []).map(s => "  " + jsonLd(s)),
     '  <script src="config.js" defer></' + "script>",
-    '  <script src="js/main.js" defer></' + "script>",
-    cfg.turnstileSiteKey
-      ? '  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></' + "script>"
-      : null
+    '  <script src="js/main.js" defer></' + "script>"
+    // Turnstile's api.js is no longer a static <head> tag — js/main.js injects
+    // it lazily (near the form, or on first interaction) so it stops competing
+    // with the hero image for bandwidth during the LCP window. See loadTurnstile()
+    // in js/main.js.
   ].filter(Boolean).join("\n");
 }
 
@@ -287,26 +301,34 @@ const heroCallButtonHtml = () => {
 const valuePropsHtml = () => '<ul class="value-props">' +
   (cfg.valueProps || []).map(v => "<li>" + esc(v) + "</li>").join("") + "</ul>";
 
-/* Width-derived WebP variants: images/foo.jpg -> images/foo-640.webp and
-   images/foo-1000.webp, generated as a one-off (not a build step — see
-   README) and committed alongside the JPEG. Falls back to the plain <img>
-   with no srcset if the variants aren't on disk yet, so a hero image swapped
-   in without regenerating them still works, just without the size/format win.
-   sizes matches css/styles.css: .hero-img is width:100% capped at
-   max-width:520px in .hero-grid (gap 40px, container padding 20px each
-   side), and that cap holds at every breakpoint since .hero.has-media only
-   changes the column split, not the image's own max-width. */
+/* Width-derived WebP variants: images/foo.jpg -> images/foo-640.webp,
+   images/foo-768.webp, images/foo-1000.webp, generated as a one-off (not a
+   build step — see README) and committed alongside the JPEG. 768w exists
+   because common mobile viewports (~412 CSS px) at ~1.75-2x DPR land right
+   between 640 and 1000 device px — without it the srcset skips straight to
+   the 1000w file and wastes ~65KiB. Shared between heroImgTag() and the
+   --check warning below so the two can't drift on which widths are expected. */
+const HERO_WIDTHS = [640, 768, 1000];
+
+function heroVariantPaths(src) {
+  const m = src.match(/^(.*)\.(jpe?g|png)$/i);
+  return m ? HERO_WIDTHS.map(w => m[1] + "-" + w + ".webp") : [];
+}
+
+/* Falls back to the plain <img> with no srcset if the variants aren't on
+   disk yet, so a hero image swapped in without regenerating them still
+   works, just without the size/format win. sizes matches css/styles.css:
+   .hero-img is width:100% capped at max-width:520px in .hero-grid (gap
+   40px, container padding 20px each side), and that cap holds at every
+   breakpoint since .hero.has-media only changes the column split, not the
+   image's own max-width. */
 function heroImgTag(image) {
   if (!image || !image.src) return "";
   let srcset = "";
-  const m = image.src.match(/^(.*)\.(jpe?g|png)$/i);
-  if (m) {
-    const w640 = m[1] + "-640.webp";
-    const w1000 = m[1] + "-1000.webp";
-    if (exists(w640) && exists(w1000)) {
-      srcset = ' srcset="' + esc(w640) + ' 640w, ' + esc(w1000) + ' 1000w"' +
-        ' sizes="(min-width: 560px) 520px, calc(100vw - 40px)"';
-    }
+  const variants = heroVariantPaths(image.src);
+  if (variants.length && variants.every(exists)) {
+    srcset = ' srcset="' + variants.map((v, i) => esc(v) + " " + HERO_WIDTHS[i] + "w").join(", ") + '"' +
+      ' sizes="(min-width: 560px) 520px, calc(100vw - 40px)"';
   }
   return '<img class="hero-img" src="' + esc(image.src) + '"' + srcset +
     ' alt="' + esc(image.alt || "") + '"' +
@@ -837,12 +859,11 @@ function runCheck() {
   const heroImages = [cfg.pages.home.image, ...cfg.services.map(s => s.image)]
     .filter(img => img && img.src);
   for (const img of heroImages) {
-    const m = img.src.match(/^(.*)\.(jpe?g|png)$/i);
-    if (!m) continue;
-    const w640 = m[1] + "-640.webp", w1000 = m[1] + "-1000.webp";
-    if (!exists(w640) || !exists(w1000)) {
-      warnings.push("hero image " + img.src + " has no WebP variants (" +
-        w640 + " / " + w1000 + ") — serving the full-size JPEG to every viewport instead");
+    const variants = heroVariantPaths(img.src);
+    if (variants.length && !variants.every(exists)) {
+      warnings.push("hero image " + img.src + " is missing WebP variant(s) (" +
+        variants.filter(v => !exists(v)).join(", ") +
+        ") — serving the full-size JPEG to every viewport instead");
     }
   }
 
