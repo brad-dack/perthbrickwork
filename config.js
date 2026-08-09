@@ -248,10 +248,10 @@ window.SITE_CONFIG = {
         { p: "Replacing damaged or spalled bricks, rebuilding a section, fixing a cracked wall. Cost depends entirely on why the damage happened, which is the next section." },
         {
           image: {
-            src: "images/spalled-brick-wall-damage.jpg",
-            alt: "A section of brick wall where several brick faces have spalled away, exposing the softer material behind",
+            src: "images/spalled-capping-brick-on-garden-wall.jpg",
+            alt: "Close-up of the capping course of a low brick wall where the face of one brick has spalled away, leaving a rough crumbling hollow, with fragments of brick and mortar lying on the bricks alongside",
             width: 1000,
-            height: 751
+            height: 650
           }
         },
 
@@ -692,6 +692,14 @@ window.SITE_CONFIG = {
 
         { h3: "1. Length and height" },
         { p: "They do not scale the same way. Length adds material and labour at a steady rate. Height adds disproportionately, because above a certain point the footing and pier spacing have to change, and above the local height limit you are into approval." },
+        {
+          image: {
+            src: "images/brick-boundary-wall-with-gate-arch.jpg",
+            alt: "A long masonry boundary wall along a street frontage: pale blockwork with red brick banding at one end, a red brick gabled gate arch part way along, and panels of vertically laid brick divided by piers beyond it",
+            width: 1000,
+            height: 650
+          }
+        },
 
         { h3: "2. Piers" },
         { p: "Piers are the thicker columns at intervals, and at gates and corners. They carry the lateral load, and spacing is a structural decision rather than a styling one. A quote noticeably cheaper than the others is sometimes a quote with fewer piers in it. Compare pier spacing before comparing totals." },
@@ -721,6 +729,14 @@ window.SITE_CONFIG = {
         },
         { h3: "4. Materials and finish" },
         { p: "Face brick or rendered brick. Rendered is two trades rather than one, which is most of why it costs more up front." },
+        {
+          image: {
+            src: "images/face-brick-wall-against-rendered-wall.jpg",
+            alt: "A low face brick wall capped with a header course, returning at a corner where it butts against a painted rendered wall, with a steel palisade fence above and a concrete footpath alongside",
+            width: 1000,
+            height: 650
+          }
+        },
 
         { h3: "5. Gates and openings" },
         /* TODO (Brad): add a real photo of a vehicle gate opening with piers, for scale,
@@ -941,10 +957,10 @@ window.SITE_CONFIG = {
         },
         {
           image: {
-            src: "images/face-brick-and-rendered-fence.jpg",
-            alt: "A street frontage combining dark face brick piers with rendered infill panels between them",
+            src: "images/low-brick-wall-with-raised-garden-bed.jpg",
+            alt: "A low red brick wall running along a footpath kerb, capped with a header course, holding back a raised garden bed whose soil and planting sit level with the top of the wall",
             width: 1000,
-            height: 611
+            height: 650
           }
         },
 
