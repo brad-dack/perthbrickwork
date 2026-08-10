@@ -212,31 +212,42 @@
   }
 
   function renderHeader() {
-    var file = currentFile();
-    var nav = navLinks().map(function (l) {
-      var active = l.href === file ? ' class="active"' : "";
-      return "<li><a" + active + ' href="' + l.href + '">' + esc(l.label) + "</a></li>";
-    }).join("");
+    var headerEl = document.getElementById("site-header");
 
-    var phoneBtn = phoneReady()
-      ? '<a class="btn btn-outline nav-phone" href="' + telHref() + '">' +
-        UI.callLabel + " " + esc(cfg.business.phoneDisplay) + "</a>"
-      : "";
-    var quoteBtn = quoteButton(UI.quoteShortLabel, "nav-quote");
+    // bake.js now bakes this same markup into the static HTML (see headerHtml()
+    // in bake.js). #site-header is position:sticky, so rebuilding it here after
+    // first paint would shove the whole page down — that's what caused CLS
+    // 0.999 once the page build was deferred. Only wire the toggle, which is
+    // the one part that needs JS. The rebuild below stays as a fallback for
+    // page HTML that predates the bake change.
+    if (!headerEl.hasAttribute("data-baked")) {
+      var file = currentFile();
+      var nav = navLinks().map(function (l) {
+        var active = l.href === file ? ' class="active"' : "";
+        return "<li><a" + active + ' href="' + l.href + '">' + esc(l.label) + "</a></li>";
+      }).join("");
 
-    document.getElementById("site-header").innerHTML =
-      '<div class="container header-inner">' +
-        '<a class="logo" href="index.html">' + esc(cfg.business.name) + "</a>" +
-        '<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="' + UI.menuLabel + '">' +
-          "<span></span><span></span><span></span>" +
-        "</button>" +
-        '<nav id="site-nav" class="site-nav" aria-label="Main">' +
-          "<ul>" + nav + "</ul>" + phoneBtn + quoteBtn +
-        "</nav>" +
-      "</div>";
+      var phoneBtn = phoneReady()
+        ? '<a class="btn btn-outline nav-phone" href="' + telHref() + '">' +
+          UI.callLabel + " " + esc(cfg.business.phoneDisplay) + "</a>"
+        : "";
+      var quoteBtn = quoteButton(UI.quoteShortLabel, "nav-quote");
+
+      headerEl.innerHTML =
+        '<div class="container header-inner">' +
+          '<a class="logo" href="index.html">' + esc(cfg.business.name) + "</a>" +
+          '<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="' + UI.menuLabel + '">' +
+            "<span></span><span></span><span></span>" +
+          "</button>" +
+          '<nav id="site-nav" class="site-nav" aria-label="Main">' +
+            "<ul>" + nav + "</ul>" + phoneBtn + quoteBtn +
+          "</nav>" +
+        "</div>";
+    }
 
     var toggle = document.querySelector(".nav-toggle");
     var navEl = document.getElementById("site-nav");
+    if (!toggle || !navEl) return;
     toggle.addEventListener("click", function () {
       var open = navEl.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");

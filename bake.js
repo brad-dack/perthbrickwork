@@ -368,7 +368,45 @@ const pageHeadMain = headline => `    <section class="page-head">
     </section>
     <div id="page-content"></div>`;
 
-const page = (dataPage, headHtml, mainInner) => `<!DOCTYPE html>
+/* ---------- header (baked, not client-rendered) ---------------------------
+   #site-header is position:sticky, i.e. in normal flow — so an empty one at
+   first paint has zero height, and filling it from JS afterwards shoves the
+   entire viewport down. That was invisible while js/main.js built the page
+   synchronously (the shift landed before first paint), but deferring the
+   build to paint the hero sooner made it a real, metric-visible layout shift
+   (PSI: CLS 0.999). Baking it fixes the shift at the source and makes the
+   nav static content for crawlers and no-JS readers as a bonus.
+   Mirrors renderHeader() in js/main.js — see the data-baked guard there. */
+function headerHtml(file, blocks) {
+  const links = [{ href: "index.html", label: "Home" }]
+    .concat(cfg.services.map(s => ({ href: s.page, label: s.shortName || s.name })))
+    .concat([{ href: "about.html", label: "About" }]);
+
+  const nav = links.map(l =>
+    "<li><a" + (l.href === file ? ' class="active"' : "") +
+    ' href="' + esc(l.href) + '">' + esc(l.label) + "</a></li>").join("");
+
+  const phoneBtn = phoneIsReal()
+    ? '<a class="btn btn-outline nav-phone" href="tel:' + cfg.business.phone + '">' +
+      "Call " + esc(cfg.business.phoneDisplay) + "</a>"
+    : "";
+  // "Get a quote", not the page's own ctaText — the full text wraps the nav
+  // onto a second row (see UI.quoteShortLabel in js/main.js).
+  const quoteBtn = '<a class="btn btn-primary nav-quote" href="' +
+    enquiryHrefFor(blocks) + '">Get a quote</a>';
+
+  return '<div class="container header-inner">' +
+      '<a class="logo" href="index.html">' + esc(cfg.business.name) + "</a>" +
+      '<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">' +
+        "<span></span><span></span><span></span>" +
+      "</button>" +
+      '<nav id="site-nav" class="site-nav" aria-label="Main">' +
+        "<ul>" + nav + "</ul>" + phoneBtn + quoteBtn +
+      "</nav>" +
+    "</div>";
+}
+
+const page = (dataPage, headHtml, mainInner, file, blocks) => `<!DOCTYPE html>
 <html lang="en" data-style="${themeStyle()}" data-pattern="${themePattern()}">
 <head>
 ${headHtml}
@@ -376,7 +414,7 @@ ${headHtml}
 <body data-page="${dataPage}">
   <a class="skip-link" href="#main">Skip to content</a>
   ${noscript}
-  <header id="site-header"></header>
+  <header id="site-header" data-baked="1">${headerHtml(file, blocks)}</header>
   <main id="main">
 ${mainInner}
   </main>
@@ -399,7 +437,8 @@ function buildPages() {
     heroMain({
       headline: cfg.pages.home.headline, subheadline: cfg.pages.home.subheadline,
       ctaText: cfg.pages.home.ctaText, image: cfg.pages.home.image, blocks: cfg.homeBlocks
-    }))]);
+    }),
+    "index.html", cfg.homeBlocks)]);
 
   for (const svc of cfg.services) {
     files.push([svc.page, page("service",
@@ -414,7 +453,8 @@ function buildPages() {
       heroMain({
         headline: svc.headline, subheadline: svc.subheadline,
         ctaText: svc.ctaText, image: svc.image, blocks: svc.blocks
-      }))]);
+      }),
+      svc.page, svc.blocks)]);
   }
 
   for (const area of cfg.areas || []) {
@@ -424,7 +464,8 @@ function buildPages() {
         title: area.metaTitle, description: area.metaDescription, file: file, faqs: area.faqs,
         extraSchemas: [breadcrumbSchema(area.name, canonicalFor(file))]
       }),
-      heroMain({ headline: area.headline }))]);
+      heroMain({ headline: area.headline }),
+      file, area.blocks || [])]);
   }
 
   files.push(["about.html", page("about",
@@ -435,14 +476,16 @@ function buildPages() {
         breadcrumbSchema(cfg.pages.about.headline, canonicalFor("about.html"))
       ]
     }),
-    pageHeadMain(cfg.pages.about.headline))]);
+    pageHeadMain(cfg.pages.about.headline),
+    "about.html", cfg.aboutBlocks)]);
 
   files.push(["privacy.html", page("privacy",
     head({
       title: cfg.pages.privacy.metaTitle, description: cfg.pages.privacy.metaDescription, file: "privacy.html",
       extraSchemas: [breadcrumbSchema(cfg.pages.privacy.headline, canonicalFor("privacy.html"))]
     }),
-    pageHeadMain(cfg.pages.privacy.headline))]);
+    pageHeadMain(cfg.pages.privacy.headline),
+    "privacy.html", cfg.privacyBlocks)]);
 
   return files;
 }
