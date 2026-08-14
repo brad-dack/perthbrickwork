@@ -190,7 +190,7 @@ window.SITE_CONFIG = {
       shortDescription: "Mortar fails long before brick does. Repointing is maintenance, tuckpointing is a specialist decorative finish, and cracking is sometimes neither.",
       serviceType: "Brick repointing and repair",
       metaTitle: "Tuckpointing and Repointing Perth | Brick Repairs",
-      metaDescription: "Tuckpointing, repointing and brick repairs in Perth. How to tell maintenance from structural movement, why mortar mix matters, and what each job costs.",
+      metaDescription: "Tuckpointing, repointing, restoration and repairs in Perth. How to tell maintenance from structural movement, why mortar mix matters, and what each job costs.",
       headline: "Tuckpointing, repointing and brick repairs in Perth",
       subheadline: "Mortar fails long before brick does. What each job involves, what drives the price, and what to check before you accept a quote.",
       ctaText: "Tell us what your wall is doing",
@@ -206,7 +206,7 @@ window.SITE_CONFIG = {
 
         {
           lead: [
-            "If you have crumbling mortar, a crack you have started watching, or an older frontage that has been patched by someone who did not know what they were looking at, this page is the place to start.",
+            "If you have crumbling mortar, a crack you have started watching, or an older frontage that has been patched by someone who did not know what they were looking at, this page is the place to start - whether you think of it as repointing, tuckpointing, brick restoration or just getting it fixed.",
             "The first thing to sort out is what you actually have, because three different problems get described the same way and they have very different costs. Deteriorating mortar is maintenance. Structural movement is an engineering problem. Tuckpointing is a decorative finish that most bricklayers cannot do at all."
           ]
         },
