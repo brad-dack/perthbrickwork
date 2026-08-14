@@ -943,6 +943,79 @@ window.SITE_CONFIG = {
           ]
         },
 
+        { h2: "When a fence or garden wall cracks" },
+        {
+          p: [
+            "This section is about an existing wall rather than a new one. A cracked front fence or garden wall is one of the most common things people go looking for answers about in Perth, and the answer is usually less alarming than it looks - but only once you know which kind of crack you have.",
+            "A freestanding wall has a harder life than a house wall, and it is worth understanding why before reading anything into a crack. A house wall is braced by floors, roof and return walls, and it carries load from above, which keeps the masonry in compression and helps hold it together. A fence has none of that. It is exposed on both faces to full sun and rain, it carries no load holding it down, and it is frequently built on the lightest footing anyone thought they could get away with. Fences and garden walls crack more readily than houses do, and a crack in one is not automatically the same signal it would be on a facade."
+          ]
+        },
+
+        { h3: "Read the path of the crack, not the width" },
+        {
+          p: [
+            "The single most useful thing you can do is look at where the crack goes.",
+            "**Stepped and diagonal, following the mortar joints.** The crack tracks around the bricks in a staircase pattern, up and across, because mortar is the weaker material and the crack takes the easiest path. This is the classic signature of differential footing movement - one part of the wall has moved vertically relative to another. On the eastern side of the metro area and in the foothills, reactive clay is the usual cause, expanding when wet and contracting when dry through the seasons. Water concentrating at one point along a footing, from a downpipe or a paved area falling the wrong way, will do it on any soil.",
+            "**Straight and vertical, often passing through the bricks themselves.** The crack ignores the joints and splits brick faces on its way. This is a different mechanism and usually means expansion with nowhere to go. Clay bricks take up moisture from the atmosphere after they are fired and grow permanently as they do, fastest in the early years and continuing slowly for a long time afterwards. Where the mortar is harder than the brick, which modern high-cement mixes often are, the brick becomes the weakest part of the wall, so the crack goes through it rather than around it. A long run of masonry with no deliberate gap in it will find its own gap eventually.",
+            "**Widest at the top** suggests the wall is rotating or the ground beneath is lifting. **Widest at the bottom** points to something settling below. **Uniform top to bottom** is more consistent with expansion than with movement.",
+            "None of this is a substitute for someone looking at it. It is enough to tell you whether you are looking at a maintenance job or a footing conversation, which is the part that changes the cost."
+          ]
+        },
+        {
+          image: {
+            src: "images/brick-wall-vertical-crack-through-bricks.jpg",
+            alt: "A low brick garden wall in Perth's northern suburbs, photographed August 2026, with a near-vertical crack running through several courses of brick rather than along the mortar joints",
+            width: 1000,
+            height: 750
+          }
+        },
+        /* TODO (Brad): real photo, taken by you this week (northern suburbs,
+           Aug 2026) - matches the "straight and vertical, through the bricks"
+           paragraph above. A second angle of the same wall (corner return,
+           crack visible near the pier) is sitting in the scratchpad if a
+           second image is ever wanted here or in "Articulation joints" below.
+           Left out of the repairs-page crack-diagnosis section deliberately:
+           that section's diagram covers four crack types and this photo only
+           documents one of them (the through-brick type), so swapping it in
+           there would leave that section worse, not better, until matching
+           photos exist for the other three. */
+
+        { h3: "Articulation joints: the gap that should have been there" },
+        {
+          p: [
+            "An articulation joint is a deliberate vertical break in the brickwork, filled with a flexible sealant rather than mortar, that lets a wall expand and contract without tearing itself. It is the standard answer to the expansion problem above, and on a long fence it is not optional detailing.",
+            "Leave them out of a long run and the wall makes its own. That is what a straight vertical crack in an otherwise sound fence usually is: the joint the bricklayer did not put in. It is a build decision rather than bad luck, and it is invisible on a finished wall, which is exactly the sort of thing that gets left out of a keen price.",
+            "On a new fence, ask where the articulation joints are going. It sits alongside pier spacing as a question that separates two quotes that look identical on paper. A contractor who has thought about it will tell you where they fall and why; the spacing depends on the masonry, the length and the restraint conditions, and it is set by the standards rather than by preference.",
+            "On an existing cracked wall, a crack that has opened along a natural line can sometimes be cut out and converted into the articulation joint the wall wanted, sealed rather than repointed solid. Repointing an expansion crack with rigid mortar puts it straight back where it started, which is why the same crack reappears in the same place a year after it was patched."
+          ]
+        },
+        {
+          note: "Articulation joint requirements are set out in **AS 3700** (Masonry structures - the same standard governing footings and wind load) and in Think Brick Australia's technical guidance on articulated walling. No spacing figure is given here because it depends on masonry type, wall length and restraint conditions rather than a single rule of thumb - the same reason a fence price is not quoted on this page without seeing the job."
+        },
+
+        { h3: "Repair, rebuild, or leave it" },
+        {
+          p: [
+            "Three honest outcomes, and the cheapest one is often the right one.",
+            "**Leave it and watch it.** A hairline crack that has looked the same for years, in a wall that is straight and stable, is not costing you anything. Mark the ends of it with a pencil and a date. If it has not moved in a year, it is not moving. This is a legitimate answer and it is worth being suspicious of anyone who never gives it.",
+            "**Repair.** Cutting out and replacing damaged brickwork, sealing a crack as a movement joint rather than filling it rigid, repointing joints that have gone soft, rebuilding a single pier. Most cracked garden walls in Perth are in this category. The work is local to the damage and the wall is otherwise sound.",
+            "**Rebuild.** A wall that is leaning, bowing, or has moved out of plane is a different matter, because those are stability problems rather than appearance problems, and a freestanding wall that goes over is heavy. Recurring cracking in the same place after a proper repair usually means the cause is below ground and is still there, and repairing the visible part again will not change that.",
+            "The distinction that matters is whether the cause has stopped. A crack from a footing that settled once, years ago, and has been stable since is a cosmetic job. A crack from clay that moves every summer will keep coming back until the footing is dealt with, and pricing the patch without saying so is not doing you a favour."
+          ]
+        },
+
+        { h3: "What makes a fence repair quote hard to compare" },
+        {
+          ul: [
+            "Whether the cause has been identified, or only the damage",
+            "Whether cracks are being sealed as movement joints or repointed solid",
+            "Brick matching, which on an older wall is the part most likely to disappoint - colour, size and texture all drift over the decades and a perfect match is not always available",
+            "Whether any of the footing is being exposed or investigated, or assumed",
+            "Whether a leaning section is being rebuilt or straightened, because those are very different jobs",
+            "Access, spoil removal and reinstating whatever garden is in the way"
+          ]
+        },
+
         { h2: "Looking after it" },
         {
           p: [
@@ -951,7 +1024,7 @@ window.SITE_CONFIG = {
             "**Keep soil and mulch off it.** Garden beds built up against a fence hold moisture against the brickwork and can bridge whatever damp protection exists at the base.",
             "**Watch the drainage.** Water concentrating along a footing, whether from a downpipe, a paved area falling the wrong way or a neighbour's run-off, is a slow way to undermine one.",
             "**Look at the joints every few years.** Mortar that can be scratched out with a key is telling you the pointing has reached the end of its life, and repointing a fence early is cheap. Leaving it until water has been running through open joints into the core of the wall is not.",
-            "**Watch for cracks that change.** A hairline crack that has looked the same for a decade is not the same thing as one that has opened over a summer. The [crack diagnosis section on the repairs page](brick-repairs-repointing-tuckpointing.html) applies to fences as much as to houses, and a freestanding wall that is leaning or bowing should be looked at rather than watched.",
+            "**Watch for cracks that change.** A hairline crack that has looked the same for a decade is not the same thing as one that has opened over a summer. See above for how to read one, and a freestanding wall that is leaning or bowing should be looked at rather than watched.",
             "**Rendered walls need recoating.** Budget for it. Touching up a crack early is a small job; leaving render to debond in sheets is not."
           ]
         },
@@ -1027,6 +1100,22 @@ window.SITE_CONFIG = {
             {
               q: "Is bagging cheaper than rendering?",
               a: "Yes, noticeably. Bagging is a thin slurry rubbed over the brick that fills the joints and unifies the colour while letting the brick shape read through. Much less material and labour than a full render system, and a different look rather than a worse one - it suits some houses better than a flat rendered finish does."
+            },
+            {
+              q: "Why is my brick fence cracked?",
+              a: "Usually one of two things. A stepped crack that follows the mortar joints diagonally points to the footing moving, most often reactive clay on the eastern side of the metro area or water concentrating at one spot. A straight vertical crack that runs through the bricks themselves is more likely expansion in a wall with no articulation joint in it. The path of the crack tells you more than its width does."
+            },
+            {
+              q: "Can a cracked brick fence be repaired, or does it need rebuilding?",
+              a: "Most cracked garden walls in Perth can be repaired. Rebuilding is for walls that are leaning, bowing or out of plane, or where the same crack keeps returning after a proper repair, which means the cause is below ground and still active. A stable hairline crack that has not changed in years often needs nothing at all."
+            },
+            {
+              q: "What is an articulation joint in a brick fence?",
+              a: "A deliberate vertical break in the brickwork, filled with flexible sealant instead of mortar, that lets the wall expand and contract without cracking. Long runs of masonry need them. A wall built without them tends to crack vertically somewhere along its length, which is the wall making the joint that was left out."
+            },
+            {
+              q: "Why does the same crack keep coming back after it is repaired?",
+              a: "Because the repair addressed the crack rather than the cause. Filling an expansion crack with rigid mortar puts the wall back exactly as it was, so it cracks in the same place again. Where the cause is seasonal footing movement, the visible repair will keep failing until the footing is dealt with."
             }
           ]
         },
