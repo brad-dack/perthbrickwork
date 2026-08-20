@@ -783,7 +783,7 @@ window.SITE_CONFIG = {
           ]
         },
         {
-          note: "Geology: the Quindalup, Spearwood and Bassendean dune systems (coast to inland) and the clay-rich Guildford Formation to the east are described in [Geoscience Australia, Natural Hazard Risk in Perth, WA - Appendix D: Perth Basin Geology Review and Site Class Assessment](http://www.ga.gov.au/webtemp/image_cache/GA6548.pdf) (McPherson & Jones). Site classification: the stable-versus-reactive framework referenced above is AS 2870 (Residential slabs and footings), which classifies sites from Class A (most stable, typically sand) through to Class E and P (extremely reactive/problem sites). The regional pattern above is a general guide only: the class for any particular site is set by assessment, not by suburb." },
+          note: "Geology: the Quindalup, Spearwood and Bassendean dune systems (coast to inland) and the clay-rich Guildford Formation to the east are described in [Geoscience Australia, Natural Hazard Risk in Perth, WA - Appendix D: Perth Basin Geology Review and Site Class Assessment](https://www.ga.gov.au/webtemp/image_cache/GA6548.pdf) (McPherson & Jones). Site classification: the stable-versus-reactive framework referenced above is AS 2870 (Residential slabs and footings), which classifies sites from Class A (most stable, typically sand) through to Class E and P (extremely reactive/problem sites). The regional pattern above is a general guide only: the class for any particular site is set by assessment, not by suburb." },
 
         { h2: "Wind load: why height costs more than length" },
         {

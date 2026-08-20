@@ -337,11 +337,14 @@ function heroImgTag(image) {
     ' fetchpriority="high">';
 }
 
-// opts: { headline, subheadline, ctaText, image, blocks } — blocks decides
-// the CTA href (#enquiry vs index.html#enquiry) and whether the hero's own
-// quote button is suppressed because the page's form is its first block
-// (home page: repeating "Tell us about your job" right above the form
-// itself would be redundant — see formIsFirstBlock in js/main.js).
+// opts: { headline, subheadline, ctaText, image, blocks, contentHtml } —
+// blocks decides the CTA href (#enquiry vs index.html#enquiry) and whether
+// the hero's own quote button is suppressed because the page's form is its
+// first block (home page: repeating "Tell us about your job" right above
+// the form itself would be redundant — see formIsFirstBlock in js/main.js).
+// contentHtml is the page body (see homeContentHtml()/serviceContentHtml()
+// etc. above), baked straight into #page-content rather than left for
+// js/main.js to build after the fact — see the data-baked guard there.
 function heroMain(opts) {
   const media = heroImgTag(opts.image);
   const formFirst = formIsFirstBlockOf(opts.blocks);
@@ -359,14 +362,14 @@ function heroMain(opts) {
         ${media ? '<div class="hero-media">' + media + "</div>" : ""}
       </div>
     </section>
-    <div id="page-content"></div>`;
+    <div id="page-content" data-baked="1">${opts.contentHtml || ""}</div>`;
 }
 
-// Simple pages (faq/about/privacy): static H1 in the page header band.
-const pageHeadMain = headline => `    <section class="page-head">
+// Simple pages (about/privacy): static H1 in the page header band.
+const pageHeadMain = (headline, contentHtml) => `    <section class="page-head">
       <div class="container"><h1>${esc(headline)}</h1></div>
     </section>
-    <div id="page-content"></div>`;
+    <div id="page-content" data-baked="1">${contentHtml || ""}</div>`;
 
 /* ---------- header (baked, not client-rendered) ---------------------------
    #site-header is position:sticky, i.e. in normal flow — so an empty one at
@@ -406,6 +409,251 @@ function headerHtml(file, blocks) {
     "</div>";
 }
 
+/* ---------- content blocks (baked, not client-rendered) -------------------
+   Mirrors the block renderer in js/main.js — paragraphs(), tableHtml(),
+   fieldValue(), cardsHtml(), markerHtml(), faqItems(), blockHtml(),
+   renderBlocks(), testimonialsSection(), photosSection(), areasSection(),
+   ctaBand() and the enquiry form (formFields/fieldHtml/formHtml/formSection)
+   — so the real page content lands in the static HTML #page-content ships
+   with, not only in the post-JS DOM. js/main.js now only rebuilds this if
+   #page-content isn't already baked — see the data-baked guard there. */
+
+const UI = {
+  ctaBandTitle: "Tell us about your job",
+  chooseOne: "Choose one",
+  optional: "optional",
+  markerLabel: "Unfinished - not for publication",
+  areasTitle: "Areas We Serve",
+  testimonialsTitle: "What Customers Say",
+  photosTitle: "Recent Work"
+};
+
+const telHrefStr = () => "tel:" + cfg.business.phone;
+
+const phoneTextHtml = cls => {
+  const display = esc(cfg.business.phoneDisplay);
+  return phoneIsReal()
+    ? '<a class="' + (cls || "") + '" href="' + telHrefStr() + '">' + display + "</a>"
+    : '<span class="' + (cls || "") + '">' + display + "</span>";
+};
+
+function imgTag(image, className, lazy) {
+  if (!image || !image.src) return "";
+  return '<img class="' + (className || "") + '" src="' + esc(image.src) + '"' +
+    ' alt="' + esc(image.alt || "") + '"' +
+    (image.width ? ' width="' + image.width + '"' : "") +
+    (image.height ? ' height="' + image.height + '"' : "") +
+    (lazy ? ' loading="lazy"' : "") + ">";
+}
+
+const paragraphs = (value, className) => [].concat(value).map(t =>
+  "<p" + (className ? ' class="' + className + '"' : "") + ">" + inline(t) + "</p>").join("");
+
+const tableHtml = t => {
+  const head = "<tr>" + t.columns.map(c => "<th scope=\"col\">" + inline(c) + "</th>").join("") + "</tr>";
+  const body = t.rows.map(row =>
+    "<tr>" + row.map(cell => "<td>" + inline(cell) + "</td>").join("") + "</tr>").join("");
+  return '<div class="table-wrap" tabindex="0" role="group" aria-label="Data table">' +
+    "<table><thead>" + head + "</thead><tbody>" + body + "</tbody></table></div>";
+};
+
+/* Reference cells are frequently a bare URL, sometimes with a trailing note.
+   inline() only linkifies [label](url), so link it here and label it with
+   the host, same as js/main.js's fieldValue(). */
+const fieldValue = cell => {
+  const m = String(cell).match(/^(https?:\/\/[^\s]+)(.*)$/);
+  if (!m) return inline(cell);
+  const host = m[1].replace(/^https?:\/\//i, "").replace(/\/.*$/, "");
+  const tail = m[2].trim();
+  return '<a href="' + esc(m[1]) + '" rel="noopener">' + esc(host) + "</a>" +
+    (tail ? " " + inline(tail) : "");
+};
+
+const cardsHtml = t => {
+  const cards = t.rows.map(row => {
+    const fields = row.slice(1).map((cell, i) =>
+      '<div class="data-field"><dt>' + inline(t.columns[i + 1]) + "</dt>" +
+      "<dd>" + fieldValue(cell) + "</dd></div>").join("");
+    return '<article class="data-card"><h4>' + inline(row[0]) + "</h4>" +
+      "<dl>" + fields + "</dl></article>";
+  }).join("");
+  return '<div class="data-cards">' + cards + "</div>";
+};
+
+const markerHtml = text => '<div class="marker"><p class="marker-label">' + UI.markerLabel + "</p>" +
+  "<p>" + inline(text) + "</p></div>";
+
+const faqItems = list => list.map(f =>
+  '<details class="faq-item"><summary>' + esc(f.q) + "</summary>" +
+  '<div class="faq-answer"><p>' + inline(f.a) + "</p></div></details>").join("");
+
+/* The hidden "_id" idempotency key is deliberately baked with an EMPTY value.
+   It has to be unique per real page load (the ingest function dedupes
+   retries on it), and a value baked into the static file would instead be
+   identical for every visitor until the next `node bake.js` — the opposite
+   of what it's for. js/main.js's wireQuoteForm() sets it fresh on every
+   real page load regardless of whether the form markup around it was baked
+   or client-built. */
+function formFields(opts) {
+  const fields = cfg.form.fields.map(f => Object.assign({}, f,
+    (opts.placeholders && opts.placeholders[f.name]) ? { placeholder: opts.placeholders[f.name] } : {}));
+  (opts.extraFields || []).forEach(extra => {
+    const at = fields.findIndex(f => f.name === extra.after);
+    fields.splice(at === -1 ? fields.length : at + 1, 0, extra);
+  });
+  return fields;
+}
+
+function fieldHtml(f, opts) {
+  const id = "qf-" + f.name;
+  const req = f.required ? " required" : "";
+  const label = '<label for="' + id + '">' + esc(f.label) +
+    (f.required ? "" : ' <span class="field-optional">(' + UI.optional + ")</span>") + "</label>";
+  let control;
+  const preset = (f.name === "job" && opts.preset) ? opts.preset : null;
+
+  if (f.type === "select") {
+    const options = f.options.map(o =>
+      '<option value="' + esc(o) + '"' + (o === preset ? " selected" : "") + ">" + esc(o) + "</option>").join("");
+    control = '<select id="' + id + '" name="' + esc(f.name) + '"' + req + ">" +
+      '<option value="">' + UI.chooseOne + "</option>" + options + "</select>";
+  } else if (f.type === "textarea") {
+    control = '<textarea id="' + id + '" name="' + esc(f.name) + '" rows="3"' + req +
+      (f.placeholder ? ' placeholder="' + esc(f.placeholder) + '"' : "") + "></textarea>";
+  } else {
+    control = '<input id="' + id + '" name="' + esc(f.name) + '" type="' + esc(f.type || "text") + '"' +
+      (f.autocomplete ? ' autocomplete="' + esc(f.autocomplete) + '"' : "") +
+      (f.placeholder ? ' placeholder="' + esc(f.placeholder) + '"' : "") +
+      (preset ? ' value="' + esc(preset) + '"' : "") + req + ">";
+  }
+  return '<div class="form-field">' + label + control + "</div>";
+}
+
+function formHtml(opts) {
+  const fields = formFields(opts);
+  return '<form id="quote-form" novalidate>' +
+    fields.map(f => fieldHtml(f, opts)).join("") +
+    '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" ' +
+      'style="position:absolute;left:-9999px;top:-9999px">' +
+    '<input type="hidden" name="_id" value="">' +
+    (cfg.turnstileSiteKey ? '<div id="turnstile-widget"></div>' : "") +
+    '<button class="btn btn-primary btn-block" type="submit">' + esc(cfg.form.submitText) + "</button>" +
+    '<p class="form-under">' + esc(cfg.form.underButton) + "</p>" +
+    '<p class="form-status" id="form-status" role="status" aria-live="polite"></p>' +
+  "</form>";
+}
+
+function formSection(opts) {
+  opts = opts || {};
+  const intro = opts.intro ? paragraphs(opts.intro, "lead") : "";
+  const phone = opts.showPhone ? '<p class="form-phone">' + phoneTextHtml("") + "</p>" : "";
+  return '<section class="section section-alt" id="enquiry"><div class="container narrow">' +
+    "<h2>" + esc(opts.headline || cfg.form.headline) + "</h2>" +
+    intro + phone + formHtml(opts) +
+  "</div></section>";
+}
+
+function blockHtml(b) {
+  if (b.credit) return '<p class="page-credit">' + inline(b.credit) + "</p>";
+  if (b.h2) return "<h2>" + inline(b.h2) + "</h2>";
+  if (b.h3) return "<h3>" + inline(b.h3) + "</h3>";
+  if (b.lead) return paragraphs(b.lead, "lead");
+  if (b.p) return paragraphs(b.p);
+  if (b.ul) return "<ul>" + b.ul.map(i => "<li>" + inline(i) + "</li>").join("") + "</ul>";
+  if (b.ol) return "<ol>" + b.ol.map(i => "<li>" + inline(i) + "</li>").join("") + "</ol>";
+  if (b.table) return tableHtml(b.table);
+  if (b.cards) return cardsHtml(b.cards);
+  if (b.image) return '<figure class="content-image">' + imgTag(b.image, "", true) + "</figure>";
+  if (b.note) return '<div class="note">' + paragraphs(b.note) + "</div>";
+  if (b.marker) return markerHtml(b.marker);
+  if (b.faqs) return faqItems(b.faqs);
+  if (b.form) return formSection(b.form);
+  return "";
+}
+
+/* Blocks are grouped into banded sections: a new section starts at each h2
+   and at each form. Bands alternate so a long page still has rhythm. */
+function renderBlocks(blocks) {
+  if (!blocks || !blocks.length) return "";
+  const groups = [];
+  let current = null;
+  blocks.forEach(b => {
+    if (!current || b.h2 || b.form) {
+      current = { isForm: !!b.form, items: [] };
+      groups.push(current);
+    }
+    current.items.push(b);
+  });
+
+  let alt = false;
+  return groups.map(g => {
+    const inner = g.items.map(blockHtml).join("");
+    if (g.isForm) return inner;           // formSection emits its own <section>
+    alt = !alt;
+    return '<section class="section' + (alt ? "" : " section-alt") + '">' +
+      '<div class="container narrow prose">' + inner + "</div></section>";
+  }).join("");
+}
+
+/* Testimonials/photos stay hidden until real evidence exists in config —
+   see the note at the bottom of config.js. Both are empty today, but are
+   mirrored here so baked and client-rendered output can never drift once
+   they aren't. */
+const testimonialsSection = () => {
+  if (!cfg.testimonials || !cfg.testimonials.length) return "";
+  const items = cfg.testimonials.map(t =>
+    '<figure class="testimonial"><blockquote>' + esc(t.quote) + "</blockquote>" +
+    "<figcaption>" + esc(t.name) + (t.detail ? " - " + esc(t.detail) : "") + "</figcaption></figure>").join("");
+  return '<section class="section"><div class="container">' +
+    "<h2>" + UI.testimonialsTitle + '</h2><div class="grid-3">' + items + "</div></div></section>";
+};
+
+const photosSection = () => {
+  if (!cfg.photos || !cfg.photos.length) return "";
+  const items = cfg.photos.map(p =>
+    '<figure class="photo"><img loading="lazy" src="' + esc(p.src) + '" alt="' + esc(p.alt) + '">' +
+    (p.caption ? "<figcaption>" + esc(p.caption) + "</figcaption>" : "") + "</figure>").join("");
+  return '<section class="section"><div class="container">' +
+    "<h2>" + UI.photosTitle + '</h2><div class="grid-3">' + items + "</div></div></section>";
+};
+
+const areasSection = () => {
+  if (!cfg.areas || !cfg.areas.length) return "";
+  const links = cfg.areas.map(a => '<li><a href="' + esc(a.slug) + '.html">' + esc(a.name) + "</a></li>").join("");
+  return '<section class="section" id="areas"><div class="container">' +
+    "<h2>" + UI.areasTitle + '</h2><ul class="area-links">' + links + "</ul>" +
+  "</div></section>";
+};
+
+const quoteButtonHtml = (text, blocks, extraClass) =>
+  '<a class="btn btn-primary ' + (extraClass || "") + '" href="' + enquiryHrefFor(blocks) + '">' +
+  esc(text || cfg.pages.home.ctaText) + "</a>";
+
+const ctaBand = (ctaText, blocks) => '<section class="cta-band"><div class="container">' +
+  "<h2>" + UI.ctaBandTitle + "</h2>" +
+  "<p>" + esc(cfg.form.underButton) + "</p>" +
+  quoteButtonHtml(ctaText, blocks, "btn-invert") +
+"</div></section>";
+
+/* Composes the same #page-content HTML that js/main.js's renderHome /
+   renderService / renderAbout / renderPrivacy build at runtime — keep these
+   in step with those four functions if either ever changes. */
+const homeContentHtml = () => renderBlocks(cfg.homeBlocks) +
+  areasSection() +
+  testimonialsSection() +
+  ctaBand(cfg.pages.home.ctaText, cfg.homeBlocks);
+
+const serviceContentHtml = svc => renderBlocks(svc.blocks) +
+  testimonialsSection() +
+  ctaBand(svc.ctaText, svc.blocks);
+
+const aboutContentHtml = () => renderBlocks(cfg.aboutBlocks) +
+  photosSection() +
+  ctaBand(cfg.pages.home.ctaText, cfg.aboutBlocks);
+
+const privacyContentHtml = () =>
+  renderBlocks([{ credit: "Last updated: " + cfg.pages.privacy.lastUpdated }].concat(cfg.privacyBlocks));
+
 const page = (dataPage, headHtml, mainInner, file, blocks) => `<!DOCTYPE html>
 <html lang="en" data-style="${themeStyle()}" data-pattern="${themePattern()}">
 <head>
@@ -436,7 +684,8 @@ function buildPages() {
     }),
     heroMain({
       headline: cfg.pages.home.headline, subheadline: cfg.pages.home.subheadline,
-      ctaText: cfg.pages.home.ctaText, image: cfg.pages.home.image, blocks: cfg.homeBlocks
+      ctaText: cfg.pages.home.ctaText, image: cfg.pages.home.image, blocks: cfg.homeBlocks,
+      contentHtml: homeContentHtml()
     }),
     "index.html", cfg.homeBlocks)]);
 
@@ -452,7 +701,8 @@ function buildPages() {
       }),
       heroMain({
         headline: svc.headline, subheadline: svc.subheadline,
-        ctaText: svc.ctaText, image: svc.image, blocks: svc.blocks
+        ctaText: svc.ctaText, image: svc.image, blocks: svc.blocks,
+        contentHtml: serviceContentHtml(svc)
       }),
       svc.page, svc.blocks)]);
   }
@@ -464,7 +714,13 @@ function buildPages() {
         title: area.metaTitle, description: area.metaDescription, file: file, faqs: area.faqs,
         extraSchemas: [breadcrumbSchema(area.name, canonicalFor(file))]
       }),
-      heroMain({ headline: area.headline }),
+      // js/main.js has no runtime renderer for data-page="area" (cfg.areas
+      // is deliberately empty — see the note by its definition), so there's
+      // no client-side equivalent to mirror here yet. Baking area.blocks
+      // now rather than leaving this at "" so a page added straight to
+      // cfg.areas without also wiring a renderArea() in js/main.js still
+      // ships with real content instead of a silently empty body.
+      heroMain({ headline: area.headline, contentHtml: renderBlocks(area.blocks || []) }),
       file, area.blocks || [])]);
   }
 
@@ -476,7 +732,7 @@ function buildPages() {
         breadcrumbSchema(cfg.pages.about.headline, canonicalFor("about.html"))
       ]
     }),
-    pageHeadMain(cfg.pages.about.headline),
+    pageHeadMain(cfg.pages.about.headline, aboutContentHtml()),
     "about.html", cfg.aboutBlocks)]);
 
   files.push(["privacy.html", page("privacy",
@@ -484,7 +740,7 @@ function buildPages() {
       title: cfg.pages.privacy.metaTitle, description: cfg.pages.privacy.metaDescription, file: "privacy.html",
       extraSchemas: [breadcrumbSchema(cfg.pages.privacy.headline, canonicalFor("privacy.html"))]
     }),
-    pageHeadMain(cfg.pages.privacy.headline),
+    pageHeadMain(cfg.pages.privacy.headline, privacyContentHtml()),
     "privacy.html", cfg.privacyBlocks)]);
 
   return files;

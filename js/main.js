@@ -574,7 +574,12 @@
       // instead of creating a second one. Without it the server falls back to a random
       // id per request, and every retry is a new lead. Picked up automatically by the
       // generic field loop in wireQuoteForm, same as _gotcha above.
-      '<input type="hidden" name="_id" value="' + esc(submissionId()) + '">' +
+      // Left empty here rather than filled with submissionId(): this markup is now
+      // also baked into the static HTML by bake.js (see formHtml() there), and a
+      // value baked at build time would be identical for every visitor until the
+      // next `node bake.js` — the opposite of "one id per page load". wireQuoteForm()
+      // below sets it fresh every real page load instead, baked or not.
+      '<input type="hidden" name="_id" value="">' +
       (cfg.turnstileSiteKey ? '<div id="turnstile-widget"></div>' : "") +
       '<button class="btn btn-primary btn-block" type="submit">' + esc(cfg.form.submitText) + "</button>" +
       '<p class="form-under">' + esc(cfg.form.underButton) + "</p>" +
@@ -651,6 +656,13 @@
     var form = document.getElementById("quote-form");
     if (!form) return;
     var status = document.getElementById("form-status");
+
+    // Set fresh every real page load, whether this form's markup came from
+    // the baked HTML or was just built above by formHtml() — see the
+    // comment on the hidden "_id" input in formHtml().
+    var idField = form.querySelector('input[name="_id"]');
+    if (idField) idField.value = submissionId();
+
     renderTurnstile(document.getElementById("turnstile-widget"));
     scheduleTurnstileLoad(document.getElementById("enquiry"));
 
@@ -725,11 +737,22 @@
   function renderHome(content) {
     var p = cfg.pages.home;
     noteFormPosition(cfg.homeBlocks);
-    content.innerHTML =
-      renderBlocks(cfg.homeBlocks) +
-      areasSection() +
-      testimonialsSection() +
-      ctaBand(p.ctaText);
+    // bake.js now bakes this same content into #page-content (see
+    // homeContentHtml() there) so it's real static HTML, not something a
+    // crawler or no-JS reader only sees after main.js runs. This rebuild
+    // stays as a fallback for page HTML that predates the bake change —
+    // skip it when the content is already there, both to avoid redundant
+    // work and so the two renderers can never disagree about what's on
+    // the page. noteFormPosition/fillHero/wireQuoteForm still need to run
+    // either way: the footer/contact bar and the form's interactivity
+    // aren't baked.
+    if (!content.hasAttribute("data-baked")) {
+      content.innerHTML =
+        renderBlocks(cfg.homeBlocks) +
+        areasSection() +
+        testimonialsSection() +
+        ctaBand(p.ctaText);
+    }
     fillHero(p, p.image);
     wireQuoteForm();
   }
@@ -751,27 +774,40 @@
     }
 
     noteFormPosition(svc.blocks);
-    content.innerHTML =
-      renderBlocks(svc.blocks) +
-      testimonialsSection() +
-      ctaBand(svc.ctaText);
+    // See the matching comment in renderHome() — bake.js bakes this same
+    // content at build time now (serviceContentHtml()); only rebuild it
+    // here if that didn't happen.
+    if (!content.hasAttribute("data-baked")) {
+      content.innerHTML =
+        renderBlocks(svc.blocks) +
+        testimonialsSection() +
+        ctaBand(svc.ctaText);
+    }
     fillHero(svc, svc.image);
     wireQuoteForm();
   }
 
   function renderAbout(content) {
     noteFormPosition(cfg.aboutBlocks);
-    content.innerHTML =
-      renderBlocks(cfg.aboutBlocks) +
-      photosSection() +
-      ctaBand(cfg.pages.home.ctaText);
+    // See the matching comment in renderHome() — bake.js bakes this same
+    // content at build time now (aboutContentHtml()).
+    if (!content.hasAttribute("data-baked")) {
+      content.innerHTML =
+        renderBlocks(cfg.aboutBlocks) +
+        photosSection() +
+        ctaBand(cfg.pages.home.ctaText);
+    }
     wireQuoteForm();
   }
 
   function renderPrivacy(content) {
     pageHasForm = false;
-    var intro = [{ credit: "Last updated: " + cfg.pages.privacy.lastUpdated }];
-    content.innerHTML = renderBlocks(intro.concat(cfg.privacyBlocks));
+    // See the matching comment in renderHome() — bake.js bakes this same
+    // content at build time now (privacyContentHtml()).
+    if (!content.hasAttribute("data-baked")) {
+      var intro = [{ credit: "Last updated: " + cfg.pages.privacy.lastUpdated }];
+      content.innerHTML = renderBlocks(intro.concat(cfg.privacyBlocks));
+    }
   }
 
   /* ---------- motion ------------------------------------------------------
