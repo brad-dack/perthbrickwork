@@ -409,6 +409,46 @@ function headerHtml(file, blocks) {
     "</div>";
 }
 
+/* ---------- footer (baked, not client-rendered) ----------------------------
+   Same reasoning as the header: an empty #site-footer at first paint means
+   the site's only other set of internal links (each service page, Home,
+   About, Privacy) was invisible to a crawler that doesn't run the deferred
+   JS build. Mirrors renderFooter() in js/main.js exactly — see the
+   data-baked guard there — with one deliberate difference: the copyright
+   year is wrapped in its own #copyright-year span so js/main.js can keep it
+   current on every load without touching (or CLS-shifting) the rest of the
+   footer. A year baked once and never rebaked would otherwise go stale. */
+function footerHtml() {
+  const b = cfg.business;
+  const pageLinks = cfg.services.map(s =>
+    '<li><a href="' + esc(s.page) + '">' + esc(s.name) + "</a></li>").join("");
+
+  const identity = [
+    b.abn ? "ABN " + esc(b.abn) : "",
+    b.businessNumber ? esc(b.businessNumber) : ""
+  ].filter(Boolean).join(" &nbsp;|&nbsp; ");
+
+  return '<div class="container footer-grid">' +
+      "<div>" +
+        '<p class="footer-brand">' + esc(b.name) + "</p>" +
+        (identity ? "<p>" + identity + "</p>" : "") +
+        "<p>" + phoneTextHtml("") + "</p>" +
+        (b.email ? '<p><a href="mailto:' + esc(b.email) + '">' + esc(b.email) + "</a></p>" : "") +
+        "<p>" + UI.serviceAreaLabel + ": " + esc(b.serviceArea) + "</p>" +
+      "</div>" +
+      '<div><p class="footer-title">' + UI.services + "</p><ul>" + pageLinks + "</ul></div>" +
+      '<div><p class="footer-title">More</p><ul>' +
+        '<li><a href="index.html">Home</a></li>' +
+        '<li><a href="about.html">About</a></li>' +
+        '<li><a href="privacy.html">Privacy policy</a></li>' +
+      "</ul></div>" +
+    "</div>" +
+    '<div class="container footer-bottom">' +
+      "<p>&copy; <span id=\"copyright-year\">" + new Date().getFullYear() + "</span> " + esc(b.name) +
+      ". Serving the Perth metropolitan area.</p>" +
+    "</div>";
+}
+
 /* ---------- content blocks (baked, not client-rendered) -------------------
    Mirrors the block renderer in js/main.js — paragraphs(), tableHtml(),
    fieldValue(), cardsHtml(), markerHtml(), faqItems(), blockHtml(),
@@ -425,7 +465,10 @@ const UI = {
   markerLabel: "Unfinished - not for publication",
   areasTitle: "Areas We Serve",
   testimonialsTitle: "What Customers Say",
-  photosTitle: "Recent Work"
+  photosTitle: "Recent Work",
+  // Footer-only labels — must match js/main.js's UI.services/serviceAreaLabel.
+  services: "Pages",
+  serviceAreaLabel: "Service area"
 };
 
 const telHrefStr = () => "tel:" + cfg.business.phone;
@@ -666,7 +709,7 @@ ${headHtml}
   <main id="main">
 ${mainInner}
   </main>
-  <footer id="site-footer"></footer>
+  <footer id="site-footer" data-baked="1">${footerHtml()}</footer>
   <div id="contact-bar" class="contact-bar"></div>
 </body>
 </html>
@@ -782,6 +825,69 @@ const sitemapContent = pageNames =>
   pageNames.map(f => "  <url><loc>" + canonicalFor(f) + "</loc></url>").join("\n") +
   "\n</urlset>\n";
 
+/* ---------- legacy redirect pages -----------------------------------------
+   cfg.legacyRedirects entries describe a URL that used to be a real page and
+   is now a static stand-in: <meta refresh> + canonical, both pointing at the
+   new page, so a visitor or crawler that reaches the old file directly on
+   GitHub Pages still lands on real content instead of a 404. Never listed in
+   sitemap.xml — a redirect is never the canonical page. The AUTHORITATIVE
+   fix is a real 301 at the Cloudflare edge (GitHub Pages can't issue one
+   itself); this page is the fallback for before that rule exists, or if it's
+   ever removed. Self-contained like 404.html — no CSS/JS dependency on the
+   rest of the site, since this file's only job is to get someone off it. */
+const redirectPageContent = (toFile, alsoFiles) => {
+  const target = canonicalFor(toFile);
+  const also = (alsoFiles || []).map(f =>
+    '<li><a href="' + esc(f) + '">' + esc(canonicalFor(f)) + "</a></li>").join("");
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page moved | ${esc(cfg.business.name)}</title>
+  <meta http-equiv="refresh" content="0; url=${esc(target)}">
+  <link rel="canonical" href="${target}">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      color: #1b2430;
+      background: ${mix(cfg.brand.color, "#ffffff", 0.055)};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #dfe4e9;
+      border-radius: 12px;
+      padding: 40px 32px;
+      max-width: 460px;
+    }
+    h1 { font-size: 1.7rem; margin: 0 0 0.5em; }
+    p { margin: 0 0 1em; color: #55606e; }
+    a { color: ${cfg.brand.color}; font-weight: 700; }
+    ul { list-style: none; padding: 0; margin: 0; text-align: left; }
+    li { padding: 4px 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>This page has moved</h1>
+    <p>Continue to <a href="${esc(target)}">${esc(target)}</a>.</p>
+    ${also ? "<p>This page has also been split into:</p><ul>" + also + "</ul>" : ""}
+  </div>
+</body>
+</html>
+`;
+};
+
 /* Self-contained on purpose: GitHub Pages serves 404.html for ANY missing
    path (including nested ones), so it uses absolute URLs and inline styles
    and loads no JS. */
@@ -886,9 +992,15 @@ function bake() {
     console.log("baked " + name);
   }
 
+  const legacyRedirects = cfg.legacyRedirects || [];
+  for (const r of legacyRedirects) {
+    fs.writeFileSync(path.join(__dirname, r.from), redirectPageContent(r.to, r.also), "utf8");
+    console.log("baked " + r.from + " (redirect -> " + r.to + ")");
+  }
+
   // Flag leftover pages (e.g. an area removed from config, or a renamed
   // service stub) — they aren't in the sitemap and should be deleted.
-  const expected = new Set([...pageNames, "404.html"]);
+  const expected = new Set([...pageNames, "404.html", ...legacyRedirects.map(r => r.from)]);
   const stale = fs.readdirSync(__dirname)
     .filter(f => f.endsWith(".html") && !expected.has(f));
   if (stale.length) {
@@ -1052,14 +1164,40 @@ function runCheck() {
     for (const f of locFiles) {
       if (!exists(f)) errors.push("sitemap.xml lists a page that doesn't exist on disk: " + f);
     }
+    // Legacy redirect stand-ins are deliberately excluded — a redirect is
+    // never the canonical page, so it belongs on disk but not in the sitemap.
+    const legacyFromFiles = (cfg.legacyRedirects || []).map(r => r.from);
     const htmlOnDisk = fs.readdirSync(__dirname)
-      .filter(f => f.endsWith(".html") && f !== "404.html");
+      .filter(f => f.endsWith(".html") && f !== "404.html" && !legacyFromFiles.includes(f));
     for (const f of htmlOnDisk) {
       if (!locFiles.includes(f)) errors.push("page on disk missing from sitemap.xml: " + f);
     }
     for (const f of expectedPages) {
       if (!locFiles.includes(f)) errors.push("config expects page " + f +
         " but it's not in sitemap.xml (run node bake.js)");
+    }
+    for (const f of legacyFromFiles) {
+      if (locFiles.includes(f)) errors.push("legacyRedirects entry " + f +
+        " is also listed in sitemap.xml — a redirect must not be sitemapped (run node bake.js)");
+    }
+  }
+
+  /* -- 4b. legacy redirects: `to` is real, `from` doesn't collide, file on
+     disk actually redirects where config says it should ------------------- */
+  for (const r of (cfg.legacyRedirects || [])) {
+    if (!expectedPages.includes(r.to)) {
+      errors.push("legacyRedirects: \"" + r.from + "\" points at \"" + r.to +
+        "\", which isn't a real page in config.js");
+    }
+    if (expectedPages.includes(r.from)) {
+      errors.push("legacyRedirects: \"" + r.from + "\" collides with a live page of the same name");
+    }
+    const onDisk = read(r.from);
+    if (onDisk === null) {
+      errors.push("legacyRedirects: " + r.from + " is missing from disk (run node bake.js)");
+    } else if (!onDisk.includes(canonicalFor(r.to))) {
+      errors.push("legacyRedirects: " + r.from + " on disk doesn't point at " + r.to +
+        " — it's stale (run node bake.js)");
     }
   }
 

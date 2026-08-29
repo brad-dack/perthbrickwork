@@ -255,36 +255,52 @@
   }
 
   function renderFooter() {
-    var b = cfg.business;
-    var pageLinks = cfg.services.map(function (s) {
-      return '<li><a href="' + esc(s.page) + '">' + esc(s.name) + "</a></li>";
-    }).join("");
+    var footerEl = document.getElementById("site-footer");
 
-    var identity = [
-      b.abn ? "ABN " + esc(b.abn) : "",
-      b.businessNumber ? esc(b.businessNumber) : ""
-    ].filter(Boolean).join(" &nbsp;|&nbsp; ");
+    // bake.js now bakes this same markup into the static HTML (see
+    // footerHtml() in bake.js) for the same reason renderHeader() skips its
+    // own rebuild below — see the comment there. The rebuild here stays as a
+    // fallback for page HTML that predates the bake change.
+    if (!footerEl.hasAttribute("data-baked")) {
+      var b = cfg.business;
+      var pageLinks = cfg.services.map(function (s) {
+        return '<li><a href="' + esc(s.page) + '">' + esc(s.name) + "</a></li>";
+      }).join("");
 
-    document.getElementById("site-footer").innerHTML =
-      '<div class="container footer-grid">' +
-        "<div>" +
-          '<p class="footer-brand">' + esc(b.name) + "</p>" +
-          (identity ? "<p>" + identity + "</p>" : "") +
-          "<p>" + phoneText("") + "</p>" +
-          (b.email ? '<p><a href="mailto:' + esc(b.email) + '">' + esc(b.email) + "</a></p>" : "") +
-          "<p>" + UI.serviceAreaLabel + ": " + esc(b.serviceArea) + "</p>" +
+      var identity = [
+        b.abn ? "ABN " + esc(b.abn) : "",
+        b.businessNumber ? esc(b.businessNumber) : ""
+      ].filter(Boolean).join(" &nbsp;|&nbsp; ");
+
+      footerEl.innerHTML =
+        '<div class="container footer-grid">' +
+          "<div>" +
+            '<p class="footer-brand">' + esc(b.name) + "</p>" +
+            (identity ? "<p>" + identity + "</p>" : "") +
+            "<p>" + phoneText("") + "</p>" +
+            (b.email ? '<p><a href="mailto:' + esc(b.email) + '">' + esc(b.email) + "</a></p>" : "") +
+            "<p>" + UI.serviceAreaLabel + ": " + esc(b.serviceArea) + "</p>" +
+          "</div>" +
+          '<div><p class="footer-title">' + UI.services + "</p><ul>" + pageLinks + "</ul></div>" +
+          '<div><p class="footer-title">More</p><ul>' +
+            '<li><a href="index.html">Home</a></li>' +
+            '<li><a href="about.html">About</a></li>' +
+            '<li><a href="privacy.html">Privacy policy</a></li>' +
+          "</ul></div>" +
         "</div>" +
-        '<div><p class="footer-title">' + UI.services + "</p><ul>" + pageLinks + "</ul></div>" +
-        '<div><p class="footer-title">More</p><ul>' +
-          '<li><a href="index.html">Home</a></li>' +
-          '<li><a href="about.html">About</a></li>' +
-          '<li><a href="privacy.html">Privacy policy</a></li>' +
-        "</ul></div>" +
-      "</div>" +
-      '<div class="container footer-bottom">' +
-        "<p>&copy; " + new Date().getFullYear() + " " + esc(b.name) +
-        ". Serving the Perth metropolitan area.</p>" +
-      "</div>";
+        '<div class="container footer-bottom">' +
+          "<p>&copy; <span id=\"copyright-year\">" + new Date().getFullYear() + "</span> " + esc(b.name) +
+          ". Serving the Perth metropolitan area.</p>" +
+        "</div>";
+    }
+
+    // Runs regardless of data-baked: the year in the baked footer is frozen
+    // at whatever "node bake.js" was last run, and nobody reruns that on
+    // January 1st. A text-only patch to one already-rendered span doesn't
+    // reflow anything, so it doesn't reintroduce the CLS the header/footer
+    // bake was written to avoid.
+    var yearEl = document.getElementById("copyright-year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
   /* ---------- mobile contact bar -----------------------------------------

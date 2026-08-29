@@ -2,11 +2,16 @@
    SITE CONFIG — the ONLY file you edit by hand.
    Every page on the site reads from this object at load time.
 
-   CONTENT SOURCE: "Perth Brickwork — Page Copy v6". Four pages:
-     /                                       homepage
-     /brick-repairs-repointing-tuckpointing  repointing, tuckpointing, repairs
-     /brick-fences-boundary-walls            brick and rendered fences
-     /about                                  about + disclosure
+   CONTENT SOURCE: "Perth Brickwork — Page Copy v6", plus a 28 August 2026
+   split of the original /brick-repairs-repointing-tuckpointing page into
+   three keyword-focused pages (see legacyRedirects below for why the old
+   URL is still on disk instead of being deleted):
+     /                                homepage
+     /tuckpointing-repointing         tuckpointing + repointing
+     /brick-repairs-crack-stitching   brick repairs, crack diagnosis, crack stitching
+     /federation-heritage-restoration federation/heritage restoration, tuckpointing reinstatement
+     /brick-fences-boundary-walls     brick and rendered fences
+     /about                           about + disclosure
    (plus /privacy, which v6 links to from the homepage and about page)
 
    MARKERS ARE DELIBERATE. [VERIFY: ...] and [NEEDS INPUT: ...] render on the
@@ -184,16 +189,16 @@ window.SITE_CONFIG = {
   -------------------------------------------------------------------------- */
   services: [
     {
-      page: "brick-repairs-repointing-tuckpointing.html",
-      name: "Repointing, tuckpointing and brick repairs",
-      shortName: "Repairs",
-      shortDescription: "Mortar fails long before brick does. Repointing is maintenance, tuckpointing is a specialist decorative finish, and cracking is sometimes neither.",
-      serviceType: "Brick repointing and repair",
-      metaTitle: "Tuckpointing and Repointing Perth | Brick Repairs",
-      metaDescription: "Tuckpointing, repointing, restoration and repairs in Perth. How to tell maintenance from structural movement, why mortar mix matters, and what each job costs.",
-      headline: "Tuckpointing, repointing and brick repairs in Perth",
-      subheadline: "Mortar fails long before brick does. What each job involves, what drives the price, and what to check before you accept a quote.",
-      ctaText: "Tell us what your wall is doing",
+      page: "tuckpointing-repointing.html",
+      name: "Tuckpointing and repointing",
+      shortName: "Tuckpointing",
+      shortDescription: "Tuckpointing and repointing in Perth. What separates the decorative finish from ordinary mortar maintenance, and what each one costs.",
+      serviceType: "Tuckpointing and mortar repointing",
+      metaTitle: "Tuckpointing & Repointing Perth | Brick Pointing Cost",
+      metaDescription: "Tuckpointing and repointing in Perth: what each one is, why mortar mix matters, how the work is done, and what to check before you accept a quote.",
+      headline: "Tuckpointing and repointing in Perth",
+      subheadline: "The specialist decorative finish, and the mortar maintenance job it's often confused with. What each involves and what to check on a quote.",
+      ctaText: "Tell us what your wall needs",
       image: {
         src: "images/tuckpointed-brickwork-detail.jpg",
         alt: "Close-up of tuckpointed brickwork: fine pale ribbons run along each joint of the upper courses, with untreated brickwork below",
@@ -206,19 +211,19 @@ window.SITE_CONFIG = {
 
         {
           lead: [
-            "If you have crumbling mortar, a crack you have started watching, or an older frontage that has been patched by someone who did not know what they were looking at, this page is the place to start - whether you think of it as repointing, tuckpointing, brick restoration or just getting it fixed.",
-            "The first thing to sort out is what you actually have, because three different problems get described the same way and they have very different costs. Deteriorating mortar is maintenance. Structural movement is an engineering problem. Tuckpointing is a decorative finish that most bricklayers cannot do at all."
+            "If you have crumbling mortar, an older frontage with a fine raised ribbon of mortar along the joints, or you've just been quoted for \"repointing\" or \"brick pointing\" and want to know if that is actually what you need, this page is the place to start.",
+            "Tuckpointing and repointing get used interchangeably and they are not the same job. One is decoration. The other is maintenance. They are priced differently, and knowing which one you actually have - or want - is worth sorting out before you get a quote."
           ]
         },
 
-        { h2: "Tuckpointing, repointing and repair are three different things" },
+        { h2: "Tuckpointing and repointing are two different things" },
 
         { h3: "Tuckpointing" },
         {
           p: [
             "A decorative finish, not a repair. The joint is filled with mortar coloured to match the brick, then a fine ribbon of contrasting lime putty is applied on top, creating the appearance of perfectly regular, very thin joints. It was used to make ordinary brickwork look like expensive, precisely laid brickwork.",
             "Common on Perth federation-era and inter-war housing. It is a specialist skill, closer to a trade of its own than a bricklaying task, and there are not many people in Perth who do it properly. Priced by the metre of joint rather than by wall area, and significantly more expensive than repointing.",
-            "If a tuckpointed house has been repointed flat by a general bricklayer, the original finish is gone. It can be reinstated, but at that point it is restoration work rather than maintenance, and it is priced accordingly.",
+            "If a tuckpointed house has been repointed flat by a general bricklayer, the original finish is gone. It can be reinstated - see the [federation and heritage restoration page](federation-heritage-restoration.html) for what that involves.",
             "The single most useful thing you can do before hiring anyone for tuckpointing is ask to see a finished job and go and look at it. Done well it is almost invisible as work and the facade simply looks right. Done badly the ribbon wanders, the widths vary, and it is obvious from the footpath."
           ]
         },
@@ -242,17 +247,6 @@ window.SITE_CONFIG = {
         },
         {
           note: "For lime mortar joints, the City of Fremantle's heritage conservation guidance gives a mix of about 1 part lime putty to 2.5 parts sand, richer (1:2 or even 1:1.5) if the sand is fine-grained - never cement. See [City of Fremantle, Technical Advice Sheet 6: Repointing lime mortar joints](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf)."
-        },
-
-        { h3: "Brick repairs" },
-        { p: "Replacing damaged or spalled bricks, rebuilding a section, fixing a cracked wall. Cost depends entirely on why the damage happened, which is the next section." },
-        {
-          image: {
-            src: "images/spalled-capping-brick-on-garden-wall.jpg",
-            alt: "Close-up of the capping course of a low brick wall where the face of one brick has spalled away, leaving a rough crumbling hollow, with fragments of brick and mortar lying on the bricks alongside",
-            width: 1000,
-            height: 650
-          }
         },
 
         { h2: "What mortar actually is, and why it is designed to fail first" },
@@ -322,6 +316,157 @@ window.SITE_CONFIG = {
           ]
         },
 
+        { h2: "What tuckpointing and repointing cost in Perth" },
+        {
+          p: [
+            "Not a price list, and deliberately so. Tuckpointing is priced by metre of joint, repointing per square metre, and neither number means anything without real Perth quotes behind them - logged by suburb, job type and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
+            "What follows instead is what actually moves the number, so you can read any quote you get and know whether it makes sense."
+          ]
+        },
+
+        { h3: "What moves the price" },
+        {
+          p: [
+            "**Access and scaffolding.** A single-storey front facade you can reach from a trestle is a different job to a two-storey return elevation. Scaffold is frequently quoted separately and is frequently the largest single line.",
+            "**How hard the existing mortar is to remove.** A previous cement repoint is the worst case, because it has to come out without damaging brick that is softer than the mortar holding it.",
+            "**Joint length versus wall area.** Tuckpointing is priced by joint metre. A wall with smaller bricks has more joint per square metre and therefore costs more to tuckpoint at the same area."
+          ]
+        },
+
+        { h3: "What is usually excluded" },
+        {
+          ul: [
+            "Scaffolding",
+            "Painting or sealing afterwards",
+            "Making good render or paint disturbed at the edges of the work"
+          ]
+        },
+
+        { h3: "Comparing quotes" },
+        { p: "Three quotes only compare if they describe the same job, and on repointing they usually do not." },
+        {
+          ol: [
+            "**Rake-out depth.** Ask for it in millimetres. Skim repointing over the top looks fine for about two years.",
+            "**Mortar mix, and the reasoning behind it.** On an older wall this is the difference between maintenance and damage.",
+            "**Whether scaffold is in or out.**",
+            "**Area or joint length measured, not estimated.** Two quotes based on different measurements are not comparable at all.",
+            "Only then, the totals."
+          ]
+        },
+
+        { h2: "What to ask before you accept a quote" },
+        {
+          ol: [
+            "**What mortar mix are you using, and why that one?** The answer should reference the existing mortar and the age of the building.",
+            "**Have you done tuckpointing before, and can I go and look at it?** If the job is tuckpointing. Most bricklayers have not, and the ones who have will be glad to send you to a job.",
+            "**Are you raking out to a proper depth or skimming over the top?** Ask for the depth in millimetres.",
+            "**Is scaffolding in the price?**"
+          ]
+        },
+
+        { h2: "Frequently asked questions" },
+        {
+          faqs: [
+            {
+              q: "Is tuckpointing the same as repointing?",
+              a: "No. Repointing replaces failed mortar and is maintenance. Tuckpointing is a decorative finish applied over the joint, priced by joint length rather than wall area, and it is a specialist skill that most bricklayers do not have."
+            },
+            {
+              q: "How much does tuckpointing cost in Perth?",
+              a: "Every job is different - the state of the existing mortar, access and any scaffold needed move the cost more than the size of the house does, so there is no single figure worth quoting here. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+            },
+            {
+              q: "How do I know if my house is tuckpointed or just repointed?",
+              a: "Look closely at a joint on the front facade in good light. Tuckpointing has a fine raised ribbon of contrasting colour, usually white or near-white, sitting on top of a joint coloured to match the brick, and the ribbon is a consistent width. Ordinary pointing is a single mortar colour, tooled to a profile, with no ribbon."
+            },
+            {
+              q: "Can I use cement mortar on an old brick wall?",
+              a: "You should not. Cement mortar is harder and less permeable than old brick, so the wall's movement and moisture are both forced through the brick face rather than through the joint. The damage takes a few years to appear and is not reversible. The mortar should always be softer than the brick."
+            },
+            {
+              q: "How long should repointing last?",
+              a: "There is no fixed number, and heritage conservation guidance from [the SPAB](https://www.spab.org.uk/advice/repointing), the UK's Society for the Protection of Ancient Buildings, deliberately avoids giving one - good repointing is judged on condition, not a calendar. The trigger for redoing it is mortar that has weathered back to a depth equal to the joint width, or gone loose, not a fixed age. What actually decides how long a repoint lasts is exposure - a sheltered wall outlasts one facing driving rain or salt spray by a wide margin - and workmanship: correct mortar mix, a proper rake-out depth and real curing are what get you decades rather than a few years. Skimped work on any of those three is the usual reason a repoint fails early."
+            }
+          ]
+        },
+        {
+          form: {
+            headline: "Tell us what your wall needs",
+            preset: "Tuckpointing or repointing",
+            placeholders: {
+              size: "e.g. front facade of a 1920s home, mortar crumbling, about 20 square metres"
+            },
+            extraFields: [
+              {
+                name: "buildingAge",
+                label: "Roughly how old is the building?",
+                type: "select",
+                required: false,
+                after: "size",
+                options: ["Pre-1940", "1940-1980", "Post-1980", "Not sure"]
+              }
+            ]
+          }
+        },
+
+        { h2: "Related" },
+        {
+          ul: [
+            "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
+            "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
+            "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
+            "[About Perth Brickwork](about.html)"
+          ]
+        }
+        /* TODO (Brad): staying with the illustrative images on this page for now
+           rather than sourcing real photographs. They carry no captions and make
+           no claim of authorship, consistent with the imagery policy. Real shots
+           (tuckpointed facade, failed mortar joint) remain the cheapest available
+           credibility upgrade if this is revisited. Decision recorded 28 July
+           2026, carried over unchanged when this page was split out of
+           brick-repairs-repointing-tuckpointing.html on 28 August 2026. */
+      ]
+    },
+
+    {
+      page: "brick-repairs-crack-stitching.html",
+      name: "Brick repairs and crack stitching",
+      shortName: "Repairs",
+      shortDescription: "Brick repairs, crack stitching and crack diagnosis. What's maintenance, what's a repair, and what needs an engineer first.",
+      serviceType: "Brick repair and crack stitching",
+      metaTitle: "Brick Repairs & Crack Stitching Perth | Wall Crack Fix",
+      metaDescription: "Brick repairs and crack stitching in Perth. How to read a wall crack, when it needs an engineer, how crack stitching works, and what drives the price.",
+      headline: "Brick repairs and crack stitching in Perth",
+      subheadline: "Cracked, spalled or fretting brickwork. How to tell maintenance from a structural problem, and how a stitched repair actually works.",
+      ctaText: "Tell us what your wall is doing",
+      image: {
+        src: "images/brick-wall-vertical-crack-through-bricks.jpg",
+        alt: "A low brick garden wall in Perth's northern suburbs, photographed August 2026, with a near-vertical crack running through several courses of brick rather than along the mortar joints",
+        width: 1000,
+        height: 750
+      },
+
+      blocks: [
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 28 August 2026." },
+
+        {
+          lead: [
+            "A cracked wall, a brick face that is crumbling rather than sound, or a section of brickwork that needs cutting out and replacing - this page is the place to start, and the first job is working out which of those you actually have.",
+            "Some of what gets called a \"crack in the wall\" is cosmetic. Some of it is a structural problem wearing a cosmetic-looking crack. Telling the two apart before you pay for a repair is what stops you paying to fix the same wall twice."
+          ]
+        },
+
+        { h2: "Brick repairs" },
+        { p: "Replacing damaged or spalled bricks, rebuilding a section, fixing a cracked wall. Cost depends entirely on why the damage happened, which is the next section." },
+        {
+          image: {
+            src: "images/spalled-capping-brick-on-garden-wall.jpg",
+            alt: "Close-up of the capping course of a low brick wall where the face of one brick has spalled away, leaving a rough crumbling hollow, with fragments of brick and mortar lying on the bricks alongside",
+            width: 1000,
+            height: 650
+          }
+        },
+
         { h2: "How to tell maintenance from a structural problem" },
         { p: "Not a substitute for having someone look at it, but it tells you how worried to be." },
         { p: "**Probably maintenance:**" },
@@ -384,6 +529,14 @@ window.SITE_CONFIG = {
           note: "The crystallisation mechanism and the advice against watering walls or garden beds hard against them follows [City of Fremantle, Technical Advice Sheet 5: Dealing with dampness in old walls](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-5-Dealing-with-dampness-in-old-walls.pdf). Bore water salinity near the coast and the Swan River is documented by the [WA Department of Water and Environmental Regulation](https://www.wa.gov.au/service/natural-resources/water-resources/rebalancing-our-groundwater), which states that \"lower groundwater recharge has caused saline water to move inland, making bores more saline.\""
         },
 
+        { h3: "Brickwork fretting" },
+        {
+          p: [
+            "Fretting is the gradual crumbling and granular loss of the brick face, rather than the face blowing off in one sheet the way spalling does. It comes from the same causes as spalling - repeated salt crystallisation, or a soft or underfired brick weathering faster than the mortar around it - just acting more slowly and less dramatically.",
+            "A fretting brick face has a soft, sandy, eroded texture that rubs off under a thumb, sometimes leaving the mortar joints standing slightly proud of the brick around them because the brick has worn back faster than the joint. The fix is the same as for spalling: find and remove whatever moisture and salt source is feeding it, then replace the affected bricks rather than patching or sealing the surface over."
+          ]
+        },
+
         { h3: "Efflorescence" },
         {
           p: [
@@ -403,49 +556,16 @@ window.SITE_CONFIG = {
         { h3: "Previous bad repairs" },
         { p: "Very common on Perth character housing, because these houses have had eighty years of well-meaning owners. A hard cement repoint over lime, a patch in the wrong colour or profile, brick faces ground flat to tidy them up, silicone sealer applied to a damp wall, or a tuckpointed facade repointed flat by someone who did not recognise what it was. Undoing bad work is frequently more expensive than the original job would have been, and it is worth knowing that before you get a quote that seems high." },
 
-        { h2: "Tuckpointing: where it came from and how it is done" },
+        { h2: "Crack stitching: repairing a crack without rebuilding the wall" },
         {
           p: [
-            "Tuckpointing is worth a proper explanation, because it is the single most misunderstood term in this trade and it is routinely used to mean ordinary repointing.",
-            "It emerged in England between the late seventeenth and early twentieth centuries, most commonly used to imitate **gauged** or **rubbed** work: expensive, precisely shaped bricks laid with joints only a few millimetres wide, which read as a crisp, almost seamless facade - and, on cheaper buildings, to disguise irregular or damaged brick. Tuckpointing reproduced that appearance using ordinary bricks and ordinary joints. The joint is filled flush with a mortar coloured to match the brick, so the joint visually disappears into the wall. A fine ribbon of contrasting material, traditionally white lime putty and fine sand or stone dust, is then pressed into a scored groove on top, cut to a precise, uniform width. The eye reads that ribbon as the joint. The result is a wall that appears to have been laid to a tolerance it was never laid to. Done well, most people never realise a wall has been tuckpointed at all - that is the point of it.",
-            "The name comes from the ribbon being **tucked** into the finished surface. The tools are specific to the trade: a jointer for pressing the ribbon in, and a Frenchman for trimming it straight against a straightedge.",
-            "It reached Perth with federation-era and inter-war housing and it is found across the older suburbs, most often on the street-facing facade alone, because it was decoration rather than protection and there was no reason to spend it on the sides and back."
+            "Crack stitching is a repair method for a wall where the cause of movement has already been dealt with, or was never structural to begin with. It strengthens the masonry across an existing crack without cutting out and rebuilding the affected section.",
+            "A series of high-tensile stainless steel bars is bonded into slots cut along the mortar bed joints on both sides of the crack, tying the two halves of the wall back together in tension. The slots are repointed over once the bars are grouted in, so a stitched repair does not read as a repair from the footpath.",
+            "It is not a substitute for diagnosis. Stitching a crack that is still actively opening just stitches a wall that is still moving - the cause has to be dealt with first, in the same order as any other movement crack: engineer diagnoses, bricklayer repairs what the engineer identifies. Once the movement has stopped, stitching is often a cheaper and less disruptive alternative to cutting out and rebuilding a whole section of brickwork, and it suits a stepped diagonal crack that follows the joints better than a crack that has torn straight through the bricks themselves."
           ]
         },
-        /* TODO (Brad): no WA-specific source has been found for which decades
-           tuckpointing was actually common in Perth or which suburbs it survives
-           in today - don't claim more specificity than "federation-era and
-           inter-war" above until one exists. */
         {
-          note: "The origin, technique and tools above follow [The Society for the Protection of Ancient Buildings (SPAB), Tuck pointing](https://www.spab.org.uk/advice/tuck-pointing)."
-        },
-
-        { h3: "Why so few people do it" },
-        {
-          p: [
-            "It is closer to a separate trade than to a bricklaying task. The colour matching is the hard part before any of the handwork starts - the stopping mortar has to disappear against the brick, and getting that right on weathered century-old brick is a mixing and testing exercise, not a product you buy. Then the ribbon has to be laid dead straight and dead consistent over a whole facade, by hand, for days.",
-            "There is no volume in it, so the skill has not been widely passed on. That is why a general bricklayer quoting cheerfully on tuckpointing without ever having done it is a genuine risk rather than a theoretical one, and why the advice on this page is always the same: go and look at a finished job before you commit.",
-            "Done well it does not read as work at all - the facade simply looks right, and most people cannot say why. Done badly the ribbon wanders, the widths vary, and it is obvious from the other side of the road."
-          ]
-        },
-
-        { h2: "Perth brick: what it is made of and where it comes from" },
-        {
-          p: [
-            "Useful background if you are matching brick for a repair, because the answer to \"can you match it\" depends entirely on what you have.",
-            "Most Perth brick is **fired clay**. Clay is dug, formed (extruded and wire-cut for most modern brick, pressed for others), dried, then fired in a kiln to well over a thousand degrees, which vitrifies it into a hard permanent ceramic. Firing temperature and clay chemistry set the colour, the density and the durability, which is why two bricks that look similar can weather very differently.",
-            "Colour comes mostly from iron content and from kiln atmosphere rather than from anything added. Iron-rich clay fired in an oxygen-rich kiln gives the familiar reds and red-browns. Lower iron content gives the creams and buffs. Reduced-oxygen firing gives the manganese-dark and blue-grey ranges. Longer or hotter firing darkens and hardens the result, which is where the ambers, chocolates and near-blacks come from. The Perth palette that follows from this is heavy on red, terracotta, red-brown and brown, with cream, buff and sandy tones common in mid-century housing, and greys, charcoals and whites dominating contemporary work.",
-            "There is also a **limestone** tradition in Perth that sits alongside the brick one, because the Swan Coastal Plain has abundant limestone close to the surface. That is a different trade with different contractors, which is why limestone retaining work is not covered here."
-          ]
-        },
-
-        { h3: "Who makes brick in Western Australia" },
-        {
-          p: [
-            "The WA market is concentrated among a small number of manufacturers, and ownership has shifted recently. **Midland Brick**, long associated with the Middle Swan area on Swan Valley clay reserves, was owned by Boral before being sold to a Perth property consortium and then acquired by the WA-based **Buckeridge Group of Companies (BGC)** in 2021 - a deal the ACCC reviewed and did not oppose. **Austral Bricks**, the brand of ASX-listed **Brickworks Limited**, also manufactures in WA through a separately registered WA entity, alongside its national distribution. **PGH Bricks & Pavers**, owned by **CSR Limited**, manufactures only on the east coast and is sold into WA rather than made here. None of the three has any commercial relationship with this site. Beyond the manufacturers there is a secondary trade in **salvaged and reclaimed brick**, which is where a heritage repair usually has to go.",
-            "That matters for one practical reason. Some brick types on older Perth homes are simply not made any more - the clay pit is closed, the kiln is gone, or the size is obsolete, since older brick is frequently a different dimension to the modern standard (metric bricks are specified to AS/NZS 4455.1, at a nominal 230 x 110 x 76mm) and will not course in with it. Matching then means salvage: finding genuine period brick of the right type, colour and size, in enough quantity, in reasonable condition. That is a sourcing problem before it is a bricklaying problem, it can add weeks, and it is a legitimate reason for a repair quote to look expensive relative to the size of the patch.",
-            "If you are getting a repair quoted, ask directly whether they are matching new or matching salvaged, and ask to see the brick against your wall in daylight before it goes in. Colour matching under a shed light is how mismatches happen."
-          ]
+          note: "Method summarised from [Helifix Australia, Crack Stitching](https://www.helifix.com.au/applications/crack-stitching/): stainless steel helical bars bonded into slots cut into the mortar bed joints with a cementitious grout, extending a minimum of 500mm either side of the crack, at a vertical spacing of roughly every 2-6 brick courses depending on the wall and the extent of the damage. One manufacturer's system, described here for how the method works in general - bar spacing, slot depth and product brand vary by supplier and by wall type, and are a job for whoever quotes the repair to specify."
         },
 
         { h2: "Why Perth is a double brick city" },
@@ -460,21 +580,21 @@ window.SITE_CONFIG = {
         {
           note: "Figures and reasons above: [UDIA WA, Modern Methods of Housing Construction – Perth](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) (2021), commissioned from EY, citing Australian Construction Insights (2018) and ABS dwelling-completion data. Double brick's share has continued to move since 2018 and this site has not tracked it past that figure." },
 
-        { h2: "What tuckpointing and repointing cost in Perth" },
+        { h2: "What brick repairs and crack stitching cost in Perth" },
         {
           p: [
-            "Not a price list, and deliberately so. Tuckpointing is priced per metre of joint, repointing per square metre, individual brick replacement per brick, and none of those numbers mean anything without real Perth quotes behind them - logged by suburb, job type and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
-            "What follows instead is what actually moves the number, so you can read any quote you get and know whether it makes sense."
+            "Not a price list, and deliberately so. Individual brick replacement is priced per brick, crack stitching by the metre of crack treated, and rebuilding a section by area - none of those numbers mean anything without real Perth quotes behind them, logged by suburb, job type, extent of damage and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
+            "What follows instead is what actually moves the number."
           ]
         },
 
         { h3: "What moves the price" },
         {
           p: [
-            "**Access and scaffolding.** A single-storey front facade you can reach from a trestle is a different job to a two-storey return elevation. Scaffold is frequently quoted separately and is frequently the largest single line.",
-            "**How hard the existing mortar is to remove.** A previous cement repoint is the worst case, because it has to come out without damaging brick that is softer than the mortar holding it.",
             "**Brick matching, for replacement work.** Some Perth brick types are no longer made, and matching means salvage. That is a sourcing problem before it is a bricklaying problem.",
-            "**Joint length versus wall area.** Tuckpointing is priced by joint metre. A wall with smaller bricks has more joint per square metre and therefore costs more to tuckpoint at the same area."
+            "**Access and scaffolding.** Anything above single storey changes the job.",
+            "**Whether the crack is stitched or the section rebuilt.** Stitching is generally the cheaper option once the cause has stopped moving; a wall that is out of plane or unstable needs rebuilding regardless of cost.",
+            "**Whether the cause has been identified, or only the damage.** A repair quoted without a diagnosis is a repair that might need doing twice."
           ]
         },
         {
@@ -489,8 +609,8 @@ window.SITE_CONFIG = {
         { h3: "What is usually excluded" },
         {
           ul: [
-            "Scaffolding",
             "Structural investigation where movement is suspected",
+            "Scaffolding",
             "Painting or sealing afterwards",
             "Making good render or paint disturbed at the edges of the work",
             "Salvage sourcing for brick matching"
@@ -498,63 +618,31 @@ window.SITE_CONFIG = {
         },
 
         { h3: "Comparing quotes" },
-        { p: "Three quotes only compare if they describe the same job, and on repointing they usually do not." },
+        { p: "Three quotes only compare if they agree on what is actually wrong with the wall." },
         {
           ol: [
-            "**Rake-out depth.** Ask for it in millimetres. Skim repointing over the top looks fine for about two years.",
-            "**Mortar mix, and the reasoning behind it.** On an older wall this is the difference between maintenance and damage.",
-            "**Whether scaffold is in or out.**",
-            "**Area or joint length measured, not estimated.** Two quotes based on different measurements are not comparable at all.",
+            "**Has the cause been diagnosed, or only the damage described?**",
+            "**Is the crack being stitched or repointed solid?** Repointing a movement crack rigid just relocates the same crack.",
+            "**Brick matching - new or salvaged**, and has it been checked against your wall in daylight?",
+            "**Is scaffolding in or out?**",
             "Only then, the totals."
-          ]
-        },
-
-        { h2: "Perth's older brickwork" },
-        { p: "Perth has a genuine stock of federation-era and inter-war brick housing, and that housing is now at the age where original lime mortar is at or past the end of its life. That is why tuckpointing and repointing come up here more than the housing age alone would suggest." },
-        {
-          p: [
-            "**Guildford.** One of the three original 1829 Swan River Colony settlements, alongside Perth and Fremantle, and it has the brick to show for it. The **Rose & Crown Hotel** on Swan Street, WA's oldest continuously operating hotel, is built of handmade brick laid in Flemish bond dating to 1841. The **Guildford Hotel**, a two-storey Federation Free Classical building from 1885-86, was largely destroyed by fire in 2008 and rebuilt behind its original facade - restoration work turned up handmade brick from the local convict depot under the plasterwork. James Street and Market Street carry the rest of the federation-era streetscape.",
-            "**Mount Lawley.** Federation through to the inter-war building boom of the 1920s and 30s, when Mount Lawley, Inglewood and Maylands together added thousands of houses in Californian Bungalow and Spanish Mission styles. Beaufort Street is the clearest expression of the suburb's character now: heritage shopfronts and houses standing alongside a thoroughly modern cafe and bar strip, which is why the City of Vincent runs both a Heritage Area and a separate Character Retention Area system rather than one blanket rule.",
-            "**Fremantle.** Around 2,500 places on the City's own Heritage List, plus the West End separately on the state heritage register. It is the largest concentration of intact historic building stock this site speaks to - a whole port city's worth rather than a single heritage street or estate."
-          ]
-        },
-        { p: "Two things worth knowing if your house is in a heritage or character area:" },
-        {
-          ul: [
-            "Some Perth local governments have heritage listings or character area policies affecting what can be done to a street-facing facade, including repointing and rendering",
-            "Heritage-appropriate work costs more and takes longer, and that is the point rather than a problem"
-          ]
-        },
-        {
-          p: [
-            "Three examples of what that actually looks like. The **City of Fremantle** maintains a Heritage List and named Heritage Areas, including the West End and Hilton Garden Suburb, where development or repair work on a listed place generally needs planning approval so heritage staff can assess the impact before work starts. The **City of Vincent** runs a separate Heritage Area and Character Retention Area system across Mount Lawley and Highgate, with individual streets designated one or the other - Harley Street in Highgate was the first Heritage Area, St Albans Avenue the first Character Retention Area. The **City of Subiaco** has several named Heritage Areas of its own, including Hamersley Road, Kings Road and the Rokeby Road/Hay Street precinct, and is currently reviewing its wider Local Heritage Survey precinct by precinct.",
-            "If your address falls in any of these, or in another council's heritage or character area, check with that council's planning department before you commit to a repointing, rendering or repair scope - the work itself is not necessarily different, but the approval pathway is."
           ]
         },
 
         { h2: "What to ask before you accept a quote" },
         {
           ol: [
-            "**What mortar mix are you using, and why that one?** The answer should reference the existing mortar and the age of the building.",
-            "**Have you done tuckpointing before, and can I go and look at it?** If the job is tuckpointing. Most bricklayers have not, and the ones who have will be glad to send you to a job.",
             "**Do you think this is movement?** Ask directly, and ask what they are basing it on.",
-            "**Are you raking out to a proper depth or skimming over the top?** Ask for the depth in millimetres.",
-            "**Is scaffolding in the price?**",
-            "**Can you match the brick?** For replacement work."
+            "**Are you stitching the crack or rebuilding the section, and why?**",
+            "**Can you match the brick?** New or salvaged.",
+            "**Is the cause being investigated, or just the visible damage repaired?**",
+            "**Is scaffolding in the price?**"
           ]
         },
 
         { h2: "Frequently asked questions" },
         {
           faqs: [
-            {
-              q: "Is tuckpointing the same as repointing?",
-              a: "No. Repointing replaces failed mortar and is maintenance. Tuckpointing is a decorative finish applied over the joint, priced by joint length rather than wall area, and it is a specialist skill that most bricklayers do not have."
-            },
-            {
-              q: "How much does tuckpointing cost in Perth?",
-              a: "Every job is different - the state of the existing mortar, access and any scaffold needed move the cost more than the size of the house does, so there is no single figure worth quoting here. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
-            },
             {
               q: "My wall has a crack. Is it serious?",
               a: "Use the diagnosis section above as a first pass. Cracks running through bricks, widening toward the top, or changing recently are the ones to get looked at by an engineer rather than a bricklayer."
@@ -564,24 +652,12 @@ window.SITE_CONFIG = {
               a: "Rendering over failed mortar or a moving wall hides the problem rather than fixing it, and render shows movement cracking readily. Deal with the cause first."
             },
             {
-              q: "My house was tuckpointed and someone has repointed over it. Can it be fixed?",
-              a: "It can be reinstated, but it is restoration work rather than maintenance and it is priced accordingly."
-            },
-            {
               q: "What is the white powder on my bricks?",
               a: "Efflorescence - salts carried to the surface by moisture and left behind when the water evaporates. On new brickwork it is normal and weathers off. On established brickwork it means water is repeatedly getting into the wall, and the thing to find is the water source rather than to treat the powder. Do not seal or paint over it."
             },
             {
               q: "Why are the faces coming off my bricks?",
-              a: "Usually salt attack. Salts crystallise inside the brick just under the surface and the pressure eventually blows the face off. In Perth the salt commonly comes from bore water reticulation spraying the wall, from coastal exposure, or from groundwater rising through the base. A hard cement repoint makes it worse by forcing moisture to leave through the brick instead of the joint."
-            },
-            {
-              q: "Can I use cement mortar on an old brick wall?",
-              a: "You should not. Cement mortar is harder and less permeable than old brick, so the wall's movement and moisture are both forced through the brick face rather than through the joint. The damage takes a few years to appear and is not reversible. The mortar should always be softer than the brick."
-            },
-            {
-              q: "How do I know if my house is tuckpointed or just repointed?",
-              a: "Look closely at a joint on the front facade in good light. Tuckpointing has a fine raised ribbon of contrasting colour, usually white or near-white, sitting on top of a joint coloured to match the brick, and the ribbon is a consistent width. Ordinary pointing is a single mortar colour, tooled to a profile, with no ribbon."
+              a: "Usually salt attack, or its slower relation, fretting. Salts crystallise inside the brick just under the surface and the pressure eventually blows the face off, or gradually crumbles it. In Perth the salt commonly comes from bore water reticulation spraying the wall, from coastal exposure, or from groundwater rising through the base. A hard cement repoint makes it worse by forcing moisture to leave through the brick instead of the joint."
             },
             {
               q: "What are weep holes and can I fill them in?",
@@ -592,17 +668,25 @@ window.SITE_CONFIG = {
               a: "Sometimes with new brick, often only with salvaged brick. Some older Perth brick is no longer manufactured, and older brick is frequently a different size to the current standard, so it will not course in. Matching then means sourcing genuine period brick in the right colour, size and condition, which takes time and is a legitimate reason for a small repair to be quoted higher than expected."
             },
             {
-              q: "How long should repointing last?",
-              a: "There is no fixed number, and heritage conservation guidance from [the SPAB](https://www.spab.org.uk/advice/repointing), the UK's Society for the Protection of Ancient Buildings, deliberately avoids giving one - good repointing is judged on condition, not a calendar. The trigger for redoing it is mortar that has weathered back to a depth equal to the joint width, or gone loose, not a fixed age. What actually decides how long a repoint lasts is exposure (a sheltered wall outlasts one facing driving rain or salt spray by a wide margin) and workmanship: correct mortar mix, a proper rake-out depth and real curing are what get you decades rather than a few years. Skimped work on any of those three is the usual reason a repoint fails early."
+              q: "What is crack stitching?",
+              a: "A repair method that ties the two sides of a crack back together using stainless steel bars bonded into the mortar joints either side of it, rather than cutting out and rebuilding the wall. See the crack stitching section above for how it works."
+            },
+            {
+              q: "Does crack stitching fix the cause of a crack?",
+              a: "No. It repairs the masonry once the cause has stopped moving, or once the crack was never structural to begin with. Stitching a wall that is still actively moving just stitches a wall that will keep cracking - get the cause diagnosed first."
+            },
+            {
+              q: "How much does crack stitching cost?",
+              a: "It is priced by the metre of crack treated, and the number of courses stitched and the access involved move it more than the length of the crack does. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
             }
           ]
         },
         {
           form: {
             headline: "Tell us what your wall is doing",
-            preset: "Repointing or brick repairs",
+            preset: "Brick repairs or crack stitching",
             placeholders: {
-              size: "e.g. front facade of a 1920s home, mortar crumbling, about 20 square metres"
+              size: "e.g. stepped crack across the front wall, about 1.5m long, single storey"
             },
             extraFields: [
               {
@@ -620,19 +704,196 @@ window.SITE_CONFIG = {
         { h2: "Related" },
         {
           ul: [
+            "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
+            "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
             "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
             "[About Perth Brickwork](about.html)"
           ]
         }
-        /* TODO (Brad): staying with the illustrative images on this page for now
-           rather than sourcing real photographs. They carry no captions and make
-           no claim of authorship, consistent with the imagery policy. Real shots
-           (tuckpointed facade, failed mortar joint, spalled brick face) remain the
-           cheapest available credibility upgrade if this is revisited.
-           Decision recorded 28 July 2026. */
+        /* TODO (Brad): staying with the illustrative images on this page for now,
+           except the crack-through-bricks hero, which is a real photo taken
+           August 2026 (see the crack-diagnosis TODO above for a second angle of
+           the same wall sitting in the scratchpad). Decision recorded 28 July
+           2026, carried over when this page was split out of
+           brick-repairs-repointing-tuckpointing.html on 28 August 2026. */
       ]
     },
 
+    {
+      page: "federation-heritage-restoration.html",
+      name: "Federation and heritage brick restoration",
+      shortName: "Restoration",
+      shortDescription: "Heritage and federation-era brick restoration in Perth, including reinstating lost tuckpointing and matching salvaged period brick.",
+      serviceType: "Heritage brick and mortar restoration",
+      metaTitle: "Federation & Heritage Brick Restoration Perth",
+      metaDescription: "Federation and heritage brick restoration in Perth: reinstating tuckpointing, matching period brick, lime mortar, and council heritage rules.",
+      headline: "Federation and heritage brick restoration in Perth",
+      subheadline: "Reinstating tuckpointing that's been repointed over, matching salvaged period brick, and what your council's heritage rules mean for the work.",
+      ctaText: "Tell us about your heritage home",
+      image: {
+        src: "images/tuckpointed-brickwork-detail.jpg",
+        alt: "Close-up of tuckpointed brickwork: fine pale ribbons run along each joint of the upper courses, with untreated brickwork below",
+        width: 1000,
+        height: 650
+      },
+
+      blocks: [
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 28 July 2026." },
+
+        {
+          lead: [
+            "Perth has a genuine stock of federation-era and inter-war brick housing, old enough now that its original lime mortar is at or past the end of its life, and old enough that plenty of it has already had at least one well-meaning repair done to it the wrong way.",
+            "This page is about the things that come up specifically on a heritage or federation-era home: reinstating tuckpointing someone repointed over, matching brick that is no longer made, and working within whatever heritage or character area rules your council applies to your street."
+          ]
+        },
+
+        { h2: "Tuckpointing: where it came from" },
+        {
+          p: [
+            "Worth a proper explanation, because it is the single most misunderstood term in this trade and it is routinely used to mean ordinary repointing.",
+            "It emerged in England between the late seventeenth and early twentieth centuries, most commonly used to imitate **gauged** or **rubbed** work: expensive, precisely shaped bricks laid with joints only a few millimetres wide, which read as a crisp, almost seamless facade - and, on cheaper buildings, to disguise irregular or damaged brick. Tuckpointing reproduced that appearance using ordinary bricks and ordinary joints. The joint is filled flush with a mortar coloured to match the brick, so the joint visually disappears into the wall. A fine ribbon of contrasting material, traditionally white lime putty and fine sand or stone dust, is then pressed into a scored groove on top, cut to a precise, uniform width. The eye reads that ribbon as the joint. The result is a wall that appears to have been laid to a tolerance it was never laid to. Done well, most people never realise a wall has been tuckpointed at all - that is the point of it.",
+            "The name comes from the ribbon being **tucked** into the finished surface. The tools are specific to the trade: a jointer for pressing the ribbon in, and a Frenchman for trimming it straight against a straightedge.",
+            "It reached Perth with federation-era and inter-war housing and it is found across the older suburbs, most often on the street-facing facade alone, because it was decoration rather than protection and there was no reason to spend it on the sides and back."
+          ]
+        },
+        /* TODO (Brad): no WA-specific source has been found for which decades
+           tuckpointing was actually common in Perth or which suburbs it survives
+           in today - don't claim more specificity than "federation-era and
+           inter-war" above until one exists. */
+        {
+          note: "The origin, technique and tools above follow [The Society for the Protection of Ancient Buildings (SPAB), Tuck pointing](https://www.spab.org.uk/advice/tuck-pointing)."
+        },
+
+        { h3: "Why so few people do it" },
+        {
+          p: [
+            "It is closer to a separate trade than to a bricklaying task. The colour matching is the hard part before any of the handwork starts - the stopping mortar has to disappear against the brick, and getting that right on weathered century-old brick is a mixing and testing exercise, not a product you buy. Then the ribbon has to be laid dead straight and dead consistent over a whole facade, by hand, for days.",
+            "There is no volume in it, so the skill has not been widely passed on. That is why a general bricklayer quoting cheerfully on tuckpointing without ever having done it is a genuine risk rather than a theoretical one, and why the advice on this page is always the same: go and look at a finished job before you commit."
+          ]
+        },
+
+        { h3: "Reinstating a lost tuckpoint" },
+        {
+          p: "If a tuckpointed facade has been repointed flat by someone who did not recognise what it was, the original finish is gone, but it can be reinstated. That is restoration work rather than maintenance, priced by the metre of joint the same way tuckpointing itself is, and it is worth asking specifically to see a reinstatement job rather than any tuckpointing job - matching a new ribbon to a hundred-year-old facade's existing weathered colour and texture is a harder colour-matching exercise than tuckpointing a plain new wall."
+        },
+
+        { h2: "Perth brick: what it is made of and where it comes from" },
+        {
+          p: [
+            "Useful background if you are matching brick for a restoration, because the answer to \"can you match it\" depends entirely on what you have.",
+            "Most Perth brick is **fired clay**. Clay is dug, formed (extruded and wire-cut for most modern brick, pressed for others), dried, then fired in a kiln to well over a thousand degrees, which vitrifies it into a hard permanent ceramic. Firing temperature and clay chemistry set the colour, the density and the durability, which is why two bricks that look similar can weather very differently.",
+            "Colour comes mostly from iron content and from kiln atmosphere rather than from anything added. Iron-rich clay fired in an oxygen-rich kiln gives the familiar reds and red-browns. Lower iron content gives the creams and buffs. Reduced-oxygen firing gives the manganese-dark and blue-grey ranges. Longer or hotter firing darkens and hardens the result, which is where the ambers, chocolates and near-blacks come from. The Perth palette that follows from this is heavy on red, terracotta, red-brown and brown, with cream, buff and sandy tones common in mid-century housing, and greys, charcoals and whites dominating contemporary work.",
+            "There is also a **limestone** tradition in Perth that sits alongside the brick one, because the Swan Coastal Plain has abundant limestone close to the surface. That is a different trade with different contractors, which is why limestone retaining work is not covered here."
+          ]
+        },
+
+        { h3: "Who makes brick in Western Australia" },
+        {
+          p: [
+            "The WA market is concentrated among a small number of manufacturers, and ownership has shifted recently. **Midland Brick**, long associated with the Middle Swan area on Swan Valley clay reserves, was owned by Boral before being sold to a Perth property consortium and then acquired by the WA-based **Buckeridge Group of Companies (BGC)** in 2021 - a deal the ACCC reviewed and did not oppose. **Austral Bricks**, the brand of ASX-listed **Brickworks Limited**, also manufactures in WA through a separately registered WA entity, alongside its national distribution. **PGH Bricks & Pavers**, owned by **CSR Limited**, manufactures only on the east coast and is sold into WA rather than made here. None of the three has any commercial relationship with this site. Beyond the manufacturers there is a secondary trade in **salvaged and reclaimed brick**, which is where a heritage restoration usually has to go.",
+            "That matters for one practical reason. Some brick types on older Perth homes are simply not made any more - the clay pit is closed, the kiln is gone, or the size is obsolete, since older brick is frequently a different dimension to the modern standard (metric bricks are specified to AS/NZS 4455.1, at a nominal 230 x 110 x 76mm) and will not course in with it. Matching then means salvage: finding genuine period brick of the right type, colour and size, in enough quantity, in reasonable condition. That is a sourcing problem before it is a bricklaying problem, it can add weeks, and it is a legitimate reason for a restoration quote to look expensive relative to the size of the patch.",
+            "If you are getting a restoration quoted, ask directly whether they are matching new or matching salvaged, and ask to see the brick against your wall in daylight before it goes in. Colour matching under a shed light is how mismatches happen."
+          ]
+        },
+
+        { h2: "Perth's federation and heritage suburbs" },
+        {
+          p: [
+            "**Guildford.** One of the three original 1829 Swan River Colony settlements, alongside Perth and Fremantle, and it has the brick to show for it. The **Rose & Crown Hotel** on Swan Street, WA's oldest continuously operating hotel, is built of handmade brick laid in Flemish bond dating to 1841. The **Guildford Hotel**, a two-storey Federation Free Classical building from 1885-86, was largely destroyed by fire in 2008 and rebuilt behind its original facade - restoration work turned up handmade brick from the local convict depot under the plasterwork. James Street and Market Street carry the rest of the federation-era streetscape.",
+            "**Mount Lawley.** Federation through to the inter-war building boom of the 1920s and 30s, when Mount Lawley, Inglewood and Maylands together added thousands of houses in Californian Bungalow and Spanish Mission styles. Beaufort Street is the clearest expression of the suburb's character now: heritage shopfronts and houses standing alongside a thoroughly modern cafe and bar strip, which is why the City of Vincent runs both a Heritage Area and a separate Character Retention Area system rather than one blanket rule.",
+            "**Fremantle.** Around 2,500 places on the City's own Heritage List, plus the West End separately on the state heritage register. It is the largest concentration of intact historic building stock this site speaks to - a whole port city's worth rather than a single heritage street or estate."
+          ]
+        },
+        { p: "Two things worth knowing if your house is in a heritage or character area:" },
+        {
+          ul: [
+            "Some Perth local governments have heritage listings or character area policies affecting what can be done to a street-facing facade, including repointing and rendering",
+            "Heritage-appropriate work costs more and takes longer, and that is the point rather than a problem"
+          ]
+        },
+        {
+          p: [
+            "Three examples of what that actually looks like. The **City of Fremantle** maintains a Heritage List and named Heritage Areas, including the West End and Hilton Garden Suburb, where development or repair work on a listed place generally needs planning approval so heritage staff can assess the impact before work starts. The **City of Vincent** runs a separate Heritage Area and Character Retention Area system across Mount Lawley and Highgate, with individual streets designated one or the other - Harley Street in Highgate was the first Heritage Area, St Albans Avenue the first Character Retention Area. The **City of Subiaco** has several named Heritage Areas of its own, including Hamersley Road, Kings Road and the Rokeby Road/Hay Street precinct, and is currently reviewing its wider Local Heritage Survey precinct by precinct.",
+            "If your address falls in any of these, or in another council's heritage or character area, check with that council's planning department before you commit to a repointing, rendering or restoration scope - the work itself is not necessarily different, but the approval pathway is."
+          ]
+        },
+
+        { h2: "Working with lime mortar on an old wall" },
+        { p: "The mortar science behind why an old wall needs lime rather than cement, and why a hard cement repoint damages a heritage facade instead of protecting it, is covered in full on the [tuckpointing and repointing page](tuckpointing-repointing.html) - the short version is that lime is the sacrificial, breathing part of the wall, and getting the mix wrong is the single most common way well-meaning restoration work does lasting damage to a heritage facade." },
+
+        { h2: "What restoration costs in Perth" },
+        {
+          p: [
+            "Not a price list, and deliberately so. Reinstating tuckpointing is priced by the metre of joint, like tuckpointing itself, and salvaged brick carries a sourcing cost on top of the bricklaying - neither number means anything without real Perth quotes behind them, logged by suburb, job type and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you.",
+            "What actually moves the number on a heritage job: colour and texture matching for a tuckpointing reinstatement, how much genuine salvaged brick is available in the size and condition you need, and whatever your council's heritage approval pathway adds in time - rarely in bricklaying cost itself."
+          ]
+        },
+
+        { h2: "What to ask before you accept a quote" },
+        {
+          ol: [
+            "**Have you reinstated tuckpointing before, and can I see a finished job?**",
+            "**What mortar mix are you using, and is it lime rather than cement?**",
+            "**Are you matching new brick or salvaged brick, and have you checked it against my wall in daylight?**",
+            "**Has my property's heritage or character area status been checked with the council?**"
+          ]
+        },
+
+        { h2: "Frequently asked questions" },
+        {
+          faqs: [
+            {
+              q: "My house was tuckpointed and someone has repointed over it. Can it be fixed?",
+              a: "It can be reinstated, but it is restoration work rather than maintenance and it is priced accordingly."
+            },
+            {
+              q: "Do I need council approval to repoint or restore a heritage-listed home?",
+              a: "Often, if the work is visible from the street and your property is on a council heritage list or in a character area - check with your council's planning department before you commit to a scope. The work itself is not necessarily different, but the approval pathway is."
+            },
+            {
+              q: "Can salvaged brick always be matched for a heritage repair?",
+              a: "Not always. Some older Perth brick types are no longer manufactured and are a different size to the modern standard, so matching means sourcing genuine period brick in the right colour, size and condition - which takes time and is a legitimate reason for a small heritage repair to cost more than it looks like it should."
+            }
+          ]
+        },
+        {
+          form: {
+            headline: "Tell us about your heritage home",
+            preset: "Heritage or federation restoration",
+            placeholders: {
+              size: "e.g. federation-era home, tuckpointing repointed over flat on the front facade"
+            },
+            extraFields: [
+              {
+                name: "buildingAge",
+                label: "Roughly how old is the building?",
+                type: "select",
+                required: false,
+                after: "size",
+                options: ["Pre-1940", "1940-1980", "Post-1980", "Not sure"]
+              }
+            ]
+          }
+        },
+
+        { h2: "Related" },
+        {
+          ul: [
+            "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
+            "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
+            "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
+            "[About Perth Brickwork](about.html)"
+          ]
+        }
+        /* TODO (Brad): staying with the illustrative tuckpointing hero image here
+           too, rather than sourcing a real federation-streetscape photo. A real
+           photo of a heritage-listed federation facade (with the owner's
+           permission) would be a genuine upgrade for this page specifically if
+           one is ever available. Decision recorded 28 July 2026, carried over
+           when this page was split out of
+           brick-repairs-repointing-tuckpointing.html on 28 August 2026. */
+      ]
+    },
     {
       page: "brick-fences-boundary-walls.html",
       name: "Brick and rendered fences",
@@ -910,7 +1171,7 @@ window.SITE_CONFIG = {
         {
           p: [
             "Laid and left. The brick is the finished surface, so there is one trade, one process, and nothing to recoat. Cheapest over the life of the fence, and it matches most Perth housing stock, much of which is double brick already.",
-            "The colour is fired into the material rather than applied on top, so it does not fade, peel or need redoing - a face brick fence essentially looks the same in twenty years, weathered slightly. The mortar joints will eventually need repointing, but that is decades away and it is a small job on a fence compared to a house. See [repointing](brick-repairs-repointing-tuckpointing.html).",
+            "The colour is fired into the material rather than applied on top, so it does not fade, peel or need redoing - a face brick fence essentially looks the same in twenty years, weathered slightly. The mortar joints will eventually need repointing, but that is decades away and it is a small job on a fence compared to a house. See [repointing](tuckpointing-repointing.html).",
             "The palette available is wide: reds, red-browns and terracottas through the browns and ambers, creams, buffs and sandy tones, and the greys, charcoals and near-blacks that dominate contemporary work. Texture ranges from smooth through wirecut and sandstock to heavily tumbled. Matching the house is the usual approach, though deliberately contrasting the fence against the house is common and looks intentional rather than mismatched when the contrast is decisive rather than nearly-the-same.",
             "The real constraint is on an older home: if the house brick is no longer manufactured, an exact match may not exist, and the honest options are a sympathetic contrast, a rendered fence, or salvage."
           ]
@@ -1133,7 +1394,9 @@ window.SITE_CONFIG = {
         { h2: "Related" },
         {
           ul: [
-            "[Repointing, tuckpointing and brick repairs](brick-repairs-repointing-tuckpointing.html)",
+            "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
+            "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
+            "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
             "[About Perth Brickwork](about.html)"
           ]
         }
@@ -1144,6 +1407,28 @@ window.SITE_CONFIG = {
            section), and a vehicle gate opening with piers for scale (in the "Gates
            and openings" section). Decision recorded 28 July 2026. */
       ]
+    }
+  ],
+
+  /* --- Legacy URL redirects ------------------------------------------------
+     Pages that used to live at these URLs. bake.js writes each `from` as a
+     minimal, self-contained static redirect page (canonical link + meta
+     refresh, no JS) pointing at `to`, instead of deleting the file and
+     leaving a 404 for anyone who still has the old URL bookmarked, linked,
+     or indexed. Excluded from sitemap.xml (a redirect is never a canonical
+     page) and from the stale-page warning in bake().
+
+     This is NOT a substitute for a real 301 at the edge — GitHub Pages
+     serves static files only, it can't issue an HTTP redirect itself. Add a
+     Cloudflare Bulk Redirect (301, source = the `from` URL, target = the
+     `to` URL) for the authoritative fix; this static page is the fallback
+     for anyone who reaches the GitHub Pages file directly before that
+     rule exists, or if it's ever removed. */
+  legacyRedirects: [
+    {
+      from: "brick-repairs-repointing-tuckpointing.html",
+      to: "tuckpointing-repointing.html",
+      also: ["brick-repairs-crack-stitching.html", "federation-heritage-restoration.html"]
     }
   ],
 
@@ -1167,8 +1452,14 @@ window.SITE_CONFIG = {
 
     { h2: "The work we cover" },
 
-    { h3: "Repointing, tuckpointing and brick repairs" },
-    { p: "Mortar fails long before brick does. Repointing is maintenance. Tuckpointing is a decorative finish found on Perth's federation-era and inter-war housing, and it is a specialist skill that most bricklayers cannot do at all. Cracking is sometimes neither, and telling the difference is what stops you paying twice. [Repointing, tuckpointing and brick repairs in Perth](brick-repairs-repointing-tuckpointing.html)" },
+    { h3: "Tuckpointing and repointing" },
+    { p: "Mortar fails long before brick does. Repointing is maintenance. Tuckpointing is a decorative finish found on Perth's federation-era and inter-war housing, and it is a specialist skill that most bricklayers cannot do at all. [Tuckpointing and repointing in Perth](tuckpointing-repointing.html)" },
+
+    { h3: "Brick repairs and crack stitching" },
+    { p: "Cracked, spalled or fretting brickwork. Cracking is sometimes maintenance and sometimes a structural problem, and telling the difference is what stops you paying twice. [Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)" },
+
+    { h3: "Federation and heritage brick restoration" },
+    { p: "Reinstating tuckpointing someone repointed over, matching salvaged period brick, and working within a council heritage or character area. [Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)" },
 
     { h3: "Brick and rendered fences" },
     { p: "Front fences, boundary walls, piers, gate openings and letterboxes. Usually a fixed-scope job that can be quoted accurately once someone has stood on the frontage, unless part of it turns out to be retaining. [Brick and rendered fences in Perth](brick-fences-boundary-walls.html)" },
@@ -1182,7 +1473,7 @@ window.SITE_CONFIG = {
       p: [
         "**Limestone retaining walls.** Limestone walling in Perth is a different trade to bricklaying. Different suppliers, different blocks, different handling, and largely different contractors.",
         "**Paving, concreting and landscaping.** Adjacent trades, not this one.",
-        "**Structural engineering.** If a wall is moving, an engineer diagnoses it and a bricklayer repairs what the engineer identifies. Doing it in the other order is how people pay for the same wall twice. The [repairs page](brick-repairs-repointing-tuckpointing.html) covers how to tell which one you need."
+        "**Structural engineering.** If a wall is moving, an engineer diagnoses it and a bricklayer repairs what the engineer identifies. Doing it in the other order is how people pay for the same wall twice. The [brick repairs and crack stitching page](brick-repairs-crack-stitching.html) covers how to tell which one you need."
       ]
     },
 
@@ -1191,7 +1482,7 @@ window.SITE_CONFIG = {
       p: [
         "People often arrive looking for a rate per thousand bricks, because that is how bricklayers are paid subcontracting to builders on large sites.",
         "It does not translate to a domestic job. On a homeowner's job the brick laying is frequently a minority of the total. Footings, access, scaffolding, spoil removal, piers and approval can add up to more than the brickwork itself, and on repointing there is no new brick being laid at all.",
-        "Costs are set out per job type on the [fences page](brick-fences-boundary-walls.html) and the [repairs page](brick-repairs-repointing-tuckpointing.html), because that is the only level at which a range means anything."
+        "Costs are set out per job type on the [fences page](brick-fences-boundary-walls.html), the [tuckpointing and repointing page](tuckpointing-repointing.html) and the [brick repairs and crack stitching page](brick-repairs-crack-stitching.html), because that is the only level at which a range means anything."
       ]
     },
 
@@ -1307,7 +1598,7 @@ window.SITE_CONFIG = {
      disclosure on the about page. If you change the form, change this. */
   privacyBlocks: [
     { h2: "What this website collects" },
-    { p: "When you use the enquiry form on this site, we collect what you type into it: **what you need, your suburb, a description of the job, your name, your phone number,** and anything you add in the optional notes field. On the repairs page the form also asks the rough age of the building, which is optional. There are no other fields, and the site does not ask for an address, an email address or any payment detail." },
+    { p: "When you use the enquiry form on this site, we collect what you type into it: **what you need, your suburb, a description of the job, your name, your phone number,** and anything you add in the optional notes field. On the tuckpointing, brick repairs and heritage restoration pages, the form also asks the rough age of the building, which is optional. There are no other fields, and the site does not ask for an address, an email address or any payment detail." },
 
     { h2: "How it's used, and who it goes to" },
     { p: "Your details are used for one purpose: to get your job in front of a bricklayer in your part of Perth who does that type of work, so they can contact you about it." },
