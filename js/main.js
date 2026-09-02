@@ -598,7 +598,10 @@
       '<input type="hidden" name="_id" value="">' +
       (cfg.turnstileSiteKey ? '<div id="turnstile-widget"></div>' : "") +
       '<button class="btn btn-primary btn-block" type="submit">' + esc(cfg.form.submitText) + "</button>" +
-      '<p class="form-under">' + esc(cfg.form.underButton) + "</p>" +
+      /* Collection notice + privacy link. Keep in step with formHtml in
+         bake.js — two renderers on this build. */
+      '<p class="form-under">' + esc(cfg.form.underButton) +
+        ' <a href="privacy.html">' + esc(cfg.form.privacyLinkText) + "</a>.</p>" +
       '<p class="form-status" id="form-status" role="status" aria-live="polite"></p>' +
     "</form>";
   }

@@ -160,7 +160,25 @@ window.SITE_CONFIG = {
       { name: "notes", label: "Anything else we should know?", type: "textarea", required: false }
     ],
     submitText: "Send my job details",
-    underButton: "Free to send, and there is no obligation. Your details go to a bricklayer who covers your part of Perth and does that type of work.",
+    /* COLLECTION NOTICE - this is not just reassurance copy, so read before
+       editing. The site relies on the Privacy Act small business exemption,
+       and the "trading in personal information" carve-out (OAIC: disclosing
+       personal information for a benefit, service or advantage) only bites
+       where the individual has NOT consented. Consent can be implied, but
+       OAIC requires it to be informed - the person has to understand what
+       happens to their details. That means this line must say, at the point
+       of collection, that the details go to a bricklayer and that the
+       bricklayer pays. The previous wording named the disclosure but not the
+       payment, which is the part that puts the site in the carve-out.
+       This string is rendered in TWO places: inside the form (below the
+       submit button, followed by the privacy link) and in the CTA band, so
+       keep it readable in both. Backported from the Canberra Tiling build,
+       2 September 2026. See the template's LAUNCH_PLAYBOOK.md, phase 2. */
+    underButton: "Free to send, and there is no obligation. Your details go to a bricklayer who covers your part of Perth and does that type of work - the bricklayer pays for the enquiry, you do not. We never sell your details or add you to a marketing list.",
+    /* Link text appended after underButton inside the form only, not in the
+       CTA band. This build has no inline-markdown helper, so the anchor is
+       assembled in formHtml rather than written as markdown here. */
+    privacyLinkText: "How we handle your information",
     successMessage: "Thanks, your job details are through. If a bricklayer in your area can help, they will be in touch.",
     /* Two variants: the phone fallback is only offered once a real number is
        in `business.phone`. Telling someone to ring [PHONE] is worse than

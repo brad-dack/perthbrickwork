@@ -581,7 +581,13 @@ function formHtml(opts) {
     '<input type="hidden" name="_id" value="">' +
     (cfg.turnstileSiteKey ? '<div id="turnstile-widget"></div>' : "") +
     '<button class="btn btn-primary btn-block" type="submit">' + esc(cfg.form.submitText) + "</button>" +
-    '<p class="form-under">' + esc(cfg.form.underButton) + "</p>" +
+    /* Collection notice. The privacy link is appended here, in the form only,
+       because this is the point of collection — the CTA band use of
+       underButton (see ctaBand) deliberately carries no link. Keep this in
+       step with renderQuoteFormHtml in js/main.js — two renderers on this
+       build. See the consent note on form.underButton in config. */
+    '<p class="form-under">' + esc(cfg.form.underButton) +
+      ' <a href="privacy.html">' + esc(cfg.form.privacyLinkText) + "</a>.</p>" +
     '<p class="form-status" id="form-status" role="status" aria-live="polite"></p>' +
   "</form>";
 }
