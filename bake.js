@@ -6,7 +6,8 @@
        node bake.js           Regenerates every derived file from config.js:
                               all page HTML (baked title/meta/canonical/OG/
                               JSON-LD/H1/noscript), plus CNAME, robots.txt,
-                              sitemap.xml, 404.html, and favicon.svg.
+                              sitemap.xml, sitemap-lastmod.json, 404.html,
+                              and favicon.svg.
                               config.js is the only file you edit by hand.
 
        node bake.js --check   Preflight. Writes nothing. Fails loudly (exit 1)
@@ -20,6 +21,7 @@
 ============================================================================= */
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 global.window = {};
 require(path.join(__dirname, "config.js"));
@@ -825,10 +827,62 @@ const cnameContent = () => hostOf(cfg.domain) + "\n";
 const robotsContent = () => "User-agent: *\nAllow: /\n\nSitemap: " +
   cfg.domain + "/sitemap.xml\n";
 
-const sitemapContent = pageNames =>
+/* ---------- sitemap <lastmod> ---------------------------------------------
+   Google only pays attention to <lastmod> if it moves when the page actually
+   moves. Stamping today's build date on every URL each time bake.js runs is
+   worse than shipping no <lastmod> at all — the whole file gets discounted.
+
+   So each page's baked HTML is hashed, and the hash plus the date that hash
+   last changed are kept in sitemap-lastmod.json, committed like every other
+   derived file. Re-baking an unchanged page leaves its date alone; the date
+   only advances when the generated HTML genuinely differs.
+
+   The footer's copyright year is normalised out of the hash. It ticks over on
+   1 January and would otherwise advance every page's <lastmod> on the first
+   bake of each year for a change no reader or crawler cares about.
+
+   Dates are UTC, so a bake done in the Perth evening stamps the previous
+   day. That's deliberate: the writer and the --check validator share one
+   clock, so a fresh bake can never trip the "date in the future" check. */
+const LASTMOD_STATE = "sitemap-lastmod.json";
+const ISO_DATE_RX = /^\d{4}-\d{2}-\d{2}$/;
+
+const todayISO = () => new Date().toISOString().slice(0, 10);
+
+const pageHash = html => crypto.createHash("sha256")
+  .update(html.replace(/(<span id="copyright-year">)\d{4}(<\/span>)/, "$1$2"))
+  .digest("hex");
+
+/* Missing or corrupt state is not an error: every page simply reads as new
+   and gets today's date, which is the same place a fresh checkout starts. */
+const readLastmodState = () => {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(path.join(__dirname, LASTMOD_STATE), "utf8"));
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+  } catch {
+    return {};
+  }
+};
+
+/* Keyed by exactly the pages passed in, so a page dropped from config.js
+   drops out of the state file too instead of accumulating forever. */
+const nextLastmodState = pages => {
+  const prev = readLastmodState();
+  const next = {};
+  for (const [name, html] of pages) {
+    const hash = pageHash(html);
+    const was = prev[name];
+    const unchanged = was && was.hash === hash && ISO_DATE_RX.test(was.lastmod || "");
+    next[name] = { hash, lastmod: unchanged ? was.lastmod : todayISO() };
+  }
+  return next;
+};
+
+const sitemapContent = (pageNames, state) =>
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  pageNames.map(f => "  <url><loc>" + canonicalFor(f) + "</loc></url>").join("\n") +
+  pageNames.map(f => "  <url><loc>" + canonicalFor(f) + "</loc><lastmod>" +
+    ((state[f] || {}).lastmod || todayISO()) + "</lastmod></url>").join("\n") +
   "\n</urlset>\n";
 
 /* ---------- legacy redirect pages -----------------------------------------
@@ -986,10 +1040,12 @@ function bake() {
   }
 
   const pageNames = pages.map(([name]) => name);
+  const lastmodState = nextLastmodState(pages);
   const aux = [
     ["CNAME", cnameContent()],
     ["robots.txt", robotsContent()],
-    ["sitemap.xml", sitemapContent(pageNames)],
+    ["sitemap.xml", sitemapContent(pageNames, lastmodState)],
+    [LASTMOD_STATE, JSON.stringify(lastmodState, null, 2) + "\n"],
     ["404.html", notFoundContent()],
     ["favicon.svg", faviconContent()]
   ];
@@ -1157,16 +1213,18 @@ function runCheck() {
   validateTheme().forEach(p => errors.push(p));
 
   /* -- 4. sitemap <-> disk -------------------------------------------------- */
-  const expectedPages = buildPages().map(([name]) => name);
+  const builtPages = buildPages();
+  const expectedPages = builtPages.map(([name]) => name);
+  const fileOfLoc = u => {
+    const p = u.replace(/^https?:\/\/[^/]+\/?/, "");
+    return p === "" ? "index.html" : p;
+  };
   const sitemapRaw = read("sitemap.xml");
   if (sitemapRaw === null) {
     errors.push("sitemap.xml is missing (run node bake.js)");
   } else {
     const locs = [...sitemapRaw.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
-    const locFiles = locs.map(u => {
-      const p = u.replace(/^https?:\/\/[^/]+\/?/, "");
-      return p === "" ? "index.html" : p;
-    });
+    const locFiles = locs.map(fileOfLoc);
     for (const f of locFiles) {
       if (!exists(f)) errors.push("sitemap.xml lists a page that doesn't exist on disk: " + f);
     }
@@ -1185,6 +1243,53 @@ function runCheck() {
     for (const f of legacyFromFiles) {
       if (locFiles.includes(f)) errors.push("legacyRedirects entry " + f +
         " is also listed in sitemap.xml — a redirect must not be sitemapped (run node bake.js)");
+    }
+
+    /* -- 4a. <lastmod> is present, well-formed, and honest -----------------
+       A date that is malformed, in the future, or out of step with the state
+       file is worse than no date: Google discounts <lastmod> across the whole
+       sitemap once it stops matching what actually changed. */
+    const lastmodState = readLastmodState();
+    const now = todayISO();
+    for (const block of [...sitemapRaw.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1])) {
+      const loc = (block.match(/<loc>([^<]+)<\/loc>/) || [])[1];
+      if (!loc) continue;
+      const lm = (block.match(/<lastmod>([^<]*)<\/lastmod>/) || [])[1];
+      const rec = lastmodState[fileOfLoc(loc)];
+      if (lm === undefined) {
+        errors.push("sitemap.xml: " + loc + " has no <lastmod> (run node bake.js)");
+      } else if (!ISO_DATE_RX.test(lm)) {
+        errors.push("sitemap.xml: " + loc + " has a malformed <lastmod> \"" + lm +
+          "\" (expected YYYY-MM-DD, run node bake.js)");
+      } else if (lm > now) {
+        errors.push("sitemap.xml: " + loc + " has a <lastmod> in the future (\"" + lm + "\")");
+      } else if (rec && rec.lastmod !== lm) {
+        errors.push("sitemap.xml: " + loc + " says <lastmod> " + lm + " but " + LASTMOD_STATE +
+          " recorded " + rec.lastmod + " — one of them was hand-edited (run node bake.js)");
+      }
+    }
+
+    /* The state file is what makes those dates mean anything. If it's gone,
+       or its hashes no longer match the HTML config.js would generate now,
+       every date in sitemap.xml is describing a site that no longer exists. */
+    if (read(LASTMOD_STATE) === null) {
+      errors.push(LASTMOD_STATE + " is missing (run node bake.js)");
+    } else {
+      for (const [name, html] of builtPages) {
+        const rec = lastmodState[name];
+        if (!rec) {
+          errors.push(LASTMOD_STATE + " has no entry for " + name + " (run node bake.js)");
+        } else if (rec.hash !== pageHash(html)) {
+          errors.push(LASTMOD_STATE + " is stale for " + name + " — its <lastmod> no longer " +
+            "reflects the page config.js would generate (run node bake.js)");
+        }
+      }
+      for (const name of Object.keys(lastmodState)) {
+        if (!expectedPages.includes(name)) {
+          errors.push(LASTMOD_STATE + " has a leftover entry for " + name +
+            ", which config.js no longer generates (run node bake.js)");
+        }
+      }
     }
   }
 
