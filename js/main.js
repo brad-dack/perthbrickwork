@@ -202,13 +202,27 @@
 
   /* ---------- header / footer ------------------------------------------ */
 
-  function navLinks() {
-    var links = [{ href: "index.html", label: "Home" }];
-    cfg.services.forEach(function (s) {
-      links.push({ href: s.page, label: s.shortName || s.name });
-    });
-    links.push({ href: "about.html", label: "About" });
-    return links;
+  /* Mirrors headerHtml() in bake.js — services grouped under one <details>
+     rather than listed flat. Only reached on page HTML that predates the
+     bake change; see the guard in renderHeader(). */
+  function navHtml(file) {
+    function item(href, label) {
+      return "<li><a" + (href === file ? ' class="active"' : "") +
+        ' href="' + esc(href) + '">' + esc(label) + "</a></li>";
+    }
+    var onService = cfg.services.some(function (s) { return s.page === file; });
+    var subItems = cfg.services.map(function (s) {
+      return item(s.page, s.shortName || s.name);
+    }).join("");
+
+    return item("index.html", "Home") +
+      '<li class="nav-services">' +
+        "<details" + (onService ? ' class="active"' : "") + ">" +
+          "<summary>Services</summary>" +
+          '<ul class="nav-submenu">' + subItems + "</ul>" +
+        "</details>" +
+      "</li>" +
+      item("about.html", "About");
   }
 
   function renderHeader() {
@@ -222,10 +236,7 @@
     // page HTML that predates the bake change.
     if (!headerEl.hasAttribute("data-baked")) {
       var file = currentFile();
-      var nav = navLinks().map(function (l) {
-        var active = l.href === file ? ' class="active"' : "";
-        return "<li><a" + active + ' href="' + l.href + '">' + esc(l.label) + "</a></li>";
-      }).join("");
+      var nav = navHtml(file);
 
       var phoneBtn = phoneReady()
         ? '<a class="btn btn-outline nav-phone" href="' + telHref() + '">' +
@@ -251,6 +262,35 @@
     toggle.addEventListener("click", function () {
       var open = navEl.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    /* The services dropdown is a <details>, so opening and keyboard access
+       already work without this. All that's added here is the behaviour a
+       bare <details> lacks: closing when you click away or press Escape. */
+    var menus = navEl.querySelectorAll(".nav-services details");
+    if (!menus.length) return;
+
+    function closeMenus(except) {
+      Array.prototype.forEach.call(menus, function (d) {
+        if (d !== except) d.removeAttribute("open");
+      });
+    }
+    Array.prototype.forEach.call(menus, function (d) {
+      d.addEventListener("toggle", function () {
+        if (d.open) closeMenus(d);
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!navEl.contains(e.target)) closeMenus(null);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      Array.prototype.forEach.call(menus, function (d) {
+        if (!d.open) return;
+        d.removeAttribute("open");
+        var s = d.querySelector("summary");
+        if (s) s.focus();
+      });
     });
   }
 

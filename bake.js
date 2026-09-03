@@ -383,13 +383,29 @@ const pageHeadMain = (headline, contentHtml) => `    <section class="page-head">
    nav static content for crawlers and no-JS readers as a bonus.
    Mirrors renderHeader() in js/main.js — see the data-baked guard there. */
 function headerHtml(file, blocks) {
-  const links = [{ href: "index.html", label: "Home" }]
-    .concat(cfg.services.map(s => ({ href: s.page, label: s.shortName || s.name })))
-    .concat([{ href: "about.html", label: "About" }]);
+  const serviceLinks = cfg.services.map(s => ({ href: s.page, label: s.shortName || s.name }));
+  const onService = serviceLinks.some(l => l.href === file);
 
-  const nav = links.map(l =>
+  const item = l =>
     "<li><a" + (l.href === file ? ' class="active"' : "") +
-    ' href="' + esc(l.href) + '">' + esc(l.label) + "</a></li>").join("");
+    ' href="' + esc(l.href) + '">' + esc(l.label) + "</a></li>";
+
+  /* Services collapse into one nav item. Listed flat they ran to eight
+     top-level links and wrapped the bar on narrower desktops. <details> is
+     doing the work rather than a JS menu, so the dropdown opens by click and
+     by keyboard with no script at all; js/main.js only adds outside-click and
+     Escape closing on top. Every service link is still in the baked markup,
+     so nothing changes for a crawler. */
+  const servicesItem =
+    '<li class="nav-services">' +
+      "<details" + (onService ? ' class="active"' : "") + ">" +
+        "<summary>Services</summary>" +
+        '<ul class="nav-submenu">' + serviceLinks.map(item).join("") + "</ul>" +
+      "</details>" +
+    "</li>";
+
+  const nav = item({ href: "index.html", label: "Home" }) + servicesItem +
+    item({ href: "about.html", label: "About" });
 
   const phoneBtn = phoneIsReal()
     ? '<a class="btn btn-outline nav-phone" href="tel:' + cfg.business.phone + '">' +

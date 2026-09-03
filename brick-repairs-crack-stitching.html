@@ -371,6 +371,48 @@ html[data-style="elegant"] .logo::before { border-radius: 50%; width: 9px; heigh
 .site-nav li a.active,
 .site-nav li a:hover { color: var(--brand); }
 
+/* ---------- services dropdown ----------
+   Built on <details>, so it opens by click and by keyboard with no JS. Below
+   the desktop breakpoint it is just a disclosure inside the burger panel;
+   above it, the submenu becomes an absolutely positioned card. */
+
+.nav-services summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 10px 4px;
+  color: var(--ink);
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+}
+.nav-services summary::-webkit-details-marker { display: none; }
+.nav-services summary:hover,
+.nav-services details.active > summary { color: var(--brand); }
+
+/* Chevron, rotated when open. */
+.nav-services summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.nav-services details[open] > summary::after { transform: translateY(1px) rotate(-135deg); }
+
+/* Specificity note: the generic `.site-nav ul` rules below are (0,1,1), so a
+   bare `.nav-submenu` (0,1,0) loses to them regardless of order. Every
+   submenu rule is therefore scoped as `.site-nav .nav-submenu` (0,2,0). */
+.site-nav .nav-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 12px;
+}
+
 .nav-phone { white-space: nowrap; }
 
 @media (min-width: 800px) {
@@ -410,6 +452,42 @@ html[data-style="elegant"] .logo::before { border-radius: 50%; width: 9px; heigh
   .site-nav li a.active::after { transform: scaleX(1); }
   .nav-phone { margin-left: 10px; padding: 10px 18px; }
   .nav-quote { margin-left: 4px; padding: 10px 18px; }
+
+  /* Services dropdown, desktop: the submenu leaves the flow and becomes a
+     card under the summary. Placed after the rules above so it wins on
+     order as well as specificity. */
+  .nav-services { position: relative; }
+  .nav-services summary {
+    border-bottom: 0;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+  .site-nav .nav-submenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 60;
+    display: block;
+    width: max-content;
+    min-width: 232px;
+    padding: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+  }
+  /* An absolutely positioned panel still takes layout inside a closed
+     <details> in some engines, so hide it explicitly rather than relying on
+     the element's own open/closed behaviour. */
+  .nav-services details:not([open]) > .nav-submenu { display: none; }
+  .site-nav .nav-submenu li a {
+    padding: 9px 12px;
+    border-radius: calc(var(--radius) - 6px);
+    white-space: nowrap;
+  }
+  .site-nav .nav-submenu li a:hover { background: var(--brand-softer); }
+  /* The animated underline belongs to the top-level bar, not to panel rows. */
+  .site-nav .nav-submenu li a::after { content: none; }
 }
 
 /* ---------- mobile contact bar ----------
@@ -1483,7 +1561,7 @@ html[data-style="sharp"] .data-card { border-radius: 0; }
 <body data-page="service">
   <a class="skip-link" href="#main">Skip to content</a>
   <noscript><p class="noscript-warning">This site&#8217;s content needs JavaScript. Perth Brickwork - call <a href="tel:+61895161337">(08) 9516 1337</a> about your job.</p></noscript>
-  <header id="site-header" data-baked="1"><div class="container header-inner"><a class="logo" href="index.html">Perth Brickwork</a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button><nav id="site-nav" class="site-nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="tuckpointing-repointing.html">Tuckpointing</a></li><li><a class="active" href="brick-repairs-crack-stitching.html">Repairs</a></li><li><a href="lintel-repair-replacement.html">Lintels</a></li><li><a href="bricking-up-and-new-openings.html">Openings</a></li><li><a href="federation-heritage-restoration.html">Restoration</a></li><li><a href="brick-fences-boundary-walls.html">Fences</a></li><li><a href="about.html">About</a></li></ul><a class="btn btn-outline nav-phone" href="tel:+61895161337">Call (08) 9516 1337</a><a class="btn btn-primary nav-quote" href="#enquiry">Get a quote</a></nav></div></header>
+  <header id="site-header" data-baked="1"><div class="container header-inner"><a class="logo" href="index.html">Perth Brickwork</a><button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button><nav id="site-nav" class="site-nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li class="nav-services"><details class="active"><summary>Services</summary><ul class="nav-submenu"><li><a href="tuckpointing-repointing.html">Tuckpointing</a></li><li><a class="active" href="brick-repairs-crack-stitching.html">Repairs</a></li><li><a href="lintel-repair-replacement.html">Lintels</a></li><li><a href="bricking-up-and-new-openings.html">Openings</a></li><li><a href="federation-heritage-restoration.html">Restoration</a></li><li><a href="brick-fences-boundary-walls.html">Fences</a></li></ul></details></li><li><a href="about.html">About</a></li></ul><a class="btn btn-outline nav-phone" href="tel:+61895161337">Call (08) 9516 1337</a><a class="btn btn-primary nav-quote" href="#enquiry">Get a quote</a></nav></div></header>
   <main id="main">
     <section class="hero has-media">
       <div class="container hero-grid">
