@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" role="img">
+  <defs>
+    <pattern id="brick2" width="86" height="64" patternUnits="userSpaceOnUse">
+      <rect width="86" height="64" fill="#e3dbcf"/>
+      <rect x="0" y="0" width="80" height="26" fill="#a05c3a"/>
+      <rect x="43" y="32" width="80" height="26" fill="#a05c3a"/>
+      <rect x="-43" y="32" width="80" height="26" fill="#a05c3a"/>
+    </pattern>
+    <clipPath id="wallclipA"><rect x="0" y="0" width="424" height="260"/></clipPath>
+    <clipPath id="wallclipB"><rect x="0" y="0" width="424" height="260"/></clipPath>
+  </defs>
+
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <text x="30" y="38" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" font-weight="600" fill="#55606e">Cracking at a window or door head — diagrams, not photographs</text>
+
+  <!-- ===== 1. HORIZONTAL AT THE HEAD (lintel) ===== -->
+  <g transform="translate(30,66)">
+    <text x="0" y="22" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" font-weight="700" fill="#1b2430">1. Horizontal, at the head</text>
+    <rect x="0" y="34" width="176" height="26" rx="13" fill="#e4f0e9" stroke="#bcd9c9" stroke-width="1"/>
+    <text x="88" y="52" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#276749">Lintel, not footings</text>
+
+    <g transform="translate(8,74)">
+      <rect width="424" height="260" fill="url(#brick2)"/>
+      <g clip-path="url(#wallclipA)">
+        <!-- the opening -->
+        <rect x="140" y="120" width="160" height="112" fill="#f4f1ec" stroke="#8a6a52" stroke-width="2"/>
+        <!-- corroding steel lintel over the opening -->
+        <rect x="126" y="106" width="188" height="14" fill="#6b7480"/>
+        <rect x="126" y="106" width="188" height="5" fill="#8c3a12" opacity="0.75"/>
+        <!-- rust staining bleeding down the reveals -->
+        <path d="M133,120 L131,152 M137,120 L138,144" stroke="#b2521f" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+        <path d="M304,120 L306,150 M309,120 L308,141" stroke="#b2521f" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+        <!-- the crack: one bed joint, horizontal, running past both ends -->
+        <path d="M108,100 L152,99 L196,101 L240,100 L284,101 L328,99"
+              fill="none" stroke="#16202b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- label -->
+        <path d="M320,144 L312,118" stroke="#1b2430" stroke-width="1.4" fill="none"/>
+        <rect x="318" y="132" width="92" height="24" rx="6" fill="#ffffff" stroke="#c9ccd1" stroke-width="1"/>
+        <text x="364" y="148" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="13" font-weight="600" fill="#1b2430">Steel lintel</text>
+      </g>
+      <rect width="424" height="260" fill="none" stroke="#8a6a52" stroke-width="2"/>
+    </g>
+
+    <text x="0" y="362" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">Sits in one bed joint at the head and runs past both ends of</text>
+    <text x="0" y="384" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">the opening. Rust staining is the confirming sign.</text>
+  </g>
+
+  <!-- ===== 2. STEPPED AND DIAGONAL (movement) ===== -->
+  <g transform="translate(530,66)">
+    <text x="0" y="22" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="21" font-weight="700" fill="#1b2430">2. Stepped and diagonal</text>
+    <rect x="0" y="34" width="146" height="26" rx="13" fill="#fceae4" stroke="#f0c9bc" stroke-width="1"/>
+    <text x="73" y="52" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600" fill="#96331a">Engineer first</text>
+
+    <g transform="translate(8,74)">
+      <rect width="424" height="260" fill="url(#brick2)"/>
+      <g clip-path="url(#wallclipB)">
+        <rect x="140" y="120" width="160" height="112" fill="#f4f1ec" stroke="#8a6a52" stroke-width="2"/>
+        <!-- stepped crack climbing the joints into the opening corner -->
+        <path d="M44,256 L44,230 L64,230 L64,204 L84,204 L84,178 L104,178 L104,152 L124,152 L124,126 L140,126 L140,120"
+              fill="none" stroke="#16202b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <rect width="424" height="260" fill="none" stroke="#8a6a52" stroke-width="2"/>
+    </g>
+
+    <text x="0" y="362" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">Climbs through the joints, often out of an opening corner.</text>
+    <text x="0" y="384" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="15" fill="#1b2430">The cause is under the wall, not over the opening.</text>
+  </g>
+</svg>
