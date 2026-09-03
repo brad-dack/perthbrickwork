@@ -1,38 +1,42 @@
 {
   "index.html": {
-    "hash": "c5c4a25e8fc6574cd390f9f22625a1fd51a74e391d6d605ed39e6fabc3d69987",
+    "hash": "7b6ac08708442417216c04562b75089c7e8b2f3d534bc8f0fb5e9a7f606eb90b",
     "lastmod": "2026-09-03"
   },
   "tuckpointing-repointing.html": {
-    "hash": "4ca2c079eeec1f9816fd18eec4f7b4f298bf90021e3cbfda91aab94b1d20566c",
+    "hash": "63a4aa911742cdfd6654f4b44f498aa876c340976350a0873d3216861d6de0c4",
     "lastmod": "2026-09-03"
   },
   "brick-repairs-crack-stitching.html": {
-    "hash": "b501a45589bcdd7f71719b3a0d46bef35ae348ce8da74aa2d36e0bef7b94dc60",
+    "hash": "74b2aa012fc61fc17d3e04a7186935ec6ba9218abfebe9be57e10f507542ef50",
     "lastmod": "2026-09-03"
   },
   "lintel-repair-replacement.html": {
-    "hash": "a28c06a789372979ab4ce5b89a4a73aef974824a783d02acb1b8b181063cff71",
+    "hash": "b54f26d0c2503502d4c2d0bc2e2b3ac2cb6a3bbf5d2285d85a8d1dc9bdcba1a6",
     "lastmod": "2026-09-03"
   },
   "bricking-up-and-new-openings.html": {
-    "hash": "9681fec80277d8a05716dfab64a9ad3a8a59eb8ce1c68ecacd055fee7d86e820",
+    "hash": "cb8bc98e746783a7f9b01874ef6527b507c37d2b9ed713ffd38e37d07165b2b9",
     "lastmod": "2026-09-03"
   },
   "federation-heritage-restoration.html": {
-    "hash": "75c31822ca3770d2f9e85785e0b7efcda62ace29432c3a3917acc8a3937df14f",
+    "hash": "e768b62e041d905e4b3dd505f4ec7aedd7b29c371d7e3192f800074d6b454bde",
     "lastmod": "2026-09-03"
   },
   "brick-fences-boundary-walls.html": {
-    "hash": "5f17f31363690081fad18e4d48ad6ebcee3ce69c86ccc9d3103ee09c54154439",
+    "hash": "486033fc0ec704dd28feeb8e6fb093e7a19c1bfebf2a40cf43e7cee5f89013ee",
+    "lastmod": "2026-09-03"
+  },
+  "brickwork-cost-guide.html": {
+    "hash": "480b4f53a88cc8372f3232bec7923e251e5694ece940364b02f8ca213bf7a4fb",
     "lastmod": "2026-09-03"
   },
   "about.html": {
-    "hash": "bb8bc7c6fdb024213298372dea3280c6c0aa00b9f6f8f2a8c1b026c021f468ba",
+    "hash": "d50dd1bd2be449453c317cb7ab19e49966e1cdd763a94d0323483935643a3ae4",
     "lastmod": "2026-09-03"
   },
   "privacy.html": {
-    "hash": "45bc78fd1511ad35c9aad595fa96d3c83036b3905dafb73fbc66377b324dee40",
+    "hash": "7237d5257766dd71c62dc39f41ce177ed110c917deb3b9f096e4f6a7f52ef937",
     "lastmod": "2026-09-03"
   }
 }

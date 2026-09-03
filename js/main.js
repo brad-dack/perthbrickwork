@@ -215,6 +215,10 @@
       return item(s.page, s.shortName || s.name);
     }).join("");
 
+    var guideItems = (cfg.guides || []).map(function (g) {
+      return item(g.page, g.shortName || g.name);
+    }).join("");
+
     return item("index.html", "Home") +
       '<li class="nav-services">' +
         "<details" + (onService ? ' class="active"' : "") + ">" +
@@ -222,6 +226,7 @@
           '<ul class="nav-submenu">' + subItems + "</ul>" +
         "</details>" +
       "</li>" +
+      guideItems +
       item("about.html", "About");
   }
 

@@ -404,7 +404,10 @@ function headerHtml(file, blocks) {
       "</details>" +
     "</li>";
 
-  const nav = item({ href: "index.html", label: "Home" }) + servicesItem +
+  const guideItems = (cfg.guides || [])
+    .map(g => item({ href: g.page, label: g.shortName || g.name })).join("");
+
+  const nav = item({ href: "index.html", label: "Home" }) + servicesItem + guideItems +
     item({ href: "about.html", label: "About" });
 
   const phoneBtn = phoneIsReal()
@@ -457,6 +460,8 @@ function footerHtml() {
       '<div><p class="footer-title">' + UI.services + "</p><ul>" + pageLinks + "</ul></div>" +
       '<div><p class="footer-title">More</p><ul>' +
         '<li><a href="index.html">Home</a></li>' +
+        (cfg.guides || []).map(g =>
+          '<li><a href="' + esc(g.page) + '">' + esc(g.name) + "</a></li>").join("") +
         '<li><a href="about.html">About</a></li>' +
         '<li><a href="privacy.html">Privacy policy</a></li>' +
       "</ul></div>" +
@@ -791,6 +796,26 @@ function buildPages() {
       file, area.blocks || [])]);
   }
 
+  /* Guides are standalone reference pages rather than services: no
+     serviceSchema, no place in the services dropdown, their own top-level
+     nav slot. Like areas, js/main.js has no runtime renderer for
+     data-page="guide", so the blocks are baked and the deferred build
+     leaves them alone. */
+  for (const guide of cfg.guides || []) {
+    files.push([guide.page, page("guide",
+      head({
+        title: guide.metaTitle, description: guide.metaDescription, file: guide.page,
+        faqs: faqsIn(guide.blocks),
+        extraSchemas: [breadcrumbSchema(guide.name, canonicalFor(guide.page))]
+      }),
+      heroMain({
+        headline: guide.headline, subheadline: guide.subheadline,
+        ctaText: guide.ctaText, image: guide.image, blocks: guide.blocks,
+        contentHtml: renderBlocks(guide.blocks)
+      }),
+      guide.page, guide.blocks)]);
+  }
+
   files.push(["about.html", page("about",
     head({
       title: cfg.pages.about.metaTitle, description: cfg.pages.about.metaDescription, file: "about.html",
@@ -811,6 +836,25 @@ function buildPages() {
     "privacy.html", cfg.privacyBlocks)]);
 
   return files;
+}
+
+/* Guide pages must not overwrite a core page or a service page. */
+function validateGuidePages() {
+  const servicePages = cfg.services.map(s => s.page);
+  const seen = new Set();
+  const problems = [];
+  for (const g of cfg.guides || []) {
+    if (!g.page || !/^[a-z0-9][a-z0-9-]*\.html$/.test(g.page)) {
+      problems.push('guide "' + (g.name || "?") + '" has an invalid page filename: "' + g.page + '"');
+      continue;
+    }
+    if (CORE_PAGES.includes(g.page) || servicePages.includes(g.page)) {
+      problems.push('guide page "' + g.page + '" collides with an existing page');
+    }
+    if (seen.has(g.page)) problems.push('duplicate guide page "' + g.page + '"');
+    seen.add(g.page);
+  }
+  return problems;
 }
 
 /* Area slugs must not overwrite core pages or service pages. */
@@ -1041,7 +1085,7 @@ const faviconContent = () => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0
 /* ---------- bake (write mode) --------------------------------------------- */
 
 function bake() {
-  const problems = [...validateTheme(), ...validateAreaSlugs()];
+  const problems = [...validateTheme(), ...validateAreaSlugs(), ...validateGuidePages()];
   if (problems.length) {
     console.error("Cannot bake — fix these entries in config.js first:");
     problems.forEach(p => console.error("  ✖ " + p));
@@ -1226,6 +1270,7 @@ function runCheck() {
 
   /* -- area slug + theme validity ------------------------------------------- */
   validateAreaSlugs().forEach(p => errors.push(p));
+  validateGuidePages().forEach(p => errors.push(p));
   validateTheme().forEach(p => errors.push(p));
 
   /* -- 4. sitemap <-> disk -------------------------------------------------- */

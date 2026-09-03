@@ -1842,6 +1842,215 @@ window.SITE_CONFIG = {
      `to` URL) for the authoritative fix; this static page is the fallback
      for anyone who reaches the GitHub Pages file directly before that
      rule exists, or if it's ever removed. */
+  /* Standalone reference pages. Not services - they describe how the trade
+     works rather than something being sold, so they sit outside the services
+     dropdown and carry no serviceSchema. */
+  guides: [
+    {
+      page: "brickwork-cost-guide.html",
+      name: "Perth brickwork cost guide",
+      shortName: "Costs",
+      metaTitle: "Perth Brickwork Cost Guide | How Bricklaying Is Priced",
+      metaDescription: "How brickwork is actually priced in Perth: the unit each job is quoted in, what moves the number, and what WA law says about deposits, contracts and insurance.",
+      headline: "What brickwork costs in Perth",
+      subheadline: "Not a price list. How the pricing works, what actually drives the number, and the rules that govern what a tradesperson can ask you to pay before they start.",
+      ctaText: "Get a price for your job",
+
+      blocks: [
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 3 September 2026." },
+
+        {
+          lead: [
+            "Everyone wants a number, and every brickwork site either refuses to give one or gives one so heavily caveated it is useless. This page takes a different approach: it explains how the pricing actually works, so that when you do get quotes you can tell whether they are good ones.",
+            "There are real numbers on this page. They are not prices - they are the legal limits on what you can be asked to pay, when, and what protection you get for it. Those are fixed, they are Western Australian, and almost nobody tells homeowners about them."
+          ]
+        },
+
+        { h2: "Why there is no price list here" },
+        {
+          p: [
+            "A per-brick or per-square-metre figure published on a website is a guess dressed as information. On a domestic job the brick laying is frequently a minority of the total: footings, access, scaffolding, spoil removal, matching, and making good can add up to more than the brickwork. On repointing there is no new brick being laid at all.",
+            "Publishing a range would mean lifting it from a competitor or averaging something national. Either would give you a number to anchor on that has nothing to do with your wall, and a false anchor costs you more than no anchor - it makes a fair quote look expensive and an underquote look like a bargain.",
+            "Real figures for this page will come from actual Perth quotes, logged by suburb, job type, extent, building age and access. Until those exist, what follows is the part that is genuinely knowable."
+          ]
+        },
+
+        { h2: "Every job is priced in a different unit" },
+        { p: "This is the single most useful thing to understand before you collect quotes, because two quotes written in different units are not comparable at all, and that is the most common reason a set of quotes looks wildly inconsistent." },
+        {
+          ul: [
+            "**Repointing and tuckpointing** - by the square metre of wall face, or sometimes by the lineal metre of joint. Rake-out depth changes the number more than area does.",
+            "**Individual brick replacement** - per brick, and the price per brick falls sharply with quantity. Ten scattered bricks across a facade costs more per brick than fifty in one panel.",
+            "**Crack stitching** - by the lineal metre of crack treated, or per bar installed. The number of courses stitched matters more than the crack's length.",
+            "**Lintel replacement** - per opening, because the propping is most of the work and it does not scale with the width of the window.",
+            "**Rebuilding a section** - by the square metre of wall.",
+            "**Fences and boundary walls** - by the lineal metre, priced against a height and a finish. Piers, gates and returns are usually separate.",
+            "**New brickwork on a build site** - per thousand bricks laid. This is the trade rate bricklayers get subcontracting to builders, and it is the number people find online and then try to apply to a domestic repair. It does not transfer."
+          ]
+        },
+
+        { h2: "What moves the number in Perth specifically" },
+        {
+          p: [
+            "**There are two walls, not one.** Perth builds in double brick, so an opening, a repair or an alteration to an external wall goes through two structural leaves. Advice and pricing written for the brick-veneer states routinely understates this.",
+            "**Whether the brick can be matched.** Some Perth brick is no longer manufactured, and older brick is frequently a different size to the current standard, so it will not course in even when the colour is right. Matching then means salvage, which is a sourcing problem with a lead time before it is a bricklaying one.",
+            "**Whether the cause has been diagnosed.** A repair quoted off the visible damage, with no view on why it happened, is a repair that may need doing twice. That is the most expensive outcome available in this trade and it usually starts with the cheapest quote.",
+            "**Access.** Ground level with a clear approach, or an upper storey over a paved courtyard with no room for a scaffold.",
+            "**Salt and moisture exposure.** Coastal air, bore water reticulation and rising groundwater all shorten the life of a repair that does not deal with the water source, which is why the water source is part of the job rather than an optional extra.",
+            "**Heritage and appearance.** Matching a mortar colour and joint profile on a facade, or reinstating tuckpointing, is skilled work priced accordingly. The same repair on a wall nobody sees is not the same job."
+          ]
+        },
+
+        { h2: "The parts of a quote that are not brickwork" },
+        { p: "These are where quotes diverge, and where a cheap one is usually cheap because something below has been left out rather than because the labour rate is better." },
+        {
+          ul: [
+            "Footings, and the excavation and spoil removal that go with them",
+            "Scaffolding, and propping or needling where a wall is being opened up",
+            "Engineering design and certification where anything structural changes",
+            "Council building permit fees",
+            "Salvage sourcing for brick matching",
+            "Making good render, paint, paving or garden at the edges of the work",
+            "Other trades in the wall - electrical in an opening being closed up, or roof plumbing feeding a damp problem"
+          ]
+        },
+
+        { h2: "What the law says about what you pay" },
+        { p: "This is the part worth reading twice. These are Western Australian rules, they are specific, and they apply to a bricklayer working directly for you - not only to registered building companies. Under the Home Building Contracts Act a builder is any person who performs home building or associated work for others, whether or not they are registered." },
+
+        { h3: "The contract has to be in writing" },
+        { p: "For a fixed-price home building or associated work contract valued between $7,500 and $500,000, the agreement must be in writing, contain all the terms, be dated, and be signed by both parties. An oral agreement does not satisfy the Act. If someone wants to do a $20,000 job on a handshake, that is not informality, it is non-compliance." },
+
+        { h3: "A deposit is capped at 6.5 per cent" },
+        { p: "A home building work contract cannot require a deposit before work starts that exceeds 6.5 per cent of the total cost of the work. Below $7,500 or above $500,000 the Act does not apply and there is no statutory cap. So on a $30,000 job, a request for $10,000 up front is not a negotiating position - it is outside what the contract is allowed to provide for." },
+
+        { h3: "Progress payments only cover work already done" },
+        { p: "Once work has started, a progress payment can only be for work actually performed or materials already supplied. The example Building and Energy gives is exactly this trade: a builder cannot demand a progress payment for the purchase and delivery of bricks until the bricks have been delivered. Needing the money up front to buy materials is the oldest pattern in domestic building disputes, and the Act addresses it directly." },
+
+        { h3: "Over $20,000, insurance has to be in place before you pay anything" },
+        {
+          p: [
+            "Where residential building work is valued over $20,000, the builder must take out home indemnity insurance in the name of the owner before accepting payment or commencing work. Not afterwards, and not on request.",
+            "It covers completion or rectification up to $200,000, or the contract value if that is less, and loss of deposit up to $40,000, with a $500 excess. Cover runs through construction and for six years from practical completion. It pays out where the builder dies, disappears or becomes insolvent.",
+            "Residential building work here means constructing a new dwelling, extending or renovating an existing one, placing a dwelling on land, or multi-unit grouped homes. Whether a particular job falls inside that definition is worth confirming rather than assuming - ask, and ask to see the certificate before any money moves."
+          ]
+        },
+
+        { h3: "And registration, on larger jobs" },
+        { p: "Building work needs a registered building contractor once it requires a building permit and reaches $20,000, or $50,000 for a Class 10a building such as a garage, shed or carport. Fences, free-standing walls and retaining walls are classed as incidental structures and sit outside that requirement whatever they cost. There is more on checking registration on [the homepage](index.html)." },
+        {
+          note: "Contract, deposit and progress payment rules are from Building and Energy's [Home Building Contracts Act fact sheet](https://www.wa.gov.au/system/files/2024-10/home_building_contracts_act_factsheet.pdf), which states that the Act applies \"where the value of the fixed price contract is between $7,500 and $500,000\", that a contract cannot provide for a deposit prior to the commencement of work \"that exceeds 6.5 per cent of the total cost of the work\", and that \"contracts must be in writing, contain all the terms, conditions and provisions of the agreement, show the date and be signed by both parties\". Insurance figures are from the [Home indemnity insurance fact sheet](https://www.wa.gov.au/government/publications/home-indemnity-insurance-fact-sheet), which requires cover \"in the name of the owner before accepting payment or commencing work\" for residential building work valued over $20,000. Registration thresholds are from [builders' registration guidance](https://www.wa.gov.au/government/multi-step-guides/builders-registration). All three are administered by Building and Energy and the figures are subject to change - confirm the current position before relying on it for a particular contract." },
+
+        { h2: "Making three quotes comparable" },
+        { p: "Three quotes only compare if they describe the same job. Before comparing totals, line them up on these." },
+        {
+          ol: [
+            "**Are they in the same unit?** Per square metre, per lineal metre, per brick and per opening are not interchangeable.",
+            "**Do they agree on what is wrong?** On repair work especially, two quotes that diagnose differently are quotes for two different jobs.",
+            "**Is the cause being addressed, or only the damage?**",
+            "**Rake-out depth on repointing, and the mortar mix.** A shallow scratch-and-fill and a proper rake-out are not the same work and will not last the same time.",
+            "**Brick matching - new or salvaged, and checked against your wall in daylight?**",
+            "**Scaffolding, propping, permits and engineering - in or out?**",
+            "**Making good - who reinstates the paint, render, paving or garden?**",
+            "Only then, the totals."
+          ]
+        },
+
+        { h2: "Red flags on price" },
+        {
+          ul: [
+            "A deposit above 6.5 per cent on a contract the Act covers, or a large cash deposit with no written contract",
+            "A price given over the phone or from a photo, for repair work, without anyone looking at the wall",
+            "A quote that does not say why the damage happened",
+            "Pressure to decide today, or a discount that expires",
+            "An offer made at your door, particularly for repointing or roof and wall work, where the tradesperson happened to be working nearby",
+            "A refusal to provide the home indemnity insurance certificate on a job over $20,000",
+            "A number well below the others with no explanation of what is being done differently"
+          ]
+        },
+
+        { h2: "What to send when you ask for a price" },
+        { p: "The more of this you provide, the closer a first indication will be to the final number, and the less likely you are to get a quote that changes once someone is on site." },
+        {
+          ul: [
+            "Photographs: one from a distance showing the whole wall, one close up on the damage",
+            "Rough dimensions - length and height, or the size of the affected area",
+            "The approximate age of the building",
+            "Single or double storey, and what the access is like",
+            "Whether it is face brick, painted, rendered or bagged",
+            "Anything you already know about the cause: a leaking gutter, reticulation on the wall, a garden bed against it, recent tree removal",
+            "Whether anyone has repaired it before"
+          ]
+        },
+
+        { h2: "Frequently asked questions" },
+        {
+          faqs: [
+            {
+              q: "What is the going rate for a bricklayer in Perth?",
+              a: "There is a per-thousand-bricks trade rate that bricklayers get subcontracting to builders on new construction, and it is the figure most often quoted online. It does not transfer to a domestic repair, where the brick laying is often the smaller part of the job and the footings, access, matching and making good are the rest. For your job the useful question is what unit the work is priced in, which the section above sets out."
+            },
+            {
+              q: "How much deposit can a bricklayer ask for?",
+              a: "On a fixed-price contract between $7,500 and $500,000, no more than 6.5 per cent of the total cost of the work before work starts. Outside that range the Act does not apply and there is no statutory cap. After work starts, payments can only be for work already performed or materials already delivered."
+            },
+            {
+              q: "Do I need a written contract for brickwork?",
+              a: "For a fixed-price job between $7,500 and $500,000, yes - the Act requires it in writing, with all the terms, dated and signed by both parties, and an oral agreement does not comply. Below that threshold it is not a legal requirement, but a written scope is still the thing that prevents most disputes, because most disputes in this trade are about scope rather than quality."
+            },
+            {
+              q: "Does home indemnity insurance apply to a brickwork job?",
+              a: "It applies where residential building work is valued over $20,000, and the cover has to be taken out in your name before the builder accepts payment or starts work. Residential building work means a new dwelling, an extension or renovation of an existing one, placing a dwelling on land, or multi-unit grouped homes. Whether a specific job sits inside that definition is worth confirming with Building and Energy rather than assuming either way."
+            },
+            {
+              q: "Why is one quote so much cheaper than the others?",
+              a: "Usually scope rather than rate. The common gaps are rake-out depth on repointing, whether the cause is being addressed or only the damage, whether scaffolding and making good are included, and whether brick matching is new or salvaged. Line the quotes up on those before comparing totals."
+            },
+            {
+              q: "Can you give me a ballpark over the phone?",
+              a: "For some jobs, once we know the unit it is priced in and the rough size, yes. For repair work the honest answer is that a number given without anyone looking at the wall is a guess, and a guess that later moves is worse for you than a short wait for a real figure. Send photographs and dimensions through and it will be as close as it can honestly be."
+            },
+            {
+              q: "Someone knocked on my door and offered to repoint my wall. Is that normal?",
+              a: "It is not how established brickwork trades find domestic work. Door-to-door offers for repointing and roof work, often with a discount that expires and a deposit requested on the spot, are a long-running pattern in Perth. Take the details, do not pay anything, check the business, and get an independent quote."
+            }
+          ]
+        },
+        {
+          form: {
+            headline: "Get a price for your job",
+            preset: "Quote request",
+            placeholders: {
+              size: "e.g. repointing the front facade of a 1930s double brick home, roughly 20 square metres, single storey"
+            },
+            extraFields: [
+              {
+                name: "buildingAge",
+                label: "Roughly how old is the building?",
+                type: "select",
+                required: false,
+                after: "size",
+                options: ["Pre-1940", "1940-1980", "Post-1980", "Not sure"]
+              }
+            ]
+          }
+        },
+
+        { h2: "Related" },
+        {
+          ul: [
+            "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
+            "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
+            "[Lintel repair and replacement in Perth](lintel-repair-replacement.html)",
+            "[Bricking up openings and new doorways in Perth](bricking-up-and-new-openings.html)",
+            "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
+            "[About Perth Brickwork](about.html)"
+          ]
+        }
+      ]
+    }
+  ],
+
   legacyRedirects: [
     {
       from: "brick-repairs-repointing-tuckpointing.html",
