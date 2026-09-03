@@ -1,34 +1,38 @@
 {
   "index.html": {
-    "hash": "86e1b905dbdbe65f9db8025d9533358f083a4525a42cc518a7e08b6e27ad0bad",
+    "hash": "75fd1d57f9a35868dcc7d14dbc28a85bd29f8e680a67dcdf3747700303e10447",
     "lastmod": "2026-09-03"
   },
   "tuckpointing-repointing.html": {
-    "hash": "b955aadcad3dc21626585472e22685b3ce7520d7d7b5b45c4f1c62ce45c92157",
+    "hash": "2956f7affd7274310c03e1d855d753570dcf7ff998c84c109ab4fab687f72a71",
     "lastmod": "2026-09-03"
   },
   "brick-repairs-crack-stitching.html": {
-    "hash": "85413ecd334027a105f7816296be722192c40fb69ddbeb6e355ec94bdac35200",
+    "hash": "1e64038d31d8600ce84d3bdeea85053b698db3e907d2f8101ac5167374098f57",
     "lastmod": "2026-09-03"
   },
   "lintel-repair-replacement.html": {
-    "hash": "63c89c3c14e089e4cd4774f7599d887cb00e5e29a3b884ef3353081252ab30c5",
+    "hash": "c7644be27a07860887fd01e935e961b9e83ac570384ac3212aae7677dd820f69",
+    "lastmod": "2026-09-03"
+  },
+  "bricking-up-and-new-openings.html": {
+    "hash": "7f37498ad0f2cf213ba32e719a36168e3829ae432a87c22c55922e4861972a5f",
     "lastmod": "2026-09-03"
   },
   "federation-heritage-restoration.html": {
-    "hash": "ae4bab03f8cee5cc5095acb86438bfcfb84cbf4a15d23369bba555a9d55a587c",
+    "hash": "cbac25e3889033f9c1a30e5f69b70dab106b7d9515ea7c94ca539653974ed53f",
     "lastmod": "2026-09-03"
   },
   "brick-fences-boundary-walls.html": {
-    "hash": "a399009ee1e364d4f373b4a5769f6fb5a9a6cd26fb35ca84c3a8b397f69a6afa",
+    "hash": "c69734e5b313df8f80ebe2f50c748c5ded53f220f78dcf660f113dd9995a936e",
     "lastmod": "2026-09-03"
   },
   "about.html": {
-    "hash": "56725ee548c3d0fd5b2385f6e0c87cd5e35ad270f888a388526d59b4cc6fffec",
+    "hash": "8d089770e323b69c2dadb66e7071e82ba8b7479fe5835d48c66b1a26cc7b69fc",
     "lastmod": "2026-09-03"
   },
   "privacy.html": {
-    "hash": "73ddced089e6627a1fdea440206f6ede979abdf5112b6ef720d84a9fa26f458c",
+    "hash": "c486412ad3d4ef678c59c01c236c73d190e014bdd8a82cbc48ea6a28244a345c",
     "lastmod": "2026-09-03"
   }
 }

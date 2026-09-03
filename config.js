@@ -724,6 +724,7 @@ window.SITE_CONFIG = {
           ul: [
             "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
             "[Lintel repair and replacement in Perth](lintel-repair-replacement.html)",
+            "[Bricking up openings and new doorways in Perth](bricking-up-and-new-openings.html)",
             "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
             "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
             "[About Perth Brickwork](about.html)"
@@ -785,12 +786,13 @@ window.SITE_CONFIG = {
 
            Separately: this diagram is two panels side by side in a 1000px
            viewBox, so on a 375px phone the labels render around 5px and are
-           effectively unreadable. The crack-types diagram on the repairs page
-           has the same trait, and ~38% of the site's impressions are mobile.
-           Worth fixing across both together - either stacking the panels on
-           narrow viewports via a media query inside the SVG, or shipping a
-           separate single-column variant. Left alone here rather than making
-           this one page diverge from the other. */
+           effectively unreadable. All three of the site's diagrams share this
+           trait - crack-types on the repairs page, this one, and the toothing
+           diagram on the openings page - and ~38% of the site's impressions
+           are mobile. Worth fixing across all three together - either stacking
+           the panels on narrow viewports via a media query inside each SVG, or
+           shipping single-column variants. Left alone here rather than making
+           one page diverge from the others. */
         {
           image: {
             src: "images/lintel-vs-movement-crack-diagram.svg",
@@ -927,6 +929,205 @@ window.SITE_CONFIG = {
         { h2: "Related" },
         {
           ul: [
+            "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
+            "[Bricking up openings and new doorways in Perth](bricking-up-and-new-openings.html)",
+            "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
+            "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
+            "[About Perth Brickwork](about.html)"
+          ]
+        }
+      ]
+    },
+
+    {
+      page: "bricking-up-and-new-openings.html",
+      name: "Bricking up openings and new doorways",
+      shortName: "Openings",
+      serviceType: "Brick wall opening alterations",
+      shortDescription: "Bricking up old doorways, windows and air conditioner holes, and cutting in new openings. Why the patch shows, and what needs an engineer first.",
+      metaTitle: "Bricking Up Openings & New Doorways Perth",
+      metaDescription: "Bricking up doorways, windows and old air conditioner holes in Perth, and cutting in new openings. Why the patch shows, and what needs an engineer.",
+      headline: "Bricking up openings and cutting in new ones",
+      subheadline: "Closing an opening you no longer want, or opening up a wall you do. Two jobs that look opposite and turn on the same two questions: what is the wall carrying, and will the repair be visible afterwards.",
+      ctaText: "Tell us about the opening",
+
+      blocks: [
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 3 September 2026." },
+
+        {
+          lead: [
+            "A doorway that got closed off in a renovation. The hole where a wall-mounted air conditioner used to sit. A window removed when the kitchen was redone. Or the reverse: a new door out to the alfresco, a window where there is currently only wall, an opening widened to take a bigger frame.",
+            "These are ordinary jobs, they are quoted constantly, and almost nobody writes about what actually determines whether the result looks right. Two things do. Whether the wall was carrying load, and whether the new brickwork was tied into the old or just butted up against it."
+          ]
+        },
+
+        { h2: "The first question is what the wall is holding up" },
+        {
+          p: [
+            "In most of Australia the external walls of a house are brick veneer: a timber or steel frame carries the roof and floors, and the brickwork outside it is a weather skin. Cutting an opening in that skin is a different proposition to cutting one in a wall that is holding the house up.",
+            "Perth is the exception. The Perth standard is double brick, two structural leaves with a cavity between them, and the brickwork is the structure rather than a cladding. That is covered in more detail on the [brick repairs page](brick-repairs-crack-stitching.html). The practical consequence here is that an external wall in a Perth house should be assumed to be structural until someone competent says otherwise, and plenty of internal walls are masonry and structural too.",
+            "This is why \"it is only a small window\" is not a useful measure of the job. The size of the opening matters far less than what sits above it and what that load does once the opening changes."
+          ]
+        },
+
+        { h2: "Bricking up an opening" },
+        { p: "Filling in an opening is the more common of the two jobs and the one where expectations most often go wrong. Structurally it is usually straightforward, particularly if the existing lintel stays where it is and the infill simply sits beneath it. The difficulty is not holding the wall up. It is making the repair not announce itself." },
+
+        { h3: "Why the patch shows, and what makes it show less" },
+        {
+          p: [
+            "Start with the honest version: on a face brick wall, an infill can be made hard to notice, but someone who knows where to look will find it. The goal is that it does not catch the eye from the street, not that it becomes invisible. Anyone promising invisible is selling something.",
+            "Four things decide how close you get."
+          ]
+        },
+        {
+          ol: [
+            "**Whether the new work is toothed into the old.** This is the big one, and it is the difference in the diagram below. Butting new brickwork against a cut edge leaves one straight vertical joint running the full height of the opening, and a straight line in a wall is exactly what the eye picks up. Toothing in means cutting alternate bricks out of the existing wall so the new courses bond into it and the joint zigzags instead. More labour, considerably better result.",
+            "**The brick.** Colour, size and texture. Older Perth brick is often a different size to the current standard, so it will not course in with modern brick even if the colour is close, and some of it is simply no longer made. Matching then means salvage - occasionally from elsewhere on the same building, which is the best match available and worth asking about if there is a spare bit of wall nobody sees.",
+            "**The mortar.** Routinely underestimated. Joints are a larger share of what you actually look at than people expect, and fresh grey cement mortar against eighty-year-old weathered mortar is often more obvious than a slight mismatch in the brick. Colour matching the mortar, and matching the joint profile, does a lot of work.",
+            "**Weathering.** New brick has not had decades of Perth sun and rain on it. Even a good match starts out reading as newer and settles in over time, and a wall that has been painted or bagged levels this out completely."
+          ]
+        },
+        {
+          image: {
+            src: "images/toothing-in-vs-butt-joint-diagram.svg",
+            alt: "Two labelled diagrams of brickwork where new work meets old. The first, marked the join stays visible, shows new brickwork butted against the old so that a single straight mortar joint runs unbroken from top to bottom of the wall. The second, marked the join is broken up, shows the new work toothed in, with alternate courses reaching further into the old wall so the boundary zigzags and no continuous vertical joint exists.",
+            width: 1000,
+            height: 500
+          }
+        },
+
+        { h3: "The parts that are not bricklaying" },
+        {
+          p: [
+            "On an external double brick wall, an infill has to keep doing what the rest of the wall does. The cavity has to stay clear rather than being bridged with dropped mortar, because a bridged cavity carries moisture from the outer leaf to the inner one and produces damp on an internal wall. Any damp proof course has to be continued rather than stopped at the edge of the patch. Weep holes belong at the base of the new work for the same reason they belong everywhere else, and should not be left out because they look untidy.",
+            "There is usually something in the wall as well. A doorway being closed up often has a light switch, a power point or a run of cable in it, and a window opening may have had a sill tray or flashing. That is an electrician's job before it is a bricklayer's, and it is a common reason a simple-sounding infill needs a second trade."
+          ]
+        },
+
+        { h2: "Cutting in a new opening" },
+        {
+          p: [
+            "Going the other way is the more involved job, because you are removing something that is currently carrying load and have to replace its function before you take it away.",
+            "The sequence is propping or needling the brickwork above, installing a lintel sized for what it will actually carry, letting it take up the load, and only then cutting out the masonry below it. The lintel needs proper bearing onto sound brickwork at each end - that bearing is part of the design, not an afterthought - and it needs corrosion protection appropriate to where it is, which is covered on the [lintel page](lintel-repair-replacement.html). Widening an existing opening is the same job with the added wrinkle that the current lintel is almost certainly too short for the new span and cannot simply be left in place.",
+            "The reveals then need finishing, the new jambs need to be plumb and square if a frame is going into them, and the same matching problem from the infill section applies to any brickwork that gets rebuilt around the edges."
+          ]
+        },
+
+        { h2: "Permits and engineers in Western Australia" },
+        {
+          p: [
+            "This is the part that gets skipped, and it is not optional. Forming a new opening in a wall, or removing a wall, is building work under the Building Act 2011, and building work needs a building permit unless it has been specifically exempted. Permits are issued by your local government as the permit authority, so the process and the paperwork vary between councils even though the underlying law does not.",
+            "Structural work also needs engineering behind it. Councils require assurance that the structural design of the work complies with the building standards, and that assurance has to be endorsed by a professional engineer rather than by the builder doing the job. The City of Perth, for example, uses a Certificate of Structural Sufficiency for exactly that purpose.",
+            "Bricking up an opening is often the simpler case, but it is still an alteration to a wall and still worth a call to your council before rather than after. The cost of asking is a phone call. The cost of not asking can be a building order on work that is already finished."
+          ]
+        },
+        {
+          note: "The permit requirement and the role of local governments as permit authority are set out in [Building and Energy's Building Act 2011 Overview](https://www.wa.gov.au/system/files/2024-10/building_act_2011_overview.pdf) (Department of Mines, Industry Regulation and Safety), which states that \"building or demolition work requires a building permit or demolition permit unless specifically exempted by the Minister or the Building Regulations\" and that \"local governments will remain the main permit authority responsible for building control\". The structural certification example is the [City of Perth's Certificate of Structural Sufficiency](https://perth.wa.gov.au/en/forms-and-payments/building-planning-and-development/building-permits-licences-and-approvals/certificate-of-structural-sufficiency), whose stated purpose is \"to provide the City of Perth with assurance that the structural design, materials and form of construction for the proposed building work(s) complies in all respects with the relevant deemed-to-satisfy provisions of the Building Code of Australia\", endorsed by a professional engineer. Each local government sets its own process, so confirm requirements with the council your property sits in rather than assuming another council's apply." },
+
+        { h2: "What this work costs in Perth" },
+        {
+          p: [
+            "Not a price list, and deliberately so. The spread on these jobs is wide for reasons a page cannot see: whether the wall is structural, whether the brick can be matched or has to be salvaged, whether the work is toothed in or butted, single or double leaf, and whether an engineer and a permit are in the scope. Real Perth quotes logged by suburb, opening size and building age would be worth publishing here. A number borrowed from a competitor or averaged across the country would not.",
+            "What follows is what actually moves it."
+          ]
+        },
+        { h3: "What moves the price" },
+        {
+          p: [
+            "**Toothed in or butted.** Toothing is more labour and a better result. It is a legitimate reason one quote is higher than another, and worth asking about explicitly because it is rarely itemised.",
+            "**Brick matching.** New brick off a pallet, or salvage sourcing that may take weeks.",
+            "**One leaf or two.** A double brick external wall is two walls, and an opening goes through both.",
+            "**Whether it is structural.** Propping, a lintel, engineering and a permit belong to the opening-up job and to some infills, and they are most of the difference in price.",
+            "**Other trades.** Electrical in a wall being closed up, or making good render, paint or floor coverings at the edges."
+          ]
+        },
+        { h3: "What is usually excluded" },
+        {
+          ul: [
+            "Engineering design and certification",
+            "Council building permit fees",
+            "Electrical or plumbing work in the wall",
+            "Painting, rendering or making good internal finishes",
+            "Door or window frames and their installation",
+            "Salvage sourcing for brick matching"
+          ]
+        },
+
+        { h2: "What to ask before you accept a quote" },
+        {
+          ol: [
+            "**Is this wall structural?** In a Perth double brick house the answer for an external wall is usually yes, and the quote should reflect that.",
+            "**Are you toothing the new work in, or butting it?** If the quote does not say, ask, because it changes both the price and how the finished wall looks.",
+            "**How are you matching the brick, and have you checked it against my wall in daylight?**",
+            "**Are you matching the mortar colour and the joint profile?**",
+            "**Who is arranging the engineering and the building permit, and is it in this price?**",
+            "**On an external wall, how are the cavity, the damp proof course and the weep holes being handled?**",
+            "**What is not included?** Electrical, plastering, painting and frames are the usual gaps."
+          ]
+        },
+
+        { h2: "Frequently asked questions" },
+        {
+          faqs: [
+            {
+              q: "Can you brick up a doorway so you cannot tell it was there?",
+              a: "On a painted or rendered wall, effectively yes. On a face brick wall, the honest answer is that it can be made hard to notice rather than invisible - the new brick has not weathered the way the old has, and the mortar is the giveaway more often than the brick. Toothing the new work into the old, matching the mortar colour and the joint profile, and matching or salvaging the brick is what gets you closest."
+            },
+            {
+              q: "What is toothing in?",
+              a: "Cutting alternate bricks out of the edge of the existing wall so the new brickwork interlocks with it, rather than stopping the new work dead against a straight cut edge. It avoids a continuous vertical joint running the full height of the patch, which is the thing the eye notices from a distance. It is more work and it is the single biggest factor in whether an infill reads as a patch."
+            },
+            {
+              q: "I removed an old air conditioner and there is a hole in the wall. Is that a small job?",
+              a: "It is one of the more common jobs of this type and usually a modest one, particularly if the hole is small and the wall around it is sound. The things that make it bigger are brick matching on a face brick wall, the hole passing through both leaves of a double brick wall, and any cabling or bracketry left behind in it."
+            },
+            {
+              q: "Do I need council approval to brick up a window or cut in a door?",
+              a: "Cutting a new opening is building work and needs a building permit, with structural certification by a professional engineer. Bricking up an opening is still an alteration to a wall and still worth confirming with your local council, which is the permit authority. Requirements and paperwork differ between councils, so ask the one your property is in rather than assuming."
+            },
+            {
+              q: "Can you match my bricks?",
+              a: "Sometimes with new brick, often only with salvage. Older Perth brick is frequently a different size to the current standard, so a colour match that will not course in is no match at all. If there is brickwork somewhere on the property that nobody sees, taking the match from there is usually the best result available."
+            },
+            {
+              q: "Is a new opening in an external wall a bigger job in Perth than elsewhere?",
+              a: "Generally yes, and it is worth knowing why. Most Australian housing is brick veneer, where the outer brickwork is a skin over a structural frame. Perth is predominantly double brick, where the wall itself is structural and there are two leaves to go through. Advice written for the eastern states often does not transfer."
+            },
+            {
+              q: "Can the old lintel stay if I am bricking the opening up?",
+              a: "Frequently yes - if it is sound, it can simply remain in the wall with the infill built beneath it, and that is the simplest version of this job. If it is corroding, closing the opening up in front of it buries a problem you will meet again later, so it is worth looking at the state of it while the opening is still open."
+            },
+            {
+              q: "How much does it cost to brick up a doorway?",
+              a: "It depends most on whether the brickwork has to be matched and toothed in on a face brick wall, or whether the wall is painted or rendered and the finish evens everything out. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the wall."
+            }
+          ]
+        },
+        {
+          form: {
+            headline: "Tell us about the opening",
+            preset: "Bricking up an opening or a new doorway",
+            placeholders: {
+              size: "e.g. bricking up an old doorway in a face brick external wall, about 900mm wide, 1960s double brick"
+            },
+            extraFields: [
+              {
+                name: "buildingAge",
+                label: "Roughly how old is the building?",
+                type: "select",
+                required: false,
+                after: "size",
+                options: ["Pre-1940", "1940-1980", "Post-1980", "Not sure"]
+              }
+            ]
+          }
+        },
+
+        { h2: "Related" },
+        {
+          ul: [
+            "[Lintel repair and replacement in Perth](lintel-repair-replacement.html)",
             "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
             "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
             "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
