@@ -327,6 +327,7 @@ but browsers restrict some behavior on file URLs.)
 | `images/` | `og-image.png` (link previews) only, for now | Add real photos here |
 | `js/main.js` | Render engine: block renderer, enquiry form, `click_to_call` GA4 event | Only to add a block type |
 | `css/styles.css` | Styles incl. all theme presets (colors/style/pattern come from config) | Only to style a new block type |
+| `notes/` | Standing analysis/planning docs (SEO diagnosis, content-port specs) that aren't part of the site itself | Not baked — hand-maintained |
 
 ## Divergence from the original template
 
