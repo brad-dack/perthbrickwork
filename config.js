@@ -241,7 +241,7 @@ window.SITE_CONFIG = {
           p: [
             "A decorative finish, not a repair. The joint is filled with mortar coloured to match the brick, then a fine ribbon of contrasting lime putty is applied on top, creating the appearance of perfectly regular, very thin joints. It was used to make ordinary brickwork look like expensive, precisely laid brickwork.",
             "Common on Perth federation-era and inter-war housing. It is a specialist skill, closer to a trade of its own than a bricklaying task, and there are not many people in Perth who do it properly. Priced by the metre of joint rather than by wall area, and significantly more expensive than repointing.",
-            "If a tuckpointed house has been repointed flat by a general bricklayer, the original finish is gone. It can be reinstated - see the [federation and heritage restoration page](federation-heritage-restoration.html) for what that involves.",
+            "If a tuckpointed house has been repointed flat by a general bricklayer, the original finish is gone. It can be reinstated - see the [federation and heritage restoration page](federation-heritage-restoration.html) for what that involves, including which councils run heritage or character area rules that might affect the work.",
             "The single most useful thing you can do before hiring anyone for tuckpointing is ask to see a finished job and go and look at it. Done well it is almost invisible as work and the facade simply looks right. Done badly the ribbon wanders, the widths vary, and it is obvious from the footpath."
           ]
         },
@@ -1229,9 +1229,68 @@ window.SITE_CONFIG = {
             "Heritage-appropriate work costs more and takes longer, and that is the point rather than a problem"
           ]
         },
+
+        { h2: "Does your council have heritage or character area rules?" },
+        {
+          p: "Perth metro covers around thirty local governments, and heritage protection is not spread evenly across them - it tracks where the federation and inter-war housing actually is. The sixteen councils below cover the metro's federation and heritage-dense suburbs. If yours is not listed, check directly with them - it likely still runs a Local Heritage Survey, just a shorter one."
+        },
+
+        { h3: "How this section was put together" },
         {
           p: [
-            "Three examples of what that actually looks like. The **City of Fremantle** maintains a Heritage List and named Heritage Areas, including the West End and Hilton Garden Suburb, where development or repair work on a listed place generally needs planning approval so heritage staff can assess the impact before work starts. The **City of Vincent** runs a separate Heritage Area and Character Retention Area system across Mount Lawley and Highgate, with individual streets designated one or the other - Harley Street in Highgate was the first Heritage Area, St Albans Avenue the first Character Retention Area. The **City of Subiaco** has several named Heritage Areas of its own, including Hamersley Road, Kings Road and the Rokeby Road/Hay Street precinct, and is currently reviewing its wider Local Heritage Survey precinct by precinct.",
+            "The table below was built by reading each council's published Local Heritage Survey, Heritage List and heritage-area local planning policy documents - the same public record a council planning officer would point you to. Every row records the date it was checked.",
+            "It has **not** yet been checked by phoning each council directly, which is the harder question a published document can't fully answer: whether repointing or restoring your specific street-facing facade counts as approvable work in practice, versus something the council would wave through. Until that column exists, ask your own council that question directly before you commit to a scope - see [What to ask before you accept a quote] above.",
+            "This is not legal advice. Your council's answer is the authoritative one. Confirm before accepting a quote."
+          ]
+        },
+
+        { h3: "Perth councils: heritage lists and heritage/character areas" },
+        {
+          /* `cards`, not `table`: same reasoning as the fence table on the fences
+             page - long prose cells, first column becomes the card heading.
+             Pass A only (desk research): "is repointing a street-facing facade
+             approvable work" is deliberately not a column here, because that
+             needs actually contacting each council, and a guessed answer would
+             be worse than no answer. See notes/heritage-table-port-plan.md. */
+          cards: {
+            columns: ["Local Government", "Heritage list / Local Heritage Survey", "Named heritage or character areas", "Council heritage page", "Last checked"],
+            rows: [
+              ["City of Bayswater", "401 places are heritage-listed (24 on the State Register of Heritage Places), governed by the Heritage Places Local Planning Policy adopted 27 July 2021, which sets out how places are added to or removed from the Heritage List and Local Heritage Survey.", "Council has voted to retain heritage protection area status for the Bayswater town centre, and planning for a Maylands town centre heritage area was underway as of this check.", "https://engage.bayswater.wa.gov.au/heritage-places-policy", "11/09/2026"],
+              ["City of Fremantle", "The Local Heritage Survey records more than 5,000 places. The separate, statutory Heritage List currently carries around 2,500 of those - inclusion means planning approval is generally needed for works that would otherwise be exempt.", "Named Heritage Areas including the West End and the Hilton Garden Suburb. A South Fremantle Heritage Area review and update of heritage listings was underway as of this check.", "https://www.fremantle.wa.gov.au/planning-and-building/heritage/heritage-listings-and-areas/", "11/09/2026"],
+              ["City of Nedlands", "Heritage List forms part of Local Planning Scheme No. 3, gazetted April 2019.", "As of early 2026 only a handful of streets (including part of Tyrell Street) were under consideration for formal Heritage Area status, alongside a draft Local Planning Policy 6.2 - Heritage-Protected Places that had not yet been adopted.", "https://yourvoice.nedlands.wa.gov.au/heritage-areas", "11/09/2026"],
+              ["City of Perth", "Heritage List maintained under the City's planning scheme.", "The City has proposed designating seven Heritage Areas identified in its Local Planning Strategy, each to carry its own local planning policy - including the West End Heritage Area along King and Queen Streets.", "https://yoursay.perth.wa.gov.au/lps3-heritage-areas", "11/09/2026"],
+              ["City of South Perth", "Maintains a Local Heritage Survey and Heritage List, managed under Local Planning Policy 8.1 - Heritage Conservation and Development.", "No named Heritage Area precinct was found in this desk pass, separate from individually listed places - check directly with the City.", "https://southperth.wa.gov.au/development/planning/local-heritage", "11/09/2026"],
+              ["City of Subiaco", "Local Heritage Survey reviewed precinct by precinct rather than all at once - the West Subiaco Precinct was endorsed June 2022, the Daglish Precinct endorsed August 2024 (35 individual places plus two heritage areas).", "Named Heritage Areas include Hamersley Road, Kings Road, the Rokeby Road/Hay Street precinct and the Chesters' Subdivision.", "https://www.subiaco.wa.gov.au/plan-build/build-renovate/heritage", "11/09/2026"],
+              ["City of Swan", "Runs on two named Heritage Areas rather than a single metro-wide Heritage List.", "Guildford (Guildford Historic Town was added to the State Register of Heritage Places in 2019; the Guildford-Mandoon Heritage Area Local Planning Policy was adopted 5 October 2022) and Woodbridge, under the separate Woodbridge Conservation Precincts Policy.", "https://www.swan.wa.gov.au/plan-and-build/heritage", "11/09/2026"],
+              ["City of Vincent", "Municipal Heritage Inventory / Heritage List carries statutory protection under the planning scheme.", "Separately runs a Heritage Area and Character Retention Area system across Mount Lawley and Highgate, under a dedicated local planning policy - Harley Street, Highgate was the first Heritage Area designated, St Albans Avenue the first Character Retention Area.", "https://www.vincent.wa.gov.au/Profiles/vincent/Assets/ClientData/Policy___Place/7515-Character-Retention-and-Heritage-Areas.pdf", "11/09/2026"],
+              ["Shire of Peppermint Grove", "Heritage List and Local Planning Policy 3 - Heritage Places, built from the Shire's 2021 Local Heritage Survey.", "No separate named Heritage Area beyond the Heritage List itself - most building, demolition and even fencing work on a listed property needs development approval regardless.", "https://www.peppermintgrove.wa.gov.au/development/important-information/heritage.aspx", "11/09/2026"],
+              ["Town of Bassendean", "Heritage List required under the Planning and Development (Local Planning Schemes) Regulations 2015.", "Council adopted three Heritage Areas on 24 May 2022 under Local Planning Policy No. 4 - Heritage and Character, including the Kenny Street and Devon Road Heritage Areas (Federation and Inter-War streetscapes).", "https://www.bassendean.wa.gov.au/develop-build/planning-development/heritage.aspx", "11/09/2026"],
+              ["Town of Cambridge", "136 places are heritage-listed under Town Planning Scheme No. 1 (15 on the State Register), backed by a Local Heritage Survey - formerly called the Local Government Inventory.", "No named Heritage Area precinct was found in this desk pass, separate from individually listed places - check directly with the Town.", "https://www.cambridge.wa.gov.au/About/Corporate-Documents/Major-Plans-Strategies/Heritage-List", "11/09/2026"],
+              ["Town of Claremont", "Heritage List reviewed in 2014-15 and again in 2022, managed under Local Planning Policy 124 - Heritage.", "Named areas: the Bay View Terrace Heritage Area (Local Planning Policy 208) and the Claremont Crescent Heritage Area (Local Planning Policy 209).", "https://www.claremont.wa.gov.au/services/planning-and-building/heritage/heritage-listings-development-controls/", "11/09/2026"],
+              ["Town of Cottesloe", "430 places are heritage-listed under Local Planning Scheme No. 3 (27 on the State Register), backed by a Local Heritage Survey - formerly a Municipal Inventory.", "No named Heritage Area precinct was found separate from the Heritage List itself in this desk pass - check directly with the Town.", "https://www.cottesloe.wa.gov.au/develop-build/planning/heritage.aspx", "11/09/2026"],
+              ["Town of East Fremantle", "Heritage List under Town Planning Scheme No. 3 - properties categorised 'A' or 'B' were formally added to the List from 2015.", "One named Heritage Area: the George Street Designated Heritage Area (Local Planning Policy 3.1.6, adopted February 2020), covering George Street between East Street and Stirling Highway.", "https://www.eastfremantle.wa.gov.au/george-street-designated-heritage-area-policy.aspx", "11/09/2026"],
+              ["Town of Mosman Park", "An entirely new heritage framework - Local Heritage Survey, Heritage List and Local Planning Policy 34 - Management of Heritage Places - was adopted together at the 27 August 2024 Council meeting, replacing the previous Municipal Inventory. Places rated Category 1 or 2 carry statutory Heritage List protection.", "No named Heritage Area precinct beyond the Heritage List itself was found in this desk pass.", "https://www.mosmanpark.wa.gov.au/build/planning-information/heritage/", "11/09/2026"],
+              ["Town of Victoria Park", "146 places are heritage-listed (nine on the State Register), following a Local Heritage Survey review Council approved in June 2021.", "No named Heritage Area precinct was found separate from the Heritage List itself in this desk pass - check directly with the Town.", "https://www.victoriapark.wa.gov.au/develop-and-build/planning/planning-policies-and-legislation/local-heritage.aspx", "11/09/2026"]
+            ]
+          }
+        },
+        /* TODO (Brad): this table is Pass A only - built from each council's
+           published Local Heritage Survey / Heritage List / heritage-area
+           policy documents, not from calling anyone. It deliberately has no
+           "is repointing a street-facing facade approvable work" column,
+           because that answer needs actually phoning each council and a
+           guessed answer would be worse than none - same reasoning as the
+           pricing tables staying out until real renter figures exist. When
+           you (or a future session) work through the sixteen councils above,
+           add that as a sixth column rather than a separate table. Only Tier 1
+           (federation/interwar-dense) councils are covered - see
+           notes/heritage-table-port-plan.md for the Tier 2/3 list if this
+           gets extended further out from the inner suburbs. Recorded
+           11 September 2026. */
+
+        {
+          p: [
+            "Three worth calling out specifically, because their heritage systems are the most developed of the sixteen above. The **City of Fremantle** maintains a Heritage List and named Heritage Areas, including the West End and Hilton Garden Suburb, where development or repair work on a listed place generally needs planning approval so heritage staff can assess the impact before work starts. The **City of Vincent** runs a separate Heritage Area and Character Retention Area system across Mount Lawley and Highgate, with individual streets designated one or the other - Harley Street in Highgate was the first Heritage Area, St Albans Avenue the first Character Retention Area. The **City of Subiaco** has several named Heritage Areas of its own, including Hamersley Road, Kings Road and the Rokeby Road/Hay Street precinct, and reviews its wider Local Heritage Survey precinct by precinct rather than all at once.",
             "If your address falls in any of these, or in another council's heritage or character area, check with that council's planning department before you commit to a repointing, rendering or restoration scope - the work itself is not necessarily different, but the approval pathway is."
           ]
         },
