@@ -1189,7 +1189,12 @@ function runCheck() {
     [/\b(?:config|bake)\.js\b/, "reference to the site's own source files"],
     [/\balready cited above\b/i, "internal cross-reference note"],
     [/\b(?:returned 404|could not be found)\b/i, "failed-research admission"],
-    [/\bnot a survey of all\b/i, "scope-disclosure note"]
+    [/\bnot a survey of all\b/i, "scope-disclosure note"],
+    // Both leaked into the federation page's heritage table (Sep 2026): rows
+    // said "not found in this desk pass" and "does not publish a headline
+    // count" — a research log, not something a homeowner needs.
+    [/\bdesk pass\b/i, "research-process note"],
+    [/\bheadline count\b/i, "research-process note"]
   ];
   // "Brad" in a note (not a `credit` byline) is almost always the author
   // auditing their own sourcing ("Brad knows firsthand") rather than
