@@ -3,8 +3,12 @@
   "configurations": [
     {
       "name": "static-site",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["C:\\Users\\bjdac\\AppData\\Local\\Temp\\claude\\C--Users-bjdac-Perth-Brickworks\\f6f28436-8d46-49fe-8b4e-81ee29129aea\\scratchpad\\static-server.js"],
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4174"
+      ],
       "port": 4174
     }
   ]
