@@ -213,7 +213,7 @@ window.SITE_CONFIG = {
       shortDescription: "Tuckpointing and repointing in Perth. What separates the decorative finish from ordinary mortar maintenance, and what each one costs.",
       serviceType: "Tuckpointing and mortar repointing",
       metaTitle: "Tuckpointing & Repointing Perth | Brick Pointing Cost",
-      metaDescription: "Tuckpointing and repointing in Perth: what each one is, why mortar mix matters, how the work is done, and what to check before you accept a quote.",
+      metaDescription: "Tuckpointing and repointing in Perth: how each is done, when a wall actually needs repointing, why mortar mix matters, and what to check on a quote.",
       headline: "Tuckpointing and repointing in Perth",
       subheadline: "The specialist decorative finish, and the mortar maintenance job it's often confused with. What each involves and what to check on a quote.",
       ctaText: "Tell us what your wall needs",
@@ -225,7 +225,7 @@ window.SITE_CONFIG = {
       },
 
       blocks: [
-        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 28 July 2026." },
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 3 October 2026." },
 
         {
           lead: [
@@ -239,7 +239,7 @@ window.SITE_CONFIG = {
         { h3: "Tuckpointing" },
         {
           p: [
-            "A decorative finish, not a repair. The joint is filled with mortar coloured to match the brick, then a fine ribbon of contrasting lime putty is applied on top, creating the appearance of perfectly regular, very thin joints. It was used to make ordinary brickwork look like expensive, precisely laid brickwork.",
+            "Also written tuck pointing. A decorative finish, not a repair. The joint is filled with mortar coloured to match the brick, then a fine ribbon of contrasting lime putty is applied on top, creating the appearance of perfectly regular, very thin joints. It was used to make ordinary brickwork look like expensive, precisely laid brickwork.",
             "Common on Perth federation-era and inter-war housing. It is a specialist skill, closer to a trade of its own than a bricklaying task, and there are not many people in Perth who do it properly. Priced by the metre of joint rather than by wall area, and significantly more expensive than repointing.",
             "If a tuckpointed house has been repointed flat by a general bricklayer, the original finish is gone. It can be reinstated - see the [federation and heritage restoration page](federation-heritage-restoration.html) for what that involves, including which councils run heritage or character area rules that might affect the work.",
             "The single most useful thing you can do before hiring anyone for tuckpointing is ask to see a finished job and go and look at it. Done well it is almost invisible as work and the facade simply looks right. Done badly the ribbon wanders, the widths vary, and it is obvious from the footpath."
@@ -265,6 +265,55 @@ window.SITE_CONFIG = {
         },
         {
           note: "For lime mortar joints, the City of Fremantle's heritage conservation guidance gives a mix of about 1 part lime putty to 2.5 parts sand, richer (1:2 or even 1:1.5) if the sand is fine-grained - never cement. See [City of Fremantle, Technical Advice Sheet 6: Repointing lime mortar joints](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf)."
+        },
+
+        { h2: "How tuckpointing is done" },
+        {
+          p: "Knowing the steps is the quickest way to tell a tuckpointer from a bricklayer who has said yes to a tuckpointing job. The ribbon is the part everyone sees, but most of the skill is in the stages before it. Where the finish came from is covered on the [federation and heritage restoration page](federation-heritage-restoration.html)."
+        },
+        {
+          ol: [
+            "**Raking out.** The old mortar comes out of every joint being treated, bed joints and perpends, the same as for repointing. On a tuckpointed facade the existing ribbon and the stopping under it come out together.",
+            "**Colouring the brick.** On older work the brickwork was often given a colourwash first, so that the face reads as one even tone and the joints have something consistent to disappear into.",
+            "**Stopping.** The joints are filled flush with a lime mortar coloured to match the brick, traditionally with the sand and with natural pigments such as Venetian red or vegetable black. This is the colour-matching stage, and on a weathered facade it takes testing on the wall, not a product off the shelf.",
+            "**Cutting the groove.** While the stopping is still workable, a fine groove is run along the centre of each joint to receive the ribbon.",
+            "**Laying the ribbon.** A ribbon of lime putty mixed with very fine sand or stone dust is pressed into the groove with a jointer. It is usually white or near-white, though black, red and brown ribbons were also used.",
+            "**Trimming.** Each ribbon is cut to a dead-straight, even width with a Frenchman run against a straightedge. This is the stage that shows from the footpath if it is done badly.",
+            "**Protecting the work.** The lime has to be kept from drying out and protected from the weather until it has hardened. On an exposed Perth frontage in summer that means shade and regular dampening, not just leaving it to set."
+          ]
+        },
+
+        { h3: "Variations you may be quoted for" },
+        {
+          p: [
+            "**Bastard tuckpointing.** The raised ribbon is formed from the same mortar as the joint rather than from a separate lime putty, so there is no contrasting colour and the ribbon is more fragile. It is a different finish. If your facade has a true contrasting ribbon, a quote for bastard tuckpointing is not like for like.",
+            "**Raised ribbon pointing.** A related raised finish along the joints. The City of Fremantle records it surviving on local limestone walls, so on a limestone house it may be the original finish to match rather than tuckpointing."
+          ]
+        },
+
+        { h3: "Patching tuckpointing that is only failing in places" },
+        {
+          p: [
+            "If most of a tuckpointed facade is sound and only some joints have failed, conservation guidance is to repair the stopping in those joints and leave the ribbon off, so the repair does not stand out against the original ribbon around it.",
+            "What should not happen is a new ribbon run over old stopping. The new putty will not bond properly to the old mortar and comes away. If a quote proposes re-ribboning a facade without renewing the stopping underneath, ask how the new ribbon will stay on."
+          ]
+        },
+        {
+          note: "The tuckpointing method, materials, tools and patching advice above follow [The Society for the Protection of Ancient Buildings (SPAB), Tuck pointing](https://www.spab.org.uk/advice/tuck-pointing), which is written for historic British brickwork. The same finish survives locally: [City of Fremantle, Technical Advice Sheet 6](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf) records 1890s tuckpointing and raised ribbon pointing on Fremantle walls."
+        },
+
+        { h2: "Does your wall actually need repointing?" },
+        {
+          p: [
+            "Often less of it than you have been quoted for. Mortar is meant to weather, and some loss from the face of the joints is the wall working as designed rather than a fault.",
+            "For older lime-mortar walls, the City of Fremantle's heritage guidance gives a clear threshold: repoint when the mortar has worn back further than the joint is wide, which is about 10mm in brickwork, or when a joint has cracked and is letting water in. Minor losses short of that are best left alone. Soft mortar on its own is not a reason to repoint either. Lime mortar is supposed to be soft.",
+            "Mortar rarely fails evenly across a wall. The base of the wall, where rising damp and salt attack the joints, and the most weather-exposed elevation usually go first. Localised repointing of the joints that have actually failed is usually all that is needed, and repointing sound joints is not harmless: every rake-out risks chipping the brick edges, however carefully it is done.",
+            "There is one case where a full repoint is the right call even if the joints look intact: an old lime-mortar wall that has been repointed in cement. That cement is trapping moisture and salt in the brick, and taking it out is the repair.",
+            "One more thing to check before you agree to anything: tuckpointing and other decorative finishes were usually used on the street-facing front only, with plain joints on the sides and back. A repoint should follow the pattern the house was built with rather than \"upgrade\" the side walls."
+          ]
+        },
+        {
+          note: "The repointing threshold, the advice to leave minor losses alone, and the front-only pattern of decorative pointing are from [City of Fremantle, Technical Advice Sheet 6: Repointing lime mortar joints](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf). The points on soft mortar and on localised repointing are from [SPAB, Repointing](https://www.spab.org.uk/advice/repointing). Both are written for older lime-mortar walls. Modern cement-mortar brickwork is a different case."
         },
 
         { h2: "What mortar actually is, and why it is designed to fail first" },
@@ -310,7 +359,7 @@ window.SITE_CONFIG = {
         { h2: "How repointing is actually done" },
         {
           p: [
-            "Worth knowing in outline, because most repointing disputes are about how much of this was skipped. The figures below are conservation-trade specifications for older lime-mortar walls - the houses this page is mainly written for. Modern cement-mortar brickwork follows a different specification, governed by AS 3700 and the mortar manufacturer's technical data, which this site has not yet sourced.",
+            "Worth knowing in outline, because most repointing disputes are about how much of this was skipped. The figures below are conservation-trade specifications for older lime-mortar walls - the houses this page is mainly written for. Modern cement-mortar brickwork follows a different specification, governed by AS 3700 and the mortar manufacturer's technical data, so on a modern wall ask which of those your bricklayer is working to.",
             "**Raking out.** The failed mortar is cut out of the joint to a depth that lets the new mortar key in and behave as a joint rather than as a skim. For lime mortar joints, conservation guidance puts this at a minimum of 25mm, more where the mortar has eroded deeply. Doing this with an angle grinder is fast and is how a lot of joints get widened, chipped and irreversibly damaged, particularly on soft old brick where the grinder cuts the brick more readily than it cuts the joint. Hand raking, or careful mechanical raking followed by hand finishing, is slower and is what the job needs on anything old.",
             "**Cleaning and dampening.** Dust is removed and the joint is dampened so the surrounding brickwork does not suck the water straight out of the fresh mortar before it can cure. Skipping this is a common cause of a repoint that looks fine and crumbles inside two years.",
             "**Filling.** New mortar is pressed into the joint in layers on a deep rake-out rather than in one go, and compacted. For a deeply eroded lime mortar joint that means layers of roughly 15-20mm with about three days between each to let the previous layer stiffen - filling the whole depth in one go causes shrinkage cracking. Compaction is what makes the joint weather-resistant. A loosely filled joint fails from the outside in.",
@@ -319,8 +368,12 @@ window.SITE_CONFIG = {
           ]
         },
         {
-          note: "The rake-out depth and curing regime above are for lime mortar and follow [City of Fremantle, Technical Advice Sheet 6: Repointing lime mortar joints](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf) - written for local limestone and lime-mortar masonry, not for modern cement-mortar brickwork, and treat it as a minimum standard rather than a Perth-brick-specific figure until a bricklaying-specific source is found."
+          note: "The rake-out depth and curing regime above are for lime mortar and follow [City of Fremantle, Technical Advice Sheet 6: Repointing lime mortar joints](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-6-Repointing-lime-mortar-joints.pdf) - written for Fremantle's older lime-mortar brick and limestone walls, not for modern cement-mortar brickwork."
         },
+        /* TODO (Brad): rake-out depth and curing for modern cement-mortar
+           brickwork are still unsourced (AS 3700 is paywalled; a mortar
+           manufacturer's technical data sheet would do). The two sentences
+           above used to say so in reader copy; moved here 3 Oct 2026. */
 
         { h3: "Joint profiles, and which ones suit Perth" },
         {
@@ -368,6 +421,7 @@ window.SITE_CONFIG = {
             "**Mortar mix, and the reasoning behind it.** On an older wall this is the difference between maintenance and damage.",
             "**Whether scaffold is in or out.**",
             "**Area or joint length measured, not estimated.** Two quotes based on different measurements are not comparable at all.",
+            "**Whole wall or failed joints only.** One quote may cover every joint on the elevation and another only the ones that have actually failed. That is often the biggest difference between two totals.",
             "Only then, the totals."
           ]
         },
@@ -378,6 +432,8 @@ window.SITE_CONFIG = {
             "**What mortar mix are you using, and why that one?** The answer should reference the existing mortar and the age of the building.",
             "**Have you done tuckpointing before, and can I go and look at it?** If the job is tuckpointing. Most bricklayers have not, and the ones who have will be glad to send you to a job.",
             "**Are you raking out to a proper depth or skimming over the top?** Ask for the depth in millimetres.",
+            "**Which joints actually need doing?** Ask them to show you. Sound joints are better left alone.",
+            "**If you are re-doing the ribbon, are you renewing the stopping underneath it too?** A new ribbon on old stopping does not bond.",
             "**Is scaffolding in the price?**"
           ]
         },
@@ -395,7 +451,15 @@ window.SITE_CONFIG = {
             },
             {
               q: "How do I know if my house is tuckpointed or just repointed?",
-              a: "Look closely at a joint on the front facade in good light. Tuckpointing has a fine raised ribbon of contrasting colour, usually white or near-white, sitting on top of a joint coloured to match the brick, and the ribbon is a consistent width. Ordinary pointing is a single mortar colour, tooled to a profile, with no ribbon."
+              a: "Look closely at a joint on the front facade in good light. Tuckpointing has a fine raised ribbon of contrasting colour, usually white or near-white, sitting on top of a joint coloured to match the brick, and the ribbon is a consistent width. Ordinary pointing is a single mortar colour, tooled to a profile, with no ribbon. If the front has been repointed over, look in sheltered spots - under the eaves, behind downpipes and meter boxes - where original pointing often survives."
+            },
+            {
+              q: "Does my whole wall need repointing?",
+              a: "Usually not. On an older lime-mortar wall the guidance is to repoint joints where the mortar has worn back further than the joint is wide (about 10mm in brickwork) or has cracked and is letting water in, and to leave minor wear alone. Mortar rarely fails evenly, so localised repointing is normally enough. The exception is an old wall that has been repointed in cement, where taking the cement out is the repair."
+            },
+            {
+              q: "Can damaged tuckpointing be patched?",
+              a: "Yes. Where only some joints have failed, the usual conservation approach is to renew the brick-coloured stopping in those joints and leave the ribbon off, so the repair does not stand out. A new ribbon should not be laid over old stopping, because it will not bond to it and comes away."
             },
             {
               q: "Can I use cement mortar on an old brick wall?",
