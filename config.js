@@ -1616,6 +1616,36 @@ window.SITE_CONFIG = {
           ]
         },
 
+        { h2: "The fixed costs: building permit fees and levies" },
+        { p: "One part of a fence's cost is not a matter of opinion. Where a building permit is needed, the government fees are set by regulation, they are the same at every Perth council, and they are small next to the cost of the brickwork. They are worth knowing so that nobody can pad them." },
+
+        { h3: "Does your fence need a building permit?" },
+        {
+          p: [
+            "Under the Building Regulations 2012, a fence built in accordance with your council's fencing local law does not need a building permit. Where a council has no fencing local law, a masonry fence more than 0.75 metres high does need one. Many councils' local laws and guidance land in the same place for brick: the City of Joondalup, for example, says a building permit is needed for masonry fencing over 750mm.",
+            "A building permit is a different thing from the planning rules in the council table further down this page. Those set how high and how solid a front fence can be. The building permit is about whether the wall is built to stand up. A fence can need either one, both or neither, so ask your council about both in the same phone call."
+          ]
+        },
+
+        { h3: "What the permit costs" },
+        {
+          ul: [
+            "**Application fee, uncertified** - where the council's own building surveyor checks the design: 0.32% of the estimated value of the work including GST, and never less than $121. The minimum applies to any fence valued up to about $37,800, which covers most domestic fences.",
+            "**Application fee, certified** - where you have already paid a private building surveyor for a certificate of design compliance: 0.19% of the value, minimum $121. The private surveyor's own fee is on top of this and is not set by regulation.",
+            "**Building Services Levy** - $61.65 for work valued at $45,000 or less, and 0.137% of the value above that.",
+            "**Construction Training Fund levy** - 0.2% of the value, but only on work over $100,000. That threshold was $20,000 until projects starting on or after 1 July 2026, so a domestic fence now almost never pays it."
+          ]
+        },
+        { p: "Worked through for an $18,000 fence on an uncertified application: 0.32% is $57.60, which is below the minimum, so the application fee is $121. Add the $61.65 levy and the statutory total is **$182.65**. Most domestic fences that need a permit land on exactly that figure. What it does not cover: engineering, if your council asks for a structural design; a planning application fee, if the fence also needs planning approval; and any charges a council adds of its own." },
+        {
+          note: "Permit fees are from Schedule 2 of the [Building Regulations 2012](https://legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/mrdoc_49614.htm/%24FILE/Building%20Regulations%202012%20-%20%5B04-ad0-00%5D.html?OpenElement), with the $121 minimum in force from 1 July 2026, and the fence exemption is Schedule 4, item 4. The same fees and the levy appear on the [City of Kalamunda's building fees page](https://www.kalamunda.wa.gov.au/building-development/building/building-fees), current as of 1 July 2026. The masonry example is from the [City of Joondalup's fencing guide](https://www.joondalup.wa.gov.au/kb/resident/street-fences-front-fences), and the training levy threshold is from the [Construction Training Fund](https://ctf.wa.gov.au/levy). Statutory fees usually change on 1 July, so confirm the current figure with your council when you apply."
+        },
+        /* TODO (Brad): the planning (development approval) application fee is
+           not on the page. Planning and Development Regulations 2009 Sch 2 sets
+           it; one 2026-27 council schedule showed $147 for work up to $50,000,
+           but that schedule also carried pre-July building fees, so check the
+           consolidated regulations before adding a figure. */
+
         { h2: "How to compare three quotes properly" },
         { p: "Three quotes only compare if they describe the same wall, and most of the time they do not." },
         {
@@ -1859,7 +1889,11 @@ window.SITE_CONFIG = {
           faqs: [
             {
               q: "What does a brick front fence cost per metre in Perth?",
-              a: "It depends on height, pier spacing and whether any part is retaining, and a single number would mislead more readers than it helps. We are not publishing a range until we have one we can stand behind - see the costs section above."
+              a: "Every fence is different. Height moves the cost far more than length does, and pier spacing, the footing, the finish and whether any part of the wall is retaining all change the figure, so there is no single per-metre rate worth quoting here. When you compare quotes, check that each per-metre rate covers the same height, footing and finish, and whether piers, gates and demolition are priced separately. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+            },
+            {
+              q: "How much does a building permit for a brick fence cost?",
+              a: "For most domestic fences, $182.65 in statutory fees: the minimum $121 application fee on an uncertified application, plus the $61.65 Building Services Levy for work valued at $45,000 or less. Above about $37,800 the application fee becomes 0.32% of the value instead. Engineering, a planning application if one is needed, and any council-specific charges are extra. Figures are as of 1 July 2026."
             },
             {
               q: "How high can a front fence be in Perth without approval?",
@@ -1976,13 +2010,13 @@ window.SITE_CONFIG = {
       name: "Perth brickwork cost guide",
       shortName: "Costs",
       metaTitle: "Perth Brickwork Cost Guide | How Bricklaying Is Priced",
-      metaDescription: "How brickwork is actually priced in Perth: the unit each job is quoted in, what moves the number, and what WA law says about deposits, contracts and insurance.",
+      metaDescription: "How brickwork is priced in Perth: the unit each job is quoted in, what moves the number, permit fees, and WA rules on deposits, contracts and insurance.",
       headline: "What brickwork costs in Perth",
       subheadline: "Not a price list. How the pricing works, what actually drives the number, and the rules that govern what a tradesperson can ask you to pay before they start.",
       ctaText: "Get a price for your job",
 
       blocks: [
-        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 3 September 2026." },
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 3 October 2026." },
 
         {
           lead: [
@@ -2038,6 +2072,15 @@ window.SITE_CONFIG = {
             "Making good render, paint, paving or garden at the edges of the work",
             "Other trades in the wall - electrical in an opening being closed up, or roof plumbing feeding a damp problem"
           ]
+        },
+        {
+          p: [
+            "Of those, the permit fees are the only fixed numbers, because they are set by regulation rather than by the tradesperson. As of 1 July 2026, an uncertified building permit application costs 0.32% of the estimated value of the work, never less than $121, plus a Building Services Levy of $61.65 on work valued at $45,000 or less. That makes **$182.65** for most domestic jobs that need a permit, such as a brick front fence or a new opening cut into a wall. Whether your job needs a permit at all is a question for your council.",
+            "The Construction Training Fund levy, 0.2% of the value, now applies only to work over $100,000. It used to start at $20,000, so older quotes and older advice online may still include it on a mid-sized job. For a project starting on or after 1 July 2026 under $100,000, it should not be there. The [fences page](brick-fences-boundary-walls.html) sets out the permit fees in full, with a worked example."
+          ]
+        },
+        {
+          note: "Fees are from Schedule 2 of the [Building Regulations 2012](https://legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/mrdoc_49614.htm/%24FILE/Building%20Regulations%202012%20-%20%5B04-ad0-00%5D.html?OpenElement) as in force from 1 July 2026, and match the [City of Kalamunda's building fees page](https://www.kalamunda.wa.gov.au/building-development/building/building-fees). The training levy threshold is from the [Construction Training Fund](https://ctf.wa.gov.au/levy). Statutory fees usually change on 1 July, so confirm with your council when you apply."
         },
 
         { h2: "What the law says about what you pay" },
@@ -2114,6 +2157,18 @@ window.SITE_CONFIG = {
             {
               q: "What is the going rate for a bricklayer in Perth?",
               a: "There is a per-thousand-bricks trade rate that bricklayers get subcontracting to builders on new construction, and it is the figure most often quoted online. It does not transfer to a domestic repair, where the brick laying is often the smaller part of the job and the footings, access, matching and making good are the rest. For your job the useful question is what unit the work is priced in, which the section above sets out."
+            },
+            {
+              q: "How much does tuckpointing or repointing cost in Perth?",
+              a: "Every job is different. Repointing is priced per square metre of wall and tuckpointing by the metre of joint, and the state of the existing mortar, the rake-out depth, access and scaffold move the cost more than the size of the house does. A previous cement repoint that has to come out is the most expensive starting point. The [tuckpointing and repointing page](tuckpointing-repointing.html) sets out what to check on a quote. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+            },
+            {
+              q: "How much does it cost to rebuild a brick wall?",
+              a: "A rebuild is priced per square metre of wall, and the figure turns on things a photo cannot show: whether the brick can be reused or matched, what the footing is like, whether the wall is structural, and why it failed in the first place. A rebuild that does not deal with the cause tends to fail the same way. Send photographs and rough dimensions through via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+            },
+            {
+              q: "How much does a brick fence cost in Perth?",
+              a: "Fences are priced by the lineal metre against a height and a finish, with piers, gates and demolition often priced separately. Height moves the cost far more than length does, because a taller wall needs a bigger footing and closer piers. If the fence needs a building permit, the statutory fees for most domestic fences are $182.65 as of 1 July 2026. The [fences page](brick-fences-boundary-walls.html) covers what drives the rest. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
             },
             {
               q: "How much deposit can a bricklayer ask for?",
