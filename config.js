@@ -1637,14 +1637,17 @@ window.SITE_CONFIG = {
           ]
         },
         { p: "Worked through for an $18,000 fence on an uncertified application: 0.32% is $57.60, which is below the minimum, so the application fee is $121. Add the $61.65 levy and the statutory total is **$182.65**. Most domestic fences that need a permit land on exactly that figure. What it does not cover: engineering, if your council asks for a structural design; a planning application fee, if the fence also needs planning approval; and any charges a council adds of its own." },
+
+        { h3: "If the fence also needs planning approval" },
         {
-          note: "Permit fees are from Schedule 2 of the [Building Regulations 2012](https://legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/mrdoc_49614.htm/%24FILE/Building%20Regulations%202012%20-%20%5B04-ad0-00%5D.html?OpenElement), with the $121 minimum in force from 1 July 2026, and the fence exemption is Schedule 4, item 4. The same fees and the levy appear on the [City of Kalamunda's building fees page](https://www.kalamunda.wa.gov.au/building-development/building/building-fees), current as of 1 July 2026. The masonry example is from the [City of Joondalup's fencing guide](https://www.joondalup.wa.gov.au/kb/resident/street-fences-front-fences), and the training levy threshold is from the [Construction Training Fund](https://ctf.wa.gov.au/levy). Statutory fees usually change on 1 July, so confirm the current figure with your council when you apply."
+          p: [
+            "A fence that goes beyond your council's height or see-through rules needs a development application, on top of any building permit. That fee is also set by regulation, but as a maximum: councils decide their own fee and can charge less, never more. For development costing up to $50,000, which covers almost any domestic fence, the maximum is **$147**. Between $50,000 and $500,000 it is 0.32% of the estimated cost.",
+            "Building first and applying afterwards is expensive. If the fence has already been built, the maximum fee is the normal fee plus twice that again as a penalty, so $441 rather than $147 for a typical fence, and the council can still refuse it."
+          ]
         },
-        /* TODO (Brad): the planning (development approval) application fee is
-           not on the page. Planning and Development Regulations 2009 Sch 2 sets
-           it; one 2026-27 council schedule showed $147 for work up to $50,000,
-           but that schedule also carried pre-July building fees, so check the
-           consolidated regulations before adding a figure. */
+        {
+          note: "Permit fees are from Schedule 2 of the [Building Regulations 2012](https://legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/mrdoc_49614.htm/%24FILE/Building%20Regulations%202012%20-%20%5B04-ad0-00%5D.html?OpenElement), with the $121 minimum in force from 1 July 2026, and the fence exemption is Schedule 4, item 4. The same fees and the levy appear on the [City of Kalamunda's building fees page](https://www.kalamunda.wa.gov.au/building-development/building/building-fees), current as of 1 July 2026. The masonry example is from the [City of Joondalup's fencing guide](https://www.joondalup.wa.gov.au/kb/resident/street-fences-front-fences), and the training levy threshold is from the [Construction Training Fund](https://ctf.wa.gov.au/levy). Statutory fees usually change on 1 July, so confirm the current figure with your council when you apply. Development application fees are the maximums in items 1 and 2 of Schedule 2 of the [Planning and Development Regulations 2009](https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/mrdoc_49204.pdf/%24FILE/Planning%20and%20Development%20Regulations%202009%20-%20%5B01-m0-00%5D.pdf?OpenElement), and regulation 47 lets each council set its own fee up to them."
+        },
 
         { h2: "How to compare three quotes properly" },
         { p: "Three quotes only compare if they describe the same wall, and most of the time they do not." },
