@@ -660,7 +660,10 @@ window.SITE_CONFIG = {
           ]
         },
         {
-          note: "Figures and reasons above: [UDIA WA, Modern Methods of Housing Construction – Perth](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) (2021), commissioned from EY, citing Australian Construction Insights (2018) and ABS dwelling-completion data. Double brick's share has continued to move since 2018 and this site has not tracked it past that figure." },
+          note: "Figures and reasons above: [UDIA WA, Modern Methods of Housing Construction – Perth](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) (2021), commissioned from EY, citing Australian Construction Insights (2018) and ABS dwelling-completion data. The 76% share is the 2018 figure, and it has continued to move since." },
+        /* TODO (Brad): no double brick share later than 2018 has been sourced.
+           ABS building activity data by material would update it. Moved here
+           from the public note on 5 Oct 2026. */
 
         { h2: "What brick repairs and crack stitching cost in Perth" },
         {
