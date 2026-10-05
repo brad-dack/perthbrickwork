@@ -130,6 +130,19 @@
       (lazy ? ' loading="lazy"' : "") + ">";
   }
 
+  /* Inline content images. A diagram can carry a `mobile` variant - a
+     single-column SVG with larger text - served below 600px via <picture>,
+     because a two-panel diagram scaled to a phone column shrinks its labels
+     to a few pixels. */
+  function contentImg(image) {
+    if (!image.mobile || !image.mobile.src) return imgTag(image, "", true);
+    var m = image.mobile;
+    return '<picture><source media="(max-width: 599px)" srcset="' + esc(m.src) + '"' +
+      (m.width ? ' width="' + m.width + '"' : "") +
+      (m.height ? ' height="' + m.height + '"' : "") + ">" +
+      imgTag(image, "", true) + "</picture>";
+  }
+
   function faqItems(list) {
     return list.map(function (f) {
       return '<details class="faq-item"><summary>' + esc(f.q) + "</summary>" +
@@ -459,7 +472,7 @@
     if (b.ol) return "<ol>" + b.ol.map(function (i) { return "<li>" + inline(i) + "</li>"; }).join("") + "</ol>";
     if (b.table) return tableHtml(b.table);
     if (b.cards) return cardsHtml(b.cards);
-    if (b.image) return '<figure class="content-image">' + imgTag(b.image, "", true) + "</figure>";
+    if (b.image) return '<figure class="content-image">' + contentImg(b.image) + "</figure>";
     if (b.note) return '<div class="note">' + paragraphs(b.note) + "</div>";
     if (b.marker) return markerHtml(b.marker);
     if (b.faqs) return faqItems(b.faqs);

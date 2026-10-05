@@ -612,7 +612,8 @@ window.SITE_CONFIG = {
             src: "images/crack-types-diagram.svg",
             alt: "Four labelled diagrams of brickwork, each showing a different crack pattern. One: a fine hairline crack running only along the mortar joints without crossing any brick, marked usually maintenance. Two: a crack stepping diagonally up the wall along the joints, marked get it looked at. Three: a near-vertical crack cutting straight through the brick faces, marked get it looked at. Four: a crack that is widest at the top and tapers to nothing at the bottom, marked get it looked at.",
             width: 1000,
-            height: 780
+            height: 780,
+            mobile: { src: "images/crack-types-diagram-mobile.svg", width: 480, height: 1658 }
           }
         },
 
@@ -882,21 +883,17 @@ window.SITE_CONFIG = {
            page: only a genuine verified photo, never a generated or stock
            approximation, because this image is teaching a diagnostic call.
 
-           Separately: this diagram is two panels side by side in a 1000px
-           viewBox, so on a 375px phone the labels render around 5px and are
-           effectively unreadable. All three of the site's diagrams share this
-           trait - crack-types on the repairs page, this one, and the toothing
-           diagram on the openings page - and ~38% of the site's impressions
-           are mobile. Worth fixing across all three together - either stacking
-           the panels on narrow viewports via a media query inside each SVG, or
-           shipping single-column variants. Left alone here rather than making
-           one page diverge from the others. */
+           The diagram has a single-column phone version (-mobile.svg),
+           served below 600px through the `mobile` image field. If you edit
+           the diagram, regenerate it with `python tools/mobile_diagrams.py`
+           and update the mobile width/height below if they change. */
         {
           image: {
             src: "images/lintel-vs-movement-crack-diagram.svg",
             alt: "Two labelled diagrams of a brick wall with a window opening. The first, marked lintel not footings, shows a horizontal crack running along a single mortar joint at the head of the opening and past both of its ends, with a corroding steel lintel below it and rust staining bleeding down the reveals. The second, marked engineer first, shows a crack stepping diagonally up through the mortar joints from low in the wall into the top corner of the opening.",
             width: 1000,
-            height: 500
+            height: 500,
+            mobile: { src: "images/lintel-vs-movement-crack-diagram-mobile.svg", width: 480, height: 1022 }
           }
         },
         { p: "Neither diagram replaces having someone look at the wall. What they do is tell you which kind of tradesperson to ring first, and that is worth getting right." },
@@ -1091,7 +1088,8 @@ window.SITE_CONFIG = {
             src: "images/toothing-in-vs-butt-joint-diagram.svg",
             alt: "Two labelled diagrams of brickwork where new work meets old. The first, marked the join stays visible, shows new brickwork butted against the old so that a single straight mortar joint runs unbroken from top to bottom of the wall. The second, marked the join is broken up, shows the new work toothed in, with alternate courses reaching further into the old wall so the boundary zigzags and no continuous vertical joint exists.",
             width: 1000,
-            height: 500
+            height: 500,
+            mobile: { src: "images/toothing-in-vs-butt-joint-diagram-mobile.svg", width: 480, height: 1072 }
           }
         },
 
@@ -1514,7 +1512,8 @@ window.SITE_CONFIG = {
             src: "images/fence-retaining-vs-freestanding-diagram.svg",
             alt: "Two labelled cross-section diagrams side by side. On the left, a brick fence on ground that is level on both sides, with a footing below ground and arrows showing wind pushing on the wall. On the right, a fence where the ground on the block side is higher than the verge, with arrows showing soil pressure increasing with depth against the buried part of the wall, a wider and deeper footing, gravel drainage behind the wall and a weep hole through it.",
             width: 1000,
-            height: 580
+            height: 580,
+            mobile: { src: "images/fence-retaining-vs-freestanding-diagram-mobile.svg", width: 500, height: 1130 }
           }
         },
 

@@ -512,6 +512,17 @@ function imgTag(image, className, lazy) {
     (lazy ? ' loading="lazy"' : "") + ">";
 }
 
+/* Mirrors contentImg() in js/main.js: a `mobile` variant is served below
+   600px through <picture>. */
+function contentImg(image) {
+  if (!image.mobile || !image.mobile.src) return imgTag(image, "", true);
+  const m = image.mobile;
+  return '<picture><source media="(max-width: 599px)" srcset="' + esc(m.src) + '"' +
+    (m.width ? ' width="' + m.width + '"' : "") +
+    (m.height ? ' height="' + m.height + '"' : "") + ">" +
+    imgTag(image, "", true) + "</picture>";
+}
+
 const paragraphs = (value, className) => [].concat(value).map(t =>
   "<p" + (className ? ' class="' + className + '"' : "") + ">" + inline(t) + "</p>").join("");
 
@@ -635,7 +646,7 @@ function blockHtml(b) {
   if (b.ol) return "<ol>" + b.ol.map(i => "<li>" + inline(i) + "</li>").join("") + "</ol>";
   if (b.table) return tableHtml(b.table);
   if (b.cards) return cardsHtml(b.cards);
-  if (b.image) return '<figure class="content-image">' + imgTag(b.image, "", true) + "</figure>";
+  if (b.image) return '<figure class="content-image">' + contentImg(b.image) + "</figure>";
   if (b.note) return '<div class="note">' + paragraphs(b.note) + "</div>";
   if (b.marker) return markerHtml(b.marker);
   if (b.faqs) return faqItems(b.faqs);

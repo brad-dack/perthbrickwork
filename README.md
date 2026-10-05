@@ -188,6 +188,10 @@ What to edit in `config.js`:
     - Keep `width`/`height` accurate to prevent layout shift; `--check`
       fails on a missing file or missing dimensions.
     - Write `alt` text that literally describes what is depicted.
+    - A diagram with side-by-side panels should also get a `mobile:` entry
+      (`{ src, width, height }`) pointing at a single-column version. It is
+      served below 600px through `<picture>`, because a two-panel diagram
+      squeezed into a phone column shrinks its labels to a few pixels.
     - `images/og-image.png` stays — a neutral illustration with no business
       details on it, used only for link previews.
 
@@ -327,6 +331,7 @@ but browsers restrict some behavior on file URLs.)
 | `images/` | `og-image.png` (link previews) only, for now | Add real photos here |
 | `js/main.js` | Render engine: block renderer, enquiry form, `click_to_call` GA4 event | Only to add a block type |
 | `css/styles.css` | Styles incl. all theme presets (colors/style/pattern come from config) | Only to style a new block type |
+| `tools/mobile_diagrams.py` | Rebuilds the single-column `-mobile.svg` phone versions of the two-panel diagrams. Run `python tools/mobile_diagrams.py` from the repo root after editing a diagram, then update the `mobile` width/height in `config.js` if they change | Run after diagram edits |
 | `notes/` | Standing analysis/planning docs (SEO diagnosis, content-port specs) that aren't part of the site itself | Not baked — hand-maintained |
 
 ## Divergence from the original template
