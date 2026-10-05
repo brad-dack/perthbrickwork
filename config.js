@@ -2080,7 +2080,7 @@ window.SITE_CONFIG = {
           p: [
             "A per-brick or per-square-metre figure published on a website is a guess dressed as information. On a domestic job the brick laying is frequently a minority of the total: footings, access, scaffolding, spoil removal, matching, and making good can add up to more than the brickwork. On repointing there is no new brick being laid at all.",
             "Publishing a range would mean lifting it from a competitor or averaging something national. Either would give you a number to anchor on that has nothing to do with your wall, and a false anchor costs you more than no anchor - it makes a fair quote look expensive and an underquote look like a bargain.",
-            "Real figures for this page will come from actual Perth quotes, logged by suburb, job type, extent, building age and access. Until those exist, what follows is the part that is genuinely knowable."
+            "A real range can only come from actual Perth quotes, logged by suburb, job type, extent, building age and access. What follows is the part that is genuinely knowable."
           ]
         },
 
@@ -2101,8 +2101,8 @@ window.SITE_CONFIG = {
         { h2: "What moves the number in Perth specifically" },
         {
           p: [
-            "**There are two walls, not one.** Perth builds in double brick, so an opening, a repair or an alteration to an external wall goes through two structural leaves. Advice and pricing written for the brick-veneer states routinely understates this.",
-            "**Whether the brick can be matched.** Some Perth brick is no longer manufactured, and older brick is frequently a different size to the current standard, so it will not course in even when the colour is right. Matching then means salvage, which is a sourcing problem with a lead time before it is a bricklaying one.",
+            "**There are two walls, not one.** Perth builds in double brick: a [2021 UDIA WA study](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) put it at 76% of new WA dwellings in 2018, where every other state builds mostly brick veneer. So an opening, a repair or an alteration to an external wall goes through two structural leaves, and advice and pricing written for the veneer states understates this. There is more on [why Perth is a double brick city](index.html) on the homepage.",
+            "**Whether the brick can be matched.** Some Perth brick is no longer manufactured, and older brick is often a different size to the modern metric brick (a nominal 230 x 110 x 76mm under AS/NZS 4455.1), so it will not course in even when the colour is right. Matching then means salvage, which is a sourcing problem with a lead time before it is a bricklaying one. The [federation and heritage page](federation-heritage-restoration.html) covers who makes brick in WA and what can still be matched.",
             "**Whether the cause has been diagnosed.** A repair quoted off the visible damage, with no view on why it happened, is a repair that may need doing twice. That is the most expensive outcome available in this trade and it usually starts with the cheapest quote.",
             "**Access.** Ground level with a clear approach, or an upper storey over a paved courtyard with no room for a scaffold.",
             "**Salt and moisture exposure.** Coastal air, bore water reticulation and rising groundwater all shorten the life of a repair that does not deal with the water source, which is why the water source is part of the job rather than an optional extra.",
@@ -2134,7 +2134,7 @@ window.SITE_CONFIG = {
         },
 
         { h2: "What the law says about what you pay" },
-        { p: "This is the part worth reading twice. These are Western Australian rules, they are specific, and they apply to a bricklayer working directly for you - not only to registered building companies. Under the Home Building Contracts Act a builder is any person who performs home building or associated work for others, whether or not they are registered." },
+        { p: "This is the part worth reading twice. These are Western Australian rules, they are specific, and they apply to a bricklayer working directly for you - not only to registered building companies. Under the Home Building Contracts Act a builder is anyone who carries on a business doing home building or associated work for others, whether or not they are registered." },
 
         { h3: "The contract has to be in writing" },
         { p: "For a fixed-price home building or associated work contract valued between $7,500 and $500,000, the agreement must be in writing, contain all the terms, be dated, and be signed by both parties. An oral agreement does not satisfy the Act. If someone wants to do a $20,000 job on a handshake, that is not informality, it is non-compliance." },
@@ -2145,19 +2145,39 @@ window.SITE_CONFIG = {
         { h3: "Progress payments only cover work already done" },
         { p: "Once work has started, a progress payment can only be for work actually performed or materials already supplied. The example Building and Energy gives is exactly this trade: a builder cannot demand a progress payment for the purchase and delivery of bricks until the bricks have been delivered. Needing the money up front to buy materials is the oldest pattern in domestic building disputes, and the Act addresses it directly." },
 
-        { h3: "Over $20,000, insurance has to be in place before you pay anything" },
+        { h3: "Variations, price rises and defects" },
+        {
+          p: [
+            "**Variations go in writing.** A change to the work normally has to be written down, dated and signed by both of you, with a copy given to you before the varied work starts. The exceptions are changes a building surveyor directs, or circumstances nobody could have foreseen when the contract was signed.",
+            "**No rise-and-fall clauses.** A contract covered by the Act can't include a clause letting the price rise with costs during the job. The price should be as fixed and final as possible. Passing on an increase in taxes or duty is generally allowed.",
+            "**Defects are the builder's to fix.** The builder must make good defects at no cost to you if you notify them in writing within four months of practical completion. Put it in writing, and keep a copy."
+          ]
+        },
+
+        { h3: "On bigger building jobs, insurance before you pay anything" },
         {
           p: [
             "Where residential building work is valued over $20,000, the builder must take out home indemnity insurance in the name of the owner before accepting payment or commencing work. Not afterwards, and not on request.",
-            "It covers completion or rectification up to $200,000, or the contract value if that is less, and loss of deposit up to $40,000, with a $500 excess. Cover runs through construction and for six years from practical completion. It pays out where the builder dies, disappears or becomes insolvent.",
-            "Residential building work here means constructing a new dwelling, extending or renovating an existing one, placing a dwelling on land, or multi-unit grouped homes. Whether a particular job falls inside that definition is worth confirming rather than assuming - ask, and ask to see the certificate before any money moves."
+            "It covers completion or rectification up to $200,000, or the contract value if that is less, including claims for defective work, and loss of deposit up to $40,000, with a $500 excess. Cover runs through construction and for six years from practical completion. It pays out where the builder dies, disappears or becomes insolvent.",
+            "It does not apply to every brickwork job. Residential building work means constructing a new dwelling, extending or renovating an existing one, placing a dwelling on land, or multi-unit grouped homes. Insurance is not required where the work is under $20,000, where no building permit is needed, or for associated work such as a fence done on its own under a separate contract. So a standalone fence or a repair that needs no permit falls outside it. Brickwork that is part of an extension or renovation worth more than $20,000, and needing a permit, falls inside it, and on that job you should see the certificate before any money moves."
           ]
         },
 
         { h3: "And registration, on larger jobs" },
         { p: "Building work needs a registered building contractor once it requires a building permit and reaches $20,000, or $50,000 for a Class 10a building such as a garage, shed or carport. Fences, free-standing walls and retaining walls are classed as incidental structures and sit outside that requirement whatever they cost. There is more on checking registration on [the homepage](index.html)." },
+
+        { h3: "If the job was agreed at your door" },
         {
-          note: "Contract, deposit and progress payment rules are from Building and Energy's [Home Building Contracts Act fact sheet](https://www.wa.gov.au/system/files/2024-10/home_building_contracts_act_factsheet.pdf), which states that the Act applies \"where the value of the fixed price contract is between $7,500 and $500,000\", that a contract cannot provide for a deposit prior to the commencement of work \"that exceeds 6.5 per cent of the total cost of the work\", and that \"contracts must be in writing, contain all the terms, conditions and provisions of the agreement, show the date and be signed by both parties\". Insurance figures are from the [Home indemnity insurance fact sheet](https://www.wa.gov.au/government/publications/home-indemnity-insurance-fact-sheet), which requires cover \"in the name of the owner before accepting payment or commencing work\" for residential building work valued over $20,000. Registration thresholds are from [builders' registration guidance](https://www.wa.gov.au/government/multi-step-guides/builders-registration). All three are administered by Building and Energy and the figures are subject to change - confirm the current position before relying on it for a particular contract." },
+          p: [
+            "The national consumer law has specific rules for work agreed at your door. If you agree at the door, or on an uninvited phone call, to work worth more than $100, you have a **10 business day cooling-off period** to cancel, starting the business day after you sign or receive the agreement. During that time the trader can't take any payment and can't start the work, except for emergency repairs, and can't ask you to waive the cooling-off period.",
+            "Door-to-door traders can only call between 9am and 6pm on weekdays and 9am and 5pm on Saturdays, never on Sundays or public holidays, and must leave if you ask or if you have a 'do not knock' sign. If they break the rules, the cooling-off period stretches to three months, or to six months if they didn't tell you about it or give you a written agreement. A trader who wants cash today or to start straight away is asking you to give up rights the law gives you."
+          ]
+        },
+
+        { h3: "If something goes wrong" },
+        { p: "Building and Energy can deal with contract disputes on fixed-price home building contracts between $7,500 and $500,000, if the complaint is lodged within three years of the cause arising. Complaints about the standard of workmanship can be lodged whatever the contract value, within six years of the work being completed." },
+        {
+          note: "Contract, deposit, progress payment, variation, rise-and-fall, defect and dispute rules are from Building and Energy's [Home Building Contracts Act fact sheet](https://www.wa.gov.au/system/files/2024-10/home_building_contracts_act_factsheet.pdf), which says the Act applies \"where the value of the fixed price contract is between $7,500 and $500,000\" and that a contract cannot provide for a deposit \"that exceeds 6.5 per cent of the total cost of the work\". Insurance cover, limits and exemptions are from the [Home indemnity insurance fact sheet](https://www.wa.gov.au/system/files/2025-11/2510324_home_indemnity_insurance.pdf). Registration thresholds and the incidental structure exemption are from [Do I need to be a registered building contractor?](https://www.wa.gov.au/government/publications/do-i-need-be-registered-building-contractor). Door-to-door rules are from the ACCC's [Telemarketing and door-to-door sales](https://www.accc.gov.au/consumers/buying-products-and-services/telemarketing-and-door-to-door-sales) and Consumer Protection WA's [Ask us: Door-to-door sales](https://www.consumerprotection.wa.gov.au/publications/ask-us-door-door-sales). Figures and thresholds change, so confirm the current position before relying on them for a particular contract." },
 
         { h2: "Making three quotes comparable" },
         { p: "Three quotes only compare if they describe the same job. Before comparing totals, line them up on these." },
@@ -2181,8 +2201,8 @@ window.SITE_CONFIG = {
             "A price given over the phone or from a photo, for repair work, without anyone looking at the wall",
             "A quote that does not say why the damage happened",
             "Pressure to decide today, or a discount that expires",
-            "An offer made at your door, particularly for repointing or roof and wall work, where the tradesperson happened to be working nearby",
-            "A refusal to provide the home indemnity insurance certificate on a job over $20,000",
+            "An offer made at your door, particularly for repointing or roof and wall work, where the tradesperson happened to be working nearby, and above all one that asks for payment or wants to start before the 10 business day cooling-off period is up",
+            "A refusal to provide the home indemnity insurance certificate on a job that needs it: residential building work over $20,000 that requires a building permit",
             "A number well below the others with no explanation of what is being done differently"
           ]
         },
@@ -2230,7 +2250,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "Does home indemnity insurance apply to a brickwork job?",
-              a: "It applies where residential building work is valued over $20,000, and the cover has to be taken out in your name before the builder accepts payment or starts work. Residential building work means a new dwelling, an extension or renovation of an existing one, placing a dwelling on land, or multi-unit grouped homes. Whether a specific job sits inside that definition is worth confirming with Building and Energy rather than assuming either way."
+              a: "Only to some. It applies to residential building work valued over $20,000 that needs a building permit, such as brickwork that is part of an extension or renovation, and the cover has to be taken out in your name before the builder accepts payment or starts work. It is not required for work under $20,000, for work that needs no building permit, or for associated work such as a fence done on its own under a separate contract."
             },
             {
               q: "Why is one quote so much cheaper than the others?",
@@ -2242,7 +2262,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "Someone knocked on my door and offered to repoint my wall. Is that normal?",
-              a: "It is not how established brickwork trades find domestic work. Door-to-door offers for repointing and roof work, often with a discount that expires and a deposit requested on the spot, are a long-running pattern in Perth. Take the details, do not pay anything, check the business, and get an independent quote."
+              a: "Be careful, and know your rights. If you agree at the door to work worth more than $100, the national consumer law gives you 10 business days to cancel, and the trader can't take any payment or start the work in that time, except for emergency repairs. A trader who wants a deposit on the spot or to start today is breaking that rule. Take the details, don't pay anything, check the business, and get an independent quote."
             }
           ]
         },
