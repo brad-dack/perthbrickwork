@@ -529,7 +529,7 @@ window.SITE_CONFIG = {
       },
 
       blocks: [
-        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 28 August 2026." },
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 5 October 2026." },
 
         {
           lead: [
@@ -566,7 +566,7 @@ window.SITE_CONFIG = {
             "A crack running through bricks rather than around them",
             "A crack wider at one end than the other, particularly wider at the top",
             "Stepped cracking following the joints diagonally across a wall",
-            "Any crack you can fit a coin into",
+            "Any crack wider than about 1mm at its widest point, which is past very slight on the scale below",
             "A wall bowing, leaning, or separating from the structure next to it",
             "Cracking that has visibly changed in the last few months"
           ]
@@ -576,6 +576,30 @@ window.SITE_CONFIG = {
             "The second list is a movement problem. The cause is under the wall: footings, soil movement, drainage or tree roots. Repointing a moving wall achieves nothing. The crack comes back and you have paid twice.",
             "An engineer diagnoses movement. A bricklayer repairs what the engineer identifies. Doing it in the other order is the most expensive mistake available in this category."
           ]
+        },
+        { h3: "How wide is too wide" },
+        {
+          p: [
+            "Measure a crack at its widest point. WA's building regulator judges cracking in walls on the scale from Australian Standard AS 2870, which grades damage mainly by crack width:"
+          ]
+        },
+        {
+          table: {
+            columns: ["Crack width", "Category", "What it typically means"],
+            rows: [
+              ["Under 0.1mm", "0 - Negligible", "Hairline cracks"],
+              ["Under 1mm", "1 - Very slight", "Fine cracks that do not need repair"],
+              ["Under 5mm", "2 - Slight", "Noticeable but easily filled. Doors and windows may stick slightly"],
+              ["5mm to 15mm, or several cracks of 3mm or more in one area", "3 - Moderate", "Repairable, but some of the wall may need replacing. Doors and windows stick, weather tightness is often affected"],
+              ["15mm to 25mm, depending on the number of cracks", "4 - Severe", "Breaking out and replacing sections of wall, especially over doors and windows. Walls lean or bulge noticeably"]
+            ]
+          }
+        },
+        {
+          p: "Width isn't everything: the same guide says where the crack is and what the wall does count too, and a crack that is still growing matters more than its width today. For new building work, the guide treats Category 3 or worse as needing investigation and stabilisation, and Category 2 cracks as something to monitor for 12 months."
+        },
+        {
+          note: "Damage categories are from Table 3.02 of the [Guide to Standards and Tolerances 2019 (WA)](https://wa.gov.au/system/files/2024-11/guide_to_standards_and_tolerances_2019_wa_17521.pdf), published by the WA building regulator, which reproduces AS 2870 Table C1. The guide is written for judging defects in new building work, so treat the categories as a way to describe a crack rather than a verdict on an old wall."
         },
         /* TODO (Brad): real photographs of these four Perth crack types would be
            a genuine upgrade over the drawn diagram below - but never swap in a
@@ -598,23 +622,23 @@ window.SITE_CONFIG = {
         { h3: "Salt attack" },
         {
           p: [
-            "The characteristic Perth masonry problem, and the reason brickwork here does not fail the way brickwork in colder climates does. Textbooks blame spalling on freeze-thaw. Perth does not freeze. Here the mechanism is salt.",
+            "A common Perth masonry problem, and a different one from what you will read in guides written for colder climates, which blame spalling on freeze-thaw. The City of Fremantle's heritage guidance names salt as the cause of the fretting and crumbling commonly seen in old local walls.",
             "Soluble salts dissolve in moisture inside the wall and travel with it toward the drying face. At the surface the water evaporates and the salt crystallises. Crystal growth exerts real pressure inside the pores of the brick, and it repeats every wetting and drying cycle. Eventually the face fails and sheets off.",
             "Perth supplies the salt from several directions. Coastal and near-coastal suburbs get airborne salt off the ocean. Garden bore water is another source: WA Government monitoring of the Gnangara and Jandakot groundwater systems has recorded saltwater intrusion near the coast and the Swan River, making some bores more saline as groundwater levels fall. Reticulation that sprays a wall directly, rather than the garden, adds both the moisture and the salt a wall needs to fail - the practical tell is damage concentrated in a band at sprinkler height, worst on the side the reticulation runs.",
             "The fix is the moisture source and the salt path, not the brick. Replacing spalled bricks while leaving the reticulation spraying on them buys you a few years at most."
           ]
         },
-        /* TODO (Brad): no source found yet measures how often reticulation is
-           specifically the cause of Perth brick spalling (vs. coastal exposure
-           or rising groundwater). Don't state a frequency figure until one exists. */
+        /* TODO (Brad): no source measures how often reticulation is the cause of
+           Perth brick spalling versus coastal exposure or rising groundwater, so
+           the page names sources without ranking them. Keep it that way. */
         {
-          note: "The crystallisation mechanism and the advice against watering walls or garden beds hard against them follows [City of Fremantle, Technical Advice Sheet 5: Dealing with dampness in old walls](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-5-Dealing-with-dampness-in-old-walls.pdf). Bore water salinity near the coast and the Swan River is documented by the [WA Department of Water and Environmental Regulation](https://www.wa.gov.au/service/natural-resources/water-resources/rebalancing-our-groundwater), which states that \"lower groundwater recharge has caused saline water to move inland, making bores more saline.\""
+          note: "The crystallisation mechanism, salt as the cause of fretting and crumbling, and the advice to keep garden beds at least 300mm from walls and limit reticulation to drippers so it doesn't wet them, follow [City of Fremantle, Technical Advice Sheet 5: Dealing with dampness in old walls](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-5-Dealing-with-dampness-in-old-walls.pdf). Bore water salinity near the coast and the Swan River is documented by the [WA Department of Water and Environmental Regulation](https://www.wa.gov.au/service/natural-resources/water-resources/rebalancing-our-groundwater), which states that \"lower groundwater recharge has caused saline water to move inland, making bores more saline.\""
         },
 
         { h3: "Brickwork fretting" },
         {
           p: [
-            "Fretting is the gradual crumbling and granular loss of the brick face, rather than the face blowing off in one sheet the way spalling does. It comes from the same causes as spalling - repeated salt crystallisation, or a soft or underfired brick weathering faster than the mortar around it - just acting more slowly and less dramatically.",
+            "Fretting is the gradual crumbling and granular loss of the brick face, rather than the face blowing off in one sheet the way spalling does. It comes from the same cause as spalling, repeated salt crystallisation, acting more slowly and less dramatically.",
             "A fretting brick face has a soft, sandy, eroded texture that rubs off under a thumb, sometimes leaving the mortar joints standing slightly proud of the brick around them because the brick has worn back faster than the joint. The fix is the same as for spalling: find and remove whatever moisture and salt source is feeding it, then replace the affected bricks rather than patching or sealing the surface over."
           ]
         },
@@ -623,17 +647,23 @@ window.SITE_CONFIG = {
         {
           p: [
             "The white powdery bloom on a brick face. Cosmetic in itself and frequently confused with salt attack, though the two are related - same salts, same moisture, different outcome.",
-            "**Primary efflorescence** appears on new brickwork within weeks as the wall dries out for the first time. It is normal, it is mostly salts that were in the materials, and it usually weathers off within the first year. Do not let anyone sell you a repair for it on a new wall.",
+            "**Primary efflorescence**, which the brick industry calls new building bloom, appears on brickwork less than a year old as the wall dries out after construction. It is normal, it comes mostly from salts in the mortar and materials, and it usually weathers off, or brushes off dry. Do not let anyone sell you a repair for it on a new wall.",
             "**Secondary efflorescence** appears on established brickwork and means water is getting in and moving through the wall. That is the one that matters. It is not the problem, it is the receipt - something is wetting the wall repeatedly. A failed damp course, a leaking gutter or downpipe, a garden bed built up against the wall, reticulation, or a paved area draining back toward the house.",
             "Do not seal it, and do not paint over it. A sealer traps the moisture behind the face and converts an efflorescence problem into a spalling problem. Find the water first."
           ]
         },
+        {
+          note: "New building bloom and its usual weathering off are from the Brick Industry Association's [Technical Note 23A: Efflorescence](https://www.gobrick.com/media/file/23a-tn23a.pdf), which also advises against coatings as the sole treatment. That efflorescence is non-structural but its cause must be investigated, including flashings and the damp proof course, is from section 3.20 of the [Guide to Standards and Tolerances 2019 (WA)](https://wa.gov.au/system/files/2024-11/guide_to_standards_and_tolerances_2019_wa_17521.pdf). The warning against sealing old walls follows the City of Fremantle's Technical Advice Sheet 5, cited above."
+        },
 
         { h3: "Rising damp and salt damp" },
-        { p: "Moisture drawn up from the ground through the base of a wall by capillary action, carrying dissolved salts with it. The signature is a tide-line of damp, staining or deterioration in the lower courses, roughly level, that does not go away in summer. Older Perth housing often has a physical damp proof course of slate or bituminous felt, and after a century these fail, get bridged by a raised garden bed or new paving, or were never there in the first place. This is a specialist diagnosis rather than a bricklaying one, and repointing over it achieves nothing." },
+        { p: "Moisture drawn up from the ground through the base of a wall by capillary action, carrying dissolved salts with it. The signature is a tide-line of damp, staining or deterioration in the lower courses, roughly level, that does not go away in summer. Damp proof courses were not generally used until late in the nineteenth century, and many early ones, such as roofing slates laid in mortar or a tar and sand mix, have not proved fully effective. A working one can still be bridged by a raised garden bed or new paving: the City of Fremantle's guidance is to keep ground levels at least 200mm below the damp proof course. This is a specialist diagnosis rather than a bricklaying one, and repointing over it achieves nothing." },
 
         { h3: "Cement render over old brick" },
-        { p: "The same mistake as cement repointing, applied to the whole wall at once. A hard impermeable render on a solid brick wall that needs to breathe traps moisture behind it. The render then debonds in sheets, and the brickwork underneath is usually worse than it was before. Tap a rendered old wall and listen - a hollow drumming sound means it has already let go. This is why the answer to \"can I just render over it\" is generally no." },
+        { p: "The same mistake as cement repointing, applied to the whole wall at once. A hard impermeable render on a solid brick wall that needs to breathe traps moisture behind it. The render then lets go, and the brickwork underneath is usually worse than it was before. The City of Fremantle's guidance for old walls is to remove previous cement renders and pointing so the wall can dry out, expecting a rush of salt to the surface as it does. This is why the answer to \"can I just render over it\" is generally no." },
+        {
+          note: "Damp proof course history, the 200mm ground clearance and the advice to remove cement renders and pointing from old walls are from the City of Fremantle's [Technical Advice Sheet 5: Dealing with dampness in old walls](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Technical-Advice-Sheet-5-Dealing-with-dampness-in-old-walls.pdf), written for older brick and limestone walls."
+        },
 
         { h3: "Previous bad repairs" },
         { p: "Very common on Perth character housing, because these houses have had eighty years of well-meaning owners. A hard cement repoint over lime, a patch in the wrong colour or profile, brick faces ground flat to tidy them up, silicone sealer applied to a damp wall, or a tuckpointed facade repointed flat by someone who did not recognise what it was. Undoing bad work is frequently more expensive than the original job would have been, and it is worth knowing that before you get a quote that seems high." },
@@ -643,7 +673,7 @@ window.SITE_CONFIG = {
           p: [
             "Crack stitching is a repair method for a wall where the cause of movement has already been dealt with, or was never structural to begin with. It strengthens the masonry across an existing crack without cutting out and rebuilding the affected section.",
             "A series of high-tensile stainless steel bars is bonded into slots cut along the mortar bed joints on both sides of the crack, tying the two halves of the wall back together in tension. The slots are repointed over once the bars are grouted in, so a stitched repair does not read as a repair from the footpath.",
-            "It is not a substitute for diagnosis. Stitching a crack that is still actively opening just stitches a wall that is still moving - the cause has to be dealt with first, in the same order as any other movement crack: engineer diagnoses, bricklayer repairs what the engineer identifies. Once the movement has stopped, stitching is often a cheaper and less disruptive alternative to cutting out and rebuilding a whole section of brickwork, and it suits a stepped diagonal crack that follows the joints better than a crack that has torn straight through the bricks themselves."
+            "It is not a substitute for diagnosis. Stitching a crack that is still actively opening just stitches a wall that is still moving - the cause has to be dealt with first, in the same order as any other movement crack: engineer diagnoses, bricklayer repairs what the engineer identifies. Once the movement has stopped, stitching is often a cheaper and less disruptive alternative to cutting out and rebuilding a whole section of brickwork."
           ]
         },
         {
@@ -662,8 +692,10 @@ window.SITE_CONFIG = {
         {
           note: "Figures and reasons above: [UDIA WA, Modern Methods of Housing Construction – Perth](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) (2021), commissioned from EY, citing Australian Construction Insights (2018) and ABS dwelling-completion data. The 76% share is the 2018 figure, and it has continued to move since." },
         /* TODO (Brad): no double brick share later than 2018 has been sourced.
-           ABS building activity data by material would update it. Moved here
-           from the public note on 5 Oct 2026. */
+           Checked 5 Oct 2026: ABS building activity releases don't split double
+           brick from brick veneer, so desk research can't update it. A newer
+           industry report (UDIA WA, MBA WA, Midland Brick) or a figure from a
+           renter's builder contacts would. */
 
         { h2: "What brick repairs and crack stitching cost in Perth" },
         {
@@ -742,7 +774,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "Why are the faces coming off my bricks?",
-              a: "Usually salt attack, or its slower relation, fretting. Salts crystallise inside the brick just under the surface and the pressure eventually blows the face off, or gradually crumbles it. In Perth the salt commonly comes from bore water reticulation spraying the wall, from coastal exposure, or from groundwater rising through the base. A hard cement repoint makes it worse by forcing moisture to leave through the brick instead of the joint."
+              a: "Usually salt attack, or its slower relation, fretting. Salts crystallise inside the brick just under the surface and the pressure eventually blows the face off, or gradually crumbles it. In Perth the salt can come from bore water reticulation spraying the wall, from coastal exposure, or from groundwater rising through the base. A hard cement repoint makes it worse by forcing moisture to leave through the brick instead of the joint."
             },
             {
               q: "What are weep holes and can I fill them in?",
@@ -799,8 +831,7 @@ window.SITE_CONFIG = {
         }
         /* TODO (Brad): staying with the illustrative images on this page for now,
            except the crack-through-bricks hero, which is a real photo taken
-           August 2026 (see the crack-diagnosis TODO above for a second angle of
-           the same wall sitting in the scratchpad). Decision recorded 28 July
+           August 2026. Decision recorded 28 July
            2026, carried over when this page was split out of
            brick-repairs-repointing-tuckpointing.html on 28 August 2026. */
       ]
