@@ -1307,10 +1307,10 @@ html[data-style="sharp"] .cta-band { background: var(--brand); }
     from { opacity: 0; transform: translateY(22px); }
   }
 
-  /* Hero entrance, staggered. */
-  html.anim .hero-copy h1 { animation: rise-in 0.6s 0.05s cubic-bezier(0.2, 0.7, 0.3, 1) backwards; }
-  html.anim .hero-dynamic { animation: rise-in 0.6s 0.18s cubic-bezier(0.2, 0.7, 0.3, 1) backwards; }
-  html.anim .hero-media   { animation: rise-in 0.7s 0.30s cubic-bezier(0.2, 0.7, 0.3, 1) backwards; }
+  /* No hero entrance animation. The hero is baked into the static HTML and
+     paints before main.js runs, so animating it from opacity 0 once html.anim
+     lands made it vanish and fade back in, and pushed mobile LCP to 4.5-8.5s
+     in PageSpeed. */
 
   /* Scroll reveal (elements tagged by main.js). */
   html.anim .reveal {
