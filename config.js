@@ -497,6 +497,7 @@ window.SITE_CONFIG = {
             "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
             "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
             "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
+            "[Brick restoration in Perth](brick-restoration-perth.html)",
             "[About Perth Brickwork](about.html)"
           ]
         }
@@ -1227,6 +1228,373 @@ window.SITE_CONFIG = {
             "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
             "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
             "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
+            "[Brick extensions and additions in Perth](brick-extensions-additions.html)",
+            "[About Perth Brickwork](about.html)"
+          ]
+        }
+      ]
+    },
+
+    {
+      page: "brick-extensions-additions.html",
+      name: "Brick extensions and additions",
+      shortName: "Extensions",
+      serviceType: "Brick extensions and additions",
+      shortDescription: "The brickwork for extensions, additions and garage conversions. When you need a registered builder, what needs a permit, and how new brick is matched to old.",
+      metaTitle: "Brick Extensions & Additions Perth | Builder or Bricklayer?",
+      metaDescription: "Brick extensions in Perth: when WA law needs a registered builder, permits and planning approval, matching new brick to old, and garage conversions.",
+      headline: "Brick extensions and additions in Perth",
+      subheadline: "Who you contract with, what needs a permit, and how the new brickwork is made to sit with the old.",
+      ctaText: "Tell us about the extension",
+
+      blocks: [
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 8 October 2026." },
+
+        {
+          lead: [
+            "A bricklayer builds the brickwork on a brick extension, but on most extensions in Western Australia they are not the person you sign the contract with. Once the work needs a building permit and is worth $20,000 or more, it has to be carried out by a registered building contractor or by an owner with owner-builder approval, and the bricklayer works under them.",
+            "Smaller additions, and structures the law treats as incidental, such as fences and free-standing walls, can be engaged with a bricklayer directly. The rest of this page covers what decides which side of that line your job falls on, the approvals involved, and the details that decide whether an extension looks like it was always part of the house."
+          ]
+        },
+
+        { h2: "Bricklayer or registered builder? The WA rules" },
+        {
+          p: [
+            "Building work needs a registered building contractor once it requires a building permit and its value reaches $20,000, or $50,000 for a Class 10a building such as a private garage, shed or carport. The value is the whole job, not just the brickwork. If your extension is over that line, it is run by a registered builder who engages the bricklayer.",
+            "The alternative is to be your own builder. An owner can apply for owner-builder approval to carry out additions and alterations to their own existing dwelling, but the role is a real one: an owner-builder takes on the responsibilities, risks and liabilities of a professional builder, and selling an owner-built home within seven years of the building permit is an offence unless home indemnity insurance is in place.",
+            "Home indemnity insurance is the other reason the line matters. Where residential building work worth over $20,000 needs a permit, extending or renovating an existing home included, the builder must take out home indemnity insurance in your name before taking any payment or starting work. On an extension, ask to see the certificate before any money moves. The [cost guide](brickwork-cost-guide.html) covers deposits, contracts and the insurance in more detail."
+          ]
+        },
+        {
+          note: "Registration thresholds are from [Building and Energy's builders' registration guidance](https://www.wa.gov.au/government/multi-step-guides/builders-registration), which requires registration where building work needs a building permit and has a value of \"$50,000 or more if the work relates to a Class 10a building (such as a private garage, shed or carport); or $20,000 or more for other types of building work\". The incidental-structure exclusion is from [Do I need to be a registered building contractor?](https://www.wa.gov.au/government/publications/do-i-need-be-registered-building-contractor). Owner-builder scope and obligations are from the WA Government's [owner-builder approval](https://www.wa.gov.au/organisation/service-delivery/owner-builder-approval) page (last updated 16 September 2026), which states that \"an owner-builder assumes the responsibilities, risks and liabilities of a professional builder\" and that selling an owner-built dwelling within seven years of the building permit is an offence without home indemnity insurance. The insurance requirement is from Building and Energy's [home indemnity insurance](https://www.wa.gov.au/system/files/2025-11/2510324_home_indemnity_insurance.pdf) guidance. Thresholds change, so confirm current requirements before relying on them for a particular job."
+        },
+
+        { h2: "Permits, planning approval and engineers" },
+        {
+          p: [
+            "An extension is building work under the Building Act 2011 and needs a building permit before it starts. The permit is issued through your local government, and in most cases, once the work is worth more than $20,000, only to a registered builder or an approved owner-builder.",
+            "Planning approval is a separate question. The City of Vincent's guidance is a typical example: a planning application is generally needed where the council's town planning scheme requires one, or where the design varies from the Residential Design Codes (the R-Codes) on things like setbacks or height. An extension that fits within the R-Codes may need only the building permit. One that pushes a boundary setback may need both.",
+            "If your house is heritage-listed, or sits in a heritage or character area, expect more scrutiny of anything visible from the street. The [heritage page](federation-heritage-restoration.html) has each Perth council's heritage lists and areas.",
+            "Structural design comes with the permit. Councils need assurance that the structural design complies with the building standards, endorsed by a professional engineer. On an extension, that covers the new footings and any opening cut through the existing wall to join old and new."
+          ]
+        },
+        {
+          note: "The permit requirement is from Building and Energy's [Building Act 2011 Overview](https://www.wa.gov.au/system/files/2024-10/building_act_2011_overview.pdf), which states that \"building or demolition work requires a building permit or demolition permit unless specifically exempted\". The planning summary is the City of Vincent's [Renovate your property](https://www.vincent.wa.gov.au/your-home/property/my-property.aspx) guidance, which says building permits are required for \"additions or alterations to existing buildings\", that \"in most cases, when the estimated total value of work is more than $20,000 (except Class 10a), a building permit can only be issued to a registered builder or an owner-builder\", and that a planning application is generally required where a town planning scheme requires one or where there are \"one or more variations to the Residential Design Codes\". Each council applies its own scheme, so check with yours. The structural certification example is the [City of Perth's Certificate of Structural Sufficiency](https://perth.wa.gov.au/en/forms-and-payments/building-planning-and-development/building-permits-licences-and-approvals/certificate-of-structural-sufficiency)."
+        },
+
+        { h2: "Making the extension look like it belongs" },
+        {
+          p: [
+            "Most of the visible success of a brick extension is matching, and Building and Energy's guide to standards and tolerances is realistic about it. Where matching masonry in alteration work is not reasonably possible, it expects a practical approach. It also accepts that a perfect mortar colour match may not be possible, and that differences may lessen over time.",
+            "The guide's suggested fix is worth knowing at the design stage rather than after. Where the new brick will not match closely, put a physical break, such as a door, a window, a downpipe or a separating joint, where new meets old, so the eye reads two parts rather than one wall with a mismatched patch. Planned early, this costs nothing. Discovered once the walls are up, it is a compromise.",
+            "The brick itself is the hard part on older Perth houses. Older brick is often a different size to current brick and may no longer be made, which is the same problem as an infilled doorway on a larger scale. The [bricking up page](bricking-up-and-new-openings.html) explains why patches show and what reduces it. The [heritage page](federation-heritage-restoration.html) covers who makes brick in Western Australia. For new work, the guide expects brick for the building to come from the same batch where practicable, so order enough at the start rather than topping up later."
+          ]
+        },
+
+        { h2: "Where the new brickwork meets the old" },
+        {
+          p: [
+            "The extension sits on new footings, designed to the site's soil classification and conditions. Building and Energy's guide accepts that a properly designed footing system still moves within acceptable limits, and that this movement can cause minor cracking. The joint between a new structure and an old one is where that movement shows first.",
+            "So how the walls join is a design decision, not something settled on site on the day. Where the design calls for a control joint, a deliberate flexible break in the brickwork, it has to run through the full thickness of the masonry and be sealed to the masonry standard, AS 3700. A control joint that is left out, or only cut into the face, is a defect under the guide, and the straight crack it eventually becomes is the usual result.",
+            "On a Perth double brick house there is a second consideration. The existing external wall is usually structural, so opening it up to join the extension is structural work with a lintel, propping and engineering behind it, not a matter of knocking a hole through. The [bricking up and new openings page](bricking-up-and-new-openings.html) covers how that is done.",
+            "Floor levels are part of the same join. Unless the plans say otherwise, the guide treats new floor levels in an extension that do not match the existing floor as a defect. Check the levels are on the drawings."
+          ]
+        },
+        {
+          note: "Masonry matching, the advice to use a door, window, downpipe or joint to break the visual impact, same-batch brick for new work, footing movement, control joints and floor levels are from Building and Energy's [Western Australia Guide to Standards and Tolerances 2019](https://wa.gov.au/system/files/2024-11/guide_to_standards_and_tolerances_2019_wa_17521.pdf): sections 3.05 and 3.06 (blending and matching of masonry), Explanatory note 2A (footing systems and movement), 3.03 (control joints, which are defective \"if they do not extend through the full thickness of masonry skin\" or are not sealed in accordance with AS 3700) and 2.07 (finished floor levels)."
+        },
+
+        { h2: "Before work starts: the condition of the existing house" },
+        {
+          p: [
+            "An extension joins onto a house that already has its own problems: cracks, a corroding lintel, failed pointing, damp. The guide recommends that before new work starts, the builder tells the owner about any existing conditions that could affect the standard of the new work. It also recommends that the builder and owner agree in the contract, or in a written variation, what repairs to the existing building are needed first.",
+            "That is worth insisting on. A crack in the old wall that predates the extension otherwise becomes an argument about whether the extension caused it. Photograph the existing walls before work starts, and get any repairs priced and agreed in writing. If the existing walls need attention, the [brick repairs page](brick-repairs-crack-stitching.html) and the [lintel page](lintel-repair-replacement.html) cover the usual culprits."
+          ]
+        },
+        {
+          note: "From Item I, Renovations, alterations and extensions, in the [Western Australia Guide to Standards and Tolerances 2019](https://wa.gov.au/system/files/2024-11/guide_to_standards_and_tolerances_2019_wa_17521.pdf), which recommends that \"before starting new work, the builder informs the owner of any potential circumstances and conditions of the existing building that may have a detrimental effect on the standard of the new building work\"."
+        },
+
+        { h2: "Garage and carport conversions" },
+        {
+          p: [
+            "Turning a garage or carport into a bedroom, study or living area changes it from a non-habitable space to a habitable room, and the rules change with it. The City of Vincent, for example, lists conversion to a habitable room among the works that usually need a building permit.",
+            "The ceiling is often the first thing that rules a conversion in or out. Under the National Construction Code, a habitable room other than a kitchen needs a floor-to-ceiling height of at least 2.4 metres, while a garage only needs 2.1 metres. A garage built to the lower figure may need its roof or ceiling reworked before it can become a bedroom.",
+            "Bricking in a carport adds new walls where there were none, which means footings and a structural design for those walls. It is closer to a small extension than to a bricking-up job, and it should be quoted that way."
+          ]
+        },
+        {
+          note: "Room heights are from clause 10.3.1 of the [NCC 2025 Housing Provisions, Part 10.3](https://ncc.abcb.gov.au/editions/ncc-2025/adopted/housing-provisions/10-health-and-amenity/part-103-room-heights), which sets a minimum of 2.4 m \"in a habitable room excluding a kitchen\" and 2.1 m for a garage. The same figures appear in the NCC 2022 edition, which WA permit applications may still use during the transition to NCC 2025. The permit example is the City of Vincent's [Renovate your property](https://www.vincent.wa.gov.au/your-home/property/my-property.aspx) guidance. Other habitable-room requirements apply as well, such as light, ventilation, damp-proofing and energy efficiency. Your council or building surveyor will set them out for your design."
+        },
+
+        { h2: "What moves the price" },
+        {
+          p: [
+            "No figures here. An extension price depends on the design, the site and the builder's margin as much as on the brickwork, and a number borrowed from elsewhere would mislead more than it helped. What moves the brickwork part of it:",
+          ]
+        },
+        {
+          ul: [
+            "**Double brick or a single leaf.** Two structural leaves is twice the brickwork of a veneer skin.",
+            "**Matching the existing brick.** Off-the-shelf brick, a close current range, or salvage that takes time to find.",
+            "**Joining old to new.** Opening up a structural external wall means a lintel, propping and engineering.",
+            "**Access.** A narrow side path, or no room for a pallet drop, slows everything down.",
+            "**The existing house.** Repairs that have to happen before the new work can tie in."
+          ]
+        },
+
+        { h2: "Frequently asked questions" },
+        {
+          faqs: [
+            {
+              q: "Do I need a registered builder for a brick extension in Perth?",
+              a: "If it needs a building permit and is worth $20,000 or more, yes. In Western Australia, that work has to be done by a registered building contractor unless you hold owner-builder approval, and the bricklayer works under the builder. Fences, free-standing walls and retaining walls are classed as incidental structures and are the exception."
+            },
+            {
+              q: "Do I need council approval to build an extension?",
+              a: "You need a building permit from your local government before work starts. You may also need planning approval, generally where your council's planning scheme requires it or where the design varies from the R-Codes, for example on a boundary setback. Heritage-listed homes and heritage areas face more scrutiny. Ask your council early, before the design is final."
+            },
+            {
+              q: "Will the new bricks match my house?",
+              a: "Sometimes closely, sometimes not. It depends on whether your brick is still made and in what size. Where a close match is not possible, WA's guide to standards and tolerances expects a practical approach: putting a door, window, downpipe or joint where new meets old, so the difference reads as intentional. Salvaged brick is often the best match for an older house."
+            }
+          ]
+        },
+        { p: "To talk through an extension, send the details through [the enquiry form](#enquiry) or call (08) 9516 1337. If the job needs a registered builder, we will say so and point it to the right fit." },
+        {
+          form: {
+            headline: "Tell us about the extension",
+            preset: "Brick extension or addition",
+            placeholders: {
+              size: "e.g. single-room extension off the back of a 1970s double brick house, face brick to match, plans not drawn yet"
+            },
+            extraFields: [
+              {
+                name: "buildingAge",
+                label: "Roughly how old is the house?",
+                type: "select",
+                required: false,
+                after: "size",
+                options: ["Pre-1940", "1940-1980", "Post-1980", "Not sure"]
+              }
+            ]
+          }
+        },
+
+        { h2: "Related" },
+        {
+          ul: [
+            "[Bricking up openings and new doorways](bricking-up-and-new-openings.html)",
+            "[Perth brickwork cost guide](brickwork-cost-guide.html)",
+            "[Brick restoration in Perth](brick-restoration-perth.html)",
+            "[Lintel repair and replacement in Perth](lintel-repair-replacement.html)",
+            "[About Perth Brickwork](about.html)"
+          ]
+        }
+      ]
+    },
+
+    {
+      page: "brick-restoration-perth.html",
+      name: "Brick restoration",
+      shortName: "Restoration",
+      serviceType: "Brick restoration",
+      shortDescription: "Bringing tired brickwork back: cleaning, repointing, replacing damaged bricks and fixing what lets water in. What order to do it in, and what acid washing can damage.",
+      metaTitle: "Brick Restoration Perth | Cleaning, Repointing & Repairs",
+      metaDescription: "Brick restoration in Perth: what it covers, the order to do it in, how careless acid washing stains brick, and what to check on a quote.",
+      headline: "Brick restoration in Perth",
+      subheadline: "Cleaning, repointing and repairing tired brickwork, in the right order, without causing new damage on the way.",
+      ctaText: "Tell us about the wall",
+
+      blocks: [
+        { credit: "Researched and written by Brad, Perth Brickwork. Sources cited inline. Last reviewed 8 October 2026." },
+
+        {
+          lead: [
+            "Brick restoration means bringing tired brickwork back into good condition: fixing whatever is letting water in, replacing failed mortar, replacing damaged bricks and cleaning the face. On most Perth houses it is a combination of those jobs rather than one, and the order you do them in matters more than any single product.",
+            "This page is about ordinary brick houses rather than period homes. If yours is a federation or inter-war house with tuckpointing, or is heritage-listed, the [federation and heritage restoration page](federation-heritage-restoration.html) is the one you want."
+          ]
+        },
+
+        { h2: "What brick restoration actually covers" },
+        {
+          ul: [
+            "**Fixing the water first.** Overflowing gutters, reticulation spraying the wall, garden beds built up against it, a bridged damp proof course. Salt attack, fretting and efflorescence all need water moving through the wall, and restoring a wall that stays wet only buys time.",
+            "**Repointing.** Raking out failed mortar and replacing it with a mortar suited to the wall. See [tuckpointing and repointing](tuckpointing-repointing.html).",
+            "**Replacing damaged bricks.** Cutting out spalled, fretting or cracked bricks and replacing them with a matching brick. See [brick repairs](brick-repairs-crack-stitching.html).",
+            "**Crack repair.** Diagnosing why a crack opened before deciding how to close it, sometimes with crack stitching. Also on the [brick repairs page](brick-repairs-crack-stitching.html).",
+            "**Lintels.** Replacing the corroded steel over windows and doors that is lifting the brickwork above. See [lintel repair](lintel-repair-replacement.html).",
+            "**Cleaning.** Removing staining, efflorescence and old mortar smears without creating new stains. Covered below, because it is where most restoration damage is done."
+          ]
+        },
+
+        { h2: "Start with what the wall is telling you" },
+        {
+          p: [
+            "The City of Fremantle publishes an inspection checklist for owners of older buildings. Most of its masonry questions are worth asking of any brick house, whatever its age. Walk around the house, and if you can, do it again in heavy rain, when you can see where the water actually goes."
+          ]
+        },
+        {
+          ul: [
+            "Is water running down the walls from gutters or downpipes that overflow?",
+            "Does the reticulation spray the base of the walls?",
+            "Are garden beds or paving built up against the walls, or above the damp proof course?",
+            "Is there cracking, often stepping around the bricks?",
+            "Is mortar missing from the lower parts of the walls, or patched with grey cement?",
+            "Are there white salts on the surface, or a damp band with a tide line near the base?",
+            "Is there steel in the brickwork, such as a lintel, that is rusting and expanding?"
+          ]
+        },
+        {
+          p: [
+            "The checklist's advice on what to do next applies just as well: make a written plan, deal with the most urgent things first, and start with basic maintenance such as cleaning the gutters. A wrong diagnosis, the same sheets warn, can lead to unnecessary work and damage. That is the case for knowing what is wrong before anyone quotes a fix."
+          ]
+        },
+        {
+          note: "The questions are adapted from the City of Fremantle's [Technical Advice Sheet 2: Checklist for inspection](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Heritage-Building-Conservation-Technical-Advice-Sheet-2-Checklist-for-inspection.pdf). The advice to make a written plan, put urgent things first and start with basic maintenance, and the warning that \"a wrong diagnosis can lead to unnecessary work and damage to the building\", are from [Technical Advice Sheet 1: Introduction to good conservation practice](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Heritage-Building-Conservation-Technical-Advice-Sheet-1-Introduction-to-good-conservation-practice.pdf). Both sheets were written for heritage buildings; the questions used here are the ones about water and masonry that apply to brick walls generally."
+        },
+
+        { h2: "Restore or rebuild?" },
+        {
+          p: [
+            "Most tired brickwork does not need rebuilding. Mortar is designed to be the sacrificial part of a wall, and a wall with failed pointing, some damaged bricks and staining is a maintenance job, not a structural one.",
+            "Rebuilding a section becomes the answer when the wall itself is unsound: it is leaning, bulging, or moving along a crack that keeps opening. That is an engineer's diagnosis, not a bricklayer's guess. The [brick repairs page](brick-repairs-crack-stitching.html) explains how to read a crack and when to get an engineer first.",
+            "On an older house, the conservation approach in the City of Fremantle's advice sheets is a sensible default whether or not the house is heritage-listed: keep as much of the original material as possible, and repair rather than replace when you are unsure. Original brick cannot be bought again, and a rebuilt section built from new brick is the most visible kind of repair."
+          ]
+        },
+        {
+          note: "The guidance to keep as much original material as possible and to repair cautiously is from the City of Fremantle's [Technical Advice Sheet 1](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Heritage-Building-Conservation-Technical-Advice-Sheet-1-Introduction-to-good-conservation-practice.pdf), written for heritage buildings. It is applied here as a general default, not as a rule for every wall."
+        },
+
+        { h2: "Cleaning brickwork: what acid washing can damage" },
+        {
+          p: [
+            "Cleaning is the step most likely to make a wall look worse, and it is usually the last step, after any repointing and brick replacement. The traditional cleaner is hydrochloric acid, also known as muriatic acid or spirits of salts. Its job is to dissolve the cement in mortar, which is why it removes mortar smears. The brick industry's own cleaning manual warns that it has few other uses and should not be used on many stains at all.",
+            "Used badly, it causes the stains people then pay to remove. The rules in that manual are specific:"
+          ]
+        },
+        {
+          ol: [
+            "**Saturate the wall first.** The wall, and the brickwork below it, has to be thoroughly wet before any acid goes on, and kept wet ahead of it. The manual calls failure to saturate the wall a major cause of cleaning stains, and calls the idea that pre-wetting weakens the acid a myth.",
+            "**Keep the acid weak.** The recommended maximum is 1 part acid to 20 parts water for light-coloured clay bricks, and 1 part to 10 for other clay bricks.",
+            "**Keep it on the wall briefly.** The manual advises a shorter time on the wall for bricks made in Western Australia, or secondary staining can occur.",
+            "**Test a small area first,** to check both that the method works and that it is not damaging the wall.",
+            "**Go easy with the pressure cleaner.** Turbo or rotary heads damage brickwork and must not be used. A straight jet should never be used. Pressure that is too high, or a nozzle held too close, erodes bricks and mortar joints."
+          ]
+        },
+        { h3: "Green, yellow and brown stains on cream brick" },
+        {
+          p: [
+            "Light-coloured Perth brick has a particular problem. Midland Brick, a WA manufacturer, explains that vanadium salts occur naturally in light-coloured bricks, especially those from WA clay, and show up as green, yellow or reddish-brown staining. Using hydrochloric acid to remove mortar can trigger or worsen it. The cleaning manual adds that acid can turn vanadium black and make it harder to remove, so it should be dealt with before any acid goes on, using different chemicals altogether.",
+            "A yellow to brown, rust-like stain that appears after cleaning is usually what the manual calls acid burn: iron oxide staining caused by incorrect acid use, such as skipping the pre-wetting or mixing the acid too strong. It is a known, avoidable result of bad cleaning, not a property of the brick.",
+            "The white powder that brushes off is a different thing again. That is efflorescence, and it means water is moving through the wall. Brush it off dry, and look for the source of the water rather than reaching for acid. The [brick repairs page](brick-repairs-crack-stitching.html) covers it in more detail."
+          ]
+        },
+        { h3: "Don't seal it, and don't paint it" },
+        {
+          p: [
+            "On older walls, the last step people reach for after cleaning is a clear sealer, a coat of paint or a cement render, and the City of Fremantle's inspection advice says plainly that these should not be used on old walls. They stop the masonry drying out, and moisture trapped behind the face turns into fretting and spalling."
+          ]
+        },
+        { h3: "Who should do the cleaning" },
+        {
+          p: [
+            "Think Brick Australia, the clay brick industry body, runs a brick cleaning accreditation course, including in Perth at South Guildford. It covers identifying and treating stains, avoiding damage and handling chemicals safely. Asking whether the cleaner has done it, and how they plan to test, pre-wet and rinse, is a fair way to separate an experienced cleaner from someone with a pressure washer and a drum of acid."
+          ]
+        },
+        {
+          note: "The acid strengths, pre-wetting, dwell time for WA-made bricks, test areas, pressure-cleaning cautions and acid burn are from Think Brick Australia's Clay Masonry Cleaning Manual (Manual 13). The edition read was the December 2017 revision, [as hosted by Littlehampton Brick](https://littlehamptonbrick.com.au/wp-content/uploads/2024/09/manual-13-clay-masonry-cleaning-manual.pdf); the current edition is available to registered users from [Think Brick's technical manuals](https://thinkbrick.com.au/technical/manuals/technical-manuals). Vanadium staining in WA clay bricks and the warning that \"using hydrochloric acid to remove mortar or construction debris can trigger or worsen vanadium staining\" are from [Midland Brick's brick stains guide](https://www.midlandbrick.com.au/Brick-Cleaning-Stain-Removal) and its [vanadium fact sheet](https://www.midlandbrick.com.au/wp-content/uploads/2025/09/Product-Fact-Sheet-Vanadium.pdf). The advice against sealers, cement and modern paints on old walls is from the City of Fremantle's [Technical Advice Sheet 2](https://www.fremantle.wa.gov.au/wp-content/uploads/2025/04/Heritage-Building-Conservation-Technical-Advice-Sheet-2-Checklist-for-inspection.pdf). The accreditation course and its Perth venue are from [Think Brick's brick cleaning FAQ](https://thinkbrick.com.au/brick-cleaning/faq/)."
+        },
+        /* TODO (Brad): Think Brick's accredited-cleaner directory said "coming soon"
+           on 8 Oct 2026, so the page doesn't point to it. Link it once WA cleaners
+           are listed. */
+
+        { h2: "Matching brick and mortar" },
+        {
+          p: [
+            "A restored wall with replaced bricks and new pointing will not look uniform on day one, and Building and Energy's guide to standards and tolerances says so. It accepts that a perfect mortar colour match may not be possible, and that differences may lessen over time. It also expects some variation in colour and texture between batches of brick.",
+            "The brick is the harder part on an older house, because the original may no longer be made or may be a different size to current brick. Salvage from elsewhere on the same property is often the best match available. The [bricking up page](bricking-up-and-new-openings.html) explains why a patch shows and what reduces it. Mortar colour and joint profile matter as much as the brick, and the [tuckpointing and repointing page](tuckpointing-repointing.html) covers matching the mortar to the wall."
+          ]
+        },
+        {
+          note: "From section 3.05, Blending and matching of masonry: repair work, of Building and Energy's [Western Australia Guide to Standards and Tolerances 2019](https://wa.gov.au/system/files/2024-11/guide_to_standards_and_tolerances_2019_wa_17521.pdf): \"A perfect colour match may not be possible and differences may diminish over time.\""
+        },
+
+        { h2: "Heritage homes: check your council first" },
+        { p: "If your house is on a council heritage list, or sits in a heritage or character area, work visible from the street may need your council's approval before it starts. The work itself is not necessarily different, but the approval pathway is. The [federation and heritage page](federation-heritage-restoration.html) lists each Perth council's heritage lists and areas, and covers lime mortar and reinstating tuckpointing." },
+
+        { h2: "What moves the price" },
+        {
+          p: [
+            "Not a price list. A restoration quote is the sum of several jobs, and its size depends on things a page cannot see. What moves it:"
+          ]
+        },
+        {
+          ul: [
+            "**How much of the wall needs repointing,** and whether it is lime or cement mortar.",
+            "**How many bricks need replacing,** and whether a match is available new or has to be salvaged.",
+            "**Access.** Scaffolding on a two-storey wall, or a tight side path, adds cost before any brickwork happens.",
+            "**Staining.** Vanadium, acid burn or old paint each need their own treatment, sometimes more than one pass.",
+            "**What is causing the damage.** Gutters, drainage and reticulation are usually other trades, and fixing them is part of the job even if it is not part of the brickwork quote."
+          ]
+        },
+
+        { h2: "What to ask before you accept a quote" },
+        {
+          ol: [
+            "**What do you think is causing the damage,** and does your price fix the cause or only the symptom?",
+            "**Which bricks are you replacing, and where is the matching brick coming from?**",
+            "**What mortar are you repointing with,** and how are you matching its colour and joint profile?",
+            "**How will you clean it?** Ask about the test area, pre-wetting, the acid strength and the pressure equipment.",
+            "**What is not included?** Gutters, drainage, scaffolding and making good are the usual gaps."
+          ]
+        },
+
+        { h2: "Frequently asked questions" },
+        {
+          faqs: [
+            {
+              q: "What does brick restoration involve?",
+              a: "Usually several jobs together: fixing whatever is letting water into the wall, repointing failed mortar, replacing spalled or cracked bricks, and cleaning the face. On a house with structural cracking or rusted lintels, those come first. The order matters, because cleaning and repointing a wall that is still getting wet only buys time."
+            },
+            {
+              q: "Is acid washing safe for my bricks?",
+              a: "It can be, done properly. Done badly, it causes the staining it is meant to remove. The brick industry's cleaning manual requires the wall to be saturated first, the acid kept weak, and a shorter time on the wall for WA-made bricks. On light-coloured brick, Midland Brick warns that hydrochloric acid can trigger or worsen green and yellow vanadium staining. Ask any cleaner how they handle all of those."
+            },
+            {
+              q: "Should I seal or paint my brickwork after it is restored?",
+              a: "On an older wall, no. The City of Fremantle's advice is that clear sealers, cement renders and modern paints should not be used on old walls, because they stop the masonry drying out. Moisture trapped behind the face is what causes fretting and spalling in the first place."
+            }
+          ]
+        },
+        { p: "To get a restoration job looked at, send the details through [the enquiry form](#enquiry) or call (08) 9516 1337. Photos of the worst areas, and of the wall as a whole, help." },
+        {
+          form: {
+            headline: "Tell us about the wall",
+            preset: "Brick restoration",
+            placeholders: {
+              size: "e.g. front and side walls of a 1960s double brick house, mortar crumbling at the base, some bricks spalling, old cleaning stains"
+            },
+            extraFields: [
+              {
+                name: "buildingAge",
+                label: "Roughly how old is the building?",
+                type: "select",
+                required: false,
+                after: "size",
+                options: ["Pre-1940", "1940-1980", "Post-1980", "Not sure"]
+              }
+            ]
+          }
+        },
+
+        { h2: "Related" },
+        {
+          ul: [
+            "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
+            "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
+            "[Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)",
+            "[Lintel repair and replacement in Perth](lintel-repair-replacement.html)",
             "[About Perth Brickwork](about.html)"
           ]
         }
@@ -1236,7 +1604,7 @@ window.SITE_CONFIG = {
     {
       page: "federation-heritage-restoration.html",
       name: "Federation and heritage brick restoration",
-      shortName: "Restoration",
+      shortName: "Heritage",
       shortDescription: "Heritage and federation-era brick restoration in Perth, including reinstating lost tuckpointing and matching salvaged period brick.",
       serviceType: "Heritage brick and mortar restoration",
       metaTitle: "Federation & Heritage Brick Restoration Perth",
@@ -1457,6 +1825,7 @@ window.SITE_CONFIG = {
             "[Tuckpointing and repointing in Perth](tuckpointing-repointing.html)",
             "[Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)",
             "[Brick and rendered fences in Perth](brick-fences-boundary-walls.html)",
+            "[Brick restoration in Perth](brick-restoration-perth.html)",
             "[About Perth Brickwork](about.html)"
           ]
         }
@@ -2381,7 +2750,7 @@ window.SITE_CONFIG = {
     { p: "Front fences, boundary walls, piers, gate openings and letterboxes. Usually a fixed-scope job that can be quoted accurately once someone has stood on the frontage, unless part of it turns out to be retaining. [Brick and rendered fences in Perth](brick-fences-boundary-walls.html)" },
 
     { h3: "Extensions and additions" },
-    { p: "Double brick extensions, garage conversions, additions. Some extensions and additions will need to be contracted through a registered builder rather than engaged with a bricklayer directly, depending on the value and nature of the work. Send the job through either way and it will be pointed at whoever is the right fit for it." },
+    { p: "Double brick extensions, garage conversions, additions. Some extensions and additions will need to be contracted through a registered builder rather than engaged with a bricklayer directly, depending on the value and nature of the work. Send the job through either way and it will be pointed at whoever is the right fit for it. [Brick extensions and additions in Perth](brick-extensions-additions.html)" },
 
     { h2: "What we don't cover" },
     { p: "Worth saying plainly, because it saves you a phone call." },

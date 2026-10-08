@@ -1,42 +1,50 @@
 {
   "index.html": {
-    "hash": "bd34561a4816d3af3f8729b9addcd91016890c89b38ce9d413b8670b8e81bfc8",
+    "hash": "8d536ffc337f2dd8bfa4c6179d245bb279be9a406249792e0404b332211f48e0",
     "lastmod": "2026-10-08"
   },
   "tuckpointing-repointing.html": {
-    "hash": "76b0c9c9e1530f00d9cdc187164d7fe840ab17114d0490d2ff971e28238ea9dc",
+    "hash": "67fb1a42af24fb9d39c92c6e3e833c5898cf5a2e03a3e85d0c9e230354152210",
     "lastmod": "2026-10-08"
   },
   "brick-repairs-crack-stitching.html": {
-    "hash": "296783bf77998eca283c50ee6b7aba673dea53f65cc9a7b27def355178460458",
+    "hash": "d69dc4c5642f0aa2ec224f51279d2ffb44e811f81d299041146aa8e867e7096b",
     "lastmod": "2026-10-08"
   },
   "lintel-repair-replacement.html": {
-    "hash": "0f2dee2f6184fa9091973440890bfebd0d0f4430c67333cbd61a9cf389c97c65",
+    "hash": "a2ef676c82bba08aec0efe16f7a7f943345a0a825b38e1f813c6bacc63152e6e",
     "lastmod": "2026-10-08"
   },
   "bricking-up-and-new-openings.html": {
-    "hash": "7cc494a83719593ee1a698fa7a1101b4efb1eae2affd0d76977829fb7c689216",
+    "hash": "682239d0a346ccabaca3b0869bdfded41ecf7fa7a289079a5fea7f9fd4595b35",
+    "lastmod": "2026-10-08"
+  },
+  "brick-extensions-additions.html": {
+    "hash": "b06c735903baa570f1c4e5b9f7ec38353304d340a266cfa818484a0ea81544f6",
+    "lastmod": "2026-10-08"
+  },
+  "brick-restoration-perth.html": {
+    "hash": "82927468e17d7609036ebbc06184a0213e2c7b19e2a60eadfc574312783fe84a",
     "lastmod": "2026-10-08"
   },
   "federation-heritage-restoration.html": {
-    "hash": "57edcf7b751385887ff0908347c66934ffeb6749908d1754990a10915c03e267",
+    "hash": "7b5f5f83f6f4776098710775a5fcba6544ef65c4f3bba55f2a37d1ccdc91e8b7",
     "lastmod": "2026-10-08"
   },
   "brick-fences-boundary-walls.html": {
-    "hash": "1203045644eb6c33a19c0166f7c103a409c703791afd4d2dacd4177870f31bb7",
+    "hash": "eeee9ef4015ad61f61703648b28ba35966040d778c4c65061aeb5d6658b2a968",
     "lastmod": "2026-10-08"
   },
   "brickwork-cost-guide.html": {
-    "hash": "497eb0db2ff96c4612734d8a6863a05e8a9e2d21d619704495a64fb47af845b5",
+    "hash": "f6cc63efeab8ed06205fc5961a6e7dab3aaf04915c1bc6b86fa315edb9bfd5b6",
     "lastmod": "2026-10-08"
   },
   "about.html": {
-    "hash": "b4366cc2164640331a823d575c0afccd7336b8ae10549bc630177c5dc93c6dc8",
+    "hash": "9ce57b83d7b29601fa2b95fdc3d74bb7cf911176a542fa005fba6c5c677828c7",
     "lastmod": "2026-10-08"
   },
   "privacy.html": {
-    "hash": "1cc7e9bb1ba2c87e573ff803a2f2b9670189ca8ce4a3ba2029914a3854b39ce4",
+    "hash": "f4453703784ab7c72611332d0ca3c1cc4cd9efd96b639e06b5b62b693c222b17",
     "lastmod": "2026-10-08"
   }
 }
