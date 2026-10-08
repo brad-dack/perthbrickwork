@@ -517,7 +517,7 @@ window.SITE_CONFIG = {
       shortDescription: "Brick repairs, crack stitching and crack diagnosis. What's maintenance, what's a repair, and what needs an engineer first.",
       serviceType: "Brick repair and crack stitching",
       metaTitle: "Brick Repairs & Crack Stitching Perth | Wall Crack Fix",
-      metaDescription: "Brick repairs and crack stitching in Perth. How to read a wall crack, when it needs an engineer, how crack stitching works, and what drives the price.",
+      metaDescription: "Brick repairs and crack stitching in Perth. How to read a wall crack, when it needs an engineer, and what salt attack, fretting and salt damp do to brick.",
       headline: "Brick repairs and crack stitching in Perth",
       subheadline: "Cracked, spalled or fretting brickwork. How to tell maintenance from a structural problem, and how a stitched repair actually works.",
       ctaText: "Tell us what your wall is doing",
@@ -1475,7 +1475,7 @@ window.SITE_CONFIG = {
       shortName: "Fences",
       shortDescription: "Front fences, boundary walls, piers, gate openings and letterboxes - plus the front fence height limit for your council.",
       serviceType: "Brick fence construction",
-      metaTitle: "Brick Fence Cost & Repair Perth | Council Rules",
+      metaTitle: "Brick Fence Cost & Repair Perth | Council Height Rules",
       metaDescription: "What brick and rendered fences cost in Perth, why they crack and when to repair one, the front fence height limits by council, and what to check on a quote.",
       headline: "Brick and rendered fences in Perth",
       subheadline: "What they cost, what your council allows, and what to check on a quote.",
@@ -2368,6 +2368,12 @@ window.SITE_CONFIG = {
     { h3: "Brick repairs and crack stitching" },
     { p: "Cracked, spalled or fretting brickwork. Cracking is sometimes maintenance and sometimes a structural problem, and telling the difference is what stops you paying twice. [Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)" },
 
+    { h3: "Lintel repair and replacement" },
+    { p: "Rusted and failing lintels over windows and doors. The steel rusts, expands and lifts the brickwork above it, which looks like a structural crack and is usually a smaller job than the footing problem it gets mistaken for. [Lintel repair and replacement in Perth](lintel-repair-replacement.html)" },
+
+    { h3: "Bricking up openings and new doorways" },
+    { p: "Bricking up old doorways, windows and air conditioner holes, and cutting in new openings. Both turn on the same two questions: what is the wall carrying, and will the repair be visible afterwards. [Bricking up openings and new doorways](bricking-up-and-new-openings.html)" },
+
     { h3: "Federation and heritage brick restoration" },
     { p: "Reinstating tuckpointing someone repointed over, matching salvaged period brick, and working within a council heritage or character area. [Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)" },
 
@@ -2392,7 +2398,8 @@ window.SITE_CONFIG = {
       p: [
         "People often arrive looking for a rate per thousand bricks, because that is how bricklayers are paid subcontracting to builders on large sites.",
         "It does not translate to a domestic job. On a homeowner's job the brick laying is frequently a minority of the total. Footings, access, scaffolding, spoil removal, piers and approval can add up to more than the brickwork itself, and on repointing there is no new brick being laid at all.",
-        "Costs are set out per job type on the [fences page](brick-fences-boundary-walls.html), the [tuckpointing and repointing page](tuckpointing-repointing.html) and the [brick repairs and crack stitching page](brick-repairs-crack-stitching.html), because that is the only level at which a range means anything."
+        "Costs are set out per job type on the [fences page](brick-fences-boundary-walls.html), the [tuckpointing and repointing page](tuckpointing-repointing.html) and the [brick repairs and crack stitching page](brick-repairs-crack-stitching.html), because that is the only level at which a range means anything.",
+        "The [Perth brickwork cost guide](brickwork-cost-guide.html) sets out the unit each job type is quoted in, what moves the number, and the WA rules on deposits, contracts and insurance."
       ]
     },
 
