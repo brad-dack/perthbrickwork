@@ -949,10 +949,33 @@
   // Trade-off: a session that bounces before "load" fires goes untracked —
   // acceptable for a lead-gen site where page views and click_to_call on
   // sessions that stick around are what matters.
+  //
+  // "load" alone isn't late enough: on a fast connection it can fire before
+  // the first paint, and gtag.js's ~250ms of script evaluation then sits in
+  // front of the hero. PSI mobile flipped between ~98 and ~80 on the same page
+  // depending on which won. So after "load" we also wait for the browser to
+  // report its first largest-contentful-paint. Browsers without that entry
+  // type (Safari, Firefox) inject on "load" as before. The 5s timeout covers a
+  // tab that never paints (opened in the background), which reports no LCP.
+  function scheduleGA4() {
+    var done = false;
+    function go() { if (!done) { done = true; injectGA4(); } }
+    var types = window.PerformanceObserver && PerformanceObserver.supportedEntryTypes;
+    if (!types || types.indexOf("largest-contentful-paint") === -1) return go();
+    try {
+      new PerformanceObserver(function (list, obs) {
+        obs.disconnect();
+        setTimeout(go, 0);
+      }).observe({ type: "largest-contentful-paint", buffered: true });
+    } catch (e) {
+      return go();
+    }
+    setTimeout(go, 5000);
+  }
   if (document.readyState === "complete") {
-    injectGA4();
+    scheduleGA4();
   } else {
-    window.addEventListener("load", injectGA4);
+    window.addEventListener("load", scheduleGA4);
   }
   trackPhoneClicks();
 
