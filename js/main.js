@@ -213,6 +213,22 @@
     });
   }
 
+  // Sends the destination of any link that leaves the site, so the council and
+  // standards sources cited on the pages show up as outbound_click with the
+  // page they were clicked from.
+  function trackOutboundClicks() {
+    document.addEventListener("click", function (e) {
+      var link = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (!link || typeof window.gtag !== "function") return;
+      if (!/^https?:$/.test(link.protocol) || link.hostname === window.location.hostname) return;
+      window.gtag("event", "outbound_click", {
+        link_url: link.href,
+        link_domain: link.hostname,
+        page_path: window.location.pathname
+      });
+    });
+  }
+
   /* ---------- header / footer ------------------------------------------ */
 
   /* Mirrors headerHtml() in bake.js — services grouped under one <details>
@@ -978,6 +994,7 @@
     window.addEventListener("load", scheduleGA4);
   }
   trackPhoneClicks();
+  trackOutboundClicks();
 
   /* Everything below builds #page-content, the header, the footer and the
      rest of the page via innerHTML — real work on a real page, and none of

@@ -213,7 +213,7 @@ window.SITE_CONFIG = {
       shortDescription: "Tuckpointing and repointing in Perth. What separates the decorative finish from ordinary mortar maintenance, and what each one costs.",
       serviceType: "Tuckpointing and mortar repointing",
       metaTitle: "Tuckpointing & Repointing Perth | Brick Pointing Cost",
-      metaDescription: "Tuckpointing and repointing in Perth: how each is done, when a wall actually needs repointing, why mortar mix matters, and what to check on a quote.",
+      metaDescription: "Tuckpointing and repointing in Perth: how each is done, when a wall needs it, how mortar mix matters, and how the cost is worked out.",
       headline: "Tuckpointing and repointing in Perth",
       subheadline: "The specialist decorative finish, and the mortar maintenance job it's often confused with. What each involves and what to check on a quote.",
       ctaText: "Tell us what your wall needs",
@@ -239,7 +239,7 @@ window.SITE_CONFIG = {
         { h3: "Tuckpointing" },
         {
           p: [
-            "Also written tuck pointing. A decorative finish, not a repair. The joint is filled with mortar coloured to match the brick, then a fine ribbon of contrasting lime putty is applied on top, creating the appearance of perfectly regular, very thin joints. It was used to make ordinary brickwork look like expensive, precisely laid brickwork.",
+            "Also written tuck pointing, and the tradesperson who does it is a tuck pointer. A decorative finish, not a repair. The joint is filled with mortar coloured to match the brick, then a fine ribbon of contrasting lime putty is applied on top, creating the appearance of perfectly regular, very thin joints. It was used to make ordinary brickwork look like expensive, precisely laid brickwork.",
             "Common on Perth federation-era and inter-war housing. It is a specialist skill, closer to a trade of its own than a bricklaying task, and there are not many people in Perth who do it properly. Priced by the metre of joint rather than by wall area, and significantly more expensive than repointing.",
             "If a tuckpointed house has been repointed flat by a general bricklayer, the original finish is gone. It can be reinstated - see the [federation and heritage restoration page](federation-heritage-restoration.html) for what that involves, including which councils run heritage or character area rules that might affect the work.",
             "The single most useful thing you can do before hiring anyone for tuckpointing is ask to see a finished job and go and look at it. Done well it is almost invisible as work and the facade simply looks right. Done badly the ribbon wanders, the widths vary, and it is obvious from the footpath."
@@ -309,6 +309,7 @@ window.SITE_CONFIG = {
             "For older lime-mortar walls, the City of Fremantle's heritage guidance gives a clear threshold: repoint when the mortar has worn back further than the joint is wide, which is about 10mm in brickwork, or when a joint has cracked and is letting water in. Minor losses short of that are best left alone. Soft mortar on its own is not a reason to repoint either. Lime mortar is supposed to be soft.",
             "Mortar rarely fails evenly across a wall. The base of the wall, where rising damp and salt attack the joints, and the most weather-exposed elevation usually go first. Localised repointing of the joints that have actually failed is usually all that is needed, and repointing sound joints is not harmless: every rake-out risks chipping the brick edges, however carefully it is done.",
             "There is one case where a full repoint is the right call even if the joints look intact: an old lime-mortar wall that has been repointed in cement. That cement is trapping moisture and salt in the brick, and taking it out is the repair.",
+            "If the damage is to the brick itself, such as cracked, spalled or crumbling faces, that is a [brick repairs](brick-repairs-crack-stitching.html) job rather than repointing, and a wall that needs both is covered under [brick restoration](brick-restoration-perth.html).",
             "One more thing to check before you agree to anything: tuckpointing and other decorative finishes were usually used on the street-facing front only, with plain joints on the sides and back. A repoint should follow the pattern the house was built with rather than \"upgrade\" the side walls."
           ]
         },
@@ -387,10 +388,10 @@ window.SITE_CONFIG = {
           ]
         },
 
-        { h2: "What tuckpointing and repointing cost in Perth" },
+        { h2: "How much does tuckpointing cost in Perth?" },
         {
           p: [
-            "Not a price list, and deliberately so. Tuckpointing is priced by metre of joint, repointing per square metre, and neither number means anything without real Perth quotes behind them - logged by suburb, job type and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
+            "Not a price list, and deliberately so. Tuckpointing is priced by metre of joint, repointing per square metre (the [brickwork cost guide](brickwork-cost-guide.html) explains how each unit is worked out), and neither number means anything without real Perth quotes behind them - logged by suburb, job type and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
             "What follows instead is what actually moves the number, so you can read any quote you get and know whether it makes sense."
           ]
         },
@@ -624,7 +625,7 @@ window.SITE_CONFIG = {
         { h3: "Salt attack" },
         {
           p: [
-            "A common Perth masonry problem, and a different one from what you will read in guides written for colder climates, which blame spalling on freeze-thaw. The City of Fremantle's heritage guidance names salt as the cause of the fretting and crumbling commonly seen in old local walls.",
+            "A common Perth masonry problem, and a different one from what you will read in guides written for colder climates, which blame spalling on freeze-thaw. The City of Fremantle's heritage guidance names salt as the cause of the fretting, where the face of the brick crumbles and flakes away, commonly seen in old local walls.",
             "Soluble salts dissolve in moisture inside the wall and travel with it toward the drying face. At the surface the water evaporates and the salt crystallises. Crystal growth exerts real pressure inside the pores of the brick, and it repeats every wetting and drying cycle. Eventually the face fails and sheets off.",
             "Perth supplies the salt from several directions. Coastal and near-coastal suburbs get airborne salt off the ocean. Garden bore water is another source: WA Government monitoring of the Gnangara and Jandakot groundwater systems has recorded saltwater intrusion near the coast and the Swan River, making some bores more saline as groundwater levels fall. Reticulation that sprays a wall directly, rather than the garden, adds both the moisture and the salt a wall needs to fail - the practical tell is damage concentrated in a band at sprinkler height, worst on the side the reticulation runs.",
             "The fix is the moisture source and the salt path, not the brick. Replacing spalled bricks while leaving the reticulation spraying on them buys you a few years at most."
@@ -670,7 +671,7 @@ window.SITE_CONFIG = {
         { h3: "Previous bad repairs" },
         { p: "Very common on Perth character housing, because these houses have had eighty years of well-meaning owners. A hard cement repoint over lime, a patch in the wrong colour or profile, brick faces ground flat to tidy them up, silicone sealer applied to a damp wall, or a tuckpointed facade repointed flat by someone who did not recognise what it was. Undoing bad work is frequently more expensive than the original job would have been, and it is worth knowing that before you get a quote that seems high." },
 
-        { h2: "Crack stitching: repairing a crack without rebuilding the wall" },
+        { h2: "Crack stitching in Perth: repairing a crack without rebuilding the wall" },
         {
           p: [
             "Crack stitching is a repair method for a wall where the cause of movement has already been dealt with, or was never structural to begin with. It strengthens the masonry across an existing crack without cutting out and rebuilding the affected section.",
@@ -767,6 +768,10 @@ window.SITE_CONFIG = {
               a: "Use the diagnosis section above as a first pass. Cracks running through bricks, widening toward the top, or changing recently are the ones to get looked at by an engineer rather than a bricklayer."
             },
             {
+              q: "How do I get a wall crack repaired in Perth?",
+              a: "Work out which kind of crack it is first, using the diagnosis section above. If it is still moving or running through the bricks, an engineer diagnoses it and a bricklayer repairs what the engineer identifies. Once the movement has stopped, crack stitching is often a cheaper and less disruptive repair than rebuilding the section. Describe the crack through [the enquiry form](#enquiry) and we will tell you which route it points to."
+            },
+            {
               q: "Can I just render over it?",
               a: "Rendering over failed mortar or a moving wall hides the problem rather than fixing it, and render shows movement cracking readily. Deal with the cause first."
             },
@@ -845,8 +850,8 @@ window.SITE_CONFIG = {
       shortName: "Lintels",
       shortDescription: "Rusted and failing lintels over windows and doors. How to tell a lintel problem from a footing problem, and what replacing one involves.",
       serviceType: "Lintel repair and replacement",
-      metaTitle: "Lintel Repair & Replacement Perth | Rusted Lintels",
-      metaDescription: "Rusted lintel repair and replacement in Perth. How to tell a lintel crack from footing movement, why the steel corrodes, and what a replacement involves.",
+      metaTitle: "Lintel Replacement & Repair Perth | Rusted Lintels",
+      metaDescription: "Lintel replacement and repair in Perth: how to tell a lintel crack from footing movement, why steel lintels rust, and what replacing one involves.",
       headline: "Lintel repair and replacement in Perth",
       subheadline: "The steel beam over a window or door rusts, expands, and lifts the brickwork above it. It looks like a structural crack, and it is usually a smaller job than the footing problem it gets mistaken for.",
       ctaText: "Tell us what you are seeing",
@@ -913,11 +918,12 @@ window.SITE_CONFIG = {
         { h2: "The other reason brickwork cracks over an opening" },
         { p: "Not every crack at a window head is corrosion. A lintel that was undersized, or that was never designed at all because someone picked a section by eye, deflects under the load it is carrying. The masonry sitting on it cannot follow that sag, so it cracks. The Brick Industry Association names inadequate lintel design as a common cause of cracking over openings, and sets the serviceability limit at 1/600 of the clear span or 8mm, whichever is smaller - which is a tighter tolerance than most people expect, and the reason \"it only sags a little\" is not reassuring. Bearing matters for the same reason: the lintel has to sit far enough onto the brickwork at each end to spread its load. The Brick Industry Association's minimum is 75mm each end, and some Australian products ask for more: Galintel's T-bar lintels specify at least 150mm." },
 
-        { h2: "What replacing a lintel involves" },
+        { h2: "Lintel replacement in Perth: what the job involves" },
         {
           p: [
             "The brickwork above the opening has to be supported before the old lintel comes out, because removing it removes what is holding that brickwork up. That is propping or needling, and it is most of what separates this job from a cosmetic repair. The corroded steel is then cut out, the rust-damaged brick and mortar around it removed, and a new lintel with appropriate corrosion protection installed and bedded in, with flashing over it so the next one lasts.",
-            "The brickwork is then rebuilt and repointed to match. On a face brick or character home that matching is a real part of the job rather than an afterthought - a replaced lintel that leaves a patch of obviously new brick and bright grey mortar across the front of the house has solved the structural problem and created a visible one."
+            "The brickwork is then rebuilt and repointed to match. On a face brick or character home that matching is a real part of the job rather than an afterthought - a replaced lintel that leaves a patch of obviously new brick and bright grey mortar across the front of the house has solved the structural problem and created a visible one.",
+            "Cutting a new opening in a wall needs the same support and a new lintel. The [bricking up and new openings page](bricking-up-and-new-openings.html) covers that work, including why a patch shows."
           ]
         },
         { p: "**Permits and engineers.** Don't assume a straight swap is permit-free. The Building Regulations exempt most repair work from needing a building permit, but not work that removes an element supporting another part of the building, and taking out a lintel removes what holds the brickwork above. So check with your council before work starts, even for like-for-like replacement. If the opening is being widened, or there is any question about what is actually carrying the load, it is engineering territory as well: structural certification in WA has to be endorsed by a professional engineer, and the City of Perth, for instance, requires a Certificate of Structural Sufficiency for exactly that assurance." },
@@ -977,7 +983,7 @@ window.SITE_CONFIG = {
               a: "Over a window or door, it points at the lintel. Water inside the wall reaches the steel, corrodes it, and carries iron oxide out through the mortar joint. It is a symptom rather than a stain to clean off - the steel behind it is expanding while it does that, and cleaning the brick face does nothing about the cause."
             },
             {
-              q: "Can a rusted lintel just be treated rather than replaced?",
+              q: "Can a rusted window lintel be repaired, or does it need replacing?",
               a: "Sometimes, if it is caught early and the corrosion is superficial. Once the steel has expanded enough to lift the brickwork above it, the expansion is the problem, and treating the surface does not reverse it. What the situation always needs, in either case, is the water source found and stopped."
             },
             {
@@ -1607,8 +1613,8 @@ window.SITE_CONFIG = {
       shortName: "Heritage",
       shortDescription: "Heritage and federation-era brick restoration in Perth, including reinstating lost tuckpointing and matching salvaged period brick.",
       serviceType: "Heritage brick and mortar restoration",
-      metaTitle: "Federation & Heritage Brick Restoration Perth",
-      metaDescription: "Federation and heritage brick restoration in Perth: reinstating tuckpointing, matching period brick, lime mortar, and council heritage rules.",
+      metaTitle: "Federation Tuckpointing Perth | Heritage Brick Restoration",
+      metaDescription: "Federation tuckpointing in Perth: reinstating tuckpointing, matching period brick, lime mortar, and council heritage rules.",
       headline: "Federation and heritage brick restoration in Perth",
       subheadline: "Reinstating tuckpointing that's been repointed over, matching salvaged period brick, and what your council's heritage rules mean for the work.",
       ctaText: "Tell us about your heritage home",
@@ -1762,7 +1768,7 @@ window.SITE_CONFIG = {
           p: "If your address is on any of these lists, or inside a heritage or character area, check with that council's planning department before you commit to a repointing, rendering or restoration scope - the work itself is not necessarily different, but the approval pathway is."
         },
         { h2: "Working with lime mortar on an old wall" },
-        { p: "The mortar science behind why an old wall needs lime rather than cement, and why a hard cement repoint damages a heritage facade instead of protecting it, is covered in full on the [tuckpointing and repointing page](tuckpointing-repointing.html) - the short version is that lime is the sacrificial, breathing part of the wall, and getting the mix wrong is the single most common way well-meaning restoration work does lasting damage to a heritage facade." },
+        { p: "The mortar science behind why an old wall needs lime rather than cement, and why a hard cement repoint damages a heritage facade instead of protecting it, is covered in full on the [tuckpointing and repointing page](tuckpointing-repointing.html) - the short version is that lime is the sacrificial, breathing part of the wall, and getting the mix wrong is the single most common way well-meaning restoration work does lasting damage to a heritage facade. For brick and mortar restoration on a house that is not heritage-listed, see the [brick restoration page](brick-restoration-perth.html)." },
 
         { h2: "What restoration costs in Perth" },
         {
@@ -2062,6 +2068,7 @@ window.SITE_CONFIG = {
           ]
         },
         { p: "A quote thirty per cent below the others is rarely a bargain. It is usually a different wall." },
+        { p: "Send us the length, height and suburb of your fence through [the enquiry form](#enquiry) and we will tell you what to line up before you compare." },
 
         { h2: "Do you need approval for a front fence in Perth?" },
         { p: "Usually above a certain height. The starting point is a statewide standard in the R-Codes, but each council can vary it, and Perth metro's thirty or so local governments don't all set the same rules." },
@@ -2229,7 +2236,7 @@ window.SITE_CONFIG = {
           ]
         },
 
-        { h2: "When a fence or garden wall cracks" },
+        { h2: "Brick fence repair in Perth: when a fence or garden wall cracks" },
         {
           p: [
             "This section is about an existing wall rather than a new one. A cracked front fence or garden wall is one of the most common things people go looking for answers about in Perth, and the answer is usually less alarming than it looks - but only once you know which kind of crack you have.",
@@ -2506,6 +2513,7 @@ window.SITE_CONFIG = {
             "**There are two walls, not one.** Perth builds in double brick: a [2021 UDIA WA study](https://www.udiawa.com.au/wp-content/uploads/2021/01/FINAL-UDIA-Report-Modern-Methods-of-Construction.pdf) put it at 76% of new WA dwellings in 2018, where every other state builds mostly brick veneer. So an opening, a repair or an alteration to an external wall goes through two structural leaves, and advice and pricing written for the veneer states understates this. There is more on [why Perth is a double brick city](brick-repairs-crack-stitching.html) on the brick repairs page.",
             "**Whether the brick can be matched.** Some Perth brick is no longer manufactured, and older brick is often a different size to the modern metric brick (a nominal 230 x 110 x 76mm under AS/NZS 4455.1), so it will not course in even when the colour is right. Matching then means salvage, which is a sourcing problem with a lead time before it is a bricklaying one. The [federation and heritage page](federation-heritage-restoration.html) covers who makes brick in WA and what can still be matched.",
             "**Whether the cause has been diagnosed.** A repair quoted off the visible damage, with no view on why it happened, is a repair that may need doing twice. That is the most expensive outcome available in this trade and it usually starts with the cheapest quote.",
+            "**Whether the job is an opening.** A bricked-up doorway and a new opening are priced on whether the wall is structural, whether it is one leaf or two, and whether the brick can be matched. The [bricking up and new openings page](bricking-up-and-new-openings.html) sets out what each involves.",
             "**Access.** Ground level with a clear approach, or an upper storey over a paved courtyard with no room for a scaffold.",
             "**Salt and moisture exposure.** Coastal air, bore water reticulation and rising groundwater all shorten the life of a repair that does not deal with the water source, which is why the water source is part of the job rather than an optional extra.",
             "**Heritage and appearance.** Matching a mortar colour and joint profile on a facade, or reinstating tuckpointing, is skilled work priced accordingly. The same repair on a wall nobody sees is not the same job."
@@ -2745,6 +2753,9 @@ window.SITE_CONFIG = {
 
     { h3: "Federation and heritage brick restoration" },
     { p: "Reinstating tuckpointing someone repointed over, matching salvaged period brick, and working within a council heritage or character area. [Federation and heritage brick restoration in Perth](federation-heritage-restoration.html)" },
+
+    { h3: "Brick restoration" },
+    { p: "Cleaning, repointing and repairing a weathered wall as one job, in the right order. [Brick restoration in Perth](brick-restoration-perth.html)" },
 
     { h3: "Brick and rendered fences" },
     { p: "Front fences, boundary walls, piers, gate openings and letterboxes. Usually a fixed-scope job that can be quoted accurately once someone has stood on the frontage, unless part of it turns out to be retaining. [Brick and rendered fences in Perth](brick-fences-boundary-walls.html)" },
