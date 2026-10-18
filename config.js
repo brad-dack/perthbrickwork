@@ -518,8 +518,8 @@ window.SITE_CONFIG = {
       shortName: "Repairs",
       shortDescription: "Brick repairs, crack stitching and crack diagnosis. What's maintenance, what's a repair, and what needs an engineer first.",
       serviceType: "Brick repair and crack stitching",
-      metaTitle: "Brick Repairs & Crack Stitching Perth | Wall Crack Fix",
-      metaDescription: "Brick repairs and crack stitching in Perth. How to read a wall crack, when it needs an engineer, and what salt attack, fretting and salt damp do to brick.",
+      metaTitle: "Crack Stitching Perth | Brick Wall Crack Repairs",
+      metaDescription: "Crack stitching and brick wall repairs in Perth. How to read a wall crack, when it needs an engineer, and what salt damage and fretting do to brick.",
       headline: "Brick repairs and crack stitching in Perth",
       subheadline: "Cracked, spalled or fretting brickwork. How to tell maintenance from a structural problem, and how a stitched repair actually works.",
       ctaText: "Tell us what your wall is doing",
@@ -540,7 +540,7 @@ window.SITE_CONFIG = {
           ]
         },
 
-        { h2: "Brick repairs" },
+        { h2: "Brick wall repairs" },
         { p: "Replacing damaged or spalled bricks, rebuilding a section, fixing a cracked wall. Cost depends entirely on why the damage happened, which is the next section." },
         {
           image: {
@@ -622,7 +622,7 @@ window.SITE_CONFIG = {
         { h2: "The other things that go wrong with Perth brickwork" },
         { p: "Cracking and failed mortar are the two that get called in. These are the ones people live with for years without knowing what they are looking at, and several of them are specific to this city." },
 
-        { h3: "Salt attack" },
+        { h3: "Salt attack: salt damage in Perth brickwork" },
         {
           p: [
             "A common Perth masonry problem, and a different one from what you will read in guides written for colder climates, which blame spalling on freeze-thaw. The City of Fremantle's heritage guidance names salt as the cause of the fretting, where the face of the brick crumbles and flakes away, commonly seen in old local walls.",
@@ -703,7 +703,7 @@ window.SITE_CONFIG = {
         { h2: "What brick repairs and crack stitching cost in Perth" },
         {
           p: [
-            "Not a price list, and deliberately so. Individual brick replacement is priced per brick, crack stitching by the metre of crack treated, and rebuilding a section by area - none of those numbers mean anything without real Perth quotes behind them, logged by suburb, job type, extent of damage and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
+            "Not a price list, and deliberately so. Individual brick replacement is priced per brick, crack stitching by the metre of crack treated, and rebuilding a section by area (the [brickwork cost guide](brickwork-cost-guide.html) explains how each unit is worked out) - none of those numbers mean anything without real Perth quotes behind them, logged by suburb, job type, extent of damage and date, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
             "What follows instead is what actually moves the number."
           ]
         },
@@ -933,7 +933,7 @@ window.SITE_CONFIG = {
         { h2: "What lintel replacement costs in Perth" },
         {
           p: [
-            "Not a price list, and deliberately so. The number turns on things a page cannot see: how many openings, whether the wall above is face brick that has to be matched, whether the work is at ground level or needs scaffold, and how much brickwork the corrosion has already destroyed. Real Perth quotes logged by suburb, opening size, storey and building age would be worth publishing. A range lifted from a competitor site or a national average would not, and a false anchor costs you more than no anchor.",
+            "Not a price list, and deliberately so. Lintel replacement is usually priced per opening, and the [brickwork cost guide](brickwork-cost-guide.html) explains why. The number turns on things a page cannot see: how many openings, whether the wall above is face brick that has to be matched, whether the work is at ground level or needs scaffold, and how much brickwork the corrosion has already destroyed. Real Perth quotes logged by suburb, opening size, storey and building age would be worth publishing. A range lifted from a competitor site or a national average would not, and a false anchor costs you more than no anchor.",
             "What follows is what actually moves the number."
           ]
         },
@@ -1047,9 +1047,9 @@ window.SITE_CONFIG = {
       shortName: "Openings",
       serviceType: "Brick wall opening alterations",
       shortDescription: "Bricking up old doorways, windows and air conditioner holes, and cutting in new openings. Why the patch shows, and what needs an engineer first.",
-      metaTitle: "Bricking Up Openings & New Doorways Perth",
-      metaDescription: "Bricking up doorways, windows and old air conditioner holes in Perth, and cutting in new openings. Why the patch shows, and what needs an engineer.",
-      headline: "Bricking up openings and cutting in new ones",
+      metaTitle: "Bricking Up Doorways & New Openings in Perth",
+      metaDescription: "Bricking up a doorway, window or old AC hole in Perth, or cutting in a new door. Why the patch shows, what moves the cost, and when it needs an engineer.",
+      headline: "Bricking up doorways and cutting in new openings in Perth",
       subheadline: "Closing an opening you no longer want, or opening up a wall you do. Two jobs that look opposite and turn on the same two questions: what is the wall carrying, and will the repair be visible afterwards.",
       ctaText: "Tell us about the opening",
 
@@ -1131,7 +1131,7 @@ window.SITE_CONFIG = {
         { h2: "What this work costs in Perth" },
         {
           p: [
-            "Not a price list, and deliberately so. The spread on these jobs is wide for reasons a page cannot see: whether the wall is structural, whether the brick can be matched or has to be salvaged, whether the work is toothed in or butted, single or double leaf, and whether an engineer and a permit are in the scope. Real Perth quotes logged by suburb, opening size and building age would be worth publishing here. A number borrowed from a competitor or averaged across the country would not.",
+            "Not a price list, and deliberately so. The [brickwork cost guide](brickwork-cost-guide.html) covers how a quote should be laid out and what to check before you pay anything. The spread on these jobs is wide for reasons a page cannot see: whether the wall is structural, whether the brick can be matched or has to be salvaged, whether the work is toothed in or butted, single or double leaf, and whether an engineer and a permit are in the scope. Real Perth quotes logged by suburb, opening size and building age would be worth publishing here. A number borrowed from a competitor or averaged across the country would not.",
             "What follows is what actually moves it."
           ]
         },
@@ -1615,7 +1615,7 @@ window.SITE_CONFIG = {
       serviceType: "Heritage brick and mortar restoration",
       metaTitle: "Federation Tuckpointing Perth | Heritage Brick Restoration",
       metaDescription: "Federation tuckpointing in Perth: reinstating tuckpointing, matching period brick, lime mortar, and council heritage rules.",
-      headline: "Federation and heritage brick restoration in Perth",
+      headline: "Federation tuckpointing and heritage restoration in Perth",
       subheadline: "Reinstating tuckpointing that's been repointed over, matching salvaged period brick, and what your council's heritage rules mean for the work.",
       ctaText: "Tell us about your heritage home",
       image: {
@@ -1850,8 +1850,8 @@ window.SITE_CONFIG = {
       shortName: "Fences",
       shortDescription: "Front fences, boundary walls, piers, gate openings and letterboxes - plus the front fence height limit for your council.",
       serviceType: "Brick fence construction",
-      metaTitle: "Brick Fence Cost & Repair Perth | Council Height Rules",
-      metaDescription: "What brick and rendered fences cost in Perth, why they crack and when to repair one, the front fence height limits by council, and what to check on a quote.",
+      metaTitle: "Brick Fences Perth | Cost, Repairs & Council Height Rules",
+      metaDescription: "What a brick fence costs in Perth, why fences crack and when to repair one, the front fence height limit for your council, and what to check on a quote.",
       headline: "Brick and rendered fences in Perth",
       subheadline: "What they cost, what your council allows, and what to check on a quote.",
       ctaText: "Tell us about your fence",
@@ -1895,7 +1895,7 @@ window.SITE_CONFIG = {
         { h2: "What a brick fence costs in Perth" },
         {
           p: [
-            "Not a price list, and deliberately so. A low face brick fence, a rendered fence with piers, a higher boundary wall, a standalone letterbox and a pair of vehicle gate piers are all priced completely differently, and none of those figures mean anything without real Perth quotes behind them - logged by suburb, length, height, material and pier spacing, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
+            "Not a price list, and deliberately so. A low face brick fence, a rendered fence with piers, a higher boundary wall, a standalone letterbox and a pair of vehicle gate piers are all priced completely differently (the [brickwork cost guide](brickwork-cost-guide.html) explains the unit each is quoted in), and none of those figures mean anything without real Perth quotes behind them - logged by suburb, length, height, material and pier spacing, not lifted from a competitor site or a national average. Until that exists, a made-up range would cost you more than it would save you: a false anchor is worse than no anchor.",
             "What follows instead is what actually drives the number, so you can read any quote you get and know whether it makes sense."
           ]
         },
