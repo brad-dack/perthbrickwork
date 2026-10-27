@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll) build settings. The site itself is plain HTML baked
+# by bake.js; this file only keeps internal docs and build tooling off the
+# public site. config.js is loaded by every page, so it can't be excluded.
+exclude:
+  - notes/
+  - tools/
+  - README.md
+  - bake.js
+  - sitemap-lastmod.json
+  - New site prompt.txt
+  - "*.md"
