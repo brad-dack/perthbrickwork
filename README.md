@@ -9,7 +9,7 @@ Content source: **"Perth Brickwork — Page Copy v6"**. Five pages:
 | URL | Targets |
 |---|---|
 | `/` | `bricklayer perth` (500/mo) |
-| `/brick-repairs-repointing-tuckpointing` | `tuckpointing perth` (500/mo, low comp), `federation tuckpointing perth`, `tuckpointing perth cost` |
+| `/brick-repairs-repointing-tuckpointing` | `tuckpointing perth` (500/mo, low comp), `tuckpointing perth cost` |
 | `/brick-fences-boundary-walls` | `brick fence cost perth` (50/mo) — **gated, see below** |
 | `/about` | disclosure: who runs it, how it's paid |
 | `/privacy` | what the form collects and who it goes to |

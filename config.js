@@ -1613,9 +1613,9 @@ window.SITE_CONFIG = {
       shortName: "Heritage",
       shortDescription: "Heritage and federation-era brick restoration in Perth, including reinstating lost tuckpointing and matching salvaged period brick.",
       serviceType: "Heritage brick and mortar restoration",
-      metaTitle: "Federation Tuckpointing Perth | Heritage Brick Restoration",
-      metaDescription: "Federation tuckpointing in Perth: reinstating tuckpointing, matching period brick, lime mortar, and council heritage rules.",
-      headline: "Federation tuckpointing and heritage restoration in Perth",
+      metaTitle: "Heritage Tuckpointing Perth | Federation-Era Brick Restoration",
+      metaDescription: "Heritage tuckpointing in Perth: reinstating tuckpointing on federation-era homes, matching period brick, lime mortar, and council heritage rules.",
+      headline: "Heritage tuckpointing and brick restoration in Perth",
       subheadline: "Reinstating tuckpointing that's been repointed over, matching salvaged period brick, and what your council's heritage rules mean for the work.",
       ctaText: "Tell us about your heritage home",
       image: {
