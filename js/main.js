@@ -188,6 +188,35 @@
     document.documentElement.setAttribute("data-pattern", cfg.brand.pattern || "none");
   }
 
+  // Per-browser internal-traffic opt-out: open any page once with ?internal=1
+  // to tag this browser's GA4 hits as traffic_type "internal" (excluded by the
+  // property's Internal Traffic data filter); ?internal=0 clears it. Kept in
+  // localStorage rather than keyed on IP, which changes. Every storage call is
+  // guarded so GA still loads normally where storage throws (private windows).
+  var INTERNAL_KEY = "pb_internal_traffic";
+  var isInternal = (function () {
+    var flag = false;
+    try { flag = window.localStorage.getItem(INTERNAL_KEY) === "1"; } catch (e) {}
+    var params;
+    try { params = new URLSearchParams(window.location.search); } catch (e) { return flag; }
+    var v = params.get("internal");
+    if (v === null) return flag;
+    if (v === "1") {
+      flag = true;
+      try { window.localStorage.setItem(INTERNAL_KEY, "1"); } catch (e) {}
+    } else if (v === "0") {
+      flag = false;
+      try { window.localStorage.removeItem(INTERNAL_KEY); } catch (e) {}
+    }
+    params.delete("internal");
+    try {
+      var qs = params.toString();
+      window.history.replaceState(window.history.state, "",
+        window.location.pathname + (qs ? "?" + qs : "") + window.location.hash);
+    } catch (e) {}
+    return flag;
+  })();
+
   function injectGA4() {
     var id = cfg.ga4Id;
     if (!id || id.indexOf("XXXX") !== -1 || !/^G-[A-Z0-9]+$/.test(id)) return;
@@ -198,7 +227,11 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag("js", new Date());
-    window.gtag("config", id);
+    if (isInternal) {
+      window.gtag("config", id, { traffic_type: "internal" });
+    } else {
+      window.gtag("config", id);
+    }
   }
 
   function trackPhoneClicks() {

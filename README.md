@@ -151,6 +151,8 @@ What to edit in `config.js`:
    contains `XXXX`, the tracking snippet is not injected, so you get no
    analytics and no `click_to_call` events — meaning no call-volume proof
    to show a future renter. (The placeholder is safe to develop with.)
+   Open any page once with `?internal=1` to tag that browser's visits as GA4 `traffic_type: internal` (stored in localStorage, so it survives IP changes); `?internal=0` clears it.
+   Exclusion relies on the property's "Internal Traffic" data filter being set to Active in GA4 Admin → Data filters.
 5. **ingestUrl / ingestSecret / turnstileSiteKey** — the form posts straight
    to our own ingest endpoint (see `rank-and-rent-backend`'s
    `docs/DASHBOARD_PLAN.md`, Phase 2 Stage B) rather than a third-party form
