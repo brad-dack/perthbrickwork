@@ -1492,6 +1492,21 @@ function runCheck() {
     }
   }
 
+  /* -- 11. lead attribution in the form payload ------------------------------
+     The backend stores which page an enquiry was sent from, the first page of
+     the visit and the referring origin, outside the form answers. Lead counts
+     come from the backend, not GA4. Ported from Perth Limestone (6f7fb67),
+     2026-11-14. */
+  const mainJs = read("js/main.js");
+  if (mainJs !== null) {
+    ["_page", "_landing", "_referrer"].forEach(key => {
+      if (!new RegExp("(payload\\." + key + "\\s*=|\\b" + key + "\\s*:)").test(mainJs)) {
+        errors.push("js/main.js: the quote form payload no longer sets " + key + ". Without " +
+          "_page, _landing and _referrer the backend cannot say which pages produce enquiries.");
+      }
+    });
+  }
+
   /* -- report --------------------------------------------------------------- */
   const MARKERS_SHOWN = 25;
   if (markers.length) {

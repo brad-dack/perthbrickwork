@@ -120,7 +120,7 @@ window.SITE_CONFIG = {
       metaTitle: "Privacy Policy | Perth Brickwork",
       metaDescription: "What the enquiry form on this site collects, who it is passed to, and how to have your details removed.",
       headline: "Privacy Policy",
-      lastUpdated: "3 August 2026"
+      lastUpdated: "14 November 2026"
     }
   },
 
@@ -2899,6 +2899,7 @@ window.SITE_CONFIG = {
   privacyBlocks: [
     { h2: "What this website collects" },
     { p: "When you use the enquiry form on this site, we collect what you type into it: **what you need, your suburb, a description of the job, your name, your phone number,** and anything you add in the optional notes field. On the tuckpointing, brick repairs and heritage restoration pages, the form also asks the rough age of the building, which is optional. There are no other fields, and the site does not ask for an address, an email address or any payment detail." },
+    { p: "Alongside the details you enter, the page the enquiry was sent from, the first page you viewed on this site, and the referring website (if any, the site address only) are recorded with the enquiry. We use them to see which pages produce enquiries. They are not passed to the bricklayer as part of your enquiry." },
 
     { h2: "How it's used, and who it goes to" },
     { p: "Your details are used for one purpose: to get your job in front of a bricklayer in your part of Perth who does that type of work, so they can contact you about it." },

@@ -121,6 +121,37 @@
       esc(text || cfg.pages.home.ctaText) + "</a>";
   }
 
+  /* ---------- lead attribution ---------------------------------------------
+     Which page an enquiry came from and how the visitor arrived, sent with the
+     lead as _page, _landing and _referrer (the backend stores them apart from
+     the form answers, so they never reach the contractor as form fields). The
+     first page of the session and the referring ORIGIN are remembered in
+     sessionStorage: never a full referrer URL or query string. A referrer on
+     the site's own origin is stored as "". Storage can throw (private modes,
+     blocked cookies), so every access falls back to the current path and "".
+     Ported from Perth Limestone (6f7fb67), 2026-11-14. */
+  function attribution() {
+    var landing = location.pathname;
+    var referrer = "";
+    try {
+      var storedLanding = sessionStorage.getItem("landing");
+      if (storedLanding === null) {
+        try {
+          if (document.referrer) {
+            var origin = new URL(document.referrer).origin;
+            if (origin !== location.origin) referrer = origin;
+          }
+        } catch (e) { referrer = ""; }
+        sessionStorage.setItem("landing", landing);
+        sessionStorage.setItem("referrer", referrer);
+      } else {
+        landing = storedLanding;
+        referrer = sessionStorage.getItem("referrer") || "";
+      }
+    } catch (e) { /* keep the fallbacks */ }
+    return { landing: landing, referrer: referrer };
+  }
+
   function imgTag(image, className, lazy) {
     if (!image || !image.src) return "";
     return '<img class="' + (className || "") + '" src="' + esc(image.src) + '"' +
@@ -831,6 +862,10 @@
       Object.keys(values).forEach(function (k) { payload[k] = values[k]; });
       payload._secret = cfg.ingestSecret;
       payload.subject = "New job enquiry: " + (values.job || "Perth Brickwork");
+      var visit = attribution();
+      payload._page = location.pathname;
+      payload._landing = visit.landing;
+      payload._referrer = visit.referrer;
 
       fetch(ingestUrl, {
         method: "POST",
@@ -1026,6 +1061,7 @@
   } else {
     window.addEventListener("load", scheduleGA4);
   }
+  attribution();
   trackPhoneClicks();
   trackOutboundClicks();
 
