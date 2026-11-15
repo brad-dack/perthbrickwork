@@ -91,8 +91,8 @@ window.SITE_CONFIG = {
   /* --- Page meta ---------------------------------------------------------- */
   pages: {
     home: {
-      metaTitle: "Bricklayer Perth | Repointing, Tuckpointing and Brick Fences",
-      metaDescription: "Repointing, tuckpointing, brick repairs and brick fences across Perth. What each job involves, what drives the price, and what to check on a quote.",
+      metaTitle: "Bricklayers Perth | Find the Right Bricklayer for Your Job",
+      metaDescription: "Send your brickwork job to a Perth bricklayer who does that kind of work: repairs, fences, lintels, restoration and extensions. Free, no obligation.",
       headline: "Bricklayer in Perth",
       subheadline: "Repointing, tuckpointing and brick repairs. Brick and rendered fences and boundary walls. Extensions and additions.",
       ctaText: "Tell us about your job",
@@ -212,7 +212,7 @@ window.SITE_CONFIG = {
       shortName: "Tuckpointing",
       shortDescription: "Tuckpointing and repointing in Perth. What separates the decorative finish from ordinary mortar maintenance, and what each one costs.",
       serviceType: "Tuckpointing and mortar repointing",
-      metaTitle: "Tuckpointing & Repointing Perth | Brick Pointing Cost",
+      metaTitle: "Tuckpointing Perth | Brick Repointing & Cost Explained",
       metaDescription: "Tuckpointing and repointing in Perth: how each is done, when a wall needs it, how mortar mix matters, and how the cost is worked out.",
       headline: "Tuckpointing and repointing in Perth",
       subheadline: "The specialist decorative finish, and the mortar maintenance job it's often confused with. What each involves and what to check on a quote.",
@@ -357,7 +357,7 @@ window.SITE_CONFIG = {
           ]
         },
 
-        { h2: "How repointing is actually done" },
+        { h2: "Brick repointing in Perth: how it is done" },
         {
           p: [
             "Worth knowing in outline, because most repointing disputes are about how much of this was skipped. The figures below are conservation-trade specifications for older lime-mortar walls - the houses this page is mainly written for. Modern cement-mortar brickwork follows a different specification, governed by AS 3700 and the mortar manufacturer's technical data, so on a modern wall ask which of those your bricklayer is working to.",
@@ -448,7 +448,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "How much does tuckpointing cost in Perth?",
-              a: "Every job is different - the state of the existing mortar, access and any scaffold needed move the cost more than the size of the house does, so there is no single figure worth quoting here. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "Every job is different - the state of the existing mortar, access and any scaffold needed move the cost more than the size of the house does, so there is no single figure worth quoting here. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the job."
             },
             {
               q: "How do I know if my house is tuckpointed or just repointed?",
@@ -469,6 +469,14 @@ window.SITE_CONFIG = {
             {
               q: "How long should repointing last?",
               a: "There is no fixed number, and heritage conservation guidance from [the SPAB](https://www.spab.org.uk/advice/repointing), the UK's Society for the Protection of Ancient Buildings, deliberately avoids giving one - good repointing is judged on condition, not a calendar. The trigger for redoing it is mortar that has weathered back to a depth equal to the joint width, or gone loose, not a fixed age. What actually decides how long a repoint lasts is exposure - a sheltered wall outlasts one facing driving rain or salt spray by a wide margin - and workmanship: correct mortar mix, a proper rake-out depth and real curing are what get you decades rather than a few years. Skimped work on any of those three is the usual reason a repoint fails early."
+            },
+            {
+              q: "How often does a brick house need tuckpointing?",
+              a: "Not on a schedule. As with repointing, the trigger is condition: tuckpointing is redone when the joints under it have failed or the ribbon has weathered away, not after a set number of years, and how fast that happens depends mostly on exposure and on how well the original work was done. The answer above sets out what to look for."
+            },
+            {
+              q: "Can I tuckpoint my own wall?",
+              a: "It is not a beginner's job. The stopping mortar has to be colour-matched to weathered brick, and the ribbon laid dead straight and consistent by hand across a whole facade, which is why tuckpointing is closer to a separate trade than to everyday bricklaying - see [why so few people do it](federation-heritage-restoration.html). A mistake on a street-facing facade is there for everyone to see."
             }
           ]
         },
@@ -518,7 +526,7 @@ window.SITE_CONFIG = {
       shortName: "Repairs",
       shortDescription: "Brick repairs, crack stitching and crack diagnosis. What's maintenance, what's a repair, and what needs an engineer first.",
       serviceType: "Brick repair and crack stitching",
-      metaTitle: "Crack Stitching Perth | Brick Wall Crack Repairs",
+      metaTitle: "Brick Repairs & Crack Stitching Perth | Wall Crack Repairs",
       metaDescription: "Crack stitching and brick wall repairs in Perth. How to read a wall crack, when it needs an engineer, and what salt damage and fretting do to brick.",
       headline: "Brick repairs and crack stitching in Perth",
       subheadline: "Cracked, spalled or fretting brickwork. How to tell maintenance from a structural problem, and how a stitched repair actually works.",
@@ -541,7 +549,7 @@ window.SITE_CONFIG = {
         },
 
         { h2: "Brick wall repairs" },
-        { p: "Replacing damaged or spalled bricks, rebuilding a section, fixing a cracked wall. Cost depends entirely on why the damage happened, which is the next section." },
+        { p: "Brick repairs in Perth usually come down to three jobs: replacing damaged or spalled bricks, stitching a crack, or rebuilding a section of wall that has moved too far to save. Which one a damaged brick wall needs depends on why it was damaged, which is the next section. A repair that only fills the crack, without dealing with the cause, is one that may need doing twice." },
         {
           image: {
             src: "images/spalled-capping-brick-on-garden-wall.jpg",
@@ -801,7 +809,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "How much does crack stitching cost?",
-              a: "It is priced by the metre of crack treated, and the number of courses stitched and the access involved move it more than the length of the crack does. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "It is priced by the metre of crack treated, and the number of courses stitched and the access involved move it more than the length of the crack does. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the job."
             }
           ]
         },
@@ -850,9 +858,9 @@ window.SITE_CONFIG = {
       shortName: "Lintels",
       shortDescription: "Rusted and failing lintels over windows and doors. How to tell a lintel problem from a footing problem, and what replacing one involves.",
       serviceType: "Lintel repair and replacement",
-      metaTitle: "Lintel Replacement & Repair Perth | Rusted Lintels",
+      metaTitle: "Lintel Replacement Perth | Window & Door Lintel Repair",
       metaDescription: "Lintel replacement and repair in Perth: how to tell a lintel crack from footing movement, why steel lintels rust, and what replacing one involves.",
-      headline: "Lintel repair and replacement in Perth",
+      headline: "Window and door lintel repair and replacement in Perth",
       subheadline: "The steel beam over a window or door rusts, expands, and lifts the brickwork above it. It looks like a structural crack, and it is usually a smaller job than the footing problem it gets mistaken for.",
       ctaText: "Tell us what you are seeing",
 
@@ -1004,7 +1012,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "How much does lintel replacement cost?",
-              a: "It is priced per opening, and support, access and how much brickwork the corrosion has already damaged move it more than the width of the window does. Send through what you are seeing via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "It is priced per opening, and support, access and how much brickwork the corrosion has already damaged move it more than the width of the window does. Send through what you are seeing via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the job."
             }
           ]
         },
@@ -1203,7 +1211,7 @@ window.SITE_CONFIG = {
             },
             {
               q: "How much does it cost to brick up a doorway?",
-              a: "It depends most on whether the brickwork has to be matched and toothed in on a face brick wall, or whether the wall is painted or rendered and the finish evens everything out. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the wall."
+              a: "It depends most on whether the brickwork has to be matched and toothed in on a face brick wall, or whether the wall is painted or rendered and the finish evens everything out. Send through what you need done via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the wall."
             }
           ]
         },
@@ -1426,8 +1434,8 @@ window.SITE_CONFIG = {
         {
           ul: [
             "**Fixing the water first.** Overflowing gutters, reticulation spraying the wall, garden beds built up against it, a bridged damp proof course. Salt attack, fretting and efflorescence all need water moving through the wall, and restoring a wall that stays wet only buys time.",
-            "**Repointing.** Raking out failed mortar and replacing it with a mortar suited to the wall. See [tuckpointing and repointing](tuckpointing-repointing.html).",
-            "**Replacing damaged bricks.** Cutting out spalled, fretting or cracked bricks and replacing them with a matching brick. See [brick repairs](brick-repairs-crack-stitching.html).",
+            "**Repointing.** Raking out failed mortar and replacing it with a mortar suited to the wall. See [brick repointing in Perth](tuckpointing-repointing.html).",
+            "**Replacing damaged bricks.** Cutting out spalled, fretting or cracked bricks and replacing them with a matching brick. See [brick repairs in Perth](brick-repairs-crack-stitching.html).",
             "**Crack repair.** Diagnosing why a crack opened before deciding how to close it, sometimes with crack stitching. Also on the [brick repairs page](brick-repairs-crack-stitching.html).",
             "**Lintels.** Replacing the corroded steel over windows and doors that is lifting the brickwork above. See [lintel repair](lintel-repair-replacement.html).",
             "**Cleaning.** Removing staining, efflorescence and old mortar smears without creating new stains. Covered below, because it is where most restoration damage is done."
@@ -1613,9 +1621,9 @@ window.SITE_CONFIG = {
       shortName: "Heritage",
       shortDescription: "Heritage and federation-era brick restoration in Perth, including reinstating lost tuckpointing and matching salvaged period brick.",
       serviceType: "Heritage brick and mortar restoration",
-      metaTitle: "Heritage Tuckpointing Perth | Federation-Era Brick Restoration",
-      metaDescription: "Heritage tuckpointing in Perth: reinstating tuckpointing on federation-era homes, matching period brick, lime mortar, and council heritage rules.",
-      headline: "Heritage tuckpointing and brick restoration in Perth",
+      metaTitle: "Heritage Brickwork Perth | Reinstating Lost Tuckpointing",
+      metaDescription: "Heritage brickwork in Perth: reinstating tuckpointing on federation-era homes, matching period brick, lime mortar, and council heritage rules.",
+      headline: "Heritage brickwork and tuckpointing reinstatement in Perth",
       subheadline: "Reinstating tuckpointing that's been repointed over, matching salvaged period brick, and what your council's heritage rules mean for the work.",
       ctaText: "Tell us about your heritage home",
       image: {
@@ -1768,7 +1776,7 @@ window.SITE_CONFIG = {
           p: "If your address is on any of these lists, or inside a heritage or character area, check with that council's planning department before you commit to a repointing, rendering or restoration scope - the work itself is not necessarily different, but the approval pathway is."
         },
         { h2: "Working with lime mortar on an old wall" },
-        { p: "The mortar science behind why an old wall needs lime rather than cement, and why a hard cement repoint damages a heritage facade instead of protecting it, is covered in full on the [tuckpointing and repointing page](tuckpointing-repointing.html) - the short version is that lime is the sacrificial, breathing part of the wall, and getting the mix wrong is the single most common way well-meaning restoration work does lasting damage to a heritage facade. For brick and mortar restoration on a house that is not heritage-listed, see the [brick restoration page](brick-restoration-perth.html)." },
+        { p: "The mortar science behind why an old wall needs lime rather than cement, and why a hard cement repoint damages a heritage facade instead of protecting it, is covered in full in the guide to [tuckpointing in Perth](tuckpointing-repointing.html) - the short version is that lime is the sacrificial, breathing part of the wall, and getting the mix wrong is the single most common way well-meaning restoration work does lasting damage to a heritage facade. For brick and mortar restoration on a house that is not heritage-listed, see the [brick restoration page](brick-restoration-perth.html)." },
 
         { h2: "What restoration costs in Perth" },
         {
@@ -1850,7 +1858,7 @@ window.SITE_CONFIG = {
       shortName: "Fences",
       shortDescription: "Front fences, boundary walls, piers, gate openings and letterboxes - plus the front fence height limit for your council.",
       serviceType: "Brick fence construction",
-      metaTitle: "Brick Fences Perth | Cost, Repairs & Council Height Rules",
+      metaTitle: "Brick Fence Perth | Cost, Repairs & Council Height Rules",
       metaDescription: "What a brick fence costs in Perth, why fences crack and when to repair one, the front fence height limit for your council, and what to check on a quote.",
       headline: "Brick and rendered fences in Perth",
       subheadline: "What they cost, what your council allows, and what to check on a quote.",
@@ -1899,6 +1907,8 @@ window.SITE_CONFIG = {
             "What follows instead is what actually drives the number, so you can read any quote you get and know whether it makes sense."
           ]
         },
+
+        { p: "Ready to get it looked at? [Send the length, height and a photo of the frontage](#enquiry) and it goes to a bricklayer who covers your part of Perth." },
 
         { h2: "What drives the price" },
 
@@ -2182,6 +2192,8 @@ window.SITE_CONFIG = {
            WebFetch); Mundaring's local law is a scanned PDF, read by rendering
            pages with pymupdf. */
 
+        { p: "Ready to get it looked at? [Send the length, height and a photo of the frontage](#enquiry) and it goes to a bricklayer who covers your part of Perth." },
+
         { h3: "Shared boundaries" },
         {
           p: [
@@ -2308,6 +2320,12 @@ window.SITE_CONFIG = {
             "Access, spoil removal and reinstating whatever garden is in the way"
           ]
         },
+        {
+          p: [
+            "If the crack is in the house rather than the fence, see [brick wall repairs and crack stitching](brick-repairs-crack-stitching.html).",
+            "[Send a photo of the crack](#enquiry) and roughly how long the fence is."
+          ]
+        },
 
         { h2: "Looking after it" },
         {
@@ -2348,7 +2366,7 @@ window.SITE_CONFIG = {
           faqs: [
             {
               q: "What does a brick front fence cost per metre in Perth?",
-              a: "Every fence is different. Height moves the cost far more than length does, and pier spacing, the footing, the finish and whether any part of the wall is retaining all change the figure, so there is no single per-metre rate worth quoting here. When you compare quotes, check that each per-metre rate covers the same height, footing and finish, and whether piers, gates and demolition are priced separately. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "Every fence is different. Height moves the cost far more than length does, and pier spacing, the footing, the finish and whether any part of the wall is retaining all change the figure, so there is no single per-metre rate worth quoting here. When you compare quotes, check that each per-metre rate covers the same height, footing and finish, and whether piers, gates and demolition are priced separately. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the job."
             },
             {
               q: "How much does a building permit for a brick fence cost?",
@@ -2639,16 +2657,20 @@ window.SITE_CONFIG = {
               a: "There is a per-thousand-bricks trade rate that bricklayers get subcontracting to builders on new construction, and it is the figure most often quoted online. It does not transfer to a domestic repair, where the brick laying is often the smaller part of the job and the footings, access, matching and making good are the rest. For your job the useful question is what unit the work is priced in, which the section above sets out."
             },
             {
+              q: "How much does a bricklayer charge to lay 1000 bricks?",
+              a: "A per-thousand figure is the subcontract rate builders pay on new houses, covered in the answer above. A homeowner's job is rarely priced that way, and on repointing no new brick is laid at all, so it is not a number to measure a domestic quote against."
+            },
+            {
               q: "How much does tuckpointing or repointing cost in Perth?",
-              a: "Every job is different. Repointing is priced per square metre of wall and tuckpointing by the metre of joint, and the state of the existing mortar, the rake-out depth, access and scaffold move the cost more than the size of the house does. A previous cement repoint that has to come out is the most expensive starting point. The [tuckpointing and repointing page](tuckpointing-repointing.html) sets out what to check on a quote. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "Every job is different. Repointing is priced per square metre of wall and tuckpointing by the metre of joint, and the state of the existing mortar, the rake-out depth, access and scaffold move the cost more than the size of the house does. A previous cement repoint that has to come out is the most expensive starting point. The [tuckpointing and repointing page](tuckpointing-repointing.html) sets out what to check on a quote. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the job."
             },
             {
               q: "How much does it cost to rebuild a brick wall?",
-              a: "A rebuild is priced per square metre of wall, and the figure turns on things a photo cannot show: whether the brick can be reused or matched, what the footing is like, whether the wall is structural, and why it failed in the first place. A rebuild that does not deal with the cause tends to fail the same way. Send photographs and rough dimensions through via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "A rebuild is priced per square metre of wall, and the figure turns on things a photo cannot show: whether the brick can be reused or matched, what the footing is like, whether the wall is structural, and why it failed in the first place. A rebuild that does not deal with the cause tends to fail the same way. Send photographs and rough dimensions through via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the job."
             },
             {
               q: "How much does a brick fence cost in Perth?",
-              a: "Fences are priced by the lineal metre against a height and a finish, with piers, gates and demolition often priced separately. Height moves the cost far more than length does, because a taller wall needs a bigger footing and closer piers. If the fence needs a building permit, the statutory fees for most domestic fences are $182.65 as of 1 July 2026. The [fences page](brick-fences-boundary-walls.html) covers what drives the rest. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and we can give you a proper indication once we know the job."
+              a: "Fences are priced by the lineal metre against a height and a finish, with piers, gates and demolition often priced separately. Height moves the cost far more than length does, because a taller wall needs a bigger footing and closer piers. If the fence needs a building permit, the statutory fees for most domestic fences are $182.65 as of 1 July 2026. The [fences page](brick-fences-boundary-walls.html) covers what drives the rest. Send through what you need via [the enquiry form](#enquiry), by phone on (08) 9516 1337, or by emailing hello@perthbrickwork.com.au, and it goes to a bricklayer who does that work, who can give you a proper indication once they know the job."
             },
             {
               q: "How much deposit can a bricklayer ask for?",
@@ -2740,7 +2762,7 @@ window.SITE_CONFIG = {
     { h2: "The work we cover" },
 
     { h3: "Tuckpointing and repointing" },
-    { p: "Mortar fails long before brick does. Repointing is maintenance. Tuckpointing is a decorative finish found on Perth's federation-era and inter-war housing, and it is a specialist skill that most bricklayers cannot do at all. [Tuckpointing and repointing in Perth](tuckpointing-repointing.html)" },
+    { p: "Mortar fails long before brick does. Repointing is maintenance. Tuckpointing is a decorative finish found on Perth's federation-era and inter-war housing, and it is a specialist skill, closer to a separate trade than to everyday bricklaying. [Tuckpointing and repointing in Perth](tuckpointing-repointing.html)" },
 
     { h3: "Brick repairs and crack stitching" },
     { p: "Cracked, spalled or fretting brickwork. Cracking is sometimes maintenance and sometimes a structural problem, and telling the difference is what stops you paying twice. [Brick repairs and crack stitching in Perth](brick-repairs-crack-stitching.html)" },
@@ -2778,7 +2800,7 @@ window.SITE_CONFIG = {
       p: [
         "People often arrive looking for a rate per thousand bricks, because that is how bricklayers are paid subcontracting to builders on large sites.",
         "It does not translate to a domestic job. On a homeowner's job the brick laying is frequently a minority of the total. Footings, access, scaffolding, spoil removal, piers and approval can add up to more than the brickwork itself, and on repointing there is no new brick being laid at all.",
-        "Costs are set out per job type on the [fences page](brick-fences-boundary-walls.html), the [tuckpointing and repointing page](tuckpointing-repointing.html) and the [brick repairs and crack stitching page](brick-repairs-crack-stitching.html), because that is the only level at which a range means anything.",
+        "What moves the cost is set out per job type on the [fences page](brick-fences-boundary-walls.html), the [tuckpointing and repointing page](tuckpointing-repointing.html) and the [brick repairs and crack stitching page](brick-repairs-crack-stitching.html), because a single rate means nothing across jobs this different.",
         "The [Perth brickwork cost guide](brickwork-cost-guide.html) sets out the unit each job type is quoted in, what moves the number, and the WA rules on deposits, contracts and insurance."
       ]
     },
